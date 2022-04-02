@@ -5,10 +5,7 @@ import com.SeniorProject.konutcheck.app.user.dto.Us_UserSaveDto;
 import com.SeniorProject.konutcheck.app.user.service.Us_UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
@@ -18,7 +15,13 @@ public class Us_UserController {
 
     @PostMapping
     public ResponseEntity save(@RequestBody Us_UserSaveDto usUserSaveDto){
-       Us_UserDto usUserDto = usUserService.saveUser(usUserSaveDto);
-       return ResponseEntity.ok(usUserDto);
+       Us_UserDto usUserDtoSave = usUserService.saveUser(usUserSaveDto);
+       return ResponseEntity.ok(usUserDtoSave);
+    }
+
+    @PutMapping
+    public ResponseEntity update(@RequestBody Us_UserDto usUserDto){
+        Us_UserDto usUserDtoUpdate = usUserService.updateUser(usUserDto);
+        return ResponseEntity.ok(usUserDtoUpdate);
     }
 }

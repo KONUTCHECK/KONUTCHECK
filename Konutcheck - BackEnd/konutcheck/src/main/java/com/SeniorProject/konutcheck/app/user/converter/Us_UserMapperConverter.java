@@ -13,4 +13,5 @@ public interface Us_UserMapperConverter {
     Us_UserMapperConverter INSTANCE = Mappers.getMapper(Us_UserMapperConverter.class);
     Us_User convertToUsUserFromUsUserSaveDto(Us_UserSaveDto usUserSaveDto);
     Us_UserDto convertToUsUserDtoFromUsUser(Us_User usUser);
+    Us_User convertToUsUserFromUsUSerDto(Us_UserDto usUserDto);
 }

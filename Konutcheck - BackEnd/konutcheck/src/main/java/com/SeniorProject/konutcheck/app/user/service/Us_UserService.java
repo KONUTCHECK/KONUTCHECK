@@ -20,4 +20,20 @@ public class Us_UserService {
         Us_UserDto usUserDto = Us_UserMapperConverter.INSTANCE.convertToUsUserDtoFromUsUser(usUser);
         return usUserDto;
     }
+
+    public Us_UserDto updateUser(Us_UserDto usUserDto){
+        Long id = usUserDto.getId();
+        Boolean isExist = usUserEntityService.existById(id);
+
+        Us_User usUser;
+        if(isExist){
+            usUser = Us_UserMapperConverter.INSTANCE.convertToUsUserFromUsUSerDto(usUserDto);
+            usUser = usUserEntityService.save(usUser);
+        }else{
+            throw new RuntimeException("User not found");
+        }
+
+        Us_UserDto usUserDtoUpdate = Us_UserMapperConverter.INSTANCE.convertToUsUserDtoFromUsUser(usUser);
+        return usUserDtoUpdate;
+    }
 }
