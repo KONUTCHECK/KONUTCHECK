@@ -7,6 +7,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface Us_UserMapperConverter {
 
@@ -14,4 +16,5 @@ public interface Us_UserMapperConverter {
     Us_User convertToUsUserFromUsUserSaveDto(Us_UserSaveDto usUserSaveDto);
     Us_UserDto convertToUsUserDtoFromUsUser(Us_User usUser);
     Us_User convertToUsUserFromUsUSerDto(Us_UserDto usUserDto);
+    List<Us_UserDto> convertToUsUserDtoListFromUsUserList(List<Us_User> usUserList);
 }
