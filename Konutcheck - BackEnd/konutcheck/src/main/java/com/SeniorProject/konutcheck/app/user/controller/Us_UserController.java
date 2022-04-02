@@ -24,4 +24,10 @@ public class Us_UserController {
         Us_UserDto usUserDtoUpdate = usUserService.updateUser(usUserDto);
         return ResponseEntity.ok(usUserDtoUpdate);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity delete(@PathVariable Long id){
+        usUserService.deleteUser(id);
+        return ResponseEntity.ok(Void.TYPE);
+    }
 }

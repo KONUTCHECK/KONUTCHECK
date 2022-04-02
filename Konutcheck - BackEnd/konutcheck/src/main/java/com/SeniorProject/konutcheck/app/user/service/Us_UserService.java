@@ -36,4 +36,9 @@ public class Us_UserService {
         Us_UserDto usUserDtoUpdate = Us_UserMapperConverter.INSTANCE.convertToUsUserDtoFromUsUser(usUser);
         return usUserDtoUpdate;
     }
+
+    public void deleteUser(Long id){
+        Us_User usUser = usUserEntityService.getIdWithControl(id);
+        usUserEntityService.delete(usUser);
+    }
 }
