@@ -2,7 +2,7 @@ package com.SeniorProject.konutcheck.app.user.controller;
 
 import com.SeniorProject.konutcheck.app.user.dto.Us_UserDto;
 import com.SeniorProject.konutcheck.app.user.dto.Us_UserSaveDto;
-import com.SeniorProject.konutcheck.app.user.enums.UserTypeEnums;
+import com.SeniorProject.konutcheck.app.user.enums.UserType;
 import com.SeniorProject.konutcheck.app.user.service.Us_UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +29,7 @@ public class Us_UserController {
     }
 
     @GetMapping("/{userType}")
-    public ResponseEntity getAllByUserType(@PathVariable UserTypeEnums userType){
+    public ResponseEntity getAllByUserType(@PathVariable UserType userType){
         List<Us_UserDto> usUserDtoList = usUserService.getAllUsersByUserType(userType);
         return ResponseEntity.ok(usUserDtoList);
     }

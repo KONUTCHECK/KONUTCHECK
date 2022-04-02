@@ -1,7 +1,7 @@
 package com.SeniorProject.konutcheck.app.user.dto;
 
-import com.SeniorProject.konutcheck.app.user.enums.MaritialStatusEnums;
-import com.SeniorProject.konutcheck.app.user.enums.UserTypeEnums;
+import com.SeniorProject.konutcheck.app.user.enums.MaritialStatus;
+import com.SeniorProject.konutcheck.app.user.enums.UserType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,8 +11,8 @@ public class Us_UserSaveDto {
     private String name;
     private String surname;
     private Long age;
-    private UserTypeEnums userType;
-    private MaritialStatusEnums maritialStatus;
+    private UserType userType;
+    private MaritialStatus maritialStatus;
     private String email;
     private String userPhoneNumber1;
     private String userPhoneNumber2;

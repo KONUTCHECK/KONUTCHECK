@@ -1,7 +1,8 @@
 package com.SeniorProject.konutcheck.app.user.enums;
 
-public enum MaritialStatusEnums {
-    Evli,
-    Bekar,
+public enum UserType {
+    Evsahibi,
+    Kiracı,
     ;
+
 }

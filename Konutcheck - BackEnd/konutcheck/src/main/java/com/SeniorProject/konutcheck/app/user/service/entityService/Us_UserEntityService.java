@@ -3,9 +3,7 @@ package com.SeniorProject.konutcheck.app.user.service.entityService;
 import com.SeniorProject.konutcheck.app.general.service.BaseEntityService;
 import com.SeniorProject.konutcheck.app.user.dao.Us_UserDao;
 import com.SeniorProject.konutcheck.app.user.entity.Us_User;
-import com.SeniorProject.konutcheck.app.user.enums.UserTypeEnums;
-import lombok.RequiredArgsConstructor;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.SeniorProject.konutcheck.app.user.enums.UserType;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,7 +18,11 @@ public class Us_UserEntityService extends BaseEntityService<Us_User, Us_UserDao>
         this.usUserDao = dao;
     }
 
-    public List<Us_User> getAllByUserType(UserTypeEnums userType){
+    public List<Us_User> getAllByUserType(UserType userType){
         return usUserDao.findByUserType(userType);
+    }
+
+    public boolean existByEmail(String email){
+        return usUserDao.existsByEmail(email);
     }
 }
