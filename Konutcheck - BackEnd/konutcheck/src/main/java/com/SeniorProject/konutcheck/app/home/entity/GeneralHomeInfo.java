@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 @Table(name = "GENERAL_HOME_INFO")
 @Getter
 @Setter
-public class generalHomeInfo {
+public class GeneralHomeInfo {
 
     @Id
     @SequenceGenerator(name = "generalHomeInfo", sequenceName = "GENERAL_HOME_INFO_ID_SEQ", allocationSize = 1)
