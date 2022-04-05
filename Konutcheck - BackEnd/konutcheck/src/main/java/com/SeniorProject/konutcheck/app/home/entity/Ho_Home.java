@@ -18,7 +18,7 @@ public class Ho_Home {
 
     @Column(name = "ANNOUNCEMENT_DATE", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date date;
+    private Date announcementDate;
 
     @Column(name="GENERAL_HOME_INFO_ID", nullable = false)
     private Long generalHomeInfoId;

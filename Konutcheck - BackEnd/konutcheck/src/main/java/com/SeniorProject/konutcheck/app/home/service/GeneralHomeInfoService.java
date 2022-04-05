@@ -36,4 +36,5 @@ public class GeneralHomeInfoService {
         GeneralHomeInfoDto generalHomeInfoDtoUpdate = GeneralHomeInfoMapperConverter.INSTANCE.convertToGeneralHomeInfoDtoFromGeneralHomeInfo(generalHomeInfo);
         return generalHomeInfoDtoUpdate;
     }
+
 }

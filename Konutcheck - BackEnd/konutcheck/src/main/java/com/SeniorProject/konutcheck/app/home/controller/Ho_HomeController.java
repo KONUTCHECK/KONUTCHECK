@@ -24,7 +24,7 @@ public class Ho_HomeController {
     }
 
     @PostMapping("/home-infos")
-    public ResponseEntity save(@RequestBody GeneralHomeInfoSaveDto generalHomeInfoSaveDto){
+    public ResponseEntity saveInfo(@RequestBody GeneralHomeInfoSaveDto generalHomeInfoSaveDto){
         GeneralHomeInfoDto generalHomeInfoDtoSave = generalHomeInfoService.saveHomeInfos(generalHomeInfoSaveDto);
         return ResponseEntity.ok(generalHomeInfoDtoSave);
     }
@@ -33,6 +33,12 @@ public class Ho_HomeController {
     public ResponseEntity update(@RequestBody GeneralHomeInfoDto generalHomeInfoDto){
         GeneralHomeInfoDto generalHomeInfoDtoUpdate = generalHomeInfoService.updateHomeInfos(generalHomeInfoDto);
         return ResponseEntity.ok(generalHomeInfoDtoUpdate);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity delete(@PathVariable Long id){
+        hoHomeService.deleteHome(id);
+        return ResponseEntity.ok(Void.TYPE);
     }
 
 }
