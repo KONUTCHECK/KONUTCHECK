@@ -16,9 +16,9 @@ public class Ho_Home {
     @GeneratedValue(generator = "Ho_Home")
     private Long Id;
 
-    @Column(name = "ANONCUMENT_DATE", nullable = false)
+    @Column(name = "ANNOUNCEMENT_DATE", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date date;
+    private Date announcementDate;
 
     @Column(name="GENERAL_HOME_INFO_ID", nullable = false)
     private Long generalHomeInfoId;

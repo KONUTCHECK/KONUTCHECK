@@ -10,6 +10,6 @@ import java.util.Date;
 @Setter
 public class Ho_HomeDto {
     private Long Id;
-    private Date date;
+    private Date announcementDate;
     private Long generalHomeInfoId;
 }
