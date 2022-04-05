@@ -12,5 +12,5 @@ import org.mapstruct.factory.Mappers;
 public interface Ho_HomeMapperConverter {
     Ho_HomeMapperConverter INSTANCE = Mappers.getMapper(Ho_HomeMapperConverter.class);
     Ho_Home convertToHoHomeFromHoHomeSaveDto(Ho_HomeSaveDto hoHomeSaveDto);
-   Ho_HomeDto convertToHoHomeDtoFromHoHome(Ho_Home hoHome);
+    Ho_HomeDto convertToHoHomeDtoFromHoHome(Ho_Home hoHome);
 }
