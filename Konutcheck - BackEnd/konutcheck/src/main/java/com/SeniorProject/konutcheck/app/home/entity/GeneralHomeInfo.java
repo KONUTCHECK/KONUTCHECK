@@ -29,15 +29,15 @@ public class GeneralHomeInfo {
     @Column(name = "DUES", precision = 19, scale = 2, nullable = false)
     private BigDecimal dues;
 
-    @Column(name = "NUMBER_OF_ROOMS", nullable = false)
-    private int numberOfRooms;
+    @Column(name = "NUMBER_OF_ROOMS", nullable = false, length = 8)
+    private String numberOfRooms;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "WARNING_SYSTEM", length = 30, nullable = false)
     private WarningSystems warningSystem;
 
-    @Column(name = "BUILDING_AGE", nullable = false)
-    private int buildingAge;
+    @Column(name = "BUILDING_AGE", nullable = false, length = 10)
+    private String buildingAge;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "HOME_ASPECT", length = 30, nullable = false)
@@ -49,6 +49,7 @@ public class GeneralHomeInfo {
     @Column(name = "HOME_SIZE", precision = 19, scale = 2, nullable = false)
     private BigDecimal homeSize;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "HOME_TYPE", length = 30, nullable = false)
     private HomeTypes homeType;
 
