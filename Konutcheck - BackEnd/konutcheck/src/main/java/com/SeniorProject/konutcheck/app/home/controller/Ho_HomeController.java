@@ -1,14 +1,13 @@
 package com.SeniorProject.konutcheck.app.home.controller;
 
-import com.SeniorProject.konutcheck.app.home.dto.GeneralHomeInfoDto;
-import com.SeniorProject.konutcheck.app.home.dto.GeneralHomeInfoSaveDto;
-import com.SeniorProject.konutcheck.app.home.dto.Ho_HomeDto;
-import com.SeniorProject.konutcheck.app.home.dto.Ho_HomeSaveDto;
+import com.SeniorProject.konutcheck.app.home.dto.*;
 import com.SeniorProject.konutcheck.app.home.service.GeneralHomeInfoService;
 import com.SeniorProject.konutcheck.app.home.service.Ho_HomeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/homes")
@@ -27,6 +26,12 @@ public class Ho_HomeController {
     public ResponseEntity saveInfo(@RequestBody GeneralHomeInfoSaveDto generalHomeInfoSaveDto){
         GeneralHomeInfoDto generalHomeInfoDtoSave = generalHomeInfoService.saveHomeInfos(generalHomeInfoSaveDto);
         return ResponseEntity.ok(generalHomeInfoDtoSave);
+    }
+
+    @GetMapping
+    public ResponseEntity getAll(){
+        List<Ho_HomeDetails> homeDetailsList = hoHomeService.getAllHomes();
+        return ResponseEntity.ok(homeDetailsList);
     }
 
     @PutMapping("/update-home-infos")

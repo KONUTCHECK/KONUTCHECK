@@ -16,9 +16,9 @@ public class GeneralHomeInfoDto {
     private BigDecimal amount;
     private BigDecimal deposit;
     private BigDecimal dues;
-    private int numberOfRooms;
+    private String numberOfRooms;
     private WarningSystems warningSystem;
-    private int buildingAge;
+    private String buildingAge;
     private HomeAspects homeAspect;
     private int floor;
     private BigDecimal homeSize;

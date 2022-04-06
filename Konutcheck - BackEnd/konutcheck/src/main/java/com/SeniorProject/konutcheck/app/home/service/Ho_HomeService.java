@@ -1,6 +1,7 @@
 package com.SeniorProject.konutcheck.app.home.service;
 
 import com.SeniorProject.konutcheck.app.home.converter.Ho_HomeMapperConverter;
+import com.SeniorProject.konutcheck.app.home.dto.Ho_HomeDetails;
 import com.SeniorProject.konutcheck.app.home.dto.Ho_HomeDto;
 import com.SeniorProject.konutcheck.app.home.dto.Ho_HomeSaveDto;
 import com.SeniorProject.konutcheck.app.home.entity.GeneralHomeInfo;
@@ -11,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -25,6 +27,11 @@ public class Ho_HomeService {
 
         Ho_HomeDto hoHomeDto = Ho_HomeMapperConverter.INSTANCE.convertToHoHomeDtoFromHoHome(hoHome);
         return hoHomeDto;
+   }
+
+   public List<Ho_HomeDetails> getAllHomes(){
+        List<Ho_HomeDetails> homeDetailsList = hoHomeEntityService.getAllHomes();
+        return homeDetailsList;
    }
 
    public void deleteHome(Long id){
