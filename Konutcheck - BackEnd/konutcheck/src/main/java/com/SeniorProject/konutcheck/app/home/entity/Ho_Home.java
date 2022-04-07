@@ -1,9 +1,11 @@
 package com.SeniorProject.konutcheck.app.home.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -17,8 +19,9 @@ public class Ho_Home {
     private Long Id;
 
     @Column(name = "ANNOUNCEMENT_DATE", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date announcementDate;
+    //@Temporal(TemporalType.DATE)
+    @JsonFormat(pattern="yyyy/MM/dd")
+    private LocalDate announcementDate;
 
     @Column(name="GENERAL_HOME_INFO_ID", nullable = false)
     private Long generalHomeInfoId;

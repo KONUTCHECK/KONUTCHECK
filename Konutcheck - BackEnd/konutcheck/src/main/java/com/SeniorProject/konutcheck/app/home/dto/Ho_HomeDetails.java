@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
@@ -25,6 +26,6 @@ public class Ho_HomeDetails {
     private final HomeAspects homeAspect;
     private final int floor;
     private final BigDecimal homeSize;
-    private final Date announcementDate;
+    private final LocalDate announcementDate;
 
 }
