@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -44,8 +45,8 @@ public class Ho_HomeController {
 
     @GetMapping("/between-dates/")
     public ResponseEntity getAllBetweenDates(
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date date1,
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date date2){
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date1,
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date2){
         List<Ho_HomeDetails> homeDetailsList = hoHomeService.getAllHomesBetweenDate(date1, date2);
         return ResponseEntity.ok(homeDetailsList);
     }

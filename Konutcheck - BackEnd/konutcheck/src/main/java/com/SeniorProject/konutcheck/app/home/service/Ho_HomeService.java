@@ -53,7 +53,7 @@ public class Ho_HomeService {
         return homeDetailsList;
     }
 
-    public List<Ho_HomeDetails> getAllHomesBetweenDate(Date date1, Date date2){
+    public List<Ho_HomeDetails> getAllHomesBetweenDate(LocalDate date1, LocalDate date2){
         List<Ho_HomeDetails> homeDetailsList = hoHomeEntityService.findByAnnouncementDateBetween(date1, date2);
         return homeDetailsList;
     }

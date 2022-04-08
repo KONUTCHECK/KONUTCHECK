@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -25,6 +26,6 @@ public interface Ho_HomeDao extends JpaRepository<Ho_Home, Long> {
                     " left join GeneralHomeInfo generalHomeInfo on hoHome.generalHomeInfoId = generalHomeInfo.id" +
                     " where hoHome.announcementDate between :date1 and :date2"
     )
-    List<Ho_HomeDetails> findByAnnouncementDateBetween(Date date1, Date date2);
+    List<Ho_HomeDetails> findByAnnouncementDateBetween(LocalDate date1, LocalDate date2);
 }
 
