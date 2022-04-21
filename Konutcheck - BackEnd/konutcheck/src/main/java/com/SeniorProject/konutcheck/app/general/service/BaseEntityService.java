@@ -1,5 +1,7 @@
 package com.SeniorProject.konutcheck.app.general.service;
 
+import com.SeniorProject.konutcheck.app.general.exceptionEnums.GeneralErrorMessage;
+import com.SeniorProject.konutcheck.app.general.exceptions.ItemNotFoundExceptions;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
@@ -72,7 +74,7 @@ public abstract class BaseEntityService<E, D extends JpaRepository>{
         if(entityOptional.isPresent()){
             entity = entityOptional.get();
         }else{
-            throw new RuntimeException("Id cannot be found!");
+            throw new ItemNotFoundExceptions(GeneralErrorMessage.ID_NOT_FOUND);
         }
 
         return entity;
