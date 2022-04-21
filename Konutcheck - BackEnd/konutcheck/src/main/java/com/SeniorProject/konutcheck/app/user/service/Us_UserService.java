@@ -1,5 +1,7 @@
 package com.SeniorProject.konutcheck.app.user.service;
 
+import com.SeniorProject.konutcheck.app.general.exceptionEnums.GeneralErrorMessage;
+import com.SeniorProject.konutcheck.app.general.exceptions.ItemNotFoundExceptions;
 import com.SeniorProject.konutcheck.app.user.converter.Us_UserMapperConverter;
 import com.SeniorProject.konutcheck.app.user.dto.Us_UserDto;
 import com.SeniorProject.konutcheck.app.user.dto.Us_UserSaveDto;
@@ -45,7 +47,7 @@ public class Us_UserService {
             usUser = Us_UserMapperConverter.INSTANCE.convertToUsUserFromUsUSerDto(usUserDto);
             usUser = usUserEntityService.save(usUser);
         }else{
-            throw new RuntimeException("User not found");
+            throw new ItemNotFoundExceptions(GeneralErrorMessage.USER_NOT_FOUND);
         }
 
         Us_UserDto usUserDtoUpdate = Us_UserMapperConverter.INSTANCE.convertToUsUserDtoFromUsUser(usUser);

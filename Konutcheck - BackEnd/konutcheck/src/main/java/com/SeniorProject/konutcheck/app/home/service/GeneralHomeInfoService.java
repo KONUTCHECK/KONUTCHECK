@@ -1,5 +1,7 @@
 package com.SeniorProject.konutcheck.app.home.service;
 
+import com.SeniorProject.konutcheck.app.general.exceptionEnums.GeneralErrorMessage;
+import com.SeniorProject.konutcheck.app.general.exceptions.ItemNotFoundExceptions;
 import com.SeniorProject.konutcheck.app.home.converter.GeneralHomeInfoMapperConverter;
 import com.SeniorProject.konutcheck.app.home.dto.GeneralHomeInfoDto;
 import com.SeniorProject.konutcheck.app.home.dto.GeneralHomeInfoSaveDto;
@@ -30,7 +32,7 @@ public class GeneralHomeInfoService {
             generalHomeInfo = GeneralHomeInfoMapperConverter.INSTANCE.convertToGeneralHomeInfoFromGeneralHomeInfoDto(generalHomeInfoDto);
             generalHomeInfo = generalHomeInfoEntityService.save(generalHomeInfo);
         }else{
-            throw new RuntimeException("Home ınfos not found");
+            throw new ItemNotFoundExceptions(GeneralErrorMessage.HOME_INFOS_NOT_FOUND);
         }
 
         GeneralHomeInfoDto generalHomeInfoDtoUpdate = GeneralHomeInfoMapperConverter.INSTANCE.convertToGeneralHomeInfoDtoFromGeneralHomeInfo(generalHomeInfo);
