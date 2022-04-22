@@ -1,6 +1,8 @@
 package com.SeniorProject.konutcheck.app.user.service;
 
 import com.SeniorProject.konutcheck.app.general.exceptionEnums.GeneralErrorMessage;
+import com.SeniorProject.konutcheck.app.general.exceptions.DuplicateException;
+import com.SeniorProject.konutcheck.app.general.exceptions.InvalidInformationExceptions;
 import com.SeniorProject.konutcheck.app.general.exceptions.ItemNotFoundExceptions;
 import com.SeniorProject.konutcheck.app.user.converter.Us_UserMapperConverter;
 import com.SeniorProject.konutcheck.app.user.dto.Us_UserDto;
@@ -67,7 +69,7 @@ public class Us_UserService {
         if(!isExist){
             return true;
         }else{
-            throw new RuntimeException("Email was already used!");
+            throw new DuplicateException(GeneralErrorMessage.ALREADY_USED);
         }
     }
 
@@ -75,7 +77,7 @@ public class Us_UserService {
         if(age > 0){
             return true;
         }else{
-            throw new RuntimeException("Age cannot be zero(0) or little than zero(0)");
+            throw new InvalidInformationExceptions(GeneralErrorMessage.AGE_CANNOT_BE_ZERO);
         }
     }
 }

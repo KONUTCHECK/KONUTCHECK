@@ -1,5 +1,8 @@
 package com.SeniorProject.konutcheck.app.home.service;
 
+import com.SeniorProject.konutcheck.app.general.exceptionEnums.GeneralErrorMessage;
+import com.SeniorProject.konutcheck.app.general.exceptions.InvalidInformationExceptions;
+import com.SeniorProject.konutcheck.app.general.exceptions.ItemNotFoundExceptions;
 import com.SeniorProject.konutcheck.app.home.converter.GeneralHomeInfoMapperConverter;
 import com.SeniorProject.konutcheck.app.home.converter.Ho_HomeMapperConverter;
 import com.SeniorProject.konutcheck.app.home.dto.*;
@@ -9,13 +12,10 @@ import com.SeniorProject.konutcheck.app.home.enums.HomeTypes;
 import com.SeniorProject.konutcheck.app.home.service.entityService.GeneralHomeInfoEntityService;
 import com.SeniorProject.konutcheck.app.home.service.entityService.Ho_HomeEntityService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -72,7 +72,7 @@ public class Ho_HomeService {
             generalHomeInfo = GeneralHomeInfoMapperConverter.INSTANCE.convertToGeneralHomeInfoFromGeneralHomeInfoDto(generalHomeInfoDto);
             generalHomeInfo = generalHomeInfoEntityService.save(generalHomeInfo);
         }else{
-            throw new RuntimeException("Home ınfos not found");
+            throw new ItemNotFoundExceptions(GeneralErrorMessage.HOME_INFOS_NOT_FOUND);
         }
 
         GeneralHomeInfoDto generalHomeInfoDtoUpdate = GeneralHomeInfoMapperConverter.INSTANCE.convertToGeneralHomeInfoDtoFromGeneralHomeInfo(generalHomeInfo);
@@ -92,7 +92,7 @@ public class Ho_HomeService {
         if(isExist){
             return true;
         }else{
-            throw new RuntimeException("Home infos not found!");
+            throw new ItemNotFoundExceptions(GeneralErrorMessage.HOME_INFOS_NOT_FOUND);
         }
    }
 
@@ -104,7 +104,7 @@ public class Ho_HomeService {
         BigDecimal homeSize = generalHomeInfoSaveDto.getHomeSize();
 
         if(amount.compareTo(BigDecimal.ZERO) < 0 || deposit.compareTo(BigDecimal.ZERO) < 0 || dues.compareTo(BigDecimal.ZERO) < 0 || floor < 0 || homeSize.compareTo(BigDecimal.ZERO) < 0){
-            throw new RuntimeException("Cannot be negative");
+            throw new InvalidInformationExceptions(GeneralErrorMessage.CANNOT_BE_NEGATIVE);
         }else{
             return true;
         }
