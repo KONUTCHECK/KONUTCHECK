@@ -2,7 +2,10 @@ package com.SeniorProject.konutcheck.app.general.service;
 
 import com.SeniorProject.konutcheck.app.general.exceptionEnums.GeneralErrorMessage;
 import com.SeniorProject.konutcheck.app.general.exceptions.ItemNotFoundExceptions;
+import com.SeniorProject.konutcheck.app.securityGeneral.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,13 +18,13 @@ import java.util.Optional;
 public abstract class BaseEntityService<E, D extends JpaRepository>{
 
     private final D dao;
-    //private AuthenticationService authenticationService;
+    private AuthenticationService authenticationService;
 
     //Circular dependency
-    /*@Autowired
+    @Autowired
     public void setAuthenticationService(@Lazy AuthenticationService authenticationService) {
         this.authenticationService = authenticationService;
-    }*/
+    }
 
     public E save(E entity){
        // setAdditionalFields(entity);
@@ -58,10 +61,10 @@ public abstract class BaseEntityService<E, D extends JpaRepository>{
         dao.delete(entity);
     }
 
-    /*public Long getCurrentUser(){
+    public Long getCurrentUser(){
         Long currentUserId = authenticationService.getCurrentUserId();
         return currentUserId;
-    }*/
+    }
 
     public boolean existById(Long id){
         return dao.existsById(id);

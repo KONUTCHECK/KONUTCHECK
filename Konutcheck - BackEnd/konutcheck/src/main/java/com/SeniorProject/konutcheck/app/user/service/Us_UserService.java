@@ -11,6 +11,7 @@ import com.SeniorProject.konutcheck.app.user.entity.Us_User;
 import com.SeniorProject.konutcheck.app.user.enums.UserType;
 import com.SeniorProject.konutcheck.app.user.service.entityService.Us_UserEntityService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,11 +20,14 @@ import java.util.List;
 @RequiredArgsConstructor
 public class Us_UserService {
     private final Us_UserEntityService usUserEntityService;
+    private final PasswordEncoder passwordEncoder;
 
     public Us_UserDto saveUser(Us_UserSaveDto usUserSaveDto){
         isEmailExist(usUserSaveDto.getEmail());
         validationOfAge(usUserSaveDto.getAge());
         Us_User usUser = Us_UserMapperConverter.INSTANCE.convertToUsUserFromUsUserSaveDto(usUserSaveDto);
+        String encodedPassword = passwordEncoder.encode(usUserSaveDto.getPassword());
+        usUser.setPassword(encodedPassword);
         usUser = usUserEntityService.save(usUser);
 
         Us_UserDto usUserDto = Us_UserMapperConverter.INSTANCE.convertToUsUserDtoFromUsUser(usUser);
