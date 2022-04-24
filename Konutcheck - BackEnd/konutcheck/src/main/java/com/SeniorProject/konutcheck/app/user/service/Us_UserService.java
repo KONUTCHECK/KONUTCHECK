@@ -1,6 +1,8 @@
 package com.SeniorProject.konutcheck.app.user.service;
 
 import com.SeniorProject.konutcheck.app.general.exceptionEnums.GeneralErrorMessage;
+import com.SeniorProject.konutcheck.app.general.exceptions.DuplicateException;
+import com.SeniorProject.konutcheck.app.general.exceptions.InvalidInformationExceptions;
 import com.SeniorProject.konutcheck.app.general.exceptions.ItemNotFoundExceptions;
 import com.SeniorProject.konutcheck.app.user.converter.Us_UserMapperConverter;
 import com.SeniorProject.konutcheck.app.user.dto.Us_UserDto;
@@ -9,6 +11,7 @@ import com.SeniorProject.konutcheck.app.user.entity.Us_User;
 import com.SeniorProject.konutcheck.app.user.enums.UserType;
 import com.SeniorProject.konutcheck.app.user.service.entityService.Us_UserEntityService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,11 +20,14 @@ import java.util.List;
 @RequiredArgsConstructor
 public class Us_UserService {
     private final Us_UserEntityService usUserEntityService;
+    private final PasswordEncoder passwordEncoder;
 
     public Us_UserDto saveUser(Us_UserSaveDto usUserSaveDto){
         isEmailExist(usUserSaveDto.getEmail());
         validationOfAge(usUserSaveDto.getAge());
         Us_User usUser = Us_UserMapperConverter.INSTANCE.convertToUsUserFromUsUserSaveDto(usUserSaveDto);
+        String encodedPassword = passwordEncoder.encode(usUserSaveDto.getPassword());
+        usUser.setPassword(encodedPassword);
         usUser = usUserEntityService.save(usUser);
 
         Us_UserDto usUserDto = Us_UserMapperConverter.INSTANCE.convertToUsUserDtoFromUsUser(usUser);
@@ -67,7 +73,7 @@ public class Us_UserService {
         if(!isExist){
             return true;
         }else{
-            throw new RuntimeException("Email was already used!");
+            throw new DuplicateException(GeneralErrorMessage.ALREADY_USED);
         }
     }
 
@@ -75,7 +81,7 @@ public class Us_UserService {
         if(age > 0){
             return true;
         }else{
-            throw new RuntimeException("Age cannot be zero(0) or little than zero(0)");
+            throw new InvalidInformationExceptions(GeneralErrorMessage.AGE_CANNOT_BE_ZERO);
         }
     }
 }
