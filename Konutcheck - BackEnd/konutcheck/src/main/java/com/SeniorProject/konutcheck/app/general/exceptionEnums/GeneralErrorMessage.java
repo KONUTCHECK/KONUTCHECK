@@ -8,6 +8,7 @@ public enum GeneralErrorMessage implements BaseErrorMessage{
     USER_NOT_FOUND("User not found!", "User cannot found with this id."),
     ID_NOT_FOUND("There is not this id!", "This id not found anywhere."),
     HOME_INFOS_NOT_FOUND("Such informations not found!","These informations are not written."),
+    HOME_NOT_FOUND ( "Home not found!", "There is no home related to this id." ),
     ;
 
     private String errorMessage;
