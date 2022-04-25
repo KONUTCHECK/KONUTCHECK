@@ -15,4 +15,3 @@ public class HomesRelatedWithUsersDto {
     private UserType userType;
     private Long homeId;
 }
-
