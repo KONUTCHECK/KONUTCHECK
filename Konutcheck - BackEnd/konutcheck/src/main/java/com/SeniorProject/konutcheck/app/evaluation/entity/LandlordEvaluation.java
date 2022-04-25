@@ -11,7 +11,6 @@ import java.math.BigDecimal;
 @Table(name= "LANDLORD_EVALUATION")
 @Getter
 @Setter
-
 public class LandlordEvaluation {
     @Id
     @SequenceGenerator(name = "LandlordEvaluation", sequenceName = "LANDLORD_EVALUATION_ID_SEQ", allocationSize = 1)

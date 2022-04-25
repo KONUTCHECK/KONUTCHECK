@@ -1,11 +1,14 @@
 package com.SeniorProject.konutcheck.app.evaluation.controller;
 
-import com.SeniorProject.konutcheck.app.evaluation.dto.HomesRelatedWithUsersDto;
-import com.SeniorProject.konutcheck.app.evaluation.dto.HomesRelatedWithUsersSaveDto;
+import com.SeniorProject.konutcheck.app.evaluation.dto.*;
+import com.SeniorProject.konutcheck.app.evaluation.service.Ev_EvaluationService;
 import com.SeniorProject.konutcheck.app.evaluation.service.HomeRelatedService;
+import com.SeniorProject.konutcheck.app.evaluation.service.UserRelatedHomesService;
 import lombok.RequiredArgsConstructor;
+import org.apache.catalina.connector.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,12 +16,26 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping ("/evaluations")
 @RequiredArgsConstructor
 public class EvaluationController {
-    private final HomeRelatedService homeRelatedService ;
+    private final HomeRelatedService homeRelatedService;
+    private final Ev_EvaluationService evaluationService;
+    private final UserRelatedHomesService userRelatedHomesService;
 
-    @PostMapping
+   /* @PostMapping
     public ResponseEntity save (HomesRelatedWithUsersSaveDto homesRelatedWithUsersSaveDto) {
         HomesRelatedWithUsersDto homesRelatedWithUsersDto = homeRelatedService.save(homesRelatedWithUsersSaveDto);
         return ResponseEntity.ok(homesRelatedWithUsersDto);
 
+    }*/
+
+    @PostMapping
+    public ResponseEntity save(@RequestBody UserRelatedHomesSaveDto userRelatedHomesSaveDto){
+        UserRelatedHomesDto userRelatedHomesDto = userRelatedHomesService.save(userRelatedHomesSaveDto);
+        return ResponseEntity.ok(userRelatedHomesDto);
     }
+
+    /*@PostMapping("/landlord-evaluation")
+    public ResponseEntity saveLandlordEvaluation(LandlordEvaluationSaveDto landlordEvaluationSaveDto){
+        LandlordEvaluationDto landlordEvaluationDto = evaluationService.saveLandlordEvaluation(landlordEvaluationSaveDto);
+        return ResponseEntity.ok(landlordEvaluationDto);
+    }*/
 }

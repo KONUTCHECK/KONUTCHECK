@@ -10,7 +10,6 @@ import java.math.BigInteger;
 @Table(name= "TENANT_EVALUATION")
 @Getter
 @Setter
-
 public class TenantEvaluation {
     @Id
     @SequenceGenerator(name = "TenantEvaluation", sequenceName = "TENANT_EVALUATION_ID_SEQ", allocationSize = 1)
