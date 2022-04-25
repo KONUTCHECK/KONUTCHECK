@@ -1,0 +1,481 @@
+
+
+/*** 
+=============================================
+    Faq Style1 Area Css
+=============================================
+***/
+.faq-style1-area {
+    position: relative;
+    display: block;
+    background: #e9ebf4;
+    padding: 0px 0 0px;
+}
+.faq-style1-area .layer-outer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-attachment: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+.faq-style1-content {
+    position: relative;
+    display: block;
+    margin-left: -110px;
+    padding-top: 110px;
+    padding-bottom: 110px;
+}
+.faq-style1-content .sec-title.with_text {
+    padding-bottom: 42px;
+}
+.faq-style1-content .sec-title h2 {
+    margin: 0;
+}
+.faq-style1-content .sec-title .text p {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 700;
+    margin: 0;
+}
+
+
+.accordion-box {
+    position: relative;
+    display: block;
+    border-bottom: 1px solid #cbcfe0;
+}
+.accordion-box .accordion {
+    position: relative;
+    display: block;
+    padding: 21px 0px 21px;
+    border-top: 1px solid #cbcfe0;
+}
+.accordion-box .accordion .accord-btn {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    padding-left: 0px;
+    padding-right: 40px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    transition: all 500ms ease;
+}
+.accordion-box .accordion .accord-btn h4 {
+    color: #222222;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 600;
+    transition: all 500ms ease;
+}
+.accordion-box .accordion .accord-btn::after {
+    font-family: Flaticon;
+    position: absolute;
+    content: "\f110";
+    top: 50%;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    background: #ffffff;
+    color: #222222;
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 600;
+    text-align: center;
+    transform: translateY(-50%);
+    opacity: 1;
+    transition: all 500ms ease 0s;
+}
+.accordion-box .accordion .accord-btn.active {
+    position: relative;
+}
+.accordion-box .accordion .accord-btn.active h4{
+    color: #2739a7;
+}
+.accordion-box .accordion .accord-btn.active:after{
+    content: "\f115";
+    color: #ffffff;
+    opacity: 1;
+}
+
+
+.accordion-box .accordion .accord-content {
+    position: relative;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 12px;
+    padding-left: 0px;
+    padding-right: 0px;
+    display: none;
+    z-index: 1;
+}
+.accordion-box .accordion .accord-content.collapsed {
+    display: block;
+}
+.accordion-box .accordion .accord-content p {
+    margin: 0;
+}
+
+
+
+.faq-style1-image-box{
+    position: relative;
+    display: block;
+}
+.faq-style1-image-box .inner{
+    position: relative;
+    display: block;
+}
+.faq-style1-image-box .inner::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, .2);
+    border-radius: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 10;
+}
+.faq-style1-image-box:hover .inner::before{
+    -webkit-animation: circle .75s;
+    animation: circle .75s;    
+}
+.faq-style1-image-box .inner img {
+    max-width: none;
+    float: left;
+}
+.faq-style1-image-box .overlay-content {
+    position: absolute;
+    bottom: -25px;
+    right: -150px;
+    width: 635px;
+    background: #ffffff;
+    box-shadow: 0px 0px 13.5px 1.5px rgba(0, 0, 0, 0.05);
+    padding: 45px 65px 45px;
+    z-index: 1;
+}
+.faq-style1-image-box .overlay-content:before{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: "";
+}
+.faq-style1-image-box .overlay-content .sec-title {
+    padding-bottom: 0px;
+}
+.faq-style1-image-box .overlay-content .sec-title h2{
+    font-weight: 500;
+}
+.faq-style1-image-box .overlay-content .icon-box {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.faq-style1-image-box .overlay-content .icon-box span::before {
+    font-size: 65px;
+    color: #ffffff;
+}
+
+
+
+/*** 
+=============================================
+    Faq Style2 Area Css
+=============================================
+***/
+.faq-style2-area {
+    position: relative;
+    display: block;
+    background: #ffffff;
+    padding: 0px 0 145px;
+}
+.faq-style2-content{
+    position: relative;
+    display: block;
+    max-width: 625px;
+    width: 100%;
+}
+.faq-style2-content .sec-title.with_text {
+    padding-bottom: 43px;
+}
+
+
+
+
+.accordion-box-style2{
+    border: none;
+}
+.accordion-box-style2 .accordion {
+    padding: 0px 0px 0px;
+    border-top: 0px solid #cbcfe0;
+    margin-bottom: 15px;
+}
+.accordion-box-style2 .accordion .accord-btn {
+    background: #faf7f0;
+    padding-left: 35px;
+    padding-right: 80px;
+    padding-top: 18px;
+    padding-bottom: 19px;
+    z-index: 1;
+}
+.accordion-box-style2 .accordion .accord-btn.active{
+    background: #ffffff;
+}
+.accordion-box-style2 .accordion .accord-btn::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: "";
+    -webkit-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+    transition: all 0.4s linear;
+    transform: scaleY(0);    
+}
+.accordion-box-style2 .accordion .accord-btn.active::before{
+    transform: scaleY(1.0);   
+}
+.accordion-box-style2 .accordion .accord-btn.active h4 {
+    color: #111111;
+}
+.accordion-box-style2 .accordion .accord-content {
+    padding-top: 27px;
+    padding-bottom: 18px;
+    padding-left: 35px;
+    padding-right: 0px;
+}
+.accordion-box-style2 .accordion .accord-btn::after {
+    font-family: FontAwesome;
+    content: "\f105";
+    top: 0%;
+    right: 0px;
+    width: 70px;
+    height: 65px;
+    background: transparent;
+    color: #222222;
+    font-size: 20px;
+    line-height: 65px;
+    font-weight: 400;
+    text-align: center;
+    transform: translateY(0%);
+    border-left: 1px solid #ece6d9;
+}
+.accordion-box-style2 .accordion .accord-btn.active:after {
+    color: #222222;
+    content: "\f107";
+    background: transparent;
+}
+
+
+
+
+
+
+.faq-style2-image-box {
+    position: relative;
+    display: block;
+    padding-top: 72px;
+    margin-left: 33px;
+    margin-right: -76px;
+}
+.faq-style2-image-box .inner{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    z-index: 1;
+}
+.faq-style2-image-box .inner::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: 15px solid #222222;
+    content: "";
+    z-index: 1;
+}
+
+.faq-style2-image-box .box1{
+    position: absolute;
+    bottom: -50px;
+    right: -135px;
+    width: 375px;
+    height: 350px;
+    background: transparent;
+    overflow: hidden;
+    z-index: 1;
+}
+.faq-style2-image-box .box1::before {
+    position: absolute;
+    top: 0;
+    left: 65px;
+    bottom: 0;
+    right: -65px;
+    content: "";
+    -moz-transform: skew(-20deg, 0deg);
+    -webkit-transform: skew(-20deg, 0deg);
+    -o-transform: skew(-20deg, 0deg);
+    -ms-transform: skew(-20deg, 0deg);
+    transform: skew(-20deg, 0deg);
+}
+.faq-style2-image-box .box1 .inner-border {
+    position: absolute;
+    top: 0;
+    left: 22px;
+    bottom: 0;
+    right: 0;
+    background-repeat: no-repeat;
+}
+
+
+.faq-style2-image-box .phone_number {
+    position: absolute;
+    bottom: 80px;
+    right: -85px;
+    width: 370px;
+    background: #ffffff;
+    padding: 32px 30px 35px;
+    padding-right: 20px;
+    border-bottom: 1px solid #222222;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.06);
+    z-index: 10;
+}
+.faq-style2-image-box .phone_number .outer-box{
+    position: relative;
+    display: block;
+    padding-left: 65px;
+}
+.faq-style2-image-box .phone_number .outer-box .icon{
+    position: absolute;
+    top: 22px;
+    left: 0;
+    font-size: 50px;
+}
+
+.faq-style2-image-box .phone_number .outer-box .text{
+    position: relative;
+    display: block;
+}
+.faq-style2-image-box .phone_number .outer-box .text p{
+    margin: 0 0 9px;
+}
+.faq-style2-image-box .phone_number .outer-box .text h2{
+    font-size: 30px;
+    line-height: 32px;
+    font-weight: 900;
+    font-family: 'Lato', sans-serif;
+}
+.faq-style2-image-box .phone_number .outer-box .text h2 a{
+    color: #222222;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+
+
+.faq-style2-image-box .phone_number .plus_icon{
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: #222222;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+}
+
+
+
+/*** 
+=============================================
+    Faq Page Area Css
+=============================================
+***/
+.faq-page-area{
+    position: relative;
+    display: block;
+    background: #ffffff;
+    padding: 110px 0 110px;
+}
+
+
+.accordion-box-style3{
+    border: none;
+}
+.accordion-box-style3 .accordion {
+    padding: 0px 0px 0px;
+    border-top: 0px solid #cbcfe0;
+    margin-bottom: 20px;
+}
+.accordion-box-style3 .accordion .accord-btn {
+    background: #ffffff;
+    padding-left: 35px;
+    padding-right: 80px;
+    padding-top: 17px;
+    padding-bottom: 18px;
+    border: 1px solid #e9ebf4;
+    z-index: 1;
+}
+.accordion-box-style3 .accordion .accord-btn.active h4 {
+    color: #ffffff;
+}
+.accordion-box-style3 .accordion .accord-content {
+    padding-top: 27px;
+    padding-bottom: 32px;
+    padding-left: 35px;
+    padding-right: 30px;
+    border: 1px solid #e9ebf4;
+    border-top: none;
+}
+.accordion-box-style3 .accordion .accord-btn::after {
+    font-family: FontAwesome;
+    content: "\f105";
+    top: 0;
+    right: 0px;
+    bottom: 0;
+    width: 60px;
+    height: auto;
+    background: transparent;
+    color: #222222;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    transform: translateY(0%);
+    border-left: 1px solid #ece6d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.accordion-box-style3 .accordion .accord-btn.active:after {
+    color: #ffffff;
+    content: "\f107";
+    border-color: rgba(255, 255, 255, .2);
+    background: transparent;
+}
+
+
+.accordion-box-style3.style3instyle4_bg .accordion .accord-btn.active{
+    background: #2739a7;
+    border-color: #2739a7;
+}
+

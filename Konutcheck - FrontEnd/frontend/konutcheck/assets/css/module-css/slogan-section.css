@@ -1,0 +1,126 @@
+
+
+/*** 
+=============================================
+    Slogan Area Css
+=============================================
+***/
+.slogan-area {
+    position: relative;
+    display: block;
+    background: #111111;
+    padding: 79px 0px 79px;
+    z-index: 1;
+}
+.slogan-area .layer-outer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    z-index: -1;
+}
+
+.slogan-content-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.slogan-content-box .left-box {
+    position: relative;
+    display: block;
+    padding-left: 135px;
+}
+.slogan-content-box .left-box .icon {
+    position: absolute;
+    top: -70px;
+    left: -30px;
+}
+.slogan-content-box .left-box .icon span::before{
+    font-size: 230px;
+    line-height: 230px;
+}
+.slogan-content-box .left-box .title-box{}
+.slogan-content-box .left-box .title-box h2{
+    color: #ffffff;
+    font-size: 36px;
+    line-height: 46px;
+    font-weight: 700;
+}
+
+.slogan-content-box .button-box{}
+.slogan-content-box .button-box .btn-one {
+    color: #222222;
+    line-height: 65px;
+}
+.slogan-content-box .button-box:hover .btn-one {
+    color: #ffffff;
+}
+
+
+
+/*** 
+=============================================
+    Slogan Style2 Area Css
+=============================================
+***/
+.slogan-style2-area{
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.slogan-style2-content-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 60px 0px 60px;
+}
+.slogan-style2-content-box .icon {
+    position: absolute;
+    top: -75px;
+    right: -150px;
+    bottom: 0;
+}
+.slogan-style2-content-box .icon span::before {
+    color: rgba(255, 255, 255, 0.10);
+    font-size: 360px;
+}
+
+.slogan-style2-content-box .title-box{
+    position: relative;
+    display: block;
+}
+.slogan-style2-content-box .title-box .sec-title{
+    position: relative;
+    display: block;
+    padding-bottom: 0;
+}
+.slogan-style2-content-box .title-box .sec-title .sub-title .border-box{
+    background: #ffffff;
+}
+.slogan-style2-content-box .title-box .sec-title h5{
+    color: #ffffff;
+}
+.slogan-style2-content-box .title-box .sec-title h2{
+    color: #ffffff;
+    font-size: 36px;
+    line-height: 46px;
+    font-weight: 600;
+}
+
+.slogan-style2-content-box .button-box{}
+.slogan-style2-content-box .button-box .btn-one {
+    color: #ffffff;
+    line-height: 65px;
+    background: #2739a7;
+}

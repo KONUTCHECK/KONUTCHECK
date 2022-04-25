@@ -1,0 +1,871 @@
+
+
+/*** 
+=============================================
+    Features Style1 Area Style      
+=============================================
+***/
+.features-style1-area{
+    position: relative;
+    display: block;
+    background: #ffffff;
+    padding: 110px 0px 100px;
+}
+.features-style1_title{
+    position: relative;
+    display: block;
+}
+.features-style1_title .thm-logo {
+    position: absolute;
+    bottom: -460px;
+    right: -290px;
+    z-index: 1;
+}
+.features-style1_title .thm-logo span::before{
+    color: rgba(233, 235, 244, 0.30);
+    font-size: 500px;
+}
+.features-style1-area .sec-title{
+    position: relative;
+    display: block;
+    max-width: 560px;
+    width: 100%;
+    float: left;
+}
+
+
+.features-style1_top_text {
+    position: relative;
+    display: block;
+    max-width: 580px;
+    float: right;
+    margin-top: -8px;
+}
+.features-style1_top_text p {
+    margin: 0;
+}
+.features-style1_top_text ul{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding-top: 23px;
+}
+.features-style1_top_text ul li {
+    color: #222222;
+    font-size: 16px;
+    line-height: 34px;
+    font-weight: 700;
+}
+.features-style1_top_text ul li i {
+    position: relative;
+    display: inline-block;
+    top: 1px;
+    left: 1px;
+    padding-right: 15px;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.features-style1_top_text ul li:hover i {
+    color: #2739a7;
+}
+
+
+.single-features-style1 {
+    position: relative;
+    display: block;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 13.5px 1.5px rgba(0, 0, 0, 0.05);
+    padding: 50px 24px 52px;
+    text-align: center;
+    margin-bottom: 30px;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+    z-index: 2;
+}
+.single-features-style1::before{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    content: "";
+    z-index: -1;
+}
+.single-features-style1::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #2739a7;
+    transition: .5s;
+    transform: perspective(400px) scaleX(0);
+    -webkit-transform-origin: bottom;
+    -ms-transform-origin: bottom;
+    transform-origin: bottom;
+}
+.single-features-style1:hover:after{
+    opacity: 1;
+    transform: perspective(400px) scaleX(1.0);
+}
+
+.single-features-style1 .inner{
+    position: relative;
+    display: block;
+    z-index: 1;
+}
+.single-features-style1 .counting {
+    position: absolute;
+    top: 17px;
+    left: 19px;
+    z-index: 1;
+}
+.single-features-style1 .counting h2{
+    font-size: 30px;
+    line-height: 32px;
+    font-weight: 600;
+    transition: all 500ms linear;
+    transition-delay: 0.1s;
+}
+.single-features-style1:hover .counting h2{
+    color: #ffffff;
+}
+
+.single-features-style1 .btn-box{
+    position: absolute;
+    left: 0;
+    bottom: -22px;
+    right: 0;
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    -ms-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    -webkit-transform-origin: top;
+    -ms-transform-origin: top;
+    transform-origin: top;
+    transition: all 500ms linear;
+    transition-delay: 0.2s;
+    z-index: 1;
+}
+.single-features-style1:hover .btn-box{
+    opacity: 1;
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    -ms-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);    
+}
+.single-features-style1 .btn-box a span::before {
+    position: relative;
+    display: block;
+    width: 45px;
+    height: 45px;
+    background: #ffffff;
+    box-shadow: 0px 0px 36px 4px rgba(0, 0, 0, 0.2);
+    color: #222222;
+    font-size: 20px;
+    line-height: 45px;
+    text-align: center;
+    margin: 0 auto;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-features-style1 .btn-box a:hover span::before{
+    color: #ffffff;
+}
+
+
+.single-features-style1 .icon-holder {
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+}
+.single-features-style1 .icon-holder span{
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.single-features-style1 .icon-holder span::before {
+    position: relative;
+    display: block;
+    color: #2739a7;
+    font-size: 160px;
+    line-height: 0.8em;
+    transition: all 500ms linear;
+    transition-delay: 0.1s;
+    font-weight: 400;
+}
+.single-features-style1:hover .icon-holder span::before {
+    color: #ffffff;
+}
+
+.single-features-style1 .title-holder {
+    position: relative;
+    display: block;
+    text-align: center;
+}
+.single-features-style1 .title-holder h3 {
+    color: #222222;
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: 600;
+}
+.single-features-style1 .title-holder h3 a{
+    color: #222222;
+    transition: all 500ms linear;
+    transition-delay: 0.2s;
+}
+.single-features-style1:hover .title-holder h3 a {
+    color: #ffffff;
+}
+
+
+
+/*** 
+=============================================
+    Our Featues Area Css
+=============================================
+***/
+.our-featues-area{
+    position: relative;
+    display: block;
+    background:#f1f6fa;
+    padding: 90px 0 50px;
+    z-index: 1;
+}
+.our-features-area-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 170%;
+    background-position: left center;
+    background-repeat: repeat-x;
+    z-index: -1;    
+}
+
+.our-featues-area .container-box{
+    position: static;
+    max-width: 1270px;
+    padding: 0px 15px;
+    margin: 0 auto;    
+}
+.our-featues-area .row {
+    margin-left: -17.5px;
+    margin-right: -17.5px;
+}
+.our-featues-area .row [class*=col-] {
+    padding-left: 17.5px;
+    padding-right: 17.5px;
+}
+
+.our-featues_single {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 30px 40px;
+    margin-bottom: 40px;
+    z-index: 1;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.our-featues_single:hover{
+    box-shadow: 0px 0px 13.5px 1.5px rgba(0, 0, 0, 0.05);
+}
+
+
+.our-featues_single::before{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #cddfec;
+    content: "";
+    z-index: 1;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.our-featues_single::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #ffffff;
+    content: "";
+    z-index: -1;
+    transform: scaleX(0.0);
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transition: all 0.4s cubic-bezier(0.62, 0.21, 0.45, 1.52);
+}
+.our-featues_single:hover:after{
+    transform: scaleX(1.0);         
+}
+
+.our-featues_single .title{
+    position: relative;
+    display: block;
+}
+.our-featues_single .title h5 {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.our-featues_single .title h3{
+    color: #222222;
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: 600;
+    margin: 5px 0 0;
+}
+.our-featues_single .icon {
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    background: #ffffff;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+    z-index: 1;
+}
+.our-featues_single .icon:before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #1f67b0;
+    content: "";
+    z-index: -1;
+    transform: scale(0.0);
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transition: all 300ms linear;
+    transition-delay: 0.1s; 
+}
+.our-featues_single:hover .icon:before{
+    transform: scale(1.0);   
+}
+.our-featues_single .icon span::before{
+    color: #222222;
+    font-size: 120px;
+    line-height: 100px;
+    transition: all 700ms linear;
+    transition-delay: 0.2s;
+}
+.our-featues_single:hover .icon span::before{
+    color: #ffffff;
+}
+
+
+
+/*** 
+=============================================
+    Features Style2 Area Style      
+=============================================
+***/
+.features-style2-area{
+    position: relative;
+    display: block;
+}
+.features-style2-area .container-fluid{
+    padding: 0;
+}
+.features-style2-area .row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.features-style2-area .row [class*=col-] {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+.single-features-style2 {
+    position: relative;
+    display: block;
+    padding-bottom: 20px;
+}
+.single-features-style2 .inner {
+    position: relative;
+    display: block;
+    background: #ffffff;
+    padding: 77px 95px 55px;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.12);
+}
+.single-features-style2 .top {
+    position: relative;
+    display: block;
+    padding-left: 85px;
+    margin-bottom: 13px;
+    z-index: 1;
+}
+.single-features-style2 .top .icon {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+}
+.single-features-style2 .top .icon span:before {
+    font-size: 80px;
+    line-height: 0;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-features-style2 .top .icon.size1 span:before {
+    position: relative;
+    left: -15px;
+    font-size: 110px;
+    line-height: 0;
+}
+.single-features-style2 .top .icon.size2 span:before {
+    font-size: 110px;
+    line-height: 0;
+}
+
+.single-features-style2:hover .top .icon span:before,
+.single-features-style2.active .top .icon span:before {
+    color: #ffffff;
+}
+
+
+.single-features-style2 .top .title{
+    position: relative;
+    display: block;
+}
+.single-features-style2 .top .title h3{
+    font-size: 24px;
+    line-height: 30px;
+    margin: 0 0 9px;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-features-style2:hover .top .title h3,
+.single-features-style2.active .top .title h3 {
+    color: #ffffff;
+}
+.single-features-style2 .top .title .border-box{
+    position: relative;
+    display: block;
+    height: 1px;
+    width: 45px;
+    background: #888888;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-features-style2:hover .top .title .border-box,
+.single-features-style2.active .top .title .border-box {
+    background: #ffffff;
+}
+
+
+.single-features-style2 .inner .text{
+    position: relative;
+    display: block;
+    z-index: 1;
+}
+.single-features-style2 .inner .text p{
+    margin: 0;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-features-style2:hover .inner .text p,
+.single-features-style2.active .inner .text p {
+    color: #ffffff;
+}
+
+
+.single-features-style2 .readmore-button{
+    position: relative;
+    display: block;
+    margin-top: 33px;
+}
+.single-features-style2 .btn-one {
+    color: #222222;
+    background: #ffffff;
+    border: 1px solid #222222;
+    line-height: 48px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.single-features-style2 .btn-one::before{
+    top: -1px;
+    left: -1px;
+    bottom: -1px;
+    right: -1px;
+}
+
+
+.single-features-style2-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-attachment: scroll;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    width: 100%;
+    z-index: 1;
+    transition: .5s;
+    transform: perspective(400px) scaleX(0);
+    -webkit-transform-origin: bottom;
+    -ms-transform-origin: bottom;
+    transform-origin: bottom;
+}
+.single-features-style2-bg:before{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    content: "";
+}
+.single-features-style2:hover .single-features-style2-bg,
+.single-features-style2.active .single-features-style2-bg {
+    opacity: 0.70;
+    transform: perspective(400px) scaleX(1.0);
+    opacity: 1;
+}
+
+
+
+/*** 
+=============================================
+    Features Style3 Area Style      
+=============================================
+***/
+.features-style3-area {
+    position: relative;
+    display: block;
+    margin-bottom: -105px;
+    z-index: 2;
+}
+
+.single-features-style3{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background: #ffffff;
+    padding: 40px 45px 45px;
+    box-shadow: 0px 0px 13.5px 1.5px rgba(0, 0, 0, 0.05);
+    z-index: 2;
+}
+.single-features-style3:before{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    content: "";
+}
+.single-features-style3::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #2739a7;
+    transition: .5s;
+    transform: perspective(400px) scaleX(0);
+    -webkit-transform-origin: bottom;
+    -ms-transform-origin: bottom;
+    transform-origin: bottom;
+    z-index: -1;
+}
+.single-features-style3:hover:after{
+    opacity: 1;
+    transform: perspective(400px) scaleX(1.0);
+}
+
+.single-features-style3 .icon {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: #e9ebf4;
+    border-radius: 50%;
+    text-align: center;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-features-style3:hover .icon{
+    background: rgba(233, 235, 244, .15);
+}
+.single-features-style3 .icon span::before {
+    position: relative;
+    display: inline-block;
+    top: 15px;
+    left: -15px;
+    color: #333333;
+    font-size: 75px;
+    line-height: 200px;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-features-style3:hover .icon span::before{
+    color: #ffffff;
+}
+
+
+.single-features-style3 .inner{
+    position: relative;
+    display: block;
+}
+.single-features-style3 .inner .counting{
+    position: relative;
+    display: block;
+}
+.single-features-style3 .inner .counting h2{
+    font-size: 72px;
+    line-height: 70px;
+    font-weight: 600;
+    opacity: 0.1;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-features-style3 .inner .text {
+    position: relative;
+    display: block;
+    padding-top: 7px;
+}
+.single-features-style3 .inner .text h3{
+    color: #222222;
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: 700;
+    margin-bottom: 3px;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-features-style3:hover .inner .text h3{
+    color: #ffffff;
+}
+.single-features-style3 .inner .text p{
+    margin: 0;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-features-style3:hover .inner .text p{
+    color: #ffffff;
+}
+.single-features-style3 .inner .readmore-button{
+    position: relative;
+    display: block;
+    margin-top: 24px;
+}
+.single-features-style3 .inner .readmore-button a{
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.single-features-style3 .inner .readmore-button a span::before {
+    position: relative;
+    display: inline-block;
+    top: 2px;
+    color: #2739a7;
+    font-size: 20px;
+    line-height: 20px;
+    padding-right: 10px;
+}
+.single-features-style3:hover .inner .readmore-button a span::before{
+    color: #ffffff;
+    transition: all 200ms linear;
+    transition-delay: 0.1s
+}
+.single-features-style3.martop20 {
+    margin-top: 20px;
+}
+.single-features-style3.martop40 {
+    margin-top: 40px;
+}
+
+
+
+/*** 
+=============================================
+    Features Style1 Area About Page2 Css      
+=============================================
+***/
+.features-style1-area.about-page2 {
+    padding-bottom: 60px;
+}
+.features-style1-area.about-page2 .sec-title {
+    padding-bottom: 0;
+}
+.features-style1-area.about-page2 .features-style1_top_text ul {
+    padding-top: 9px;
+}
+.features-style1-area.about-page2 .features-style1_top_text ul li i {
+    color: #2739a7;
+}
+
+
+
+/*** 
+=============================================
+    Features Style4 Area Style      
+=============================================
+***/
+.features-style4-area{
+    position: relative;
+    display: block;
+    background: #ffffff;
+    padding: 110px 0 70px;
+}
+.features-style4-area_map{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-attachment: scroll;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    opacity: 0.05;
+}
+
+.single-features-style4{
+    position: relative;
+    display: block;
+    padding-bottom: 40px;
+}
+.single-features-style4 .img-holder{
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.single-features-style4 .img-holder::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, .5);
+    border-radius: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 10;
+}
+.single-features-style4:hover .img-holder::before {
+    -webkit-animation: circle .75s;
+    animation: circle .75s;
+}
+.single-features-style4 .img-holder img{
+    width: 100%;
+    transform: scale(1.0);
+    transition: all 700ms ease;
+}
+.single-features-style4:hover .img-holder img{
+    transform: scale(1.2);    
+}
+
+
+.single-features-style4 .title-holder {
+    position: relative;
+    display: flex;
+    align-items: center;
+    top: -30px;
+    background: #ffffff;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: 0px 0px 13.5px 1.5px rgba(0, 0, 0, 0.05);
+}
+.single-features-style4 .title-holder::before{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    content: "";
+}
+.single-features-style4 .title-holder .icon-holder{
+    position: relative;
+    display: block;
+    width: 85px;
+    background: #2739a7;
+    transition: all 500ms linear;
+    transition-delay: 0.1s;
+}
+
+.single-features-style4 .title-holder .icon-holder span:before {
+    position: relative;
+    display: block;
+    color: #ffffff;
+    font-size: 90px;
+    line-height: 100px;
+    text-align: center;
+}
+
+.single-features-style4 .title-holder .title{
+    position: relative;
+    display: block;
+    padding-left: 30px;
+}
+.single-features-style4 .title-holder .title h3{
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: 600;
+}
+.single-features-style4 .title-holder .title h3 a{
+    color: #222222;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+
+
+
+
+/*** 
+=============================================
+    Features Style2 Area About Page2 Css      
+=============================================
+***/
+.features-style2-area.about-page2{
+
+}
+.features-style2-area.about-page2 .single-features-style2 .btn-one::before {
+    background: #fff;
+}
+
+.features-style2-area.about-page2 .single-features-style2:hover .btn-one,
+.features-style2-area.about-page2 .single-features-style2.active .btn-one {
+    color: #222;
+}
+
+
+
+/*** 
+=============================================
+    About Page Features Css      
+=============================================
+***/
+.about-page-features{
+    position: relative;
+    display: block;
+    padding-top: 110px;
+    z-index: 1;
+}
+.about-page-features::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 70px;
+    right: 0;
+    background: #e9ebf4;
+    content: "";
+    z-index: -1;
+}

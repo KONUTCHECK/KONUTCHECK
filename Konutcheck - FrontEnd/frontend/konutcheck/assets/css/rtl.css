@@ -1,0 +1,349 @@
+
+
+/** template rtl css **/
+
+.page_direction{
+    display: none;
+}
+
+.rtl {
+  direction: rtl; 
+}
+
+.ltr {
+  direction: ltr; 
+}
+
+.demo-rtl{
+  position: fixed;
+  top: 300px;
+  left: 0;
+  z-index: 9999;
+}
+
+button.rtl{
+  background: rgba(0, 0, 0, 0.90);
+  display: block;
+  text-indent: inherit;
+  font-size: 12px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-weight: 700;
+  margin: 0px;
+  color: #fff !important;
+}
+
+.demo-ltr{
+  position: fixed;
+  top: 300px;
+  left: auto;
+  right: 0;
+  z-index: 9999;
+}
+
+button.ltr {
+  background: rgba(0, 0, 0, 0.90);
+  display: block;
+  text-indent: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin: 0px;
+  color: #fff !important;
+}
+
+.boxed_wrapper.ltr .demo-rtl{
+  display: block;
+}
+.boxed_wrapper.ltr .demo-ltr{
+  display: none;
+}
+.boxed_wrapper.rtl .demo-rtl{
+  display: none;
+}
+.boxed_wrapper.rtl .demo-ltr{
+  display: block;
+}
+
+.rtl .pull-left{
+  float: right;
+}
+.rtl .pull-right{
+  float: left;
+}
+
+
+
+
+
+
+.rtl .main-menu {
+    float: right;
+}
+.rtl .main-menu .navigation>li {
+    float: right;
+}
+.rtl .main-menu .navigation> li:first-child {
+    margin-right: 0px;
+}
+.rtl .main-menu .navigation> li:last-child {
+    margin-right: 40px;
+}
+.rtl .main-menu .navigation> li> ul {
+    left: auto;
+    right: inherit;
+}
+.rtl .main-menu .navigation> li> ul> li> a {
+    text-align: right;
+}
+.rtl .main-menu .navigation> li> ul> li> a:before {
+    display: none;
+}
+.rtl .main-menu .navigation> li> ul> li> ul> li a:before {
+    display: none;
+}
+.rtl .main-menu .navigation> li> ul> li.dropdown> a:after {
+    display: none;
+}
+.rtl .main-menu .navigation> li> ul> li> ul {
+    left: auto;
+    right: 100%;
+}
+.rtl .main-menu .navigation> li> ul> li> ul> li> a {
+    text-align: right;
+}
+.rtl .sticky-header .main-menu .navigation> li {
+    float: right;
+}
+
+
+.rtl .main-menu .navigation> li> .megamenu li> a {
+	text-align: right;
+}
+.rtl .main-menu .navigation> li> .megamenu li> a:hover {
+    padding-left: 0;
+}
+.rtl .main-menu .navigation> li> .megamenu li:hover a:before{
+    width: 0;
+}
+
+
+
+.rtl .mobile-menu{
+  text-align: right;
+}
+.rtl .mobile-menu .nav-logo{
+  text-align: right;
+}
+.rtl .mobile-menu .navigation li > a:before{
+  left: inherit;
+  right: 0px;
+}
+.rtl .mobile-menu .navigation li.dropdown .dropdown-btn{
+  right: inherit;
+  left: 6px;
+  transform: rotate(90deg);
+}
+.rtl .mobile-menu .navigation li.dropdown .dropdown-btn.open{
+  transform: rotate(0deg);
+}
+
+
+
+.rtl .scroll-top {
+    left: 20px;
+    right: auto;
+}
+.rtl .switcher .switch_btn {
+    top: 0px;
+    right: 0px;
+}
+.rtl .switcher .switch_menu {
+    left: -240px;
+}
+.rtl .banner-carousel{
+    direction: ltr;
+    text-align: right;
+}
+
+
+
+.rtl .three-item-carousel{
+    direction: ltr; 
+    text-align: right;  
+}
+.rtl .testimonial-carousel{
+    direction: ltr;
+    text-align: right;    
+}
+.rtl .testimonial-carousel.owl-nav-style-one.owl-theme .owl-nav .owl-prev {
+    float: left;
+}
+.rtl .testimonial-carousel2{
+    direction: ltr;
+    text-align: right;    
+}
+.rtl .text-right-rtl{
+    text-align: right;
+}
+.rtl .shop-review-carousel{
+    direction: ltr; 
+    text-align: right;      
+}
+
+
+/*________________Header_______________ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** 
+=============================================
+    Inner Page Css
+=============================================
+***/
+
+.rtl .sidebar-wrapper {
+    float: left;
+    text-align: right;
+}
+.rtl .sidebar-search-box .search-form button {
+    left: 0;
+    right: inherit;
+}
+.rtl .sidebar-search-box .search-form input[type="text"] {
+    padding-left: 70px;
+    padding-right: 29px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** 
+=============================================
+    RTL Page Responsive Css
+=============================================
+***/
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) { 
+ 
+
+
+
+
+    
+    
+    
+    
+    
+}
+
+
+
+
+
+@media only screen and (max-width: 991px) and (min-width: 768px){
+        
+.rtl .sidebar-wrapper {
+    float: right;
+}
+    
+    
+
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
+
+
+
+
+
+@media only screen and (max-width: 767px) { 
+
+     
+.rtl .sidebar-wrapper {
+    float: right;
+}  
+    
+
+    
+
+
+    
+    
+    
+    
+    
+    
+    
+   
+    
+    
+}
+
+
+
+
+
+

@@ -1,0 +1,84 @@
+
+
+
+/*==============================================
+   DatePicker Css
+===============================================*/
+#ui-datepicker-div.ui-widget-content {
+    border: 1px solid #c5c5c5;
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #777;
+    color: #252525;
+    font-family: "Poppins",sans-serif;
+    font-size: 14px;
+    border-radius: 0px;
+    width: 270px;
+    padding: 5px;
+    z-index: 10 !important;
+}
+#ui-datepicker-div.ui-datepicker .ui-datepicker-header {
+    background: #151515 none repeat scroll 0 0;
+    border: 2px solid #252525;
+    border-radius: 0;
+    color: #fff;
+    font-weight: 700;
+    padding: 5px 0;
+    position: relative;
+}
+
+.ui-datepicker td a {
+    color: #000000 !important;
+    text-align: center;
+    background-image: none !important;
+    background: #f5f5f5 !important;
+    border: 1px solid #f9f9f9 !important;
+}
+.ui-state-highlight, 
+.ui-widget-content .ui-state-highlight, 
+.ui-widget-header .ui-state-highlight{
+    border: 1px solid #333333 !important;
+    background: #333333 !important;
+    color: #ffffff !important;
+}
+.ui-datepicker .ui-datepicker-prev {
+    left: 5px;
+}
+.ui-datepicker .ui-datepicker-prev, 
+.ui-datepicker .ui-datepicker-next {
+    border-radius: 30%;
+    height: 20px;
+    position: absolute;
+    top: 7px;
+    width: 20px;
+    transition: all 500ms ease;
+    cursor: pointer;
+}
+.ui-datepicker .ui-datepicker-next {
+    right: 5px;
+}
+.ui-datepicker .ui-datepicker-prev:hover, 
+.ui-datepicker .ui-datepicker-next:hover {
+    top: 7px;
+    background: #fff;
+    border: none;
+}
+.ui-datepicker table {
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 0 0 0.4em;
+    width: 100%;
+    z-index: 99999999;
+}
+.ui-datepicker th {
+    border: medium none;
+    font-weight: 600;
+    padding: 2px 3px;
+    text-align: center;
+}
+.ui-datepicker-calendar .ui-state-default:hover,
+.ui-datepicker-calendar .ui-state-default:active{
+    background: #43c3ea;
+    color: #fff;
+    border-color: #43c3ea;
+}
+

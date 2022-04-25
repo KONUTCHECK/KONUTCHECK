@@ -1,0 +1,202 @@
+
+
+
+/*** 
+=============================================
+   Gallery Area Css
+=============================================
+***/
+.gallery-style1-page-area{
+    position: relative;
+    display: block;
+    background: #ffffff;
+    padding: 150px 0px 120px;
+}
+
+.project-menu-box {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding-bottom: 60px;
+}
+.project-filter {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    z-index: 1;
+}
+.project-filter li {
+    position: relative;
+    display: inline-block;
+    float: none;
+    margin: 0 1px;
+}
+.project-filter li .filter-text {
+    position: relative;
+    display: block;
+    padding: 0 30px;
+    color: #0c1529;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 45px;
+    text-transform: capitalize;
+    cursor: pointer;
+    border-radius: 0px;
+    transition: all .4s ease;
+    z-index: 1;
+    font-family: 'Rubik', sans-serif;
+}
+.project-filter li .filter-text:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: "";
+    transform: scaleX(0);
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transition: all 0.4s cubic-bezier(0.62, 0.21, 0.45, 1.52);
+    z-index: -1;
+}
+.project-filter li:hover .filter-text:before,
+.project-filter li.active .filter-text:before{
+    transform: scaleX(1.0);    
+}
+.project-filter li:hover .filter-text,
+.project-filter li.active .filter-text{
+    color: #ffffff;    
+}
+
+.project-filter li .count {
+    display: none;
+}
+
+
+.single-gallery-item{
+    position: relative;
+    display: block;
+}
+.single-gallery-item .img-holder{
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.single-gallery-item .img-holder img{
+    width: 100%;
+    transform: scale(1.0);
+}
+.single-gallery-item:hover .img-holder img{
+    transform:scale(1.2) rotate(1deg);	    
+}
+.single-gallery-item .img-holder:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: #000000;
+    opacity: 0.10;
+    transition-delay: .1s;
+    transition-timing-function: ease-in-out;
+    transition-duration: .5s;
+    transition-property: all;
+    opacity: 1;
+    transform-origin: top;
+    transform-style: preserve-3d;
+    transform: scaleY(0);
+    z-index: 1;
+}
+.single-gallery-item:hover .img-holder:before{
+    opacity: 0.70;
+    transform: scaleY(1.0);    
+}
+
+.single-gallery-item .img-holder:after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: #000000;
+    opacity: 0.10;
+    transition-delay: .1s;
+    transition-timing-function: ease-in-out;
+    transition-duration: .5s;
+    transition-property: all;
+    opacity: 1;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform: scaleY(0);
+    z-index: 1;
+}
+.single-gallery-item:hover .img-holder:after{
+    opacity: 0.70;
+    transform: scaleY(1.0);    
+}
+.single-gallery-item .img-holder .zoom-button{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: scale(0);
+    transition: all 500ms ease 800ms;
+    z-index: 10;
+}
+.single-gallery-item:hover .img-holder .zoom-button{
+    opacity: 1;
+    transform: scale(1.0);    
+}
+.single-gallery-item .img-holder .zoom-button a{
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    color: #ffffff;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+}
+
+
+.gallery-style1-page-area .single-gallery-item{
+    margin-bottom: 30px;
+}
+
+
+
+/*** 
+=============================================
+   Gallery Style2 Page Area Css
+=============================================
+***/
+.gallery-style2-page-area{
+    position: relative;
+    display: block;
+    background: #ffffff;
+    padding: 150px 0px 120px;
+}
+.gallery-style2-page-area .container-fullwidth{
+    position: static;
+    max-width: 100%;
+    padding: 0px 30px; 
+}
+.gallery-style2-page-area .single-gallery-item{
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+

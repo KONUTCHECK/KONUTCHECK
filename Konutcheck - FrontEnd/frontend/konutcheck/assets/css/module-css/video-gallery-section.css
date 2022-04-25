@@ -1,0 +1,112 @@
+/*** 
+=============================================
+    Video Gallery Area Style      
+=============================================
+***/
+.video-gallery-area {
+    position: relative;
+    display: block;
+    z-index: 1;
+}
+.video-gallery-area .layer-outer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 100px;
+    right: 0;
+    background-attachment: scroll;
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;    
+}
+.video-gallery-area .layer-outer.bg{
+    background: #fbf3f1;
+    bottom: 210px;
+}
+
+.video-holder-box {
+    position: relative;
+    max-width: 970px;
+    width: 100%;
+    min-height: 550px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0px 30px 80px 0px rgba(12, 21, 41, 0.3);
+}
+.video-holder-box .shape1{
+    position: absolute;
+    bottom: -28px;
+    right: -28px;
+    opacity: 0.30;
+    z-index: -1;
+}
+.video-holder-box .icon {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    z-index: 1;
+}
+.video-holder-box .icon:after {
+    position: absolute;
+    content: '';
+    top: -15px;
+    left: -15px;
+    bottom: -15px;
+    right: -15px;
+    border: 15px solid rgba(218, 60, 34, 0.40);
+    border-radius: 50%;
+    z-index: -1;
+}
+.video-holder-box .icon:before {
+    position: absolute;
+    content: '';
+    top: -17px;
+    left: -17px;
+    bottom: -17px;
+    right: -17px;
+    border-radius: 50%;
+    background: rgba(54,124,232, 0.0);
+    z-index: -1;
+}
+.video-holder-box:hover .icon:before {
+    -webkit-box-shadow: 0 0 0 0 rgba(54,124,232, .09);
+    box-shadow: 0 0 0 0 rgba(54,124,232, .09);
+    -webkit-animation: ripple 1s infinite;
+    animation: ripple 3s infinite
+}
+.video-holder-box .icon a{
+    position: relative;
+    display: inline-block;
+}
+.video-holder-box .icon a span:before {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    font-size: 25px;
+    line-height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

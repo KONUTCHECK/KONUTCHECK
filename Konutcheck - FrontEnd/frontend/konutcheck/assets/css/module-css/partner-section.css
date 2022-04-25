@@ -1,0 +1,91 @@
+
+
+/*** 
+=============================================
+    Partner Area Css
+=============================================
+***/
+.partner-area {
+    position: relative;
+    display: block;
+    background: #ffffff;
+    padding-top: 122px;
+    padding-bottom: 110px;
+}
+.partner-area.pdtop110{
+    padding-top: 110px;
+}
+.partner-area.pdtop0{
+    padding-top: 0;
+}
+.partner-area .custom-container{
+    position: relative;
+    display: block;
+    max-width: 1325px;
+    width: 100%;
+    margin:  0 auto;
+    padding: 0 15px;
+}
+.partner-box {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 1px solid #e9ebf4;
+}
+.partner-box::before {
+    position: absolute;
+    top: 0;
+    right: -5px;
+    bottom: 0;
+    width: 9px;
+    background: #ffffff;
+    content: "";
+    z-index: 1;
+}
+.single-partner-logo-box {
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    border-right: 1px solid #e9ebf4;
+    text-align: center;
+    padding: 35px 0;
+}
+.single-partner-logo-box a {
+    position: relative;
+    display: inline-block;
+}
+.single-partner-logo-box a img {
+    opacity: 1.0;
+    transition: all 0.2s ease-in-out 0.1s;
+}
+.single-partner-logo-box:hover a img{
+    opacity: 0.70;
+    transition: all 0.8s ease-in-out 0.1s;
+}
+
+
+
+/*** 
+=============================================
+    Partner Area About Page Css      
+=============================================
+***/
+.partner-area.about-page{
+    padding-top: 60px;
+    z-index: 1;
+}
+.partner-area.about-page .subscribe-bg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 170%;
+    height: 60%;
+    background-position: top center;
+    background-repeat: repeat-x;
+    z-index: -1;
+    opacity: 1.0;
+}
