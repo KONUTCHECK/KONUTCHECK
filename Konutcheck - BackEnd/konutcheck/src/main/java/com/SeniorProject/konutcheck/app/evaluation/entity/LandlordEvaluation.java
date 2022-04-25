@@ -1,11 +1,16 @@
 package com.SeniorProject.konutcheck.app.evaluation.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import javax.persistence.Table;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name= "LANDLORD_EVALUATION")
+@Getter
+@Setter
 
 public class LandlordEvaluation {
     @Id

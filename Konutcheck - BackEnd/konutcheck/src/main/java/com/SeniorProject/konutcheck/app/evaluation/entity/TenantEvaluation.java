@@ -1,10 +1,16 @@
 package com.SeniorProject.konutcheck.app.evaluation.entity;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
 @Entity
 @Table(name= "TENANT_EVALUATION")
+@Getter
+@Setter
+
 public class TenantEvaluation {
     @Id
     @SequenceGenerator(name = "TenantEvaluation", sequenceName = "TENANT_EVALUATION_ID_SEQ", allocationSize = 1)
