@@ -22,6 +22,10 @@ public class Us_UserEntityService extends BaseEntityService<Us_User, Us_UserDao>
         return usUserDao.findByUserType(userType);
     }
 
+    public Us_User findByEmail(String email){
+        return usUserDao.findByEmail(email);
+    }
+
     public boolean existByEmail(String email){
         return usUserDao.existsByEmail(email);
     }
