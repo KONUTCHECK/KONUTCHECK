@@ -12,6 +12,7 @@ import java.math.BigInteger;
 public class TenantEvaluationDto {
 
     private Long Id;
+    private Long evaluationOwnerLandlordId;
     private Long tenantId;
     private int gradeOfRentPayment;
     private int gradeOfBillPayment;

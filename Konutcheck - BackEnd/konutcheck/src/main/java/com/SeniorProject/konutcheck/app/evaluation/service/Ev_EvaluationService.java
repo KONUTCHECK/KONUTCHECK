@@ -1,19 +1,31 @@
 package com.SeniorProject.konutcheck.app.evaluation.service;
 
+import com.SeniorProject.konutcheck.app.evaluation.converter.EvaluationMapperConverter;
+import com.SeniorProject.konutcheck.app.evaluation.dto.GetHomeIdDto;
+import com.SeniorProject.konutcheck.app.evaluation.dto.LandlordEvaluationDto;
+import com.SeniorProject.konutcheck.app.evaluation.dto.LandlordEvaluationSaveDto;
+import com.SeniorProject.konutcheck.app.evaluation.entity.LandlordEvaluation;
 import com.SeniorProject.konutcheck.app.evaluation.service.entityService.LandlordEvaluationEntityService;
 import com.SeniorProject.konutcheck.app.evaluation.service.entityService.TenantEvaluationEntityService;
+import com.SeniorProject.konutcheck.app.general.exceptionEnums.GeneralErrorMessage;
+import com.SeniorProject.konutcheck.app.general.exceptions.InvalidInformationExceptions;
+import com.SeniorProject.konutcheck.app.securityGeneral.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.math.BigDecimal;
 
 @Service
 @RequiredArgsConstructor
 public class Ev_EvaluationService {
     private final LandlordEvaluationEntityService landlordEvaluationEntityService;
     private final TenantEvaluationEntityService tenantEvaluationEntityService;
+    private final AuthenticationService authenticationService;
 
-    /*public LandlordEvaluationDto saveLandlordEvaluation(LandlordEvaluationSaveDto landlordEvaluationSaveDto) {
+    public LandlordEvaluationDto saveLandlordEvaluation(LandlordEvaluationSaveDto landlordEvaluationSaveDto) {
         LandlordEvaluation landlordEvaluation = EvaluationMapperConverter.INSTANCE.convertToLandlordEvaluationFromLandlordEvaluationSaveDto(landlordEvaluationSaveDto);
-       // validationOfId(landlordEvaluationSaveDto);
+        validationOfId(landlordEvaluationSaveDto);
+        landlordEvaluation.setEvaluationOwnerTenantId(authenticationService.getCurrentUserId());
         landlordEvaluation.setLandlordPoint(calculationLandlordPoint(landlordEvaluationSaveDto));
         landlordEvaluation = landlordEvaluationEntityService.save(landlordEvaluation);
         LandlordEvaluationDto landlordEvaluationDto = EvaluationMapperConverter.INSTANCE.covertToLandlordEvaluationDtoFromLandlordEvaluation(landlordEvaluation);
@@ -28,32 +40,16 @@ public class Ev_EvaluationService {
         int sum = gradeOfLandlordSatisfaction + gradeOfLandlordTreatment + gradeOfLandlordAccessibility + gradeOfLandlordUnderstanding;
         BigDecimal avg = BigDecimal.valueOf(sum / 4);
         return avg;
-    }*/
+    }
 
-   /* private Boolean validationOfId(LandlordEvaluationSaveDto landlordEvaluationSaveDto){
-        Long landlordId = landlordEvaluationSaveDto.getLandlordId();
+   private Boolean validationOfId(LandlordEvaluationSaveDto landlordEvaluationSaveDto){
+        GetHomeIdDto landlordHomeId = landlordEvaluationEntityService.getHomeIdWithLandlordId(landlordEvaluationSaveDto.getLandlordId());
+        GetHomeIdDto tenantHomeId = landlordEvaluationEntityService.getHomeIdWithTenantId(landlordEvaluationEntityService.getCurrentUser());
 
-        if(getTenantHomeId() == getLandlordHomeId(landlordId)){
+        if(landlordHomeId.getHomeId() == tenantHomeId.getHomeId()){
             return true;
         }else{
-            throw new ItemNotFoundExceptions(GeneralErrorMessage.HOME_NOT_FOUND);
+            throw new InvalidInformationExceptions(GeneralErrorMessage.ID_NOT_MATCH);
         }
     }
-
-    private Long getTenantHomeId(){
-        Long tenantId = tenantEvaluationEntityService.getCurrentUser();
-        Long tenantHomeId = Long.valueOf(0);
-        if(tenantId == homesRelatedWithUsersDto.getUserId() && homesRelatedWithUsersDto.getUserType().equals("Tenant")){
-            tenantHomeId = homesRelatedWithUsersDto.getHomeId();
-        }
-        return tenantHomeId;
-    }
-
-    private Long getLandlordHomeId(Long landlordId){
-        Long landlordHomeId = Long.valueOf(0);
-        if(landlordId == homesRelatedWithUsersDto.getUserId() && homesRelatedWithUsersDto.getUserType().equals("Landlord")){
-            landlordHomeId = homesRelatedWithUsersDto.getHomeId();
-        }
-        return landlordHomeId;
-    }*/
 }

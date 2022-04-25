@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRelatedHomesDao extends JpaRepository<UserRelatedHomes, Long> {
 
+
 }
