@@ -13,7 +13,8 @@ public enum GeneralErrorMessage implements BaseErrorMessage{
     ALREADY_USED("Email was used already!","Cannot register the same email that was used by another one."),
     HOME_NOT_FOUND ( "Home not found!", "There is no home related to this id." ),
     INVALID_USER_TYPE("Invalid user type!", "User type mus be tenant or landlord."),
-    ID_NOT_MATCH("Id not match!", "Id may be null or not match.")
+    ID_NOT_MATCH("Id not match!", "Id may be null or not match."),
+    INVALID_GRADE("Grade is not available!", "Grade must be between 0 - 5."),
     ;
 
     private String errorMessage;
