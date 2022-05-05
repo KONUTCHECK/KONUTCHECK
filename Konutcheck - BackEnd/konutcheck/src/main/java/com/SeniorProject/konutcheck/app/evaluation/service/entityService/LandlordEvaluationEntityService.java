@@ -16,11 +16,11 @@ public class LandlordEvaluationEntityService extends BaseEntityService<LandlordE
         this.landlordEvaluationDao = dao;
     }
 
-    public GetHomeIdDto getHomeIdWithLandlordId(Long id){
+    /*public GetHomeIdDto getHomeIdWithLandlordId(Long id){
         return landlordEvaluationDao.findHomeByLandlordId(id);
     }
 
     public GetHomeIdDto getHomeIdWithTenantId(Long id){
         return landlordEvaluationDao.findHomeByTenantId(id);
-    }
+    }*/
 }
