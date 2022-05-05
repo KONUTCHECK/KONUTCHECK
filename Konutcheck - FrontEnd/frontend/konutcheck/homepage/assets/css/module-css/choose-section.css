@@ -1,0 +1,132 @@
+
+
+/*** 
+=============================================
+    Choose Area Css
+=============================================
+***/
+.choose-area{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background: #0c1529;
+}
+.choose-area .container-fullwidth {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+.choose-image-box{
+    position: relative;
+    display: block;
+    width: 50%;
+    float: left;
+}
+.choose-image-box .inner{
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.choose-image-box .inner:before {
+    position: absolute;
+    top: 0;
+    left: -10000px;
+    bottom: 0;
+    right: 0;
+    opacity: 0.80;
+    content: "";
+    transform: skew(-90deg) translateY(100%);
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: all 900ms ease 100ms;
+}
+.choose-area:hover .choose-image-box .inner:before {
+    transform: skew(0deg) translateY(0);  
+}
+.choose-image-box img{
+    width: 100%;
+    transition: all 900ms ease 100ms;
+}
+
+
+
+.choose-content-box {
+    position: relative;
+    display: block;
+    width: 50%;
+    float: left;
+    padding-left: 120px;
+    max-width: 750px;
+    height: 100%;
+}
+.choose-content-box .inner{
+    position: relative;
+    display: block;
+}
+.choose-content-box .shape1 {
+    position: absolute;
+    top: -50px;
+    right: -160px;
+    opacity: 0.20;
+}
+.choose-content-box .sec-title {
+    padding-bottom: 37px;
+}
+.choose-content-box .sec-title h2{
+    color: #ffffff;
+    margin: 0;
+}
+
+.choose-content-box ul{
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.choose-content-box ul li{
+    position: relative;
+    display: block;
+    padding-left: 100px;
+    margin-bottom: 21px;
+}
+.choose-content-box ul li:last-child{
+    margin-bottom: 0;
+}
+.choose-content-box ul li .icon-holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.choose-content-box ul li .icon-holder span:before{
+    position: relative;
+    display: block;
+    color: #ffffff;
+    font-size: 50px;
+    text-align: center;
+    line-height: 100px;
+}
+.choose-content-box ul li .title-holder{
+    position: relative;
+    display: block;
+    padding-left: 30px;
+}
+.choose-content-box ul li .title-holder h3 {
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.choose-content-box ul li .title-holder p{
+    margin: 0;
+}
+
+
+
+
+
+

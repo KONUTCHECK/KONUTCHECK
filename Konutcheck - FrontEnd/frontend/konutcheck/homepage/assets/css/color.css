@@ -1,0 +1,240 @@
+
+
+/*** 
+=====================================================
+	Theme Main Color Css
+=====================================================
+***/
+.main-menu .navigation>li:hover>a,
+.main-menu .navigation>li.current>a,
+.main-menu .navigation>li>ul>li>a:hover,
+.main-menu .navigation> li> ul> li:hover> a,
+.main-menu .navigation> li> ul> li> ul> li> a:hover,
+.main-menu .navigation> li> .megamenu li:hover a,
+.main-menu .navigation> li> ul> li.dropdown> a:after,
+.mobile-menu .navigation li.current > a,
+.mobile-menu .navigation li > a:hover,
+.outer-search-box-style1 .seach-toggle:hover,
+.outer-search-box-style1 .seach-toggle.active,
+.sticky-header .main-menu .navigation>li:hover>a,
+.sticky-header .main-menu .navigation>li.current>a,
+.clr1,
+.sec-title .sub-title h5,
+.features-style1_top_text ul li i,
+.single-features-style1 .counting h2,
+.single-service-style1 .text-holder .readmore-button a,
+.project-style1_overly_content h5,
+.single-blog-style1 .text-holder .meta-info li i,
+.single-blog-style1 .text-holder .meta-info li a:hover,
+.single-blog-style1 .text-holder .blog-title a:hover,
+.single-blog-style1 .text-holder .readmore-button a span::before,
+.footer-widget-links1 li a:before,
+.copyright-text p a:hover,
+.footer-menu-style1 ul li a:hover,
+.header-contact-info3 ul li span::before,
+.header-contact-info3 ul li a:hover,
+.main-menu.style4 .navigation>li:hover>a, 
+.main-menu.style4 .navigation>li.current>a, 
+.main-menu.style4 .navigation>li>ul>li>a:hover,
+.main-menu.style4 .navigation> li> ul> li.dropdown> a:after,
+.main-menu.style4 .navigation> li> ul> li> ul> li> a:hover,
+.outer-search-box-style4 .seach-toggle.active,
+.outer-search-box-style4 .seach-toggle:hover,
+.single-features-style3 .inner .readmore-button a,
+.single-fact-counter-style3 .count-box h2,
+.single-service-style4 .text-holder .readmore-button a,
+.single-project-style4 .overlay-content-box p,
+.brochure-content-box .overlay-text .readmore-button a,
+.footer-menu-style4 ul li a:hover,
+.header-top-style5_left .header-contact-info2 ul li span::before,
+.header-top-style5_left .header-contact-info2 ul li a:hover,
+.main-menu.style5 .navigation>li>a.home .home_icon,
+.main-menu.style5 .navigation>li:hover>a, 
+.main-menu.style5 .navigation>li.current>a, 
+.main-menu.style5 .navigation>li>ul>li>a:hover,
+.main-menu.style5 .navigation> li> ul> li.dropdown> a:after,
+.main-menu.style5 .navigation> li> ul> li> ul> li> a:hover,
+.outer-search-box-style5 .seach-toggle.active,
+.outer-search-box-style5 .seach-toggle:hover,
+.video-gallery_box_5 .icon a,
+.single-service-style5 .title-holder .readmore-button a,
+.single-blog-style5 .img-holder .overlay_text_box .blog-title a:hover,
+.single-blog-style5 .meta-info li a:hover,
+.breadcrumb-menu ul li a,
+.single-features-style4 .title-holder .title h3 a:hover,
+.tagline-content.style2 h2 span,
+.service-page2 .single-service-style5:hover .title-holder .readmore-button a,
+.service-details_content_three .text-holder ul li i,
+.single-blog-style2.blog_list .text-holder .blog-title a:hover,
+.single-blog-style2.blog_list .text-holder .meat_box .meta-info li a:hover,
+.single-sidebar .sidebar-categories-box li:hover a,
+.single-sidebar .sidebar-categories-box li.active a,
+.comment-box .single-comment-box .text-holder .reply a span::before,
+.comment-box .single-comment-box .text-holder .reply a:hover,
+.blog_list .blog_list_post_style2 .quote-icon,
+.breadcrumb-menu ul li,
+.single-footer-widget .footer-contact-info ul li .text a:hover   
+
+
+{
+    color: #ec7d1b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** 
+=====================================================
+	Theme Main Background Color Css
+=====================================================
+***/
+.bgclr1,
+.main-menu .navigation> li> ul> li> a:before,
+.main-menu .navigation> li> ul> li> ul> li a:before,
+.main-menu .navigation> li> .megamenu li> a:before,
+.nav-outer .mobile-nav-toggler .inner,
+.thm-social-link1 ul li a:before,
+.owl-carousel.owl-dot-style1 .owl-dots .owl-dot.active span,
+.header-social-link-1 .social-link ul li a:before,
+.main-menu .navigation>li>a.home .home_icon,
+.btn-one,
+.single-features-style1::before,
+.single-features-style1 .btn-box a:hover span::before,
+.service-style1_inner_box .border-top-box,
+.service-style1_inner_box .border-left-box,
+.service-style1_inner_box .border-right-box,
+.single-project-style1 .project-style1_overly_content::before,
+.accordion-box .accordion .accord-btn.active:after,
+.faq-style1-image-box .overlay-content .icon-box,
+.faq-style1-image-box .overlay-content:before,
+.testimonial-style1-content .client-thumb-outer .thumb-item .thumb-box::before,
+.social-links-style1 li a:hover i,
+.main-menu.style4 .navigation> li> ul> li> a:before,
+.main-menu.style4 .navigation> li> ul> li> ul> li a:before,
+.main-slider.style4 .content .big-title::before,
+.main-slider.style4 .content .big-title::after,
+.video-gallery_box_3 .icon,
+.video-gallery_box_3 .icon:before,
+.video-gallery_box_3 .icon::after,
+.project-filter.style2 li .filter-text:before,
+.slogan-style2-area,
+.single-team-item.v2 .title-holder::before,
+.testimonial-style3_Carousel .owl-dots .owl-dot.active span,
+.footer-style4 .footer_consultation_box .text .top:before,
+.footer-style4 .single-footer-widget-2 .title::before,
+.footer-style4 .footer-widget-links2 li a:before,
+.footer-bottom_right_box_style4 .social-links-style2 li a:hover i,
+.main-menu.style5 .navigation> li> ul> li> a:before,
+.main-menu.style5 .navigation> li> ul> li> ul> li a:before,
+.header-style5_right__btn a,
+.single-features-style4 .title-holder::before,
+.single-features-style4:hover .title-holder .icon-holder,
+.mission-vision-style2_single_box_bg::before,
+.progress-levels .progress-box .bar .bar-fill,
+.progress-levels .progress-box .bar .bar-fill::before,
+.video-gallery_box_6 .video-gallery .inner::before,
+.single-blog-style5 .img-holder .overlay-icon a:hover,
+.single-footer-widget .title::before,
+.features-style2-area.about-page2 .single-features-style2-bg:before,
+.features-style2-area.about-page2 .single-features-style2:hover .btn-one,
+.features-style2-area.about-page2 .single-features-style2.active .btn-one,
+.about-style3-area.about-page2 .about-style3_image_box .icon::before,
+.about-style3-area.about-page2 .about-style3_text_box .btn-one::before,
+.service-page3 .single-service-style3 .text-holder .btn-one::before,
+.services-page-link ul li a:before,
+.service-details_content_four .inner .accordion-box .accordion .accord-btn.active:after,
+.accordion-box-style3 .accordion .accord-btn.active,
+.single-features-style3:before,
+.testimonial-style3_Carousel .owl-dots .owl-dot.active      
+
+
+{
+    background: #ec7d1b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** 
+=====================================================
+	Theme Main Border Color Css
+=====================================================
+***/
+.mobile-menu .navigation li > a:before {
+    border-left: 5px solid #ec7d1b;
+}
+
+
+.main-slider .owl-theme .owl-nav .owl-prev:hover,
+.main-slider .owl-theme .owl-nav .owl-next:hover,
+.single-sidebar-style2 .sidebar-categories-box li:hover:before,
+.single-sidebar .sidebar-categories-box li:hover:before,
+.features-style2-area.about-page2 .single-features-style2:hover .btn-one,
+.features-style2-area.about-page2 .single-features-style2.active .btn-one,
+.accordion-box-style3 .accordion .accord-btn.active,
+.main-slider.style4 .owl-theme .owl-nav .owl-prev:hover,
+.main-slider.style4 .owl-theme .owl-nav .owl-next:hover,
+.main-slider.style5 .owl-theme .owl-nav .owl-prev:hover,
+.main-slider.style5 .owl-theme .owl-nav .owl-next:hover {
+    border-color: #ec7d1b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.single-features-style3 .inner .counting h2{
+    color: rgba(236, 125, 27, 0.90);
+}
+.project-filter.style2 li .filter-text:before {
+    border: 1px solid #ec7d1b;
+}
+.single-sidebar-box .title {
+    border-left: 5px solid #ec7d1b;
+}
+.styled-pagination li a {
+    border-bottom-color: #ec7d1b !important;
+}
+.single-sidebar .title {
+    border-left: 5px solid #ec7d1b;
+}
+.blog-details-author-box{
+    border-left: 5px solid #ec7d1b;
+}
+.testimonial-style3_Carousel .owl-dots .owl-dot.active{
+    border: 1px solid #ec7d1b;
+}

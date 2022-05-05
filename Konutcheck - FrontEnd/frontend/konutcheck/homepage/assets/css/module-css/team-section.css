@@ -1,0 +1,550 @@
+
+
+/*** 
+=============================================
+  Team Style1 Area Css
+=============================================
+***/
+.team-style1-area{
+    position: relative;
+    display: block;
+    background: #ffffff;
+    padding: 110px 0 110px;
+    z-index: 1;
+}
+.team-style1-area_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 585px;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: -1;
+}
+.team-style1-area .sec-title{
+
+}
+.team-style1-area .sec-title.style2 .sub-title .border-box {
+    background: #ffffff;
+}
+.team-style1-area .sec-title .sub-title.clr2 h5 {
+    color: #ffffff;
+}
+.team-style1-area .sec-title h2 {
+    color: #ffffff;
+}
+.team-style1-area .sec-title .text p {
+    color: #ffffff;
+}
+
+
+.team-style1-content{
+    position: relative;
+    display: block;
+}
+
+.single-team-item{
+    position:relative;
+    display: block;
+    margin-bottom: 50px;
+}
+.single-team-item .img-holder{
+    position:relative;
+    display: block;
+}
+.single-team-item .img-holder .inner {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.single-team-item .img-holder .inner:after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: #041321;
+    transition-delay: .1s;
+    transition-timing-function: ease-in-out;
+    transition-duration: .5s;
+    transition-property: all;
+    opacity: 0.50;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform: scaleY(0);
+    z-index: 1;
+}
+.single-team-item:hover .img-holder .inner:after{
+    transform: scaleY(1.0);    
+}
+.single-team-item .img-holder img{
+    width: 100%;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-team-item:hover .img-holder img {
+    transform: scale(1.2);
+    transition: all 0.5s cubic-bezier(0.62, 0.21, 0.45, 1.52);
+}
+
+
+.single-team-item .img-holder .overlay-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    -webkit-transition: .9s;
+    -o-transition: .9s;
+    transition: .9s;
+    transform: perspective(400px) scaleY(0);
+    transform-origin: bottom;
+}
+.single-team-item:hover .img-holder .overlay-icon{
+    transform: perspective(400px) scaleY(1.0);    
+}
+.single-team-item .img-holder .overlay-icon a{
+    position: relative;
+    display: inline-block;
+}
+.single-team-item .img-holder .overlay-icon span{
+    color: #ffffff;
+    font-size: 40px;
+    line-height: 40px;
+}
+
+
+.single-team-item .title-holder {
+    position: relative;
+    display: block;
+    padding: 30px 0px 70px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-team-item:hover .title-holder{
+    box-shadow: 0px 0px 13.5px 1.5px rgba(0, 0, 0, 0.05);
+}
+.single-team-item .title-holder::before{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    content: ""; 
+    opacity: 0;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s; 
+    -webkit-transform: perspective(400px) scaleX(0);
+    -ms-transform: perspective(400px) scaleX(0);
+    transform: perspective(400px) scaleX(0); 
+}
+.single-team-item:hover .title-holder::before{
+    opacity: 1;
+    -webkit-transform: perspective(400px) scaleX(1.0);
+    -ms-transform: perspective(400px) scaleX(1.0);
+    transform: perspective(400px) scaleX(1.0); 
+}
+.single-team-item .title-holder .inner{
+    position: relative;
+    display: block;
+    padding-bottom: 31px;
+}
+.single-team-item .title-holder .inner::before{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    background: #cddfec;
+    content: "";
+    opacity: 1;
+    transition: all 700ms ease 100ms;
+    -webkit-transform: perspective(400px) scaleX(1.0);
+    -ms-transform: perspective(400px) scaleX(1.0);
+    transform: perspective(400px) scaleX(1.0); 
+}
+.single-team-item:hover .title-holder .inner::before{
+    opacity: 0;
+    -webkit-transform: perspective(400px) scaleX(0);
+    -ms-transform: perspective(400px) scaleX(0);
+    transform: perspective(400px) scaleX(0); 
+}
+
+.single-team-item .title-holder h3 {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.single-team-item .title-holder h3 a{
+    color: #222222;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-team-item .title-holder p {
+    color: #222222;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    margin: 0;
+}
+
+
+.single-team-item .social-icon {
+    position: absolute;
+    left: 0;
+    bottom: 11px;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 29px;
+    opacity: 0;
+}
+.single-team-item:hover .social-icon{
+    opacity: 1;
+}
+.single-team-item .social-icon ul {
+    position: relative;
+    display: block;
+    opacity: 0;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    -webkit-transform: perspective(400px) rotateX(-90deg);
+    -ms-transform: perspective(400px) rotateX(-90deg);
+    transform: perspective(400px) rotateX(-90deg);
+    -webkit-transform-origin: top;
+    -ms-transform-origin: top;
+    transform-origin: top;
+}
+.single-team-item:hover .social-icon ul{
+    opacity: 1.0;
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    -ms-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);    
+}
+.single-team-item .social-icon ul li{
+    position: relative;
+    display: inline-block;
+    float: none;
+    margin: 0 3px;
+}
+.single-team-item .social-icon ul li:first-child{
+    margin-left: 0;
+}
+.single-team-item .social-icon ul li:last-child{
+    margin-right: 0;
+}
+.single-team-item .social-icon ul li a{
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: #3b5998;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 30px;
+    text-align: center;
+    -webkit-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+    transition: all 0.4s linear;    
+}
+.single-team-item .social-icon ul li a.twitter{
+    background: #55acee;
+}
+.single-team-item .social-icon ul li a.linkedin{
+    background: #007ab9;
+}
+.single-team-item .social-icon ul li a.pint{
+    background: #cb2027;    
+}
+
+
+
+/*** 
+=============================================
+  Team Style2 Area Css
+=============================================
+***/
+.team-style2-area{
+    position: relative;
+    display: block;
+    padding: 110px 0px 60px;
+}
+.single-team-style2{
+    position: relative;
+    display: block;
+    margin-bottom: 50px;
+}
+.single-team-style2 .img-holder{
+    position: relative;
+    display: block;
+}
+.single-team-style2 .img-holder::before{
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 180px;
+    background-image: -moz-linear-gradient( 90deg, rgb(0,0,0) 0%, rgba(0,0,0,0) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(0,0,0) 0%, rgba(0,0,0,0) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(0,0,0) 0%, rgba(0,0,0,0) 100%);
+    content: "";
+    z-index: 1;
+}
+.single-team-style2 .img-holder .inner{
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.single-team-style2 .img-holder .inner img{
+    width: 100%;
+    transition: all 2100ms linear;
+    transition-delay: 0.1s;
+}
+.single-team-style2:hover .img-holder .inner img{
+    transform: scale(1.2);
+    transition: all 0.9s cubic-bezier(0.62, 0.21, 0.45, 1.52);
+}
+
+
+.single-team-style2 .img-holder .title-holder {
+    position: absolute;
+    left: 0;
+    bottom: 38px;
+    right: 0;
+    text-align: center;
+    transition: all .4s ease-in-out .1s;
+    z-index: 2;
+}
+.single-team-style2:hover .img-holder .title-holder {
+    opacity: 0;
+    transform: scale(1.0) translateY(-65px);
+}
+.single-team-style2 .img-holder .title-holder h2{
+    font-size: 30px;
+    line-height: 34px;
+    font-weight: 600;
+}
+.single-team-style2 .img-holder .title-holder h2 a{
+    color: #ffffff;
+}
+.single-team-style2 .img-holder .title-holder p{
+    color: #ffffff;
+    margin: 0;
+}
+
+
+.single-team-style2 .title-holder.overlay {
+    position: absolute;
+    left: 0;
+    bottom: 45px;
+    right: 0;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: scale(1.0) translateY(65px);
+    transition: all .4s ease-in-out .1s;
+    z-index: 2;
+}
+.single-team-style2:hover .title-holder.overlay{
+    opacity: 1.0;
+    visibility: visible;
+    transform: scale(1.0) translateY(0%);
+}
+.single-team-style2 .title-holder.overlay h2{
+    font-size: 30px;
+    line-height: 34px;
+    font-weight: 600;
+
+}
+.single-team-style2 .title-holder.overlay h2 a{
+    color: #ffffff;
+}
+.single-team-style2 .title-holder.overlay p{
+    color: #ffffff;
+    margin: 0;
+}
+
+
+.single-team-style2 .title-holder .social-icon{
+    position: relative;
+    display: block;
+    padding-top: 23px;
+}
+.single-team-style2 .title-holder .social-icon ul{
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.single-team-style2 .title-holder .social-icon ul li{
+    position: relative;
+    display: inline-block;
+    float: none;
+    margin: 0 3px;
+}
+.single-team-style2 .title-holder .social-icon ul li a{
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+.single-team-style2 .title-holder .social-icon ul li .facebook{
+    background: #4a71c5;
+}
+.single-team-style2 .title-holder .social-icon ul li .twitter{
+    background: #4fa4e5;
+}
+.single-team-style2 .title-holder .social-icon ul li .pinterest{
+    background: #de0a2a;
+}
+.single-team-style2 .title-holder .social-icon ul li .linkedin{
+    background: #0074b2;
+}
+
+
+
+/*** 
+=============================================
+    Team Style3 Area Css
+=============================================
+***/
+.team-style3-area{
+    position: relative;
+    display: block;
+    background: #ffffff;
+    padding: 110px 0 110px;
+    z-index: 1;
+}
+.single-team-item.v2 .img-holder .inner:after {
+    background: #2739a7;
+    opacity: 0.70;
+}
+.single-team-item.v2:hover .title-holder h3 a{
+    color: #2739a7;
+}
+
+
+
+
+/*** 
+=============================================
+    Team Style4 Area Css
+=============================================
+***/
+.team-style4-area{
+    position: relative;
+    display: block;
+    background: #ffffff;
+    padding: 110px 0 125px;
+    z-index: 1;
+}
+.team-style4-area .single-team-item {
+    margin-bottom: 0px;
+}
+
+.team-style4-area .owl-nav-style-one.owl-theme .owl-nav {
+    position: absolute;
+    top: 50%;
+    left: -70px;
+    right: -70px;
+    height: 0;
+    line-height: 0;
+    transform: translateY(-150px);
+}
+.team-style4-area .owl-nav-style-one.owl-theme .owl-nav .owl-prev {
+    float: left;
+}
+.team-style4-area .owl-nav-style-one.owl-theme .owl-nav .owl-next {
+    margin-left: 0px;
+    float: right;
+}
+
+
+
+
+/*** 
+=============================================
+    Team Style5 Area Css
+=============================================
+***/
+.team-style5-area{
+    position: relative;
+    display: block;
+    background: #ffffff;
+    padding: 110px 0 0px;
+    z-index: 1;
+}
+.team-style5-area_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 585px;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: -1;
+}
+.team-style5-area .sec-title{
+
+}
+.team-style5-area .sec-title.style2 .sub-title .border-box {
+    background: #ffffff;
+}
+.team-style5-area .sec-title .sub-title.clr2 h5 {
+    color: #ffffff;
+}
+.team-style5-area .sec-title h2 {
+    color: #ffffff;
+}
+.team-style5-area .sec-title .text p {
+    color: #ffffff;
+}
+
+
+
+/*** 
+=============================================
+    Team Style5 Area Team Page Css
+=============================================
+***/
+.team-style5-area.team-page{}
+.team-style5-area.team-page .single-team-item {
+    margin-bottom: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+

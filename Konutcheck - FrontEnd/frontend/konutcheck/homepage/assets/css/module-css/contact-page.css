@@ -1,0 +1,223 @@
+
+
+
+/*** 
+=============================================
+    Contact Form Area Css
+=============================================
+***/
+.contact-style1-area {
+    position: relative;
+    display: block;
+    background: #ffffff;
+    padding: 0px 0 110px;
+    z-index: 1;
+}
+.contact-style1-area .contact-style1-big-image{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.contact-style1-area-bg{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 430px;
+    width: 170%;
+    background-position: left center;
+    background-repeat: repeat-x;
+    z-index: -1;
+}
+.contact-style1_map {
+    position: relative;
+    display: block;
+}
+.contact-style1_map .sec-title {
+    padding-bottom: 42px;
+}
+.contact-style1_map .sec-title h3{
+    color: #222222;
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: 400;
+    margin-top: 25px;
+    font-family: 'Lato', sans-serif;
+}
+.home-map-outer{
+    position: relative;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+}
+.home-map-outer .map-canvas{
+	position: relative;
+	width: 100%;
+	height: 380px;
+}
+
+
+.contact-style1_form {
+    position: relative;
+    display: block;
+    box-shadow: 0px 0px 21.25px 3.75px rgba(0, 0, 0, 0.06);
+    padding: 48px 55px 55px;
+    margin-right: 100px;
+    margin-left: 40px;
+    background: #ffffff;
+    z-index: 10;
+}
+.contact-style1_form .title {
+    position: relative;
+    display: block;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.contact-style1_form .title h2 {
+    color: #1f67b0;
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 700;
+    margin: 0 0 0px;
+}
+.contact-style1_form .title p{
+    color: #555555;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.contact-form {
+    position: relative;
+    display: block;
+}
+.contact-form .row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.contact-form .row [class*=col-] {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+
+.contact-form form{
+    position: relative;
+    display: block;
+}
+.contact-form form .input-box{
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+}
+.contact-form form input[type="text"],
+.contact-form form input[type="email"],
+.contact-form form textarea{
+    position: relative;
+    display: block;   
+    background: #ffffff;
+    width: 100%;
+    height: 65px;
+    border: 1px solid #dddddd;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    padding-left: 25px;
+    padding-right: 25px;
+    transition: all 500ms ease;
+    font-family: 'Lato', sans-serif;
+}
+.contact-form form textarea {
+    height: 182px;
+    padding-top: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.contact-form form input[type="text"]:focus{
+    color: #171717;
+    border-color: #171717; 
+}
+.contact-form form input[type="email"]:focus{
+    color: #171717;
+    border-color: #171717; 
+}
+.contact-form form textarea:focus{
+    color: #171717;
+    border-color: #171717; 
+}
+
+.contact-form form input[type="text"]::-webkit-input-placeholder {
+    color: #888888;
+}
+.contact-form form input[type="text"]:-moz-placeholder {
+    color: #888888;
+}
+.contact-form form input[type="text"]::-moz-placeholder {
+    color: #888888;
+}
+.contact-form form input[type="text"]:-ms-input-placeholder {
+    color: #888888;
+}
+.contact-form form input[type="email"]::-webkit-input-placeholder {
+    color: #888888;
+}
+.contact-form form input[type="email"]:-moz-placeholder {
+    color: #888888;
+}
+.contact-form form input[type="email"]::-moz-placeholder {
+    color: #888888;
+}
+.contact-form form input[type="email"]:-ms-input-placeholder {
+    color: #888888;
+}
+.contact-form form textarea::-webkit-input-placeholder {
+    color: #888888;
+}
+.contact-form form textarea:-moz-placeholder {
+    color: #888888;
+}
+.contact-form form textarea::-moz-placeholder {
+    color: #888888;
+}
+.contact-form form textarea:-ms-input-placeholder {
+    color: #888888;
+}
+
+.contact-form form .button-box {
+    position: relative;
+    display: block;
+    padding-top: 10px;
+}
+.contact-form form .button-box button{
+    display: block;
+    width: 100%;
+}
+
+
+
+/*** 
+=============================================
+    Contact Style1 Area Css
+=============================================
+***/
+.contact-style1-area.contact-page {
+    padding-top: 110px;
+    padding-bottom: 0;
+}
+.contact-style2_form .title h2 {
+    color: #2739a7;
+}
+.contact-style1-area.contact-page.gray-bg{
+    background: #e9ebf4;
+}
+
+
+
+.contact-style1-area.one-page-scrool-layout{
+    padding-bottom: 110px;
+}
+.contact-style2_form .title.one_page h2 {
+    color: #222222;
+}

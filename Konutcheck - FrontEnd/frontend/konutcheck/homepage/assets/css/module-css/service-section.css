@@ -1,0 +1,1354 @@
+
+/*** 
+=============================================
+    Service style1 Area Css
+=============================================
+***/
+.service-style1-area{
+    position: relative;
+    display: block;
+    padding: 110px 0 40px;
+    z-index: 1;
+}
+.service-style1-area::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background:#2739a7;
+    content: "";
+    opacity: 0.80;
+}
+.service-style1-area .layer-outer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;;
+    right: 0;
+    background-attachment: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: -1;
+}
+.service-style1-area .shape{
+    position: absolute;
+    left: 0;
+    bottom: -200px;
+    z-index: 1;
+}
+
+
+.service-style1_title{
+    position: relative;
+    display: block;
+    margin-right: 20px;
+}
+.service-style1_title .sec-title {
+    padding-bottom: 63px;
+}
+.service-style1_title .sec-title .sub-title .border-box {
+    background: #ffffff;
+}
+.service-style1_title .sec-title h2 {
+    color: #ffffff;
+    font-size: 42px;
+}
+.service-style1_title .sec-title p {
+    color: #c5c9e6;
+    margin: 0;
+    margin-top: 15px;
+}
+
+.service-style1_inner_box {
+    position: relative;
+    display: block;
+    margin-left: -110px;
+    padding-top: 60px;
+    padding-bottom: 280px;
+}
+.service-style1_inner_box .border-top-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 450px;
+    height: 8px;
+}
+.service-style1_inner_box .border-left-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 248px;
+}
+.service-style1_inner_box .border-right-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 498px;
+}
+.service-style1_inner_box h3{
+    color: #ffffff;
+    font-size: 26px;
+    line-height: 36px;
+    font-weight: 600;
+}
+.service-style1_inner_box .btns-box {
+    margin-top: 35px;
+}
+.service-style1_inner_box .btns-box a{
+    background-color: transparent;
+    border: 1px solid #ffffff;
+}
+
+
+.service-style1_content {
+    position: relative;
+    display: block;
+}
+.single-service-style1 {
+    position: relative;
+    display: block;
+    margin-bottom: 67px;
+}
+.single-service-style1 .img-holder {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.single-service-style1 .img-holder .inner{
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.single-service-style1 .img-holder img{
+    width: 100%;
+    transform: scale(1.0);
+    transition: all 700ms ease;
+}
+.single-service-style1:hover .img-holder img{
+    transform: scale(1.2);    
+}
+.single-service-style1 .img-holder::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, .5);
+    border-radius: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 10;
+}
+.single-service-style1:hover .img-holder::before {
+    -webkit-animation: circle .75s;
+    animation: circle .75s;
+}
+
+
+.single-service-style1 .text-holder {
+    position: relative;
+    display: block;
+    padding: 28px 0px 0px;
+}
+.single-service-style1 .text-holder h3 {
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: 600;
+    margin: 0 0 13px;
+}
+.single-service-style1 .text-holder h3 a{
+    color: #ffffff;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-service-style1 .text-holder p{
+    color: #c5c9e6;
+    margin: 0;   
+}
+.single-service-style1 .text-holder .readmore-button {
+    position: relative;
+    display: block;
+    margin-top: 17px;
+}
+.single-service-style1 .text-holder .readmore-button a{
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-family: 'Lato', sans-serif;
+}
+.single-service-style1 .text-holder .readmore-button a span:before {
+    position: relative;
+    display: inline-block;
+    color: #e2e5f3;
+    font-size: 20px;
+    padding-right: 10px;
+    top: 3px;
+}
+
+
+
+
+/*** 
+=============================================
+    Service style2 Area Css
+=============================================
+***/
+.service-style2-area{
+    position: relative;
+    display: block;
+    background: #ffffff;
+    padding: 110px 0 0px;
+}
+.service-style2-area .sec-title.with_text {
+    padding-bottom: 103px;
+}
+
+.single-service-style2{
+    position: relative;
+    display: block;
+    background: #ffffff;
+    padding-left: 25px;
+    padding-bottom: 45px;
+    margin-bottom:110px;
+    box-shadow: 0px 0px 13.5px 1.5px rgba(0, 0, 0, 0.05);
+    z-index: 2;
+}
+.single-service-style2_bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-attachment: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.20;
+    z-index: -2;
+}
+.single-service-style2:hover .single-service-style2_bg{
+    opacity: 1;
+    transition: all 700ms linear;
+    transition-delay: 0.2s;
+}
+
+.single-service-style2::before{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    content: "";
+    transition: all 700ms linear;
+    transition-delay: 0.1s;
+}
+
+.single-service-style2:hover:before{
+    opacity: 0;
+}
+.single-service-style2::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color:#1f67b0;
+    opacity: 1;
+    transition: .5s;
+    transform: perspective(400px) scaleX(0);
+    -webkit-transform-origin: bottom;
+    -ms-transform-origin: bottom;
+    transform-origin: bottom;
+    z-index: 1;
+}
+.single-service-style2:hover:after{
+    opacity: .90;
+    transform: perspective(400px) scaleX(1.0);
+}
+.single-service-style2 .inner_box {
+    position: relative;
+    display: block;
+    padding-left: 180px;
+    min-height: 210px;
+    z-index: 2;
+}
+.single-service-style2 .inner_box .img-holder{
+    position: absolute;
+    left: 0;
+    width: 180px;
+    margin-top: -40px;
+}
+.single-service-style2 .inner_box .img-holder img{
+    width: 100%;
+}
+
+
+.single-service-style2 .inner_box .text-holder {
+    position: relative;
+    display: block;
+    padding-top: 35px;
+    padding-left: 30px;
+    padding-right: 35px;
+}
+.single-service-style2 .inner_box .text-holder h3 {
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.single-service-style2 .inner_box .text-holder h3 a{
+    color: #222222;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-service-style2:hover .inner_box .text-holder h3 a{
+    color: #ffffff;
+}
+.single-service-style2 .inner_box .text-holder p{
+    margin: 0;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-service-style2:hover .inner_box .text-holder p{
+    color: #ffffff;
+}
+.single-service-style2 .inner_box .text-holder .readmore-button {
+    position: relative;
+    display: block;
+    margin-top: 29px;
+}
+.single-service-style2 .inner_box .text-holder .readmore-button a{
+    color: #1f67b0;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: underline;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-service-style2:hover .inner_box .text-holder .readmore-button a{
+    color: #ffffff;
+}
+.single-service-style2 .inner_box .text-holder .readmore-button a span::before {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    padding-right: 10px;
+    top: 2px;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-service-style2:hover .inner_box .text-holder .readmore-button a span::before {
+    color: #ffffff;
+}
+
+
+
+/*** 
+=============================================
+    Service Style3 Area CSS
+=============================================
+***/
+.service-style3-area{
+    position: relative;
+    display: block;
+    background: #faf7f0;
+    padding: 110px 0px 110px;
+    z-index: 1;
+}
+.service-style3-area_bg{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    background-attachment: scroll;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+.single-service-style3{
+    position: relative;
+    display: block;
+}
+.single-service-style3 .img-holder{
+    position: relative;
+    display: block;
+}
+.single-service-style3 .img-holder .inner{
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.single-service-style3 .img-holder .inner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000000;
+    transition: .3s;
+    text-align: center;
+    transform: translateY(50%);
+    opacity: 0;
+    z-index: 1;
+}
+.single-service-style3:hover .img-holder .inner::before {
+    opacity: 0.70;
+    transform: translateY(0px);
+}
+.single-service-style3 .img-holder .inner img{
+    width: 100%;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-service-style3:hover .img-holder .inner img{
+    transform: scale(1.2);
+    transition: all 0.5s cubic-bezier(0.62, 0.21, 0.45, 1.52);
+}
+
+
+.single-service-style3 .text-holder{
+    position: relative;
+    display: block;
+    background: #ffffff;
+    padding: 38px 30px 45px;
+}
+.single-service-style3 .text-holder h2{
+    color: #222222;
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+.single-service-style3 .text-holder p{
+    margin: 0;
+}
+.single-service-style3 .text-holder .readmore-button{
+    position: relative;
+    display: block;
+    margin-top: 33px;
+}
+.single-service-style3 .text-holder .btn-one {
+    color: #222222;
+    background: #ffffff;
+    border: 1px solid #222222;
+    line-height: 48px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.single-service-style3 .text-holder .btn-one::before{
+    top: -1px;
+    left: -1px;
+    bottom: -1px;
+    right: -1px;
+}
+
+.service-style3_carousel.owl-nav-style-one.owl-theme .owl-nav {
+    position: absolute;
+    top: 170px;
+    left: -80px;
+    right: -80px;
+    z-index: -1;
+}
+.service-style3_carousel.owl-nav-style-one.owl-theme .owl-nav [class*="owl-"] {
+    background: transparent;
+    border: 1px solid #222222;
+    color: #222222;
+}
+.service-style3_carousel.owl-nav-style-one.owl-theme .owl-nav .owl-prev {
+    float: left;
+}
+.service-style3_carousel.owl-nav-style-one.owl-theme .owl-nav .owl-next {
+    margin-left: 0px;
+    float: right;
+}
+
+
+
+/*** 
+=============================================
+    Service Style4 Area CSS
+=============================================
+***/
+.service-style4-area {
+    position: relative;
+    display: block;
+    padding: 110px 0px 110px;
+}
+
+.single-service-style4{
+    position: relative;
+    display: block;
+    padding-left: 200px;
+    min-height: 280px;
+    margin-bottom: 40px;
+}
+.single-service-style4 .img-holder{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+}
+.single-service-style4 .img-holder .inner{
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.single-service-style4 .img-holder .inner::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, .5);
+    border-radius: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 10;
+}
+.single-service-style4:hover .img-holder .inner::before {
+    -webkit-animation: circle .75s;
+    animation: circle .75s;
+}
+.single-service-style4 .img-holder .inner img{
+    width: 100%;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-service-style4:hover .img-holder .inner img {
+    transform: scale(1.2);
+    transition: all 0.5s cubic-bezier(0.62, 0.21, 0.45, 1.52);
+}
+
+
+.single-service-style4 .text-holder{
+    position: relative;
+    display: block;
+    box-shadow: 0px 0px 13.5px 1.5px rgba(0, 0, 0, 0.05);
+    padding: 37px 45px 43px;
+    z-index: 1;
+}
+.single-service-style4 .text-holder::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #2739a7;
+    transition: .5s;
+    transform: perspective(400px) scaleX(0);
+    -webkit-transform-origin: bottom;
+    -ms-transform-origin: bottom;
+    transform-origin: bottom;
+    z-index: -1;
+}
+.single-service-style4:hover .text-holder:after{
+    opacity: 1;
+    transform: perspective(400px) scaleX(1.0);
+}
+.single-service-style4 .text-holder h3{
+    color: #222222;
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-service-style4:hover .text-holder h3{
+    color: #ffffff;
+}
+.single-service-style4 .text-holder p {
+    margin: 0;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-service-style4:hover .text-holder p{
+    color: #ffffff;
+}
+
+.single-service-style4 .text-holder .readmore-button {
+    position: relative;
+    display: block;
+    margin-top: 33px;
+    padding-top: 20px;
+    border-top: 1px solid #dee1ed;
+}
+.single-service-style4 .text-holder .readmore-button a{
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-family: 'Lato', sans-serif;
+}
+.single-service-style4 .text-holder .readmore-button a span::before{
+    position: relative;
+    display: inline-block;
+    color: #2739a7;
+    font-size: 20px;
+    padding-right: 10px;
+    top: 3px;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-service-style4:hover .text-holder .readmore-button a span::before{
+    color: #ffffff;
+}
+
+.service-style4_more_service_button{
+    position: relative;
+    display: block;
+    padding-top: 30px;
+}
+.service-style4_more_service_button a{
+    line-height: 65px;
+}
+
+
+
+/*** 
+=============================================
+    Service style5 Area Css
+=============================================
+***/
+.service-style5-area{
+    position: relative;
+    display: block;
+    padding: 120px 0 55px;
+}
+
+
+.service-style5_top_title{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding-bottom: 59px;
+}
+.service-style5_top_title .sec-title{
+    position: relative;
+    display: block;
+    max-width: 520px;
+    width: 100%;
+    padding: 0;
+}
+.service-style5_top_title .text{
+    position: relative;
+    display: block;
+    max-width: 615px;
+    width: 100%;
+    padding-left: 80px;
+}
+.service-style5_top_title .text::before{
+    position: absolute;
+    top: -28px;
+    left: 0;
+    bottom: -28px;
+    width: 1px;
+    background: #cfd3e4;
+    content: "";    
+}
+.service-style5_top_title .text p{
+    margin: 0;
+}
+
+
+.single-service-style5{
+    position: relative;
+    display: block;
+    background: #ffffff;
+    border: 2px solid #e9ebf4;
+    padding: 54px 48px 53px;
+    margin-bottom: 55px;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.single-service-style5:hover{
+    box-shadow: 0px 0px 46.98px 7.02px rgba(0, 0, 0, 0.07); 
+    border-color: transparent;   
+}
+.single-service-style5 .icon-holder{
+    font-size: 120px;
+    margin-bottom: 30px;
+}
+.single-service-style5 .title-holder{
+    position: relative;
+    display: block;
+}
+.single-service-style5 .title-holder h3{
+    color: #222222;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 600;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+    margin: 0 0 15px;
+}
+.single-service-style5 .title-holder p{
+    margin: 0;
+    transition: all 200ms linear;
+    transition-delay: 0.2s;
+}
+
+
+.single-service-style5 .title-holder .readmore-button{
+    position: relative;
+    display: block;
+    padding-top: 35px;
+}
+.single-service-style5 .title-holder .readmore-button a{
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    text-transform: uppercase; 
+    transition: all 200ms linear;
+    transition-delay: 0.1s;   
+}
+.single-service-style5 .title-holder .readmore-button a span::before {
+    position: relative;
+    display: inline-block;
+    top: 2px;
+    color: #2739a7;
+    font-size: 20px;
+    line-height: 20px;
+    padding-right: 10px;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;  
+}
+
+
+
+/*** 
+=============================================
+    Service Style4 Area Service Page1 Css      
+=============================================
+***/
+.service-style4-area.service-page1{
+    padding-bottom: 70px;
+}
+
+
+
+/*** 
+=============================================
+    Service Style5 Area Service Page2 Css      
+=============================================
+***/
+.service-style5-area.service-page2{
+    padding-top: 99px;
+    padding-bottom: 70px;
+}
+.tagline-content.style2{
+    padding-bottom: 61px;
+}
+
+
+
+.service-page2 .single-service-style5 {
+    margin-bottom: 40px;
+}
+.service-page2 .single-service-style5 .icon-holder {
+    position: relative;
+    display: block;
+    width: 140px;
+    height: 140px;
+    border: 10px solid rgba(0, 0, 0, 0.10);
+    border-radius: 50%;
+}
+.service-page2 .single-service-style5 .overlay-bg {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    bottom: -1px;
+    right: -1px;
+    background: #2739a7;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    -webkit-transform: perspective(400px) rotateX(-90deg);
+    -ms-transform: perspective(400px) rotateX(-90deg);
+    transform: perspective(400px) rotateX(-90deg);
+    -webkit-transform-origin: top;
+    -ms-transform-origin: top;
+    transform-origin: top;
+}
+.service-page2 .single-service-style5:hover .overlay-bg{
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    -ms-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg); 
+}
+.service-page2 .single-service-style5:hover .title-holder h3 {
+    color: #ffffff;
+}
+.service-page2 .single-service-style5:hover .title-holder p{
+    color: #ffffff;    
+}
+.service-page2 .single-service-style5:hover .title-holder .readmore-button a span::before{
+    color: #ffffff;   
+}
+
+
+
+/*** 
+=============================================
+    Service Style3 Area Service Page3 Css      
+=============================================
+***/
+.service-style3-area.service-page3{
+    position: relative;
+    display: block;
+    background: #fff;
+    padding: 110px 0 40px;
+}
+.service-page3 .single-service-style3{
+    margin-bottom: 70px;
+}
+.service-page3 .single-service-style3 .text-holder {
+    border: 1px solid #e9ebf4;
+}
+.service-page3 .single-service-style3:hover .text-holder{
+    border-color: transparent;
+    border-bottom-color: #222222;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.06);
+}
+.service-page3 .single-service-style3 .text-holder .btn-one:hover{
+    color: #fff;
+}
+
+
+
+/*** 
+=============================================
+    Service Details Area Style      
+=============================================
+***/
+.service-details-area{
+    position: relative;
+    display: block;
+    background: #fff;
+    padding: 110px 0 110px;
+}
+
+.service-details-sidebar{
+    position: relative;
+    display: block;
+    max-width: 320px;
+    width: 100%;
+}
+
+.single-sidebar-box{
+    position: relative;
+    display: block;
+    padding-bottom: 60px;
+}
+
+.services-page-link{
+    position: relative;
+    display: block;
+}
+.services-page-link ul{
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.services-page-link ul li{
+    position: relative;
+    display: block;
+    margin-bottom: 5px;
+}
+.services-page-link ul li:last-child{
+    margin-bottom: 0;
+}
+.services-page-link ul li a{
+    position: relative;
+    display: block;
+    background: #e9ebf4;
+    padding: 0 30px;
+    color: #222222;
+    font-size: 18px;
+    line-height: 70px;
+    font-weight: 600;
+    font-family: 'Exo', sans-serif;
+    z-index: 1;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.services-page-link ul li a:hover,
+.services-page-link ul li.active a{
+    color: #fff;
+}
+
+
+
+
+.services-page-link ul li a span::before{
+    position: relative;
+    display: inline-block;
+    float: right;
+    color: #2739a7;
+    font-weight: 600;
+    transition: all 200ms linear;
+    transition-delay: 0.2s;
+}
+.services-page-link ul li a:hover span::before,
+.services-page-link ul li.active a span::before{
+    color: #fff;
+}
+
+.services-page-link ul li a:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    -webkit-transform: perspective(400px) rotateX(-90deg);
+    -ms-transform: perspective(400px) rotateX(-90deg);
+    transform: perspective(400px) rotateX(-90deg);
+    -webkit-transform-origin: top;
+    -ms-transform-origin: top;
+    transform-origin: top;
+    z-index: -1;
+}
+.services-page-link ul li a:hover:before,
+.services-page-link ul li.active a:before{
+    opacity: 1;
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    -ms-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+}
+
+
+.single-sidebar-box .title {
+    position: relative;
+    display: block;
+    background: #2739a7;
+    padding: 22px 0px 22px 30px;
+    margin-bottom: 5px;
+}
+.single-sidebar-box .title h3{
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 600;
+}
+.single-sidebar-box .downloads-links{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-bottom: 1px solid #e9ebf4;
+}
+.single-sidebar-box .downloads-links li{
+    position: relative;
+    display: block;
+}
+.single-sidebar-box .downloads-links li a{
+    position: relative;
+    display: block;
+    padding-left: 34px;
+    color: #222222;
+    font-size: 18px;
+    line-height: 68px;
+    border: 1px solid #e9ebf4;
+    border-bottom: none;
+}
+.single-sidebar-box .downloads-links li a i{
+    position: relative;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+
+.special-services{
+    position: relative;
+    display: block;
+    padding: 100px 40px 60px;
+    background-attachment: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 1;
+}
+.special-services::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #000;
+    opacity: 0.70;
+    z-index: -1;
+}
+.special-services .thm_logo{
+    position: relative;
+    display: block;
+    padding-bottom: 16px;
+}
+.special-services .thm_logo span::before{
+    color: #fff;
+    font-size: 70px;
+}
+.special-services h2{
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 700;
+    margin: 0 0 12px;
+}
+.special-services p{
+    color: #ffffff;
+    margin: 0 0 33px;
+}
+.special-services a{
+    line-height: 50px;
+    padding: 0 25px;    
+}
+
+
+.sidebar-contact-info{
+    position: relative;
+    display: block;
+    padding: 33px 0 60px;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+}
+.sidebar-contact-info .icon{
+    position: relative;
+    padding-bottom: 20px;
+}
+.sidebar-contact-info .icon span::before{
+    color: #ffffff;
+    font-size: 180px;
+}
+.sidebar-contact-info h3{
+    color: #ffffff;
+    font-size: 26px;
+    line-height: 36px;
+    font-weight: 600;
+    margin: -21px 0 20px;
+}
+
+.sidebar-contact-info .border-box{
+    position: relative;
+    display: block;
+    width: 70px;
+    height: 1px;
+    background: #fff;
+    margin: 0 auto;
+}
+.sidebar-contact-info .phone{
+    position: relative;
+    display: block;
+    padding-top: 29px;
+}
+.sidebar-contact-info .phone a{
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+}
+.sidebar-contact-info .mail{
+    position: relative;
+    display: block;
+}
+.sidebar-contact-info .mail a{
+    color: #ffffff;
+}
+
+
+.service-details-content{
+    position: relative;
+    display: block;
+}
+.service-details_main_image{
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.service-details_main_image img{
+    width: 100%;
+}
+
+.service-details_main_content{
+    position: relative;
+    display: block;
+    padding-top: 45px;
+    padding-bottom: 46px;
+}
+.service-details_main_content .sec-title{
+    padding-bottom: 22px;
+}
+.service-details_main_content .sec-title .sub-title {
+    padding-bottom: 6px;
+}
+.service-details_main_content .sec-title h2 {
+    font-size: 36px;
+}
+.service-details_main_content .inner-content{
+    position: relative;
+    display: block;
+}
+.service-details_main_content .inner-content .top_text{
+    position: relative;
+    display: block; 
+    padding-bottom: 20px;   
+}
+.service-details_main_content .inner-content .top_text p{
+    font-weight: 700;
+    margin: 0;
+}
+.service-details_main_content .inner-content .bottom_text{
+    position: relative;
+    display: block;
+}
+.service-details_main_content .inner-content .bottom_text p{
+    margin: 0;
+}
+
+
+
+.service-details_content_two{
+    position: relative;
+    display: block;
+    padding-bottom: 15px;
+}
+.service-details_content_two h3{
+    color: #222222;
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: 700;
+    margin: 0 0 13px;
+}
+.service-details_content_two p{
+    margin: 0;
+}
+.service-details_content_two .inner_content {
+    position: relative;
+    display: block;
+    padding-top: 43px;
+}
+.service-details_content_two .inner_content ul{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.service-details_content_two .inner_content ul li{
+    position: relative;
+    display: block;
+    float: left;
+    width: 50%;
+    padding: 0 15px 0;
+}
+
+
+.service-details_content_two .inner_content ul li .single_box {
+    position: relative;
+    display: block;
+    padding-left: 80px;
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 45px;
+    margin-bottom: 45px;
+    min-height: 80px;
+}
+.service-details_content_two .inner_content ul li .single_box .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    padding-top: 10px;
+    padding-left: 10px;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
+.service-details_content_two .inner_content ul li .single_box .icon::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #e6e8f1;
+    border-radius: 50%;
+    content: "";
+}
+.service-details_content_two .inner_content ul li .single_box .icon .inner{
+    position: relative;
+    display: block;
+    width: 70px;
+    height: 70px;
+    background:#ffffff;
+    border-radius: 50%;
+    box-shadow: 0px 0px 13.5px 1.5px rgba(0, 0, 0, 0.05);
+}
+.service-details_content_two .inner_content ul li .single_box .icon span::before {
+    position: relative;
+    display: block;
+    font-size: 70px;
+    line-height: 70px;
+    text-align: center;
+    font-weight: 100;
+}
+.service-details_content_two .inner_content ul li .single_box .text{
+    position: relative;
+    display: block;
+    padding-left: 20px;
+}
+.service-details_content_two .inner_content ul li .single_box .text h3 {
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+.service-details_content_two .inner_content ul li .single_box .text p{
+    margin: 0;
+}
+
+
+.service-details_content_three{
+    position: relative;
+    display: block;
+    padding-bottom: 60px;
+}
+.service-details_content_three .img-holder{
+    position: relative;
+    display: block;
+    overflow: hidden;    
+}
+.service-details_content_three .img-holder img{
+    width: 100%;
+}
+.service-details_content_three .text-holder{
+    position: relative;
+    display: block;
+}
+.service-details_content_three .text-holder h3 {
+    font-size: 24px;
+    margin: 0 0 12px;
+}
+.service-details_content_three .text-holder p{
+    margin: 0;
+}
+.service-details_content_three .text-holder ul{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding-top: 20px;
+}
+.service-details_content_three .text-holder ul li{
+    position: relative;
+    display: block;
+    line-height: 36px;
+    font-weight: 700;
+}
+.service-details_content_three .text-holder ul li i{
+    position: relative;
+    left: 1px;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+
+
+.service-details_content_four{
+    position: relative;
+    display: block;
+}
+.service-details_content_four h3{
+    font-size: 24px;
+    margin-top: -4px;
+}
+.service-details_content_four .inner{
+    position: relative;
+    display: block;
+    padding-top: 34px;
+}
+.service-details_content_four .inner .accordion-box .accordion {
+    padding: 21px 20px 21px;
+}
+.service-details_content_four .inner .accordion-box .accordion .accord-btn::after {
+    background: #2739a7;
+    color: #ffffff;
+}
+
+
+
+.service-details_content_five{
+    position: relative;
+    display: block;
+    padding-top: 57px;
+}
+.service-details_content_five h3{
+    font-size: 24px;
+}
+.service-details_content_five .inner{
+    position: relative;
+    display: block;
+    padding-top: 34px;
+}
+
+
+.video-gallery_box_5.service-details_video_holder {
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: auto;
+}
+.service-details_video_holder{
+    position: relative;
+    padding-top: 15px;
+    padding-left: 40px;
+    padding-bottom: 15px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: #2739a7;
+}
+.service-details_video_holder .text{
+    position: relative;
+    display: block;
+    max-width: 540px;
+    width: 100%;
+}
+.service-details_video_holder .text p{
+    color: #ffffff;
+    font-size: 22px;
+    line-height: 34px;
+    margin: 0;
+}
+.video-gallery_box_5.service-details_video_holder .icon {
+    position: relative;
+    display: block;
+}

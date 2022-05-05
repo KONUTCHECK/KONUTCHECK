@@ -1,0 +1,113 @@
+
+
+/*** 
+=====================================================
+	Theme Main Color Css
+=====================================================
+***/
+.clr2,
+.header-contact-info1 ul li span::before,
+.header-contact-info1 ul li a:hover,
+.main-menu.style2 .navigation>li:hover>a, 
+.main-menu.style2 .navigation>li.current>a, 
+.main-menu.style2 .navigation>li>ul>li>a:hover,
+.main-menu.style2 .navigation> li> ul> li.dropdown> a:after,
+.main-menu.style2 .navigation> li> ul> li> ul> li> a:hover,
+.outer-search-box-style2 .seach-toggle.active,
+.outer-search-box-style2 .seach-toggle:hover,
+.sec-title .sub-title.clr2 h5,
+.about-style2_image_box .experience-box .left .counting span,
+.about-style2_image_box .experience-box .left .counting .icon i,
+.our-featues_single .title h5,
+.project-filter li:hover .filter-text,
+.project-style2-area .project-filter li.active .filter-text,
+.project-style2-area .project-filter li:hover .filter-text,
+.single-team-item:hover .title-holder h3 a,
+.single-blog-style2 .text-holder .blog-title a:hover,
+.single-blog-style2 .text-holder .meat_box .meta-info li a:hover,
+.copyright-text-style2 p a:hover,
+.footer-menu-style2 ul li a:hover  
+
+
+{
+    color: #d12e2f;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** 
+=====================================================
+	Theme Main Background Color Css
+=====================================================
+***/
+.bgclr2,
+.main-menu.style2 .navigation>li>a.home .home_icon,
+.main-menu.style2 .navigation> li> ul> li> a:before,
+.main-menu.style2 .navigation> li> ul> li> ul> li a:before,
+.btn-one.bgclr2,
+.nav-outer.style2 .mobile-nav-toggler .inner,
+.our-featues_single:hover:before,
+.single-service-style2::before,
+.single-fact-counter::before,
+.single-team-item .title-holder::before,
+.single-footer-widget-2 .title::before,
+.footer_consultation_box .text .top:before,
+.footer-bottom_right_box_style2 .social-links-style2 li a:hover i 
+
+
+{
+    background: #d12e2f;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** 
+=====================================================
+	Theme Main Border Color Css
+=====================================================
+***/
+.main-slider.style2 .owl-theme .owl-nav .owl-prev:hover,
+.main-slider.style2 .owl-theme .owl-nav .owl-next:hover
+
+
+{
+    border-color: #d12e2f;    
+}
+
+
+
+
+
+
+.project-filter li .filter-text:before {
+    border: 1px solid #d12e2f;
+}
+
+
+
+
+

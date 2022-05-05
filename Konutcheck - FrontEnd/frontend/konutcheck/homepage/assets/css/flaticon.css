@@ -1,0 +1,83 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/flaticon.eot");
+  src: url("../fonts/flaticond41d.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/flaticon.woff") format("woff"),
+       url("../fonts/flaticon.ttf") format("truetype"),
+       url("../fonts/flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	font-family: Flaticon;
+	font-style: normal;
+}
+
+
+
+
+
+
+
+
+
+.flaticon-phone-receiver-silhouette:before { content: "\f100"; }
+.flaticon-location-marker:before { content: "\f101"; }
+.flaticon-envelope:before { content: "\f102"; }
+.flaticon-clock:before { content: "\f103"; }
+.flaticon-specialist-user:before { content: "\f104"; }
+.flaticon-phone-call:before { content: "\f105"; }
+.flaticon-love:before { content: "\f106"; }
+.flaticon-magnifiying-glass:before { content: "\f107"; }
+.flaticon-play-button:before { content: "\f108"; }
+.flaticon-right-quotes-symbol:before { content: "\f109"; }
+.flaticon-star:before { content: "\f10a"; }
+.flaticon-star-1:before { content: "\f10b"; }
+.flaticon-maps-and-flags:before { content: "\f10c"; }
+.flaticon-opened:before { content: "\f10d"; }
+.flaticon-user:before { content: "\f10e"; }
+.flaticon-shopping-cart:before { content: "\f10f"; }
+.flaticon-plus:before { content: "\f110"; }
+.flaticon-menu:before { content: "\f111"; }
+.flaticon-menu-1:before { content: "\f112"; }
+.flaticon-left-arrow:before { content: "\f113"; }
+.flaticon-right-arrow:before { content: "\f114"; }
+.flaticon-minus:before { content: "\f115"; }
+.flaticon-check-mark:before { content: "\f116"; }
+.flaticon-right-arrow-1:before { content: "\f117"; }
+.flaticon-notes:before { content: "\f118"; }
+.flaticon-quality:before { content: "\f119"; }
+.flaticon-experience:before { content: "\f11a"; }
+.flaticon-smartphone:before { content: "\f11b"; }
+.flaticon-phone:before { content: "\f11c"; }
+.flaticon-left-quote:before { content: "\f11d"; }
+.flaticon-placeholder:before { content: "\f11e"; }
+.flaticon-speaker-symbol-of-voice-volume:before { content: "\f11f"; }
+.flaticon-increase:before { content: "\f120"; }
+.flaticon-money:before { content: "\f121"; }
+.flaticon-consult:before { content: "\f122"; }
+.flaticon-quote:before { content: "\f123"; }
+.flaticon-like:before { content: "\f124"; }
+.flaticon-idea:before { content: "\f125"; }
+.flaticon-briefing:before { content: "\f126"; }
+.flaticon-calendar:before { content: "\f127"; }
+.flaticon-enter:before { content: "\f128"; }
+.flaticon-login:before { content: "\f129"; }
+.flaticon-envelope-1:before { content: "\f12a"; }
+.flaticon-incoming-call:before { content: "\f12b"; }
+.flaticon-place:before { content: "\f12c"; }
+.flaticon-clock-1:before { content: "\f12d"; }
+.flaticon-home:before { content: "\f12e"; }
+.flaticon-home-1:before { content: "\f12f"; }
+.flaticon-video-camera:before { content: "\f130"; }
