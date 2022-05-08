@@ -15,6 +15,7 @@ public enum GeneralErrorMessage implements BaseErrorMessage{
     INVALID_USER_TYPE("Invalid user type!", "User type mus be tenant or landlord."),
     ID_NOT_MATCH("Id not match!", "Id may be null or not match."),
     INVALID_GRADE("Grade is not available!", "Grade must be between 0 - 5."),
+    TOTAL_POINT_NOT_FOUND("Total point not found!","This user doesn't have evaluation."),
     ;
 
     private String errorMessage;

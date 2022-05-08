@@ -6,10 +6,9 @@ import com.SeniorProject.konutcheck.app.evaluation.service.LandlordRelatedHomesS
 import com.SeniorProject.konutcheck.app.evaluation.service.TenantRelatedHomesService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping ("/evaluations")
@@ -35,6 +34,12 @@ public class EvaluationController {
     public ResponseEntity saveLandlordEvaluation(@RequestBody LandlordEvaluationSaveDto landlordEvaluationSaveDto){
         LandlordEvaluationDto landlordEvaluationDto = landlordEvaluationService.saveLandlordEvaluation(landlordEvaluationSaveDto);
         return ResponseEntity.ok(landlordEvaluationDto);
+    }
+
+    @GetMapping("/landlord-total-point/{id}")
+    public ResponseEntity getTotalPoint(@PathVariable Long id){
+        List<GetTotalPoint> getTotalPointList = landlordEvaluationService.getTotalPointOfLandlord(id);
+        return ResponseEntity.ok(getTotalPointList);
     }
 
 }
