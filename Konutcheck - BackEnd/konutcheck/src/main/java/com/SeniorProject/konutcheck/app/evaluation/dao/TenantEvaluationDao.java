@@ -1,5 +1,6 @@
 package com.SeniorProject.konutcheck.app.evaluation.dao;
 
+import com.SeniorProject.konutcheck.app.evaluation.dto.GetTotalPoint;
 import com.SeniorProject.konutcheck.app.evaluation.entity.TenantEvaluation;
 import com.SeniorProject.konutcheck.app.home.dto.Ho_HomeDetails;
 import com.SeniorProject.konutcheck.app.home.enums.HomeTypes;
@@ -11,11 +12,10 @@ import java.util.List;
 
 @Repository
 public interface TenantEvaluationDao extends JpaRepository<TenantEvaluation, Long> {
-   /* @Query(
-            value = "select new com.SeniorProject.konutcheck.app.home.dto.Ho_HomeDetails(hoHome.Id, generalHomeInfo.homeType, generalHomeInfo.amount, generalHomeInfo.deposit, generalHomeInfo.dues, generalHomeInfo.numberOfRooms, generalHomeInfo.warningSystem, generalHomeInfo.buildingAge, generalHomeInfo.homeAspect, generalHomeInfo.floor, generalHomeInfo.homeSize, hoHome.announcementDate)" +
-                    " from Ho_Home  hoHome" +
-                    " left join GeneralHomeInfo generalHomeInfo on hoHome.generalHomeInfoId = generalHomeInfo.id" +
-                    " where generalHomeInfo.homeType = :homeType"
+    @Query(
+            value = "select new com.SeniorProject.konutcheck.app.evaluation.dto.GetTotalPoint(SUM(tenantEvaluation.tenantPoint))" +
+                    " from TenantEvaluation tenantEvaluation" +
+                    " where tenantEvaluation.tenantId = :id"
     )
-    Ho_HomeDetails findByHomeType(HomeTypes homeType);*/
+    List<GetTotalPoint> getTotalPoint(Long id);
 }

@@ -52,8 +52,8 @@ public class LandlordEvaluationService {
         int gradeOfLandlordAccessibility = landlordEvaluationSaveDto.getGradeOfLandlordAccessibility();
         int gradeOfLandlordUnderstanding = landlordEvaluationSaveDto.getGradeOfLandlordUnderstanding();
         int sum = gradeOfLandlordSatisfaction + gradeOfLandlordTreatment + gradeOfLandlordAccessibility + gradeOfLandlordUnderstanding;
-        BigDecimal singleEvaluation = BigDecimal.valueOf(sum / 4);
-        return singleEvaluation;
+        BigDecimal singlePoint = BigDecimal.valueOf(sum / 4);
+        return singlePoint;
     }
 
     private Boolean validationOfHomeId(LandlordEvaluationSaveDto landlordEvaluationSaveDto){
