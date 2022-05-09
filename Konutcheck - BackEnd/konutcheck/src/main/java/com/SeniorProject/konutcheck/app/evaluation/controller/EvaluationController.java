@@ -5,6 +5,7 @@ import com.SeniorProject.konutcheck.app.evaluation.service.LandlordEvaluationSer
 import com.SeniorProject.konutcheck.app.evaluation.service.LandlordRelatedHomesService;
 import com.SeniorProject.konutcheck.app.evaluation.service.TenantEvaluationService;
 import com.SeniorProject.konutcheck.app.evaluation.service.TenantRelatedHomesService;
+import com.SeniorProject.konutcheck.app.home.dto.Ho_HomeDetails;
 import lombok.RequiredArgsConstructor;
 import org.apache.catalina.connector.Response;
 import org.springframework.http.ResponseEntity;
@@ -21,13 +22,13 @@ public class EvaluationController {
     private final TenantRelatedHomesService tenantRelatedHomesService;
     private final LandlordRelatedHomesService landlordRelatedHomesService;
 
-    @PostMapping("/tenant-homes")
+    @PostMapping("/add-tenant-homes")
     public ResponseEntity save(@RequestBody TenantRelatedHomesSaveDto tenantRelatedHomesSaveDto){
         TenantRelatedHomesDto tenantRelatedHomesDto = tenantRelatedHomesService.save(tenantRelatedHomesSaveDto);
         return ResponseEntity.ok(tenantRelatedHomesDto);
     }
 
-    @PostMapping("/landlord-homes")
+    @PostMapping("/add-landlord-homes")
     public ResponseEntity save(@RequestBody LandlordRelatedHomesSaveDto landlordRelatedHomesSaveDto){
         LandlordRelatedHomesDto landlordRelatedHomesDto = landlordRelatedHomesService.save(landlordRelatedHomesSaveDto);
         return ResponseEntity.ok(landlordRelatedHomesDto);
@@ -55,5 +56,17 @@ public class EvaluationController {
     public ResponseEntity getTotalPointOfTenant(@PathVariable Long id){
         List<GetTotalPoint> getTotalPointList = tenantEvaluationService.getTotalPointOfTenant(id);
         return ResponseEntity.ok(getTotalPointList);
+    }
+
+    @GetMapping("/get-tenant-homes/{id}")
+    public ResponseEntity getTenantHomeDetailsByTenantId(@PathVariable Long id){
+        List<UserHomeDetails> userHomeDetailsList = tenantRelatedHomesService.getTenantHomeDetails(id);
+        return ResponseEntity.ok(userHomeDetailsList);
+    }
+
+    @GetMapping("/get-landlord-homes/{id}")
+    public ResponseEntity getLandlordHomeDetailsByLandlordId(@PathVariable Long id){
+        List<UserHomeDetails> userHomeDetailsList = landlordRelatedHomesService.getLandlordHomeDetails(id);
+        return ResponseEntity.ok(userHomeDetailsList);
     }
 }
