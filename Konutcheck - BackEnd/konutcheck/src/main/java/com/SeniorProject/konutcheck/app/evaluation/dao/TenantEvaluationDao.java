@@ -18,4 +18,5 @@ public interface TenantEvaluationDao extends JpaRepository<TenantEvaluation, Lon
                     " where tenantEvaluation.tenantId = :id"
     )
     List<GetTotalPoint> getTotalPoint(Long id);
+
 }

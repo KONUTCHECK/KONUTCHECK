@@ -1,5 +1,7 @@
 package com.SeniorProject.konutcheck.app.user.dto;
 
+import com.SeniorProject.konutcheck.app.user.enums.EducationalStatus;
+import com.SeniorProject.konutcheck.app.user.enums.Genders;
 import com.SeniorProject.konutcheck.app.user.enums.MaritialStatus;
 import com.SeniorProject.konutcheck.app.user.enums.UserType;
 import lombok.Getter;
@@ -13,6 +15,9 @@ public class Us_UserDto {
     private String surname;
     private Long age;
     private UserType userType;
+    private Genders gender;
+    private EducationalStatus educationalStatus;
+    private String job;
     private MaritialStatus maritialStatus;
     private String email;
     private String userPhoneNumber1;

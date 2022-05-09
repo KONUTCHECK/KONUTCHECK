@@ -20,6 +20,7 @@ public class TenantEvaluationEntityService extends BaseEntityService<TenantEvalu
     public List<GetTotalPoint> getTotalPoint(Long id){
         return tenantEvaluationDao.getTotalPoint(id);
     }
+
 }
 
 

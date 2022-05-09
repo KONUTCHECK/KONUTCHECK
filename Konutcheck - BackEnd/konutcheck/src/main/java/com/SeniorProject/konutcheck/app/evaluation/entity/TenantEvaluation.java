@@ -35,7 +35,7 @@ public class TenantEvaluation {
     private int gradeOfTenantNeighborliness;
 
     @Column(name = "GRADE_OF_TENANT_HOME_TREAT", nullable = false)
-    private int getGradeOfTenantHomeTreat;
+    private int gradeOfTenantHomeTreat;
 
     @Column(name = "TENANT_POINT", precision = 19, scale = 2,nullable = false)
     private BigDecimal tenantPoint;

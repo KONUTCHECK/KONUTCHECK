@@ -12,7 +12,9 @@ import com.SeniorProject.konutcheck.app.evaluation.service.entityService.TenantE
 import com.SeniorProject.konutcheck.app.evaluation.service.entityService.TenantRelatedHomesEntityService;
 import com.SeniorProject.konutcheck.app.general.exceptionEnums.GeneralErrorMessage;
 import com.SeniorProject.konutcheck.app.general.exceptions.InvalidInformationExceptions;
+import com.SeniorProject.konutcheck.app.general.exceptions.ItemNotFoundExceptions;
 import com.SeniorProject.konutcheck.app.securityGeneral.service.AuthenticationService;
+import com.SeniorProject.konutcheck.app.user.service.entityService.Us_UserEntityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +30,7 @@ public class LandlordEvaluationService {
 
     private final TenantRelatedHomesEntityService tenantRelatedHomesEntityService;
     private final LandlordRelatedHomesEntityService landlordRelatedHomesEntityService;
+    private final Us_UserEntityService userEntityService;
 
     public List<GetTotalPoint> getTotalPointOfLandlord(Long id){
         List<GetTotalPoint> getTotalPointList = landlordEvaluationEntityService.getTotalPoint(id);
@@ -38,6 +41,7 @@ public class LandlordEvaluationService {
         LandlordEvaluation landlordEvaluation = EvaluationMapperConverter.INSTANCE.convertToLandlordEvaluationFromLandlordEvaluationSaveDto(landlordEvaluationSaveDto);
         Long currentUserId = authenticationService.getCurrentUserId();
         validationOfHomeId(landlordEvaluationSaveDto);
+        validationOfLandlordId(landlordEvaluationSaveDto);
         landlordEvaluation.setEvaluationOwnerTenantId(currentUserId);
         landlordEvaluation.setLandlordPoint(calculateLandlordSinglePoint(landlordEvaluationSaveDto));
         landlordEvaluation = landlordEvaluationEntityService.save(landlordEvaluation);
@@ -46,11 +50,18 @@ public class LandlordEvaluationService {
     }
 
     private BigDecimal calculateLandlordSinglePoint(LandlordEvaluationSaveDto landlordEvaluationSaveDto) {
-       // validationOfGrades(landlordEvaluationSaveDto);
+        validationGradeOfLandlordSatisfaction(landlordEvaluationSaveDto);
         int gradeOfLandlordSatisfaction = landlordEvaluationSaveDto.getGradeOfLandlordSatisfaction();
+
+        validationGradeOfLandlordTreatment(landlordEvaluationSaveDto);
         int gradeOfLandlordTreatment = landlordEvaluationSaveDto.getGradeOfLandlordTreatment();
+
+        validationGradeOfLandlordAccessibility(landlordEvaluationSaveDto);
         int gradeOfLandlordAccessibility = landlordEvaluationSaveDto.getGradeOfLandlordAccessibility();
+
+        validationGradeOfLandlordUnderstanding(landlordEvaluationSaveDto);
         int gradeOfLandlordUnderstanding = landlordEvaluationSaveDto.getGradeOfLandlordUnderstanding();
+
         int sum = gradeOfLandlordSatisfaction + gradeOfLandlordTreatment + gradeOfLandlordAccessibility + gradeOfLandlordUnderstanding;
         BigDecimal singlePoint = BigDecimal.valueOf(sum / 4);
         return singlePoint;
@@ -67,13 +78,44 @@ public class LandlordEvaluationService {
         }
     }
 
-    private Boolean validationOfGrades(LandlordEvaluationSaveDto landlordEvaluationSaveDto){
-        if(landlordEvaluationSaveDto.getGradeOfLandlordSatisfaction() < 0 || landlordEvaluationSaveDto.getGradeOfLandlordSatisfaction() > 5
-        && landlordEvaluationSaveDto.getGradeOfLandlordAccessibility() < 0 || landlordEvaluationSaveDto.getGradeOfLandlordAccessibility() > 5
-        && landlordEvaluationSaveDto.getGradeOfLandlordTreatment() < 0 || landlordEvaluationSaveDto.getGradeOfLandlordTreatment() > 5
-        && landlordEvaluationSaveDto.getGradeOfLandlordUnderstanding() < 0 || landlordEvaluationSaveDto.getGradeOfLandlordUnderstanding() > 5)
-        {
-            return false;
+    private Boolean validationOfLandlordId(LandlordEvaluationSaveDto landlordEvaluationSaveDto){
+        Long landlordId = landlordEvaluationSaveDto.getLandlordId();
+        Boolean isLandlordIdExist = userEntityService.existById(landlordId);
+
+        if(isLandlordIdExist){
+            return true;
+        }else{
+            throw new ItemNotFoundExceptions(GeneralErrorMessage.ID_NOT_FOUND);
+        }
+    }
+
+    private Boolean validationGradeOfLandlordSatisfaction(LandlordEvaluationSaveDto landlordEvaluationSaveDto){
+        if(landlordEvaluationSaveDto.getGradeOfLandlordSatisfaction() > 0 && landlordEvaluationSaveDto.getGradeOfLandlordSatisfaction() < 6){
+            return true;
+        }else{
+            throw new InvalidInformationExceptions(GeneralErrorMessage.INVALID_GRADE);
+        }
+    }
+
+    private Boolean validationGradeOfLandlordAccessibility(LandlordEvaluationSaveDto landlordEvaluationSaveDto){
+        if(landlordEvaluationSaveDto.getGradeOfLandlordAccessibility() > 0 && landlordEvaluationSaveDto.getGradeOfLandlordAccessibility() < 6){
+            return true;
+        }else{
+            throw new InvalidInformationExceptions(GeneralErrorMessage.INVALID_GRADE);
+        }
+    }
+
+    private Boolean validationGradeOfLandlordTreatment(LandlordEvaluationSaveDto landlordEvaluationSaveDto){
+        if(landlordEvaluationSaveDto.getGradeOfLandlordTreatment() > 0 && landlordEvaluationSaveDto.getGradeOfLandlordTreatment() < 6){
+            return true;
+        }else{
+            throw new InvalidInformationExceptions(GeneralErrorMessage.INVALID_GRADE);
+        }
+    }
+
+    private Boolean validationGradeOfLandlordUnderstanding(LandlordEvaluationSaveDto landlordEvaluationSaveDto){
+        if(landlordEvaluationSaveDto.getGradeOfLandlordUnderstanding() > 0 && landlordEvaluationSaveDto.getGradeOfLandlordUnderstanding() < 6){
+            return true;
         }else{
             throw new InvalidInformationExceptions(GeneralErrorMessage.INVALID_GRADE);
         }

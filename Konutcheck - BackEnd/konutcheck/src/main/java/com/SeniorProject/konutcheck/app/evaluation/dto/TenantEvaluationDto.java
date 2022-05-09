@@ -18,6 +18,6 @@ public class TenantEvaluationDto {
     private int gradeOfBillPayment;
     private int gradeOfTenantSatisfaction;
     private int gradeOfTenantNeighborliness;
-    private int getGradeOfTenantHomeTreat;
+    private int gradeOfTenantHomeTreat;
     private BigDecimal tenantPoint;
 }

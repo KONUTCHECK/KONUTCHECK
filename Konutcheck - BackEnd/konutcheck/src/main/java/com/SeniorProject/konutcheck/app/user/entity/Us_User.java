@@ -1,5 +1,7 @@
 package com.SeniorProject.konutcheck.app.user.entity;
 
+import com.SeniorProject.konutcheck.app.user.enums.EducationalStatus;
+import com.SeniorProject.konutcheck.app.user.enums.Genders;
 import com.SeniorProject.konutcheck.app.user.enums.MaritialStatus;
 import com.SeniorProject.konutcheck.app.user.enums.UserType;
 import lombok.Getter;
@@ -30,6 +32,17 @@ public class Us_User {
     @Enumerated(EnumType.STRING)
     @Column(name = "USER_TYPE", length = 30, nullable = false)
     private UserType userType;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "GENDER", length = 30, nullable = false)
+    private Genders gender;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "EDUCATIONAL_STATUS", length = 30, nullable = false)
+    private EducationalStatus educationalStatus;
+
+    @Column(name = "JOB", length = 50, nullable = false)
+    private String job;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "MARITIAL_STATUS", length = 30, nullable = false)
