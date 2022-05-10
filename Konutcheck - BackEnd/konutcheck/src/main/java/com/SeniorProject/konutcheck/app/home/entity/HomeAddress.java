@@ -1,5 +1,6 @@
 package com.SeniorProject.konutcheck.app.home.entity;
 
+import com.SeniorProject.konutcheck.app.home.enums.Cities;
 import com.SeniorProject.konutcheck.app.home.enums.Countries;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,8 +21,9 @@ public class HomeAddress {
     @Column(name = "COUNTRY", length = 30, nullable = false)
     private Countries country;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "CITY", length = 30, nullable = false)
-    private String city;
+    private Cities city;
 
     @Column(name = "DISTRICT", length = 50, nullable = false)
     private String district;

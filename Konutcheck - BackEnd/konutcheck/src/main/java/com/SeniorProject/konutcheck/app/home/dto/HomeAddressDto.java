@@ -1,5 +1,6 @@
 package com.SeniorProject.konutcheck.app.home.dto;
 
+import com.SeniorProject.konutcheck.app.home.enums.Cities;
 import com.SeniorProject.konutcheck.app.home.enums.Countries;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +10,7 @@ import lombok.Setter;
 public class HomeAddressDto {
     private Long id;
     private Countries country;
-    private String city;
+    private Cities city;
     private String district;
     private String neighborhood;
     private String street;

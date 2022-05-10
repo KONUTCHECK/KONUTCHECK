@@ -1,6 +1,7 @@
 package com.SeniorProject.konutcheck.app.home.controller;
 
 import com.SeniorProject.konutcheck.app.home.dto.*;
+import com.SeniorProject.konutcheck.app.home.enums.Cities;
 import com.SeniorProject.konutcheck.app.home.enums.HomeTypes;
 import com.SeniorProject.konutcheck.app.home.service.Ho_HomeService;
 import lombok.RequiredArgsConstructor;
@@ -60,6 +61,43 @@ public class Ho_HomeController {
     @GetMapping("/between-amounts/")
     public ResponseEntity getAllBetweenAmount(@RequestParam BigDecimal firstAmount, @RequestParam BigDecimal secondAmount){
         List<Ho_HomeDetails> homeDetailsList = hoHomeService.getAllHomesBetweenAmount(firstAmount, secondAmount);
+        return ResponseEntity.ok(homeDetailsList);
+    }
+
+    @GetMapping("/cities/")
+    public ResponseEntity getAllHomesByCity(
+            @RequestParam Cities city){
+        List<Ho_HomeDetails> homeDetailsList = hoHomeService.getAllHomesByCity(city);
+        return ResponseEntity.ok(homeDetailsList);
+    }
+
+    @GetMapping("/cities-and-district/")
+    public ResponseEntity getAllHomesByCityAndDistrict(
+            @RequestParam Cities city,
+            @RequestParam String district
+    ){
+        List<Ho_HomeDetails> homeDetailsList = hoHomeService.getAllHomesByCityAndDistrict(city, district);
+        return ResponseEntity.ok(homeDetailsList);
+    }
+
+    @GetMapping("/cities-and-district-and-neighborhood/")
+    public ResponseEntity getAllHomesByCityAndDistrictAndNeighborhood(
+            @RequestParam Cities city,
+            @RequestParam String district,
+            @RequestParam String neighborhood
+    ){
+        List<Ho_HomeDetails> homeDetailsList = hoHomeService.getAllHomesByCityAndDistrictAndNeighborhood(city, district, neighborhood);
+        return ResponseEntity.ok(homeDetailsList);
+    }
+
+    @GetMapping("/cities-and-district-and-neighborhood-and-street/")
+    public ResponseEntity getAllHomesByCityAndDistrictAndNeighborhoodAndStreet(
+            @RequestParam Cities city,
+            @RequestParam String district,
+            @RequestParam String neighborhood,
+            @RequestParam String street
+    ){
+        List<Ho_HomeDetails> homeDetailsList = hoHomeService.getAllHomesByCityAndDistrictAndNeighborhoodAndStreet(city, district, neighborhood, street);
         return ResponseEntity.ok(homeDetailsList);
     }
 
