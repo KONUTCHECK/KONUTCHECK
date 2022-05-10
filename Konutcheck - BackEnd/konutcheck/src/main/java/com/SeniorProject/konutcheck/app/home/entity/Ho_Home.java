@@ -19,13 +19,14 @@ public class Ho_Home {
     private Long Id;
 
     @Column(name = "ANNOUNCEMENT_DATE", nullable = false)
-    //@Temporal(TemporalType.DATE)
     @JsonFormat(pattern="yyyy/MM/dd")
     private LocalDate announcementDate;
 
     @Column(name="GENERAL_HOME_INFO_ID", nullable = false)
     private Long generalHomeInfoId;
 
+    @Column(name = "HOME_ADRESS_ID", nullable = false)
+    private Long homeAddressId;
 
 
 

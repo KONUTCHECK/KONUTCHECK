@@ -8,9 +8,11 @@ import com.SeniorProject.konutcheck.app.home.converter.Ho_HomeMapperConverter;
 import com.SeniorProject.konutcheck.app.home.dto.*;
 import com.SeniorProject.konutcheck.app.home.entity.GeneralHomeInfo;
 import com.SeniorProject.konutcheck.app.home.entity.Ho_Home;
+import com.SeniorProject.konutcheck.app.home.entity.HomeAddress;
 import com.SeniorProject.konutcheck.app.home.enums.HomeTypes;
 import com.SeniorProject.konutcheck.app.home.service.entityService.GeneralHomeInfoEntityService;
 import com.SeniorProject.konutcheck.app.home.service.entityService.Ho_HomeEntityService;
+import com.SeniorProject.konutcheck.app.home.service.entityService.HomeAddressEntityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -23,9 +25,11 @@ import java.util.List;
 public class Ho_HomeService {
     private final Ho_HomeEntityService hoHomeEntityService;
     private final GeneralHomeInfoEntityService generalHomeInfoEntityService;
+    private final HomeAddressEntityService homeAddressEntityService;
 
     public Ho_HomeDto saveHome(Ho_HomeSaveDto hoHomeSaveDto){
         isGeneralHomeInfosExist(hoHomeSaveDto);
+        isHomeAddressExist(hoHomeSaveDto);
         Ho_Home hoHome= Ho_HomeMapperConverter.INSTANCE.convertToHoHomeFromHoHomeSaveDto(hoHomeSaveDto);
         hoHome.setAnnouncementDate(LocalDate.now());
         hoHome = hoHomeEntityService.save(hoHome);
@@ -41,6 +45,14 @@ public class Ho_HomeService {
 
         GeneralHomeInfoDto generalHomeInfoDto = GeneralHomeInfoMapperConverter.INSTANCE.convertToGeneralHomeInfoDtoFromGeneralHomeInfo(generalHomeInfo);
         return generalHomeInfoDto;
+    }
+
+    public HomeAddressDto saveHomeAddress(HomeAddressSaveDto homeAddressSaveDto){
+        HomeAddress homeAddress = Ho_HomeMapperConverter.INSTANCE.convertToHomeAddressFromHomeAddressSaveDto(homeAddressSaveDto);
+        homeAddress = homeAddressEntityService.save(homeAddress);
+
+        HomeAddressDto homeAddressDto = Ho_HomeMapperConverter.INSTANCE.convertToHomeAddressDtoFromHomeAddress(homeAddress);
+        return homeAddressDto;
     }
 
    public List<Ho_HomeDetails> getAllHomes(){
@@ -81,11 +93,13 @@ public class Ho_HomeService {
    public void deleteHome(Long id){
         Ho_Home hoHome = hoHomeEntityService.getIdWithControl(id);
         GeneralHomeInfo generalHomeInfo = generalHomeInfoEntityService.getIdWithControl(hoHome.getGeneralHomeInfoId());
+        HomeAddress homeAddress = homeAddressEntityService.getIdWithControl(hoHome.getHomeAddressId());
         generalHomeInfoEntityService.delete(generalHomeInfo);
+        homeAddressEntityService.delete(homeAddress);
         hoHomeEntityService.delete(hoHome);
    }
 
-   private boolean isGeneralHomeInfosExist(Ho_HomeSaveDto hoHomeSaveDto){
+   private Boolean isGeneralHomeInfosExist(Ho_HomeSaveDto hoHomeSaveDto){
         Long id = hoHomeSaveDto.getGeneralHomeInfoId();
         Boolean isExist = generalHomeInfoEntityService.existById(id);
 
@@ -93,6 +107,17 @@ public class Ho_HomeService {
             return true;
         }else{
             throw new ItemNotFoundExceptions(GeneralErrorMessage.HOME_INFOS_NOT_FOUND);
+        }
+   }
+
+   private Boolean isHomeAddressExist(Ho_HomeSaveDto hoHomeSaveDto){
+        Long id = hoHomeSaveDto.getHomeAddressId();
+        Boolean isExist = homeAddressEntityService.existById(id);
+
+        if(isExist){
+            return true;
+        }else{
+            throw new ItemNotFoundExceptions(GeneralErrorMessage.HOME_ADDRESS_NOT_FOUND);
         }
    }
 

@@ -7,4 +7,5 @@ import lombok.Setter;
 @Setter
 public class Ho_HomeSaveDto {
     private Long generalHomeInfoId;
+    private Long homeAddressId;
 }

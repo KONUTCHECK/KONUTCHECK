@@ -31,6 +31,12 @@ public class Ho_HomeController {
         return ResponseEntity.ok(generalHomeInfoDtoSave);
     }
 
+    @PostMapping("/home-address")
+    public ResponseEntity saveHomeAddress(@RequestBody HomeAddressSaveDto homeAddressSaveDto){
+        HomeAddressDto homeAddressDto = hoHomeService.saveHomeAddress(homeAddressSaveDto);
+        return ResponseEntity.ok(homeAddressDto);
+    }
+
     @GetMapping
     public ResponseEntity getAll(){
         List<Ho_HomeDetails> homeDetailsList = hoHomeService.getAllHomes();
