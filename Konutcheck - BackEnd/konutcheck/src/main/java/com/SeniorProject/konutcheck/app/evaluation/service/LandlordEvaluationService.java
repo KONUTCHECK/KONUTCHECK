@@ -45,7 +45,7 @@ public class LandlordEvaluationService {
         landlordEvaluation.setEvaluationOwnerTenantId(currentUserId);
         landlordEvaluation.setLandlordPoint(calculateLandlordSinglePoint(landlordEvaluationSaveDto));
         landlordEvaluation = landlordEvaluationEntityService.save(landlordEvaluation);
-        LandlordEvaluationDto landlordEvaluationDto = EvaluationMapperConverter.INSTANCE.covertToLandlordEvaluationDtoFromLandlordEvaluation(landlordEvaluation);
+        LandlordEvaluationDto landlordEvaluationDto = EvaluationMapperConverter.INSTANCE.convertToLandlordEvaluationDtoFromLandlordEvaluation(landlordEvaluation);
         return landlordEvaluationDto;
     }
 

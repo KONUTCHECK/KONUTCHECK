@@ -1,13 +1,8 @@
 package com.SeniorProject.konutcheck.app.evaluation.controller;
 
 import com.SeniorProject.konutcheck.app.evaluation.dto.*;
-import com.SeniorProject.konutcheck.app.evaluation.service.LandlordEvaluationService;
-import com.SeniorProject.konutcheck.app.evaluation.service.LandlordRelatedHomesService;
-import com.SeniorProject.konutcheck.app.evaluation.service.TenantEvaluationService;
-import com.SeniorProject.konutcheck.app.evaluation.service.TenantRelatedHomesService;
-import com.SeniorProject.konutcheck.app.home.dto.Ho_HomeDetails;
+import com.SeniorProject.konutcheck.app.evaluation.service.*;
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.connector.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +16,7 @@ public class EvaluationController {
     private final TenantEvaluationService tenantEvaluationService;
     private final TenantRelatedHomesService tenantRelatedHomesService;
     private final LandlordRelatedHomesService landlordRelatedHomesService;
+    private final HomeEvaluationService homeEvaluationService;
 
     @PostMapping("/add-tenant-homes")
     public ResponseEntity save(@RequestBody TenantRelatedHomesSaveDto tenantRelatedHomesSaveDto){
@@ -46,6 +42,12 @@ public class EvaluationController {
         return ResponseEntity.ok(tenantEvaluationDto);
     }
 
+    @PostMapping("/home-evaluation")
+    public ResponseEntity saveHomeEvaluation(@RequestBody HomeEvaluationSaveDto homeEvaluationSaveDto){
+        HomeEvaluationDto homeEvaluationDto = homeEvaluationService.saveHomeEvaluation(homeEvaluationSaveDto);
+        return ResponseEntity.ok(homeEvaluationDto);
+    }
+
     @GetMapping("/landlord-total-point/{id}")
     public ResponseEntity getTotalPointOfLandlord(@PathVariable Long id){
         List<GetTotalPoint> getTotalPointList = landlordEvaluationService.getTotalPointOfLandlord(id);
@@ -55,6 +57,12 @@ public class EvaluationController {
     @GetMapping("/tenant-total-point/{id}")
     public ResponseEntity getTotalPointOfTenant(@PathVariable Long id){
         List<GetTotalPoint> getTotalPointList = tenantEvaluationService.getTotalPointOfTenant(id);
+        return ResponseEntity.ok(getTotalPointList);
+    }
+
+    @GetMapping("/home-total-point/{id}")
+    public ResponseEntity getTotalPointOfHome(@PathVariable Long id){
+        List<GetTotalPoint> getTotalPointList = homeEvaluationService.getTotalPointOfHome(id);
         return ResponseEntity.ok(getTotalPointList);
     }
 
