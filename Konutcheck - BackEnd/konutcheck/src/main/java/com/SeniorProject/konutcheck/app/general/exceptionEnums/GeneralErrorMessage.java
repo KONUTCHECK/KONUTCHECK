@@ -8,12 +8,15 @@ public enum GeneralErrorMessage implements BaseErrorMessage{
     USER_NOT_FOUND("User not found!", "User cannot found with this id."),
     ID_NOT_FOUND("There is not anything with this id!", "This id not found anywhere."),
     HOME_INFOS_NOT_FOUND("Home information's id not found!","Home informations are not written."),
+    HOME_ADDRESS_NOT_FOUND("Home address not found with this id!","Home address not added."),
     AGE_CANNOT_BE_ZERO("Age cannot be zero!","Age cannot be zero or little than zero!"),
     CANNOT_BE_NEGATIVE("Value cannot be negative!","The value is little than zero but it must not."),
     ALREADY_USED("Email was used already!","Cannot register the same email that was used by another one."),
     HOME_NOT_FOUND ( "Home not found!", "There is no home related to this id." ),
     INVALID_USER_TYPE("Invalid user type!", "User type mus be tenant or landlord."),
-    ID_NOT_MATCH("Id not match!", "Id may be null or not match.")
+    ID_NOT_MATCH("Id not match!", "Id may be null or not match."),
+    INVALID_GRADE("Grade is not available!", "Grade must be between 0 - 5."),
+    TOTAL_POINT_NOT_FOUND("Total point not found!","This user doesn't have evaluation."),
     ;
 
     private String errorMessage;

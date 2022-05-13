@@ -17,6 +17,9 @@ public class LandlordEvaluation {
     @GeneratedValue(generator = "LandlordEvaluation")
     private Long Id;
 
+    @Column(name="EVALUATION_OWNER_TENANT_ID", nullable = false)
+    private Long evaluationOwnerTenantId;
+
     @Column(name="LANDLORD_ID", nullable = false)
     private Long landlordId;
 

@@ -8,8 +8,8 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 public class LandlordEvaluationDto {
-
     private Long Id;
+    private Long evaluationOwnerTenantId;
     private Long landlordId;
     private int gradeOfLandlordSatisfaction;
     private int gradeOfLandlordTreatment;

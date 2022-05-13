@@ -5,8 +5,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class UserRelatedHomesSaveDto {
-    private Long homeId;
-    private Long tenantId;
+public class LandlordRelatedHomesDto {
+    private Long id;
     private Long landlordId;
+    private Long homeId;
 }

@@ -1,4 +1,4 @@
-package com.SeniorProject.konutcheck.app.home.dto;
+package com.SeniorProject.konutcheck.app.evaluation.dto;
 
 import com.SeniorProject.konutcheck.app.home.enums.*;
 import lombok.Getter;
@@ -11,8 +11,9 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @RequiredArgsConstructor
-public class Ho_HomeDetails {
+public class UserHomeDetails {
     private final Long id;
+    private final Long userId;
     private final HomeTypes homeType;
     private final BigDecimal amount;
     private final BigDecimal deposit;

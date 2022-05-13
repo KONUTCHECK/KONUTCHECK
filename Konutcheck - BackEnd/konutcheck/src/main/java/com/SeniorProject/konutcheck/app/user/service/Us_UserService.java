@@ -1,5 +1,9 @@
 package com.SeniorProject.konutcheck.app.user.service;
 
+import com.SeniorProject.konutcheck.app.evaluation.entity.LandlordEvaluation;
+import com.SeniorProject.konutcheck.app.evaluation.entity.TenantEvaluation;
+import com.SeniorProject.konutcheck.app.evaluation.service.entityService.LandlordEvaluationEntityService;
+import com.SeniorProject.konutcheck.app.evaluation.service.entityService.TenantEvaluationEntityService;
 import com.SeniorProject.konutcheck.app.general.exceptionEnums.GeneralErrorMessage;
 import com.SeniorProject.konutcheck.app.general.exceptions.DuplicateException;
 import com.SeniorProject.konutcheck.app.general.exceptions.InvalidInformationExceptions;
@@ -21,6 +25,8 @@ import java.util.List;
 public class Us_UserService {
     private final Us_UserEntityService usUserEntityService;
     private final PasswordEncoder passwordEncoder;
+    private final LandlordEvaluationEntityService landlordEvaluationEntityService;
+    private final TenantEvaluationEntityService tenantEvaluationEntityService;
 
     public Us_UserDto saveUser(Us_UserSaveDto usUserSaveDto){
         isEmailExist(usUserSaveDto.getEmail());

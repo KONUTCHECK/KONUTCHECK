@@ -11,5 +11,5 @@ public class TenantEvaluationSaveDto {
     private int gradeOfBillPayment;
     private int gradeOfTenantSatisfaction;
     private int gradeOfTenantNeighborliness;
-    private int getGradeOfTenantHomeTreat;
+    private int gradeOfTenantHomeTreat;
 }

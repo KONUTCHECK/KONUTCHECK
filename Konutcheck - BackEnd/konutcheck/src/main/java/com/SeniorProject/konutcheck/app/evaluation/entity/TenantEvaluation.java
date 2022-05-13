@@ -16,6 +16,9 @@ public class TenantEvaluation {
     @GeneratedValue(generator = "TenantEvaluation")
     private Long Id;
 
+    @Column(name="EVALUATION_OWNER_LANDLORD_ID", nullable = false)
+    private Long evaluationOwnerLandlordId;
+
     @Column(name="TENANT_ID", nullable = false)
     private Long tenantId;
 
@@ -32,7 +35,7 @@ public class TenantEvaluation {
     private int gradeOfTenantNeighborliness;
 
     @Column(name = "GRADE_OF_TENANT_HOME_TREAT", nullable = false)
-    private int getGradeOfTenantHomeTreat;
+    private int gradeOfTenantHomeTreat;
 
     @Column(name = "TENANT_POINT", precision = 19, scale = 2,nullable = false)
     private BigDecimal tenantPoint;

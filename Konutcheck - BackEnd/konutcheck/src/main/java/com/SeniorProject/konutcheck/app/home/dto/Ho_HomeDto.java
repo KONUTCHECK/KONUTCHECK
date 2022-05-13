@@ -13,4 +13,5 @@ public class Ho_HomeDto {
     private Long Id;
     private LocalDate announcementDate;
     private Long generalHomeInfoId;
+    private Long homeAddressId;
 }
