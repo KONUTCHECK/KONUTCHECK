@@ -12151,7 +12151,7 @@ ul.nav-list li a {
 
 ul.nav-list li a:before {
 	font-family: 'Font Awesome 5 Free';
-	content: "\f054";
+	/*content: "\f054"; */
 	font-weight: 900;
 	position: absolute;
 	top: 8px;

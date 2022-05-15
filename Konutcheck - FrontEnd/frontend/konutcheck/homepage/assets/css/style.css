@@ -166,8 +166,8 @@ a:focus {
     overflow: hidden;
 }
 img {
-    max-width: 100%;
-    height: auto;
+    width: 147%;
+    height: 120px;
     transition-delay: .1s;
     transition-timing-function: ease-in-out;
     transition-duration: .7s;
@@ -234,7 +234,7 @@ li{
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear; 
-    font-family: 'Lato', sans-serif;
+    font-family: 'FontAwesome';
     z-index: 1;
 }
 .btn-one:before {
