@@ -1,4 +1,5 @@
 import React from "react";
+import PageTitle from "../general/pageTitle";
 
 class ErrorPage extends React.Component{
     constructor(props) {
@@ -17,7 +18,7 @@ class ErrorPage extends React.Component{
     render(){
         return(
             <div> 
-                <h1>ERROR!!</h1>
+                <PageTitle title="Aradığınız sayfa bulunamadı!"></PageTitle>
             </div>
         );
     }
