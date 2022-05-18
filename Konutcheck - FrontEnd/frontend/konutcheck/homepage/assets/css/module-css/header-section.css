@@ -426,7 +426,7 @@
     float: left;
 }
 .main-menu .navbar-collapse{
-	padding:0px;
+	padding:27px;
 	display:block !important;
 }
 .main-menu .navigation {
@@ -452,7 +452,7 @@
 	font-weight: 700;
 	text-transform: uppercase;
     transition: all 500ms ease;
-    font-family: 'Lato', sans-serif;
+    font-family: 'FontAwesome';
 	opacity: 1;
 }
 .main-menu .navigation>li>a.home{
@@ -1105,7 +1105,7 @@
     align-items: center;
 }
 .main-menu.style3 .navigation> li {
-    margin-right: 30px;
+    margin-right: 147px;
 }
 .main-menu.style3 .navigation>li>a.home {
     padding: 43px 0;
