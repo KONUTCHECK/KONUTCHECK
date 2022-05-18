@@ -11,10 +11,11 @@ class Menu extends React.Component {
             testState: "initialState"
         }
 
+        this.handleLogout = this.handleLogout.bind(this);
     }
 
-    handleClick() {
-        this.setState({ testState: "newState" })
+    handleLogout(){
+        this.props.logout();
     }
 
     render() {
