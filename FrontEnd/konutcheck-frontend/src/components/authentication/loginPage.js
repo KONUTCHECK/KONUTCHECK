@@ -28,7 +28,7 @@ class LoginPage extends React.Component{
 
     handleResponse(response){
         console.log(response)
-        sessionStorage.setItem('token', response.data.data)
+        sessionStorage.setItem('token', response.data)
         sessionStorage.setItem('email', this.state.email)
         this.props.login();
     }

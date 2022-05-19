@@ -5,6 +5,8 @@ import HomePage from './components/homePage/homePage';
 import ErrorPage from './components/error/errorPage';
 import LoginPage from './components/authentication/loginPage';
 import React from 'react';
+import HomeListPage from './components/home/HomeListPage';
+import HomeAddPage from './components/home/HomeAddPage';
 
 class App extends React.Component {
 
@@ -46,6 +48,8 @@ class App extends React.Component {
         <Route path='/' element={<HomePage></HomePage>}> </Route>
         <Route path='*' element={<ErrorPage></ErrorPage>}></Route>
         <Route path="/login" element={<LoginPage login={this.login}></LoginPage>}></Route>
+        <Route path="/homes" element={<HomeListPage></HomeListPage>}></Route>
+        <Route path="/add-homes" element={<HomeAddPage></HomeAddPage>}></Route>
       </Routes>
     </div>
   );

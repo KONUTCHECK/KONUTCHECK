@@ -29,11 +29,12 @@ class Menu extends React.Component {
                             <Nav className="me-auto">
                                 <Nav.Link href="/">Ana Sayfa</Nav.Link>
                                 <Nav.Link href="/">Hakkımızda</Nav.Link>
+                                <Nav.Link href="/homes">Evler</Nav.Link>
                                 <Nav.Link href="/">Bize Ulaşın</Nav.Link>
 
                                 <NavDropdown title="Hesabım" id="basic-nav-dropdown">
 
-                                    <NavDropdown.Item href="/product/add">Hesap Ekle</NavDropdown.Item>
+                                    <NavDropdown.Item href="/add-homes">Ev Ekle</NavDropdown.Item>
 
                                     <NavDropdown.Divider />
                                     {!this.props.isLoggedOn && < NavDropdown.Item href="/login">Giriş</NavDropdown.Item>}
