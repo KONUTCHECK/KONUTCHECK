@@ -1,12 +1,11 @@
 package com.SeniorProject.konutcheck.app.home.dto;
 
-import com.SeniorProject.konutcheck.app.home.enums.HomeAspects;
-import com.SeniorProject.konutcheck.app.home.enums.HomeTypes;
-import com.SeniorProject.konutcheck.app.home.enums.WarningSystems;
+import com.SeniorProject.konutcheck.app.home.enums.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -23,4 +22,13 @@ public class GeneralHomeInfoDto {
     private int floor;
     private BigDecimal homeSize;
     private HomeTypes homeType;
+    private Countries country;
+    private Cities city;
+    private String district;
+    private String neighborhood;
+    private String street;
+    private String buildingNo;
+    private Long apartmentNo;
+    private LocalDate announcementDate;
+
 }

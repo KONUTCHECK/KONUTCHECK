@@ -20,33 +20,21 @@ import java.util.List;
 public class Ho_HomeController {
     private final Ho_HomeService hoHomeService;
 
-    @PostMapping
-    public ResponseEntity save(@RequestBody Ho_HomeSaveDto hoHomeSaveDto){
-        Ho_HomeDto hoHomeDto = hoHomeService.saveHome(hoHomeSaveDto);
-        return ResponseEntity.ok(hoHomeDto);
-    }
-
     @PostMapping("/home-infos")
     public ResponseEntity saveInfo(@RequestBody GeneralHomeInfoSaveDto generalHomeInfoSaveDto){
         GeneralHomeInfoDto generalHomeInfoDtoSave = hoHomeService.saveHomeInfos(generalHomeInfoSaveDto);
         return ResponseEntity.ok(generalHomeInfoDtoSave);
     }
 
-    @PostMapping("/home-address")
-    public ResponseEntity saveHomeAddress(@RequestBody HomeAddressSaveDto homeAddressSaveDto){
-        HomeAddressDto homeAddressDto = hoHomeService.saveHomeAddress(homeAddressSaveDto);
-        return ResponseEntity.ok(homeAddressDto);
-    }
-
     @GetMapping
     public ResponseEntity getAll(){
-        List<Ho_HomeDetails> homeDetailsList = hoHomeService.getAllHomes();
+        List<GeneralHomeInfoDto> homeDetailsList = hoHomeService.getAllHomes();
         return ResponseEntity.ok(homeDetailsList);
     }
 
     @GetMapping("/{homeType}")
     public ResponseEntity getAllByHomeType(@PathVariable HomeTypes homeType){
-        List<Ho_HomeDetails> homeDetailsList = hoHomeService.getAllHomesByHomeType(homeType);
+        List<GeneralHomeInfoDto> homeDetailsList = hoHomeService.getAllHomesByHomeType(homeType);
         return ResponseEntity.ok(homeDetailsList);
     }
 
@@ -54,20 +42,20 @@ public class Ho_HomeController {
     public ResponseEntity getAllBetweenDates(
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date1,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date2){
-        List<Ho_HomeDetails> homeDetailsList = hoHomeService.getAllHomesBetweenDate(date1, date2);
+        List<GeneralHomeInfoDto> homeDetailsList = hoHomeService.getAllHomesBetweenDate(date1, date2);
         return ResponseEntity.ok(homeDetailsList);
     }
 
     @GetMapping("/between-amounts/")
     public ResponseEntity getAllBetweenAmount(@RequestParam BigDecimal firstAmount, @RequestParam BigDecimal secondAmount){
-        List<Ho_HomeDetails> homeDetailsList = hoHomeService.getAllHomesBetweenAmount(firstAmount, secondAmount);
+        List<GeneralHomeInfoDto> homeDetailsList = hoHomeService.getAllHomesBetweenAmount(firstAmount, secondAmount);
         return ResponseEntity.ok(homeDetailsList);
     }
 
     @GetMapping("/cities/")
     public ResponseEntity getAllHomesByCity(
             @RequestParam Cities city){
-        List<Ho_HomeDetails> homeDetailsList = hoHomeService.getAllHomesByCity(city);
+        List<GeneralHomeInfoDto> homeDetailsList = hoHomeService.getAllHomesByCity(city);
         return ResponseEntity.ok(homeDetailsList);
     }
 
@@ -76,7 +64,7 @@ public class Ho_HomeController {
             @RequestParam Cities city,
             @RequestParam String district
     ){
-        List<Ho_HomeDetails> homeDetailsList = hoHomeService.getAllHomesByCityAndDistrict(city, district);
+        List<GeneralHomeInfoDto> homeDetailsList = hoHomeService.getAllHomesByCityAndDistrict(city, district);
         return ResponseEntity.ok(homeDetailsList);
     }
 
@@ -86,7 +74,7 @@ public class Ho_HomeController {
             @RequestParam String district,
             @RequestParam String neighborhood
     ){
-        List<Ho_HomeDetails> homeDetailsList = hoHomeService.getAllHomesByCityAndDistrictAndNeighborhood(city, district, neighborhood);
+        List<GeneralHomeInfoDto> homeDetailsList = hoHomeService.getAllHomesByCityAndDistrictAndNeighborhood(city, district, neighborhood);
         return ResponseEntity.ok(homeDetailsList);
     }
 
@@ -97,7 +85,7 @@ public class Ho_HomeController {
             @RequestParam String neighborhood,
             @RequestParam String street
     ){
-        List<Ho_HomeDetails> homeDetailsList = hoHomeService.getAllHomesByCityAndDistrictAndNeighborhoodAndStreet(city, district, neighborhood, street);
+        List<GeneralHomeInfoDto> homeDetailsList = hoHomeService.getAllHomesByCityAndDistrictAndNeighborhoodAndStreet(city, district, neighborhood, street);
         return ResponseEntity.ok(homeDetailsList);
     }
 

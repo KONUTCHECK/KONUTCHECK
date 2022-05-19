@@ -6,7 +6,7 @@ import com.SeniorProject.konutcheck.app.evaluation.entity.HomeEvaluation;
 import com.SeniorProject.konutcheck.app.evaluation.service.entityService.HomeEvaluationEntityService;
 import com.SeniorProject.konutcheck.app.general.exceptionEnums.GeneralErrorMessage;
 import com.SeniorProject.konutcheck.app.general.exceptions.InvalidInformationExceptions;
-import com.SeniorProject.konutcheck.app.home.service.entityService.Ho_HomeEntityService;
+import com.SeniorProject.konutcheck.app.home.service.entityService.GeneralHomeInfoEntityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class HomeEvaluationService {
     private final HomeEvaluationEntityService homeEvaluationEntityService;
-    private final Ho_HomeEntityService homeEntityService;
+    private final GeneralHomeInfoEntityService generalHomeInfoEntityService;
 
     public List<GetTotalPoint> getTotalPointOfHome(Long id){
         List<GetTotalPoint> getTotalPointList = homeEvaluationEntityService.getTotalPoint(id);
@@ -65,7 +65,7 @@ public class HomeEvaluationService {
 
     private Boolean validationOfHomeId(HomeEvaluationSaveDto homeEvaluationSaveDto){
         GetHomeIdDto homeId = homeEvaluationEntityService.getHomeId(homeEvaluationSaveDto.getHomeId());
-        Boolean isHomeIdExist = homeEntityService.existById(homeId.getHomeId());
+        Boolean isHomeIdExist = generalHomeInfoEntityService.existById(homeId.getHomeId());
 
         if(isHomeIdExist){
             return true;

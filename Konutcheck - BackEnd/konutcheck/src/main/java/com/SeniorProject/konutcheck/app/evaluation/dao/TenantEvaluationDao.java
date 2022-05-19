@@ -2,8 +2,6 @@ package com.SeniorProject.konutcheck.app.evaluation.dao;
 
 import com.SeniorProject.konutcheck.app.evaluation.dto.GetTotalPoint;
 import com.SeniorProject.konutcheck.app.evaluation.entity.TenantEvaluation;
-import com.SeniorProject.konutcheck.app.home.dto.Ho_HomeDetails;
-import com.SeniorProject.konutcheck.app.home.enums.HomeTypes;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

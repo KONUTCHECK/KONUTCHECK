@@ -7,6 +7,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface GeneralHomeInfoMapperConverter {
 
@@ -14,4 +16,5 @@ public interface GeneralHomeInfoMapperConverter {
     GeneralHomeInfo convertToGeneralHomeInfoFromGeneralHomeInfoSaveDto(GeneralHomeInfoSaveDto generalHomeInfoSaveDto);
     GeneralHomeInfoDto convertToGeneralHomeInfoDtoFromGeneralHomeInfo(GeneralHomeInfo generalHomeInfo);
     GeneralHomeInfo convertToGeneralHomeInfoFromGeneralHomeInfoDto(GeneralHomeInfoDto generalHomeInfoDto);
+    List<GeneralHomeInfoDto> convertToGeneralHomeInfoDtoListFromGeneralHomeInfoList(List<GeneralHomeInfo> generalHomeInfos);
 }

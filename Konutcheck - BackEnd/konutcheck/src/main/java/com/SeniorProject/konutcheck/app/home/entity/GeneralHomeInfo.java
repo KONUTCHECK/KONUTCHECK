@@ -1,13 +1,13 @@
 package com.SeniorProject.konutcheck.app.home.entity;
 
-import com.SeniorProject.konutcheck.app.home.enums.HomeAspects;
-import com.SeniorProject.konutcheck.app.home.enums.HomeTypes;
-import com.SeniorProject.konutcheck.app.home.enums.WarningSystems;
+import com.SeniorProject.konutcheck.app.home.enums.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "GENERAL_HOME_INFO")
@@ -52,5 +52,32 @@ public class GeneralHomeInfo {
     @Enumerated(EnumType.STRING)
     @Column(name = "HOME_TYPE", length = 30, nullable = false)
     private HomeTypes homeType;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "COUNTRY", length = 30, nullable = false)
+    private Countries country;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "CITY", length = 30, nullable = false)
+    private Cities city;
+
+    @Column(name = "DISTRICT", length = 50, nullable = false)
+    private String district;
+
+    @Column(name = "NEIGHBORHOOD", length = 50, nullable = false)
+    private String neighborhood;
+
+    @Column(name = "STREET", length = 50, nullable = false)
+    private String street;
+
+    @Column(name = "BUILDING_NO", length = 10)
+    private String buildingNo;
+
+    @Column(name = "APARTMENT_NO")
+    private Long apartmentNo;
+
+    @Column(name = "ANNOUNCEMENT_DATE", nullable = false)
+    @JsonFormat(pattern="yyyy/MM/dd")
+    private LocalDate announcementDate;
 
 }

@@ -3,6 +3,7 @@ package com.SeniorProject.konutcheck.app.evaluation.dao;
 import com.SeniorProject.konutcheck.app.evaluation.dto.GetHomeIdDto;
 import com.SeniorProject.konutcheck.app.evaluation.dto.UserHomeDetails;
 import com.SeniorProject.konutcheck.app.evaluation.entity.TenantRelatedHomes;
+import com.SeniorProject.konutcheck.app.home.entity.GeneralHomeInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -19,12 +20,10 @@ public interface TenantRelatedHomesDao extends JpaRepository<TenantRelatedHomes,
     )
     GetHomeIdDto getHomeIdByLandlordId(Long id);
 
-    @Query(
-            value = "select new com.SeniorProject.konutcheck.app.evaluation.dto.UserHomeDetails(hoHome.Id, tenantRelatedHomes.tenantId, generalHomeInfo.homeType, generalHomeInfo.amount, generalHomeInfo.deposit, generalHomeInfo.dues, generalHomeInfo.numberOfRooms, generalHomeInfo.warningSystem, generalHomeInfo.buildingAge, generalHomeInfo.homeAspect, generalHomeInfo.floor, generalHomeInfo.homeSize, homeAddress.country, homeAddress.city, homeAddress.district, homeAddress.neighborhood, homeAddress.street, homeAddress.buildingNo, homeAddress.apartmentNo, hoHome.announcementDate)" +
+   @Query(
+            value = "select new com.SeniorProject.konutcheck.app.evaluation.dto.UserHomeDetails(generalHomeInfo.id, tenantRelatedHomes.tenantId, generalHomeInfo.homeType, generalHomeInfo.amount, generalHomeInfo.deposit, generalHomeInfo.dues, generalHomeInfo.numberOfRooms, generalHomeInfo.warningSystem, generalHomeInfo.buildingAge, generalHomeInfo.homeAspect, generalHomeInfo.floor, generalHomeInfo.homeSize, generalHomeInfo.country, generalHomeInfo.city, generalHomeInfo.district, generalHomeInfo.neighborhood, generalHomeInfo.street, generalHomeInfo.buildingNo, generalHomeInfo.apartmentNo, generalHomeInfo.announcementDate)" +
                     " from TenantRelatedHomes tenantRelatedHomes" +
                     " left join GeneralHomeInfo generalHomeInfo on generalHomeInfo.id = tenantRelatedHomes.homeId" +
-                    " left join Ho_Home hoHome on hoHome.generalHomeInfoId = generalHomeInfo.id" +
-                    " left join HomeAddress homeAddress on hoHome.homeAddressId = homeAddress.id " +
                     " where tenantRelatedHomes.tenantId = :tenantId"
     )
     List<UserHomeDetails> getHomeDetailsByTenantId(Long tenantId);

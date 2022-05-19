@@ -14,11 +14,9 @@ public interface LandlordRelatedHomesDao extends JpaRepository<LandlordRelatedHo
     Boolean existsByHomeId(Long id);
 
     @Query(
-            value = "select new com.SeniorProject.konutcheck.app.evaluation.dto.UserHomeDetails(hoHome.Id, landlordRelatedHomes.landlordId, generalHomeInfo.homeType, generalHomeInfo.amount, generalHomeInfo.deposit, generalHomeInfo.dues, generalHomeInfo.numberOfRooms, generalHomeInfo.warningSystem, generalHomeInfo.buildingAge, generalHomeInfo.homeAspect, generalHomeInfo.floor, generalHomeInfo.homeSize, homeAddress.country, homeAddress.city, homeAddress.district, homeAddress.neighborhood, homeAddress.street, homeAddress.buildingNo, homeAddress.apartmentNo, hoHome.announcementDate)" +
+            value = "select new com.SeniorProject.konutcheck.app.evaluation.dto.UserHomeDetails(generalHomeInfo.id, landlordRelatedHomes.landlordId, generalHomeInfo.homeType, generalHomeInfo.amount, generalHomeInfo.deposit, generalHomeInfo.dues, generalHomeInfo.numberOfRooms, generalHomeInfo.warningSystem, generalHomeInfo.buildingAge, generalHomeInfo.homeAspect, generalHomeInfo.floor, generalHomeInfo.homeSize, generalHomeInfo.country, generalHomeInfo.city, generalHomeInfo.district, generalHomeInfo.neighborhood, generalHomeInfo.street, generalHomeInfo.buildingNo, generalHomeInfo.apartmentNo, generalHomeInfo.announcementDate)" +
                     " from LandlordRelatedHomes landlordRelatedHomes" +
                     " left join GeneralHomeInfo generalHomeInfo on generalHomeInfo.id = landlordRelatedHomes.homeId" +
-                    " left join Ho_Home hoHome on hoHome.generalHomeInfoId = generalHomeInfo.id" +
-                    " left join HomeAddress homeAddress on hoHome.homeAddressId = homeAddress.id " +
                     " where landlordRelatedHomes.landlordId = :landlordId"
     )
     List<UserHomeDetails> getHomeDetailsByLandlordId(Long landlordId);
