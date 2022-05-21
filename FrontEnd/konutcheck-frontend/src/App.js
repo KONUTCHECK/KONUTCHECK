@@ -7,6 +7,9 @@ import LoginPage from './components/authentication/loginPage';
 import React from 'react';
 import HomeListPage from './components/home/HomeListPage';
 import HomeAddPage from './components/home/HomeAddPage';
+import DetailHomeInfoPage from './components/home/DetailHomeInfoPage';
+import HomeUpdatePage from './components/home/HomeUpdatePage';
+import HomeFilterPage from './components/home/HomeFilterPage';
 
 class App extends React.Component {
 
@@ -43,14 +46,17 @@ class App extends React.Component {
     return (
     <div className="App">
       <Menu isLoggedOn={isLogged} logout={this.logout}></Menu>
-
       <Routes>
         <Route path='/' element={<HomePage></HomePage>}> </Route>
         <Route path='*' element={<ErrorPage></ErrorPage>}></Route>
         <Route path="/login" element={<LoginPage login={this.login}></LoginPage>}></Route>
         <Route path="/homes" element={<HomeListPage></HomeListPage>}></Route>
         <Route path="/add-homes" element={<HomeAddPage></HomeAddPage>}></Route>
-      </Routes>
+        <Route path = "/view-home/:id" element = {<DetailHomeInfoPage></DetailHomeInfoPage>}></Route>
+        <Route path="/update-home-infos" element={<HomeUpdatePage></HomeUpdatePage>}></Route>
+        <Route path="/get-homes-by" element={<HomeFilterPage></HomeFilterPage>}></Route>
+      
+      </Routes> 
     </div>
   );
   }
