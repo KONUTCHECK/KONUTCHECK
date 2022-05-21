@@ -97,7 +97,7 @@ class HomeAddPage extends React.Component {
                         <div className="form-group ">
                             <label htmlFor="inputRating">Cephe</label>
                             <HomeAspects
-                                fieldName="warningSystem"
+                                fieldName="homeAspect"
                                 notNull={true}
                             ></HomeAspects>
                         </div>
@@ -121,7 +121,7 @@ class HomeAddPage extends React.Component {
                         <div className="form-group ">
                             <label htmlFor="inputRating">Ev Tipi</label>
                             <HomeTypes
-                                fieldName="warningSystem"
+                                fieldName="homeType"
                                 notNull={true}
                             ></HomeTypes>
                         </div>
@@ -129,7 +129,7 @@ class HomeAddPage extends React.Component {
                         <div className="form-group ">
                             <label htmlFor="inputRating">Ülke</label>
                             <Countries
-                                fieldName="warningSystem"
+                                fieldName="country"
                                 notNull={true}
                             ></Countries>
                         </div>
@@ -137,7 +137,7 @@ class HomeAddPage extends React.Component {
                         <div className="form-group ">
                             <label htmlFor="inputRating">Şehir</label>
                             <Cities
-                                fieldName="warningSystem"
+                                fieldName="city"
                                 notNull={true}
                             ></Cities>
                         </div>

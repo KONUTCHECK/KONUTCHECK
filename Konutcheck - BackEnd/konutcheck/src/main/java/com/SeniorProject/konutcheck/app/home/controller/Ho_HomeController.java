@@ -32,6 +32,12 @@ public class Ho_HomeController {
         return ResponseEntity.ok(homeDetailsList);
     }
 
+    @GetMapping("/id/{id}")
+    public ResponseEntity getById(@PathVariable Long id){
+        GeneralHomeInfoDto generalHomeInfoDto = hoHomeService.findById(id);
+        return ResponseEntity.ok(generalHomeInfoDto);
+    }
+
     @GetMapping("/{homeType}")
     public ResponseEntity getAllByHomeType(@PathVariable HomeTypes homeType){
         List<GeneralHomeInfoDto> homeDetailsList = hoHomeService.getAllHomesByHomeType(homeType);
