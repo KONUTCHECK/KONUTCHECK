@@ -20,7 +20,9 @@ class HomePage extends React.Component{
         return(
             <div> 
                 <Slider></Slider>
-                <Container></Container>
+                <Container>
+                    
+                </Container>
             </div>
         );
     }

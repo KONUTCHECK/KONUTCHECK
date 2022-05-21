@@ -38,3 +38,57 @@
     transform: rotate(360deg);
   }
 }
+
+footer{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #37474f;
+  text-align: center;
+  font-family: 'Big Shoulders Inline Display', cursive;
+  color: #f89ef8;
+}
+
+.col2{
+  float: left;
+  width: 50%;
+  padding: 5rem;
+}
+
+footer h4{
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+footer p{
+  font-size: 2rem;
+  padding-top: 2.5rem;
+  font-weight: 200;
+}
+
+footer li{
+  display: inline-block;
+  margin: 1rem;
+}
+
+.btn-social{
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  line-height: 2rem;
+  background-color: #77aac4;
+  border-color: #77aac4;
+  transition: all 0.5s;
+}
+
+.btn-social:hover{
+  background-color: white;
+}
+
+.copyright{
+  background-color:#032a3d ;
+  color: white;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
