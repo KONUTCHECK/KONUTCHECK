@@ -35,11 +35,15 @@ class Menu extends React.Component {
                                 <NavDropdown title="Hesabım" id="basic-nav-dropdown">
 
                                     <NavDropdown.Item href="/add-homes">Ev Ekle</NavDropdown.Item>
-
+                                    <NavDropdown.Divider />
+                                    {!this.props.isLoggedOn && < NavDropdown.Item href="/register">Kayıt Ol</NavDropdown.Item>}
+                                    
+                                    
                                     <NavDropdown.Divider />
                                     {!this.props.isLoggedOn && < NavDropdown.Item href="/login">Giriş</NavDropdown.Item>}
                                     {this.props.isLoggedOn && <NavDropdown.Item href="/" onClick={this.handleLogout}>Çıkış</NavDropdown.Item>}
 
+                                
                                 </NavDropdown>
                             </Nav>
                         </Navbar.Collapse>

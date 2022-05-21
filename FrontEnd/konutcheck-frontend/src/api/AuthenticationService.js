@@ -14,6 +14,11 @@ class AuthenticationService {
        return axios.post(url, data);
     }
 
+    saveUser(newUser){
+        const url = "/auth/register"
+        return axios.post(url, newUser)
+    }
+
 }
 
 export default new AuthenticationService();

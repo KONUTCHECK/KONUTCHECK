@@ -7,6 +7,8 @@ import LoginPage from './components/authentication/loginPage';
 import React from 'react';
 import HomeListPage from './components/home/HomeListPage';
 import HomeAddPage from './components/home/HomeAddPage';
+import Register from './components/authentication/register';
+
 
 class App extends React.Component {
 
@@ -50,6 +52,8 @@ class App extends React.Component {
         <Route path="/login" element={<LoginPage login={this.login}></LoginPage>}></Route>
         <Route path="/homes" element={<HomeListPage></HomeListPage>}></Route>
         <Route path="/add-homes" element={<HomeAddPage></HomeAddPage>}></Route>
+        <Route path="/register" element={<Register></Register>}></Route>
+
       </Routes>
     </div>
   );
