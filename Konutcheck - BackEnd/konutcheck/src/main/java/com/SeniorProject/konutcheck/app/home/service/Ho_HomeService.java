@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -42,18 +43,11 @@ public class Ho_HomeService {
         return generalHomeInfoDto;
     }
 
-   /* public HomeAddressDto saveHomeAddress(HomeAddressSaveDto homeAddressSaveDto){
-        HomeAddress homeAddress = Ho_HomeMapperConverter.INSTANCE.convertToHomeAddressFromHomeAddressSaveDto(homeAddressSaveDto);
-        homeAddress = homeAddressEntityService.save(homeAddress);
-
-        HomeAddressDto homeAddressDto = Ho_HomeMapperConverter.INSTANCE.convertToHomeAddressDtoFromHomeAddress(homeAddress);
-        return homeAddressDto;
-    }*/
-
-  /* public List<Ho_HomeDetails> getAllHomes(){
-        List<Ho_HomeDetails> homeDetailsList = hoHomeEntityService.getAllHomes();
-        return homeDetailsList;
-   }*/
+    public GeneralHomeInfoDto findById(Long id){
+        GeneralHomeInfo generalHomeInfo = generalHomeInfoEntityService.getIdWithControl(id);
+        GeneralHomeInfoDto generalHomeInfoDto = GeneralHomeInfoMapperConverter.INSTANCE.convertToGeneralHomeInfoDtoFromGeneralHomeInfo(generalHomeInfo);
+        return generalHomeInfoDto;
+    }
 
     public List<GeneralHomeInfoDto> getAllHomes(){
         List<GeneralHomeInfo> generalHomeInfos = generalHomeInfoEntityService.findAll();
@@ -111,6 +105,7 @@ public class Ho_HomeService {
         GeneralHomeInfo generalHomeInfo;
         if(isExist){
             generalHomeInfo = GeneralHomeInfoMapperConverter.INSTANCE.convertToGeneralHomeInfoFromGeneralHomeInfoDto(generalHomeInfoDto);
+            generalHomeInfo.setAnnouncementDate(LocalDate.now());
             generalHomeInfo = generalHomeInfoEntityService.save(generalHomeInfo);
         }else{
             throw new ItemNotFoundExceptions(GeneralErrorMessage.HOME_INFOS_NOT_FOUND);
