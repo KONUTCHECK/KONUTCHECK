@@ -9,6 +9,7 @@ import Education from "../general/combobox/RegisterCombobox/education";
 
 
 
+
 class Register extends React.Component {
 
     handleFormSubmit = (e) => {
@@ -39,6 +40,8 @@ class Register extends React.Component {
 
         return (
 
+             
+         
             <div className="container col-md-6 offset-md-3">
 
                 <form id="product-form" className="mt-5" onSubmit={this.handleFormSubmit}>
@@ -46,7 +49,7 @@ class Register extends React.Component {
                     <div className="form-row">
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Ad</label>
+                            <label htmlFor="inputRating" className="label-name">Ad</label>
                             <input
                                 className="form-control"
 
@@ -54,7 +57,7 @@ class Register extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Soyad</label>
+                            <label htmlFor="inputRating" className="label-name">Soyad</label>
                             <input
                                 className="form-control "
 
@@ -62,7 +65,7 @@ class Register extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Kullanıcı Tipi</label>
+                            <label htmlFor="inputRating" className="label-name">Kullanıcı Tipi</label>
                             <Usertype
                                 fieldName="userType"
                                 notNull={true}
@@ -70,7 +73,7 @@ class Register extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Yaş</label>
+                            <label htmlFor="inputRating" className="label-name">Yaş</label>
                             <input
                                 className="form-control "
 
@@ -78,7 +81,7 @@ class Register extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Cinsiyet</label>
+                            <label htmlFor="inputRating" className="label-name">Cinsiyet</label>
                             <Gender
                                 fieldName="gender"
                                 notNull={true}
@@ -86,7 +89,7 @@ class Register extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Eğitim Durumu</label>
+                            <label htmlFor="inputRating" className="label-name">Eğitim Durumu</label>
                             <Education
                                 fieldName="educationalStatus"
                                 notNull={true}
@@ -94,7 +97,7 @@ class Register extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Medeni Durumu</label>
+                            <label htmlFor="inputRating" className="label-name">Medeni Durumu</label>
                             <Marital_status
                                 fieldName="maritialStatus"
                                 notNull={true}
@@ -102,7 +105,7 @@ class Register extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Çalıştığı Sektör</label>
+                            <label htmlFor="inputRating" className="label-name">Çalıştığı Sektör</label>
                             <input
                                 className="form-control "
 
@@ -111,14 +114,14 @@ class Register extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Telefon Numarası</label>
+                            <label htmlFor="inputRating" className="label-name">Telefon Numarası</label>
                             <input
                                 className="form-control "
 
                                 name="userPhoneNumber1" />
                         </div>
                         <div className="form-group ">
-                            <label htmlFor="inputRating">2. Telefon Numarası</label>
+                            <label htmlFor="inputRating" className="label-name">2. Telefon Numarası</label>
                             <input
                                 className="form-control "
 
@@ -126,7 +129,7 @@ class Register extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Email Adresi</label>
+                            <label htmlFor="inputRating" className="label-name">Email Adresi</label>
                             <input
                                 className="form-control "
 
@@ -135,7 +138,7 @@ class Register extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Şifre</label>
+                            <label htmlFor="inputRating" className="label-name">Şifre</label>
                             <input
                                 className="form-control "
 
@@ -148,7 +151,14 @@ class Register extends React.Component {
                     <input type="submit" className="btn btn-danger btn-block" value="Kaydet" />
                     
                 </form>
+                
+                
+            
+            
             </div>
+
+            
+
 
         );
 

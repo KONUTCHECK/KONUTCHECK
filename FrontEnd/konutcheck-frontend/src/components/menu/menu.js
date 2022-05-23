@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import logo from "./img/logoo.png";
+import logo from "../homePage/img/logooo.png";
 
 class Menu extends React.Component {
 
@@ -20,8 +20,8 @@ class Menu extends React.Component {
 
     render() {
         return (
-            <div className="col-md-12 offset-md-12 ">
-                <Navbar bg="#fff" expand="lg">
+            <div className="col-md-12 offset-md-12">
+                <Navbar bg="#5b2f83" expand="lg">
                     <Container>
                         <Navbar.Brand href="/"><img src={logo} className="App-logo" /></Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -35,14 +35,13 @@ class Menu extends React.Component {
 
                                 <NavDropdown title="Hesabım" id="basic-nav-dropdown">
 
-                                    <NavDropdown.Item href="/add-homes">Ev Ekle</NavDropdown.Item>
-                                    <NavDropdown.Divider />
+
+                                    
                                     {!this.props.isLoggedOn && < NavDropdown.Item href="/register">Kayıt Ol</NavDropdown.Item>}
-                                    
-                                    
-                                    <NavDropdown.Divider />
                                     {!this.props.isLoggedOn && < NavDropdown.Item href="/login">Giriş</NavDropdown.Item>}
+                                    {this.props.isLoggedOn && <NavDropdown.Item href="/" >Ev Ekle</NavDropdown.Item>}
                                     {this.props.isLoggedOn && <NavDropdown.Item href="/" onClick={this.handleLogout}>Çıkış</NavDropdown.Item>}
+                                    
 
                                 
                                 </NavDropdown>

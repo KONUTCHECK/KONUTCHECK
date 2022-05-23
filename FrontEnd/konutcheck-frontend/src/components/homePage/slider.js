@@ -1,6 +1,8 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-import image from "./img/logoo.png";
+import image from "./img/morev.png";
+import Image from "./img/ev.png";
+
 
 
 
@@ -26,7 +28,7 @@ class Slider extends React.Component {
                     <Carousel.Item interval={1000}>
                         <img
                             className="d-block w-100"
-                            src={image}
+                            src= {image}
                             alt="First slide"
                         />
                         <Carousel.Caption>
@@ -37,7 +39,7 @@ class Slider extends React.Component {
                     <Carousel.Item interval={500}>
                         <img
                             className="d-block w-100"
-                            src={image}
+                            src= {Image}
                             alt="Second slide"
                         />
                         <Carousel.Caption>
