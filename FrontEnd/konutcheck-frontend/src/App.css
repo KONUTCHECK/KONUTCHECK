@@ -10,14 +10,26 @@
 
 .menu-item{
   margin: 0px 20px 0 10px;
-  
+}
+.navbar-light .navbar-nav .nav-link {
+
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 50px;
 }
 
+.nav-link{
+  color: white;
+}
 /*+*/
 .navbar-brand{
   margin-right: 3rem !important;
 }
 
+.slider-title{
+  font-size: 4.5rem;
+}
 .col-md-12{
   background-color: #9060ab;
 }
@@ -25,6 +37,11 @@
 .d-block{
   height: 580px
 } 
+
+@media screen and (max-width: 900px) {
+  .d-block {
+      height: 336px;}
+  }
 
 .form-group{
   margin-bottom: 14px;
@@ -86,15 +103,6 @@
   }
 }
 
-footer{
-  margin-top: 10px;
-  padding-top: 0rem;
-  padding-bottom: 0rem;
-  background-color: #a8abab;
-  text-align: center;
-  font-family: 'Noto Sans', sans-serif, cursive;
-  color: #5b2f83;
-}
 
 .col2{
   float: left;
@@ -107,7 +115,6 @@ footer{
   margin-top: 10px;
   padding-top: 0rem;
   padding-bottom: 0rem;
-  background-color: #a8abab;
   text-align: center;
   font-family: 'Noto Sans', sans-serif, cursive;
   color: #5b2f83;
@@ -136,6 +143,10 @@ footer li{
 .footer-item{
   width: 33%;
   margin-top: 33px;
+}
+
+.footer-social-links{
+  margin-left: 45px;
 }
 
 @media screen and (max-width: 900px) {

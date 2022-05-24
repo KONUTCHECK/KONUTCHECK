@@ -54,12 +54,13 @@ class LoginPage extends React.Component{
 
                             <img className="mb-4" 
                             src= {image} 
-                            alt="" width="102" height="72" />
+                            alt="" width="122" height="72" />
                             <h1 className="h3 mb-3 font-weight-normal">Giriş</h1>
 
-                          <h5>Email Adresi</h5>
+                          
                             <label htmlFor="inputEmail" className="sr-only">Email Adresi</label>
                             <input
+                                placeholder="Email adresinizi giriniz..."
                                 type="email"
                                 id="inputEmail"
                                 className="form-control"
@@ -69,9 +70,10 @@ class LoginPage extends React.Component{
                                 name="email"
                                 onChange={this.handlerChange}
                             />
-                         <h5>Şifre</h5>
+                         
                             <label htmlFor="inputPassword" className="sr-only">Şifre</label>
                             <input
+                                placeholder="Şifrenizi giriniz..."
                                 type="password"
                                 id="inputPassword"
                                 className="form-control"

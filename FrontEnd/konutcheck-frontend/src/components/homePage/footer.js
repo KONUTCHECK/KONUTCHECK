@@ -55,7 +55,7 @@ class Footer extends React.Component {
                                         <p>
                                     <strong>  Bizi aşağıdaki sosyal medya hesaplarından takip ederek destekleyebilirsiniz.</strong>
                                     </p>
-                                        <ul>
+                                        <ul className="footer-social-links">
                     
                     <li>
                         <button class="btn-social">

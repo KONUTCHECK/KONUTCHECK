@@ -27,9 +27,9 @@ class Menu extends React.Component {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
-                                <Nav.Link href="/" className="menu-item">Ana Sayfa</Nav.Link>
+                                <Nav.Link href="/">Ana Sayfa</Nav.Link>
                                 <Nav.Link href="/">Hakkımızda</Nav.Link>
-                                <Nav.Link href="/homes">Evler</Nav.Link>
+                                <Nav.Link href="/homes" >Evler</Nav.Link>
                                 <Nav.Link href="/">Bize Ulaşın</Nav.Link>
 
 
@@ -39,7 +39,7 @@ class Menu extends React.Component {
                                     
                                     {!this.props.isLoggedOn && < NavDropdown.Item href="/register">Kayıt Ol</NavDropdown.Item>}
                                     {!this.props.isLoggedOn && < NavDropdown.Item href="/login">Giriş</NavDropdown.Item>}
-                                    {this.props.isLoggedOn && <NavDropdown.Item href="/" >Ev Ekle</NavDropdown.Item>}
+                                    {this.props.isLoggedOn && <NavDropdown.Item href="">Ev Ekle</NavDropdown.Item>}
                                     {this.props.isLoggedOn && <NavDropdown.Item href="/" onClick={this.handleLogout}>Çıkış</NavDropdown.Item>}
                                     
 

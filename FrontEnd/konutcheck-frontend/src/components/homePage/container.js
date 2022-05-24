@@ -24,8 +24,7 @@ class Container extends React.Component {
                         <Card.Body>
                             <Card.Title>Misyonumuz</Card.Title>
                             <Card.Text>
-                                This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.
+                                  KONUTCHECK olarak ev kiralama hizmetini ve sonrasını kullanıcılarına en iyi şekilde sunmak.  
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -34,8 +33,9 @@ class Container extends React.Component {
                         <Card.Body>
                             <Card.Title>Vizyonumuz</Card.Title>
                             <Card.Text>
-                                This card has supporting text below as a natural lead-in to additional
-                                content.{' '}
+                                  Kalite standartlarını, kullanıcıya uygun bir şekilde geliştirip, yükselterek gayrimenkul
+                                 sektöründe yerimizi alıp iyi bir konuma gelmek ve kullanıcılarımızın kiralama hizmetinde
+                                  yaşadığı sorunlara çözüm bulmak.{' '}
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -44,9 +44,8 @@ class Container extends React.Component {
                         <Card.Body>
                             <Card.Title>Neden Biz?</Card.Title>
                             <Card.Text>
-                                This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This card has even longer content than the first to
-                                show that equal height action.
+                                  Siz değerli kullanıcılarımıza, ev kiralarken ya da evinizi kiralarken yaşayabileceğiniz tüm sorunları 
+                                ve ikilemleri çözerek huzur ve güven ortamında kiralama hizmeti sağlayabiliriz.
                             </Card.Text>
                         </Card.Body>
                     </Card>

@@ -32,8 +32,8 @@ class Slider extends React.Component {
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            <h3 className="slider-title">KONUTCHECK</h3>
+                            <p>Tek tıkla 'ev'lenin</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item interval={500}>
@@ -43,7 +43,7 @@ class Slider extends React.Component {
                             alt="Second slide"
                         />
                         <Carousel.Caption>
-                            <h3>Second slide label</h3>
+                            <h3 className="slider-title">Second slide label</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -54,7 +54,7 @@ class Slider extends React.Component {
                             alt="Third slide"
                         />
                         <Carousel.Caption>
-                            <h3>Third slide label</h3>
+                            <h3 className="slider-title">Third slide label</h3>
                             <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
