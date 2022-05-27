@@ -30,6 +30,7 @@ class Menu extends React.Component {
                                 <Nav.Link href="/">Ana Sayfa</Nav.Link>
                                 <Nav.Link href="/">Hakkımızda</Nav.Link>
                                 <Nav.Link href="/homes" >Evler</Nav.Link>
+                                <Nav.Link href="/users">Kullanıcılar</Nav.Link>
                                 <Nav.Link href="/">Bize Ulaşın</Nav.Link>
 
 
