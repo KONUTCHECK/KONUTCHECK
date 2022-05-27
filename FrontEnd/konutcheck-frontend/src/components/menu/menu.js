@@ -14,7 +14,7 @@ class Menu extends React.Component {
         this.handleLogout = this.handleLogout.bind(this);
     }
 
-    handleLogout(){
+    handleLogout() {
         this.props.logout();
     }
 
@@ -36,20 +36,20 @@ class Menu extends React.Component {
                                 <NavDropdown title="Hesabım" id="basic-nav-dropdown">
 
 
-                                    
+
                                     {!this.props.isLoggedOn && < NavDropdown.Item href="/register">Kayıt Ol</NavDropdown.Item>}
                                     {!this.props.isLoggedOn && < NavDropdown.Item href="/login">Giriş</NavDropdown.Item>}
-                                    {this.props.isLoggedOn && <NavDropdown.Item href="">Ev Ekle</NavDropdown.Item>}
+                                    {this.props.isLoggedOn && <NavDropdown.Item href="/add-homes">Ev Ekle</NavDropdown.Item>}
                                     {this.props.isLoggedOn && <NavDropdown.Item href="/" onClick={this.handleLogout}>Çıkış</NavDropdown.Item>}
-                                    
 
-                                
+
+
                                 </NavDropdown>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
-            </div> 
+            </div>
         );
     }
 }

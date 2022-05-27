@@ -62,9 +62,13 @@
 .btn{
   background-color: #5b2f83;
   border: #5b2f83;
+  color: white;
 }
 .btn:hover{
   background-color: #9060ab;
+}
+.btn:active {
+  transform: scale(1.1);
 }
 .btn-danger:hover{
   background-color: #9060ab;
@@ -199,4 +203,21 @@ ul{
   padding-top: 2rem;
   padding-bottom: 2rem;
   text-align: center;
+}
+
+.add-tenant {
+  display: none;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.my-card:hover  .add-tenant {
+  display: flex;
+}
+
+.add-tenant:hover {
+  display: flex;
 }
