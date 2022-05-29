@@ -38,8 +38,8 @@ public class Ho_HomeController {
         return ResponseEntity.ok(generalHomeInfoDto);
     }
 
-    @GetMapping("/{homeType}")
-    public ResponseEntity getAllByHomeType(@PathVariable HomeTypes homeType){
+    @GetMapping("/")
+    public ResponseEntity getAllByHomeType(@RequestParam HomeTypes homeType){
         List<GeneralHomeInfoDto> homeDetailsList = hoHomeService.getAllHomesByHomeType(homeType);
         return ResponseEntity.ok(homeDetailsList);
     }

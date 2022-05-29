@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 export default function HomeUpdatePage() {
 
-    /*const [amount, setAmount] = useState('');
+    const [amount, setAmount] = useState('');
     const [deposit, setDeposit] = useState('');
     const [dues, setDues] = useState('');
     const [numberOfRooms, setNumberOfRooms] = useState('');
@@ -243,6 +243,6 @@ export default function HomeUpdatePage() {
                 </Link>
             </form>
         </div>
-    );*/
+    );
 }
 

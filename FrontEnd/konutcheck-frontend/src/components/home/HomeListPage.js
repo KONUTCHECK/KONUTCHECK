@@ -105,7 +105,7 @@ class HomeListPage extends React.Component {
 
         return (
             <div className="row col-md-12 offset-md-1">
-                <label className="sr-only">İlk Tarih</label>
+                <label className="sr-only"></label>
                 <HomeTypes
                 type="combobox"
                 value={this.state.homeType}
