@@ -56,23 +56,23 @@ export default function HomeUpdatePage() {
     const updateAPIData = () => {
         axios.put('/homes/update-home-infos', {
             id,
-            amount, 
-            deposit, 
-            dues, 
-            numberOfRooms, 
-            warningSystem, 
-            buildingAge, 
-            homeAspect, 
-            floor, 
-            homeSize, 
-            homeType, 
-            country, 
-            city, 
-            district, 
-            neighborhood,  
-            street, 
-            buildingNo, 
-            apartmentNo, 
+            amount,
+            deposit,
+            dues,
+            numberOfRooms,
+            warningSystem,
+            buildingAge,
+            homeAspect,
+            floor,
+            homeSize,
+            homeType,
+            country,
+            city,
+            district,
+            neighborhood,
+            street,
+            buildingNo,
+            apartmentNo,
             announcementDate
         })
     }
@@ -239,7 +239,7 @@ export default function HomeUpdatePage() {
                     </div>
                 </div>
                 <Link to='#'>
-                <Button type='submit' onClick={updateAPIData()}>Update</Button>
+                    <Button type='submit' onClick={() => updateAPIData()}>Update</Button>
                 </Link>
             </form>
         </div>

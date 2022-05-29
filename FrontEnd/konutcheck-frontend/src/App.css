@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #e1ccf5;
 }
 
 .App-logo {
@@ -7,12 +8,74 @@
   pointer-events: none;
 }
 
+.menu-item{
+  margin: 0px 20px 0 10px;
+}
+.navbar-light .navbar-nav .nav-link {
+
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 50px;
+}
+
+.nav-link{
+  color: white;
+}
 /*+*/
 .navbar-brand{
   margin-right: 3rem !important;
 }
 
+.slider-title{
+  font-size: 4.5rem;
+}
+.col-md-12{
+  background-color: #9060ab;
+}
 
+.d-block{
+  height: 580px
+} 
+
+@media screen and (max-width: 900px) {
+  .d-block {
+      height: 336px;}
+  }
+
+.form-group{
+  margin-bottom: 14px;
+}
+.form-control{
+  border: 1px solid purple;
+  margin-bottom: 20px;
+}
+
+
+.form-select{
+  border: 1px solid purple;
+}
+
+.label-name{
+  font-weight: 700;
+}
+.btn{
+  background-color: #5b2f83;
+  border: #5b2f83;
+  color: white;
+}
+.btn:hover{
+  background-color: #9060ab;
+}
+.btn:active {
+  transform: scale(1.1);
+}
+.btn-danger:hover{
+  background-color: #9060ab;
+}
+.btn-block{
+  background-color: #9060ab;
+}
 
 .App-header {
   background-color: #282c34;
@@ -29,6 +92,12 @@
   color: #61dafb;
 }
 
+/* ++*/
+.cardgroup{
+  margin-top: 20px;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,4 +105,119 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.col2{
+  float: left;
+  width: 31%;
+  padding: 4rem;
+}
+.footer{
+  background-color: #a8abab;
+  margin-top: 39px;
+  margin-top: 10px;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif, cursive;
+  color: #5b2f83;
+}
+
+.footer h4{
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+footer p{
+  font-size: 2rem;
+  padding-top: 2.5rem;
+  font-weight: 200;
+}
+
+footer li{
+  display: inline-block;
+  margin: 1rem;
+  text-align: left;
+}
+.footer-links{
+  text-decoration: none;
+  color: #5b2f83;
+}
+.footer-item{
+  width: 33%;
+  margin-top: 33px;
+}
+
+.footer-social-links{
+  margin-left: 45px;
+}
+
+@media screen and (max-width: 900px) {
+  .footer-item {
+      width: 100%;
+      margin-top: 33px ;}
+  }
+
+ul{
+  list-style-type: none;
+}
+
+@media screen and (max-width: 900px) {
+  ul{
+    margin-right: 32px ; }
+}
+  
+.footer-links:hover{
+  color: white;
+}
+.social-links{
+  color: #5b2f83;
+}
+.social-links:hover{
+  color: #5b2f83;
+}
+.btn-social{
+  float: left;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  font-size: 1rem;
+  line-height: 2rem;
+  background-color: #cfc8d3;
+  border-color: #5b2f83;
+  transition: all 0.5s;
+  margin-right: 20px;
+}
+
+.btn-social:hover{
+  background-color: white;
+}
+.fab{
+  color:#5b2f83
+}
+
+.copyright{
+  background-color:#666868 ;
+  color: black;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.add-tenant {
+  display: none;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.my-card:hover  .add-tenant {
+  display: flex;
+}
+
+.add-tenant:hover {
+  display: flex;
 }

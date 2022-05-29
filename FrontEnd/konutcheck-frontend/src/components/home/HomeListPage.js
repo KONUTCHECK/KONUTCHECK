@@ -82,21 +82,21 @@ class HomeListPage extends React.Component {
         localStorage.setItem('Fiyat', amount);
         localStorage.setItem('Depozit', deposit);
         localStorage.setItem('Aidat', dues);
-        localStorage.setItem('OdaSayısı', numberOfRooms);
-        localStorage.setItem('IsınmaŞekli', warningSystem);
-        localStorage.setItem('BinaYaşı', buildingAge);
+        localStorage.setItem('Oda Sayısı', numberOfRooms);
+        localStorage.setItem('Isınma Şekli', warningSystem);
+        localStorage.setItem('Bina Yaşı', buildingAge);
         localStorage.setItem('Cephe', homeAspect);
         localStorage.setItem('Bulunduğu Kat', floor);
         localStorage.setItem('Metrekare', homeSize);
-        localStorage.setItem('EvTipi', homeType);
+        localStorage.setItem('Ev Tipi', homeType);
         localStorage.setItem('Ülke', country);
         localStorage.setItem('Şehir', city);
         localStorage.setItem('İlçe', district);
         localStorage.setItem('Mahalle', neighborhood);
         localStorage.setItem('Sokak', street);
-        localStorage.setItem('BinaNo', buildingNo);
-        localStorage.setItem('KapıNo', apartmentNo);
-        localStorage.setItem('SonGüncelleme', announcementDate);
+        localStorage.setItem('Bina No', buildingNo);
+        localStorage.setItem('Kapı No', apartmentNo);
+        localStorage.setItem('Son Güncelleme', announcementDate);
 
         console.log(home)
     }
@@ -107,19 +107,19 @@ class HomeListPage extends React.Component {
             <div className="row col-md-12 offset-md-1">
                 <label className="sr-only"></label>
                 <HomeTypes
-                type="combobox"
-                value={this.state.homeType}
-                name="homeType"
-                onChange={this.handlerChange}
+                    type="combobox"
+                    value={this.state.homeType}
+                    name="homeType"
+                    onChange={this.handlerChange}
                 >
                 </HomeTypes>
-               
-        
-                 <button onClick={() => this.handleSearch()}>Arama</button>
-               
-                {this.state.homeList.map((home, i) => (
 
-                    <Card style={{ width: '18rem', margin: '2rem' }} key={i}>
+
+                <button onClick={() => this.handleSearch()}>Arama</button>
+
+                {this.state.homeList.map((home, i) => (
+                    <Card className="my-card" style={{ width: '18rem', margin: '2rem' }} key={i}>
+                        <Button className="btn-light add-tenant">➕</Button>
                         <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
                         <Card.Body>
                             <Card.Title>{home.homeType}</Card.Title>
@@ -143,7 +143,6 @@ class HomeListPage extends React.Component {
                             </Link>
                         </Card.Body>
                     </Card>
-
                 ))}
 
             </div>
