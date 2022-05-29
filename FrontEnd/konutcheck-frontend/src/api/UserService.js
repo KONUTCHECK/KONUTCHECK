@@ -7,7 +7,15 @@ class UserService{
         return axios.get(url);
     }
 
+    getUserInfo(){
+        const url = "/users/user-info";
+        return axios.get(url);
+    }
 
+    deleteUser(id) {
+        const url = '/users/' + id;
+        return axios.delete(url, id);
+    }
     
 }
 

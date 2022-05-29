@@ -1,6 +1,7 @@
 package com.SeniorProject.konutcheck.app.user.controller;
 
 import com.SeniorProject.konutcheck.app.user.dto.Us_UserDto;
+import com.SeniorProject.konutcheck.app.user.dto.Us_UserGetInfoDto;
 import com.SeniorProject.konutcheck.app.user.dto.Us_UserSaveDto;
 import com.SeniorProject.konutcheck.app.user.enums.UserType;
 import com.SeniorProject.konutcheck.app.user.service.Us_UserService;
@@ -9,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
@@ -24,7 +26,13 @@ public class Us_UserController {
 
     @GetMapping
     public ResponseEntity getAll(){
-        List<Us_UserDto> usUserDtoList = usUserService.getAllUsers();
+        List<Us_UserGetInfoDto> usUserDtoList = usUserService.getAllUsers();
+        return ResponseEntity.ok(usUserDtoList);
+    }
+
+    @GetMapping("/user-info")
+    public ResponseEntity getUserById(){
+        Us_UserGetInfoDto usUserDtoList = usUserService.getUserById();
         return ResponseEntity.ok(usUserDtoList);
     }
 

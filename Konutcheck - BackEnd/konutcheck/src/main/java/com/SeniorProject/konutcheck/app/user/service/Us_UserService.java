@@ -8,25 +8,28 @@ import com.SeniorProject.konutcheck.app.general.exceptionEnums.GeneralErrorMessa
 import com.SeniorProject.konutcheck.app.general.exceptions.DuplicateException;
 import com.SeniorProject.konutcheck.app.general.exceptions.InvalidInformationExceptions;
 import com.SeniorProject.konutcheck.app.general.exceptions.ItemNotFoundExceptions;
+import com.SeniorProject.konutcheck.app.securityGeneral.service.AuthenticationService;
 import com.SeniorProject.konutcheck.app.user.converter.Us_UserMapperConverter;
 import com.SeniorProject.konutcheck.app.user.dto.Us_UserDto;
+import com.SeniorProject.konutcheck.app.user.dto.Us_UserGetInfoDto;
 import com.SeniorProject.konutcheck.app.user.dto.Us_UserSaveDto;
 import com.SeniorProject.konutcheck.app.user.entity.Us_User;
 import com.SeniorProject.konutcheck.app.user.enums.UserType;
 import com.SeniorProject.konutcheck.app.user.service.entityService.Us_UserEntityService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class Us_UserService {
     private final Us_UserEntityService usUserEntityService;
     private final PasswordEncoder passwordEncoder;
-    private final LandlordEvaluationEntityService landlordEvaluationEntityService;
-    private final TenantEvaluationEntityService tenantEvaluationEntityService;
 
     public Us_UserDto saveUser(Us_UserSaveDto usUserSaveDto){
         isEmailExist(usUserSaveDto.getEmail());
@@ -40,9 +43,16 @@ public class Us_UserService {
         return usUserDto;
     }
 
-    public List<Us_UserDto> getAllUsers(){
+    public List<Us_UserGetInfoDto> getAllUsers(){
         List<Us_User> usUserList = usUserEntityService.findAll();
-        List<Us_UserDto> usUserDtoList = Us_UserMapperConverter.INSTANCE.convertToUsUserDtoListFromUsUserList(usUserList);
+        List<Us_UserGetInfoDto> usUserDtoList = Us_UserMapperConverter.INSTANCE.convertToUsUserGetInfoDtoListFromUsUserList(usUserList);
+        return usUserDtoList;
+    }
+
+    public Us_UserGetInfoDto getUserById(){
+        Long id = usUserEntityService.getCurrentUser();
+        Us_User usUserList = usUserEntityService.getIdWithControl(id);
+        Us_UserGetInfoDto usUserDtoList = Us_UserMapperConverter.INSTANCE.convertToUsUserGetInfoDtoFromUsUser(usUserList);
         return usUserDtoList;
     }
 

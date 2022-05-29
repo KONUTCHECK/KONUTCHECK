@@ -28,20 +28,7 @@ class UserListPage extends React.Component {
     handleError(error) {
         console.log("Kullanıcılar çekilirken hata oluştu");
     }
-    handleDeleteUser(user) {
-        console.log(user);
-
-        UserService.deleteUser(user.id).then(response => this.handlerDeleteResponse(response)).catch(error => this.handleDeleteError(error));
-
-    }
-
-    handlerDeleteResponse(response) {
-        this.componentDidMount();
-    }
-
-    handleDeleteError(error) {
-        console.log("Kullanıcı silinirken hata oluştu");
-    }
+    
 
     render() {
 
@@ -63,7 +50,6 @@ class UserListPage extends React.Component {
             <ListGroup.Item>{user.email}</ListGroup.Item>
             <ListGroup.Item>{user.userPhoneNumber1}</ListGroup.Item>
             <ListGroup.Item>{user.userPhoneNumber2}</ListGroup.Item>
-            <ListGroup.Item>{user.password}</ListGroup.Item>
           </ListGroup>
               </Accordion.Body>
             </Accordion.Item>
