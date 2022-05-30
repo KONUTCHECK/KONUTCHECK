@@ -157,6 +157,9 @@ footer li{
   .footer-item {
       width: 100%;
       margin-top: 33px ;}
+      .row>* {
+        margin-bottom: 5px;
+      }
   }
 
 ul{

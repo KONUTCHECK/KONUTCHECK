@@ -103,18 +103,26 @@ class HomeListPage extends React.Component {
     render() {
 
         return (
-            <div className="row col-md-12 offset-md-1">
-                <label className="sr-only"></label>
-                <HomeTypes
-                    type="combobox"
-                    value={this.state.homeType}
-                    name="homeType"
-                    onChange={this.handlerChange}
-                >
-                </HomeTypes>
+            <div className="row" style={{ margin: '10px 0 0 0' }}>
+                <div className="col-md-10">
+                    <HomeTypes
+                        type="combobox"
+                        value={this.state.homeType}
+                        name="homeType"
+                        onChange={this.handlerChange}
+                    >
+                    </HomeTypes>
+                </div>
+                <div className="col-md-2">
+                    <div className="d-grid gap-2">
+                        <Button variant="secondary" onClick={() => this.handleSearch()}>Arama</Button>
+                    </div>
+
+                </div>
 
 
-                <button onClick={() => this.handleSearch()}>Arama</button>
+
+
 
                 {this.state.homeList.map((home, i) => (
                     <Card className="my-card" style={{ width: '18rem', margin: '2rem' }} key={i}>
