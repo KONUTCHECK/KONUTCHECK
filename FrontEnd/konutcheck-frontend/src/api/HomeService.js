@@ -32,7 +32,7 @@ class HomeService {
     }
 
     getHomeByType(type) {
-        const url = '/homes?homeType=' + type.toString();
+        const url = '/homes/?homeType=' + type.toString();
         return axios.get(url);
     }
 

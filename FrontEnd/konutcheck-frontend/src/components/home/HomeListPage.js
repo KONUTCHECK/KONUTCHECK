@@ -24,8 +24,8 @@ class HomeListPage extends React.Component {
     }
 
     componentDidMount() {
+        this.setState({ homeType: "Daire" })
         this.getHomeList();
-        this.getHomeListByType();
     }
 
     getHomeList() {
@@ -64,14 +64,13 @@ class HomeListPage extends React.Component {
     }
 
     handleSearch() {
-        HomeService.getHomeByType(this.state.homeType).then(response => this.handleResponse(response))
+        HomeService.getHomeByType(this.state.homeType).then(response => this.handlerResponse(response))
             .catch(error => this.handleError(error))
     }
 
     handlerChange(event) {
 
         this.setState({ [event.target.name]: event.target.value })
-
         console.log(this.state)
     }
 
