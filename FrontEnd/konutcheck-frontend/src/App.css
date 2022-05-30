@@ -13,25 +13,40 @@
 }
 .navbar-light .navbar-nav .nav-link {
 
-  color: white;
+  color: #000;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: bold;
   padding-left: 50px;
 }
 
-.nav-link{
-  color: white;
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #9060ab;
 }
-/*+*/
+
+.nav-link{
+  color: #5b2f83;
+}
+
 .navbar-brand{
   margin-right: 3rem !important;
 }
+.dropdown-item:hover {
+  background-color: #9f74b8 ;
 
+}
 .slider-title{
   font-size: 4.5rem;
+  margin-bottom: 30px;
+  margin-right: 26rem;
+}
+
+.slider-p{
+  font-size: 47px;
+  margin-right: 33rem;
 }
 .col-md-12{
-  background-color: #9060ab;
+  background-color: #fff;
+  border: 3px solid #e1968e;
 }
 
 .d-block{
@@ -62,13 +77,10 @@
 .btn{
   background-color: #5b2f83;
   border: #5b2f83;
-  color: white;
+  margin-bottom: 10px;
 }
 .btn:hover{
   background-color: #9060ab;
-}
-.btn:active {
-  transform: scale(1.1);
 }
 .btn-danger:hover{
   background-color: #9060ab;
@@ -92,11 +104,6 @@
   color: #61dafb;
 }
 
-/* ++*/
-.cardgroup{
-  margin-top: 20px;
-}
-
 
 @keyframes App-logo-spin {
   from {
@@ -115,8 +122,6 @@
 }
 .footer{
   background-color: #a8abab;
-  margin-top: 39px;
-  margin-top: 10px;
   padding-top: 0rem;
   padding-bottom: 0rem;
   text-align: center;
@@ -127,12 +132,18 @@
 .footer h4{
   font-size: 1rem;
   font-weight: 700;
+  margin-top: 10px;
 }
 
 footer p{
   font-size: 2rem;
   padding-top: 2.5rem;
   font-weight: 200;
+}
+
+.about-us{
+  margin-top: 23px;
+
 }
 
 footer li{
@@ -157,9 +168,6 @@ footer li{
   .footer-item {
       width: 100%;
       margin-top: 33px ;}
-      .row>* {
-        margin-bottom: 5px;
-      }
   }
 
 ul{
@@ -201,26 +209,10 @@ ul{
 }
 
 .copyright{
-  background-color:#666868 ;
+  background-color:#fff ;
   color: black;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  border: 3px solid #e1968e;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   text-align: center;
-}
-
-.add-tenant {
-  display: none;
-  position: absolute;
-  right: -10px;
-  top: -10px;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.my-card:hover  .add-tenant {
-  display: flex;
-}
-
-.add-tenant:hover {
-  display: flex;
 }
