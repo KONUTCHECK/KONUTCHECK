@@ -28,33 +28,32 @@ class UserListPage extends React.Component {
     handleError(error) {
         console.log("Kullanıcılar çekilirken hata oluştu");
     }
-    
+
 
     render() {
 
         return (
-            <div className="row col-md-12 offset-md-1">
-                
+            <div className="row p-1">
+
                 {this.state.userList.map((user, i) => (
-            <Accordion>
-            <Accordion.Item eventKey="0">
-              <Accordion.Header>{user.name} {user.surname}</Accordion.Header>
-              <Accordion.Header>{user.userType}</Accordion.Header>
-              <Accordion.Body>
-               <ListGroup>
-            <ListGroup.Item>{user.age}</ListGroup.Item>
-            <ListGroup.Item>{user.gender}</ListGroup.Item>
-            <ListGroup.Item>{user.educationalStatus}</ListGroup.Item>
-            <ListGroup.Item>{user.job}</ListGroup.Item>
-            <ListGroup.Item>{user.maritialStatus}</ListGroup.Item>
-            <ListGroup.Item>{user.email}</ListGroup.Item>
-            <ListGroup.Item>{user.userPhoneNumber1}</ListGroup.Item>
-            <ListGroup.Item>{user.userPhoneNumber2}</ListGroup.Item>
-          </ListGroup>
-              </Accordion.Body>
-            </Accordion.Item>
-          
-          </Accordion>
+                    <Accordion key={user.id}>
+                        <Accordion.Item eventKey="0">
+                            <Accordion.Header>{user.name} {user.surname}{` (${user.userType})`}</Accordion.Header>
+                            <Accordion.Body>
+                                <ListGroup>
+                                    <ListGroup.Item>{user.age}</ListGroup.Item>
+                                    <ListGroup.Item>{user.gender}</ListGroup.Item>
+                                    <ListGroup.Item>{user.educationalStatus}</ListGroup.Item>
+                                    <ListGroup.Item>{user.job}</ListGroup.Item>
+                                    <ListGroup.Item>{user.maritialStatus}</ListGroup.Item>
+                                    <ListGroup.Item>{user.email}</ListGroup.Item>
+                                    <ListGroup.Item>{user.userPhoneNumber1}</ListGroup.Item>
+                                    <ListGroup.Item>{user.userPhoneNumber2}</ListGroup.Item>
+                                </ListGroup>
+                            </Accordion.Body>
+                        </Accordion.Item>
+
+                    </Accordion>
 
                 ))}
             </div>

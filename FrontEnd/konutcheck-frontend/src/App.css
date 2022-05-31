@@ -67,9 +67,6 @@
 .btn:hover{
   background-color: #9060ab;
 }
-.btn:active {
-  transform: scale(1.1);
-}
 .btn-danger:hover{
   background-color: #9060ab;
 }
@@ -223,4 +220,7 @@ ul{
 
 .add-tenant:hover {
   display: flex;
+}
+.add-tenant:active {
+  transform: scale(1.1);
 }

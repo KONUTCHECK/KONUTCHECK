@@ -29,7 +29,7 @@ class UserInfoPage extends React.Component {
     handleError(error) {
         console.log("Kullanıcılar çekilirken hata oluştu");
     }
-    
+
     handleDeleteUser(user) {
         UserService.deleteUser(user.id).then(response => this.handlerDeleteResponse(response)).catch(error => this.handleDeleteError(error));
 
@@ -46,9 +46,9 @@ class UserInfoPage extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className="row p-1">
 
-                <Card className="my-card" style={{ width: '100%', margin: '2rem' }} >
+                <Card className="my-card" >
                     <Card.Body>
                         <Card.Title>{this.state.user.name} {this.state.user.surname}</Card.Title>
                         <ListGroup>
@@ -65,8 +65,8 @@ class UserInfoPage extends React.Component {
                     </Card.Body>
 
                     <Card.Body>
-                        <Button style={{ marginLeft: "10px" }}  
-                        className="btn btn-info" >Delete</Button>
+                        <Button style={{ marginLeft: "10px" }}
+                            className="btn btn-info" >Delete</Button>
                     </Card.Body>
                 </Card>
 
