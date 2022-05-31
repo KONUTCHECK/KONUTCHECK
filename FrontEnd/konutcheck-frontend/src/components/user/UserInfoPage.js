@@ -48,7 +48,7 @@ class UserInfoPage extends React.Component {
         return (
             <div>
 
-                <Card className="my-card" style={{ width: '100%', margin: '2rem' }} >
+                <Card className="my-card" style={{ margin: '2rem' }} >
                     <Card.Body>
                         <Card.Title>{this.state.user.name} {this.state.user.surname}</Card.Title>
                         <ListGroup>
@@ -66,7 +66,7 @@ class UserInfoPage extends React.Component {
 
                     <Card.Body>
                         <Button style={{ marginLeft: "10px" }}  
-                        className="btn btn-info" >Delete</Button>
+                        className="btn btn-info" >Profili Sil</Button>
                     </Card.Body>
                 </Card>
 

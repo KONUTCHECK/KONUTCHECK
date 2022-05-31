@@ -38,11 +38,15 @@
   font-size: 4.5rem;
   margin-bottom: 30px;
   margin-right: 26rem;
+  background-color:#00000073;
+  border-radius: 8px;
 }
 
 .slider-p{
-  font-size: 47px;
+  font-size: 35px;
   margin-right: 33rem;
+  background-color: #00000073;
+  border-radius: 8px;
 }
 .col-md-12{
   background-color: #fff;
@@ -88,6 +92,13 @@
 .btn-block{
   background-color: #9060ab;
 }
+.btn-info{
+  background-color: red;
+  float: left;
+}
+.btn-info:hover{
+  background-color: rgb(243, 138, 138);
+}
 
 .App-header {
   background-color: #282c34;
@@ -114,6 +125,37 @@
   }
 }
 
+.whole-user{
+  margin-bottom: 10px;
+}
+.user-table{
+  width: 30%;
+  display: inline-block;
+  margin: 15px 15px 5px 5px;
+  border: 2px solid purple;
+  border-radius: 14px;
+}
+
+@media screen and (max-width: 900px) {
+  .user-table {
+      width: 100%;
+      display: block;}
+  }
+
+  .accordion-button {
+    font-size: 1.3rem;
+  }
+
+  .accordion-button:not(.collapsed){
+    background-color: #d0b7df;
+    color: #000;
+    box-shadow:  0 0 0.25rem #000;
+  }
+  .list-group-item {
+    font-weight: 500;
+    background-color: #d4d4d4;
+    border: 0px solid rgba(0,0,0,.125)
+  }
 
 .col2{
   float: left;
@@ -126,13 +168,14 @@
   padding-bottom: 0rem;
   text-align: center;
   font-family: 'Noto Sans', sans-serif, cursive;
-  color: #5b2f83;
+  color: #000;
 }
 
 .footer h4{
   font-size: 1rem;
   font-weight: 700;
-  margin-top: 10px;
+  margin-top: 14px;
+  margin-left: 2px;
 }
 
 footer p{
@@ -142,7 +185,7 @@ footer p{
 }
 
 .about-us{
-  margin-top: 23px;
+  margin-top: 6px;
 
 }
 
@@ -153,15 +196,15 @@ footer li{
 }
 .footer-links{
   text-decoration: none;
-  color: #5b2f83;
+  color: #000;
 }
 .footer-item{
-  width: 33%;
+  width: 35%;
   margin-top: 33px;
 }
 
 .footer-social-links{
-  margin-left: 45px;
+  margin-left: 70px;
 }
 
 @media screen and (max-width: 900px) {
@@ -183,7 +226,7 @@ ul{
   color: white;
 }
 .social-links{
-  color: #5b2f83;
+  color: #000;
 }
 .social-links:hover{
   color: #5b2f83;
@@ -196,7 +239,7 @@ ul{
   font-size: 1rem;
   line-height: 2rem;
   background-color: #cfc8d3;
-  border-color: #5b2f83;
+  border-color: #000;
   transition: all 0.5s;
   margin-right: 20px;
 }
@@ -205,7 +248,7 @@ ul{
   background-color: white;
 }
 .fab{
-  color:#5b2f83
+  color:#000
 }
 
 .copyright{

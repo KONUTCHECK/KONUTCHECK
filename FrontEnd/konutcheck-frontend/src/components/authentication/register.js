@@ -148,7 +148,7 @@ class Register extends React.Component {
 
                     </div>
                     
-                    <input type="submit" className="btn btn-danger btn-block" value="Kaydet" />
+                    <input type="submit" className="btn btn-danger btn-block" value="Kayıt Ol" />
                     
                 </form>
                 

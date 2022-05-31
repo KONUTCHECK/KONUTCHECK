@@ -47,7 +47,7 @@ class HomeAddPage extends React.Component {
                     <div className="form-row">
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Fiyat</label>
+                            <label htmlFor="inputRating" className="label-name">Fiyat</label>
                             <input
                                 className="form-control "
 
@@ -55,7 +55,7 @@ class HomeAddPage extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Depozit</label>
+                            <label htmlFor="inputRating" className="label-name">Depozit</label>
                             <input
                                 className="form-control "
 
@@ -63,7 +63,7 @@ class HomeAddPage extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Aidat</label>
+                            <label htmlFor="inputRating" className="label-name">Aidat</label>
                             <input
                                 className="form-control "
 
@@ -71,7 +71,7 @@ class HomeAddPage extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Oda Sayısı</label>
+                            <label htmlFor="inputRating" className="label-name">Oda Sayısı</label>
                             <input
                                 className="form-control "
 
@@ -79,7 +79,7 @@ class HomeAddPage extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Isınma Şekli</label>
+                            <label htmlFor="inputRating" className="label-name">Isınma Şekli</label>
                             <WarningSystemType
                                 fieldName="warningSystem"
                                 notNull={true}
@@ -87,7 +87,7 @@ class HomeAddPage extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Bina Yaşı</label>
+                            <label htmlFor="inputRating" className="label-name">Bina Yaşı</label>
                             <input
                                 className="form-control "
 
@@ -95,7 +95,7 @@ class HomeAddPage extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Cephe</label>
+                            <label htmlFor="inputRating" className="label-name">Cephe</label>
                             <HomeAspects
                                 fieldName="homeAspect"
                                 notNull={true}
@@ -103,7 +103,7 @@ class HomeAddPage extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Kat</label>
+                            <label htmlFor="inputRating" className="label-name">Kat</label>
                             <input
                                 className="form-control "
 
@@ -111,7 +111,7 @@ class HomeAddPage extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Metrekare</label>
+                            <label htmlFor="inputRating" className="label-name">Metrekare</label>
                             <input
                                 className="form-control "
 
@@ -119,7 +119,7 @@ class HomeAddPage extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Ev Tipi</label>
+                            <label htmlFor="inputRating" className="label-name">Ev Tipi</label>
                             <HomeTypes
                                 fieldName="homeType"
                                 notNull={true}
@@ -127,7 +127,7 @@ class HomeAddPage extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Ülke</label>
+                            <label htmlFor="inputRating" className="label-name">Ülke</label>
                             <Countries
                                 fieldName="country"
                                 notNull={true}
@@ -135,7 +135,7 @@ class HomeAddPage extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Şehir</label>
+                            <label htmlFor="inputRating" className="label-name">Şehir</label>
                             <Cities
                                 fieldName="city"
                                 notNull={true}
@@ -143,7 +143,7 @@ class HomeAddPage extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">İlçe</label>
+                            <label htmlFor="inputRating" className="label-name">İlçe</label>
                             <input
                                 className="form-control "
 
@@ -151,7 +151,7 @@ class HomeAddPage extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Mahalle</label>
+                            <label htmlFor="inputRating" className="label-name">Mahalle</label>
                             <input
                                 className="form-control "
 
@@ -159,7 +159,7 @@ class HomeAddPage extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Sokak</label>
+                            <label htmlFor="inputRating" className="label-name">Sokak</label>
                             <input
                                 className="form-control "
 
@@ -167,7 +167,7 @@ class HomeAddPage extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">Bina No</label>
+                            <label htmlFor="inputRating" className="label-name">Bina No</label>
                             <input
                                 className="form-control "
 
@@ -175,7 +175,7 @@ class HomeAddPage extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating">İç Kapı No</label>
+                            <label htmlFor="inputRating" className="label-name">İç Kapı No</label>
                             <input
                                 className="form-control "
 

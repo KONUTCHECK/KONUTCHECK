@@ -24,14 +24,13 @@ class Footer extends React.Component {
             <div className="footer" >
                 <Navbar expand="lg">
                     <Container>
-                        <Navbar.Brand href="/"><img src={logo} className="App-logo" /></Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
 
                                 <div className="footer-item">
-                                    <h4>Hakkımızda</h4>
-                                    <p>Ankara Yıldırım Beyazıt Üniversitesi Yönetim Bilişim Sistemleri bölümünde eğitim gören son sınıf öğrencileriyiz. Yaşanılan ortak bir sorundan yola çıkarak ihtiyaç doğrultusunda insanların
+                                <Navbar.Brand href="/"><img src={logo} className="App-logo" /></Navbar.Brand>
+                                    <p className="about-us">Ankara Yıldırım Beyazıt Üniversitesi Yönetim Bilişim Sistemleri bölümünde eğitim gören son sınıf öğrencileriyiz. Yaşanılan ortak bir sorundan yola çıkarak ihtiyaç doğrultusunda insanların
                                         konut kiralama konusunda yaşadıkları güven problemine çözüm bulma amacıyla birleşmiş bulunmaktayız.
                                     </p>
                                 </div>
@@ -51,10 +50,7 @@ class Footer extends React.Component {
                                     <h4>Bize Ulaşın</h4>
 
                                     <a href="#" className="footer-links">
-                                        <p>Email: info@konutcheck.com</p></a>
-                                    <p>
-                                        <strong>  Bizi aşağıdaki sosyal medya hesaplarından takip ederek destekleyebilirsiniz.</strong>
-                                    </p>
+                                        <p>info@konutcheck.com</p></a>
                                     <ul className="footer-social-links">
 
                                         <li>

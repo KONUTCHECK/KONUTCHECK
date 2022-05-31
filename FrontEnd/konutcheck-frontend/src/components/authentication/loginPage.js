@@ -89,7 +89,7 @@ class LoginPage extends React.Component{
                                 </label>
                             </div>
 
-                            <input type="submit" className="btn btn-danger btn-block" value="Kaydet" />
+                            <input type="submit" className="btn btn-danger btn-block" value="Giriş Yap" />
                         </form>
                     </div>
                 </div>

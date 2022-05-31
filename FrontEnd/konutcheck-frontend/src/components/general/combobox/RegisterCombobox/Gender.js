@@ -8,7 +8,7 @@ class Gender extends React.Component{
             <Combobox
                 fieldName = {this.props.fieldName}
                 notNull= {true}
-                items = {[{id: "Kadın", name: "Kadın"}, {id: "Erkek", name: "Erkek"},{id: "Belirtmek İstemiyorum", name: "Belirtmek İstemiyorum"} ]}
+                items = {[{id: "Kadın", name: "Kadın"}, {id: "Erkek", name: "Erkek"} ]}
             ></Combobox>
         )
     }
