@@ -28,14 +28,14 @@ class Menu extends React.Component {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
-                                <Nav.Link href="/">Ana Sayfa</Nav.Link>
-                                <Nav.Link href="/">Hakkımızda</Nav.Link>
-                                <Nav.Link href="/homes" >Evler</Nav.Link>
-                                <Nav.Link href="/users">Kullanıcılar</Nav.Link>
-                                <Nav.Link href="/">Bize Ulaşın</Nav.Link>
+                                <Nav.Link href="/">ANA SAYFA</Nav.Link>
+                                <Nav.Link href="/">HAKKIMIZDA</Nav.Link>
+                                <Nav.Link href="/homes" >EVLER</Nav.Link>
+                                <Nav.Link href="/users">KULLANICILAR</Nav.Link>
+                                <Nav.Link href="/">BİZE ULAŞIN</Nav.Link>
 
 
-                                <NavDropdown title="Hesabım" id="basic-nav-dropdown">
+                                <NavDropdown title="HESABIM" id="basic-nav-dropdown">
 
 
 

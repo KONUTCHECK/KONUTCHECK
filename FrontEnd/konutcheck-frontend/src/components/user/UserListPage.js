@@ -34,7 +34,6 @@ class UserListPage extends React.Component {
 
         return (
             <div className="row p-1">
-
                 {this.state.userList.map((user, i) => (
                     <Accordion key={user.id}>
                         <Accordion.Item eventKey="0">

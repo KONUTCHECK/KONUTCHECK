@@ -47,8 +47,7 @@ class UserInfoPage extends React.Component {
 
         return (
             <div className="row p-1">
-
-                <Card className="my-card" >
+                <Card className="my-card">
                     <Card.Body>
                         <Card.Title>{this.state.user.name} {this.state.user.surname}</Card.Title>
                         <ListGroup>

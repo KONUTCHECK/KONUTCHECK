@@ -33,7 +33,7 @@ class Slider extends React.Component {
                         />
                         <Carousel.Caption>
                             <h3 className="slider-title">KONUTCHECK</h3>
-                            <p>Tek tıkla 'ev'lenin</p>
+                            <p className="slider-p">TEK TIKLA 'EV'LENİN</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item interval={500}>
@@ -43,19 +43,8 @@ class Slider extends React.Component {
                             alt="Second slide"
                         />
                         <Carousel.Caption>
-                            <h3 className="slider-title">Second slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src={image}
-                            alt="Third slide"
-                        />
-                        <Carousel.Caption>
-                            <h3 className="slider-title">Third slide label</h3>
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                            <h3 className="slider-title">KONUTCHECK</h3>
+                            <p className="slider-p">'EV'LENECEKSEN GEL</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
