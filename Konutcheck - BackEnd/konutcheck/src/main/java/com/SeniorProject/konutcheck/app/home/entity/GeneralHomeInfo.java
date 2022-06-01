@@ -80,4 +80,7 @@ public class GeneralHomeInfo {
     @JsonFormat(pattern="yyyy/MM/dd")
     private LocalDate announcementDate;
 
+    @Column(name = "HOME_OWNER", nullable = false)
+    private Long homeOwner;
+
 }

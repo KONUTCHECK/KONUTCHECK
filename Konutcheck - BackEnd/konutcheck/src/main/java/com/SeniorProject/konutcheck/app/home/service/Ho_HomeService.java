@@ -37,6 +37,7 @@ public class Ho_HomeService {
         validationOfGeneralHomeInfos(generalHomeInfoSaveDto);
         GeneralHomeInfo generalHomeInfo = GeneralHomeInfoMapperConverter.INSTANCE.convertToGeneralHomeInfoFromGeneralHomeInfoSaveDto(generalHomeInfoSaveDto);
         generalHomeInfo.setAnnouncementDate(LocalDate.now());
+        generalHomeInfo.setHomeOwner(generalHomeInfoEntityService.getCurrentUser());
         generalHomeInfo = generalHomeInfoEntityService.save(generalHomeInfo);
 
         GeneralHomeInfoDto generalHomeInfoDto = GeneralHomeInfoMapperConverter.INSTANCE.convertToGeneralHomeInfoDtoFromGeneralHomeInfo(generalHomeInfo);

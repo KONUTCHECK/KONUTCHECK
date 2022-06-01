@@ -32,4 +32,5 @@ public class Ho_HomeDetails {
     private final Long apartmentNo;
     private final LocalDate announcementDate;
 
+
 }

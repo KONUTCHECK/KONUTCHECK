@@ -15,7 +15,6 @@ public interface GeneralHomeInfoDao extends JpaRepository<GeneralHomeInfo, Long>
     
 
     List<GeneralHomeInfo> findByHomeType(HomeTypes homeType);
-
     List<GeneralHomeInfo> findByAmountBetween(BigDecimal firstAmount, BigDecimal secondAmount);
     List<GeneralHomeInfo> findByAnnouncementDateBetween(LocalDate date1, LocalDate date2);
     List<GeneralHomeInfo> findByCity(Cities city);

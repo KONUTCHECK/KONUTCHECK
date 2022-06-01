@@ -30,5 +30,6 @@ public class GeneralHomeInfoDto {
     private String buildingNo;
     private Long apartmentNo;
     private LocalDate announcementDate;
+    private Long homeOwner;
 
 }
