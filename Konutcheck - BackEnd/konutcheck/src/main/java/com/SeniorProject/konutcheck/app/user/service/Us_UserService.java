@@ -89,6 +89,15 @@ public class Us_UserService {
         usUserEntityService.save(usUser);
     }
 
+    public void changingUserTypeToActive() {
+        Long userId = usUserEntityService.getCurrentUser();
+        Us_User usUser = usUserEntityService.getIdWithControl(userId);
+        validationOfIsUserPassive(usUser);
+        usUser.setStatusType(StatusType.Aktif);
+
+        usUserEntityService.save(usUser);
+    }
+
     public void deleteUser(Long id){
         Us_User usUser = usUserEntityService.getIdWithControl(id);
         usUserEntityService.delete(usUser);
@@ -108,6 +117,14 @@ public class Us_UserService {
             return true;
         }else{
             throw new InvalidInformationExceptions(GeneralErrorMessage.AGE_CANNOT_BE_ZERO);
+        }
+    }
+
+    private Boolean validationOfIsUserPassive(Us_User usUser){
+        if(usUser.getStatusType().equals(StatusType.Pasif)){
+            return true;
+        }else{
+            throw new InvalidInformationExceptions(GeneralErrorMessage.USER_IS_ACTIVE);
         }
     }
 

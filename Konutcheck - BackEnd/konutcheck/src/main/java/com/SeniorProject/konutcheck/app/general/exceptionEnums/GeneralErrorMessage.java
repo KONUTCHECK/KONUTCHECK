@@ -18,6 +18,7 @@ public enum GeneralErrorMessage implements BaseErrorMessage{
     INVALID_GRADE("Grade is not available!", "Grade must be between 0 - 5."),
     TOTAL_POINT_NOT_FOUND("Total point not found!","This user doesn't have evaluation."),
     USER_NOT_ACTIVE("User is not active", "User must be active!"),
+    USER_IS_ACTIVE("User is active", "User is active so this is a invalid process!"),
     ;
 
     private String errorMessage;

@@ -10,8 +10,10 @@ class UserInfoPage extends React.Component {
         super(props);
 
         this.state = {
-            user: {}
+            user: {},
+            isuserpassive : false
         }
+
     }
 
     componentDidMount() {
@@ -45,6 +47,7 @@ class UserInfoPage extends React.Component {
 
     render() {
 
+
         return (
             <div className="row p-1">
                 <Card className="my-card">
@@ -66,7 +69,9 @@ class UserInfoPage extends React.Component {
 
                     <Card.Body>
                         <Button style={{ marginLeft: "10px" }}
-                            className="btn btn-info" onClick={() => this.handleCancelUser()}>Hesabı Pasifleştir</Button>
+                            className="btn btn-info" onClick={() => {this.handleCancelUser(); this.setStatus()}}>Hesabı Pasifleştir</Button>
+                        <Button style={{ marginLeft: "10px" }}
+                            className="btn btn-info" >Hesabı Aktifleştir</Button>
                     </Card.Body>
                 </Card>
 

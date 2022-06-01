@@ -54,6 +54,12 @@ public class Us_UserController {
         return ResponseEntity.ok(Void.TYPE);
     }
 
+    @PatchMapping("/get-user-back/")
+    public ResponseEntity changeStatusTypeWithActive(){
+        usUserService.changingUserTypeToActive();
+        return ResponseEntity.ok(Void.TYPE);
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable Long id){
         usUserService.deleteUser(id);
