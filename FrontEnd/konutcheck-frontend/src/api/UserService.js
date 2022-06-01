@@ -16,6 +16,11 @@ class UserService{
         const url = '/users/' + id;
         return axios.delete(url, id);
     }
+
+    cancelUser(){
+        const url = '/users/cancel/';
+        return axios.patch(url);
+    }
     
 }
 

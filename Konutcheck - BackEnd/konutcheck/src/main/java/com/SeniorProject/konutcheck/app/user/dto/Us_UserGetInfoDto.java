@@ -1,9 +1,6 @@
 package com.SeniorProject.konutcheck.app.user.dto;
 
-import com.SeniorProject.konutcheck.app.user.enums.EducationalStatus;
-import com.SeniorProject.konutcheck.app.user.enums.Genders;
-import com.SeniorProject.konutcheck.app.user.enums.MaritialStatus;
-import com.SeniorProject.konutcheck.app.user.enums.UserType;
+import com.SeniorProject.konutcheck.app.user.enums.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,4 +19,5 @@ public class Us_UserGetInfoDto {
     private String email;
     private String userPhoneNumber1;
     private String userPhoneNumber2;
+    private StatusType statusType;
 }

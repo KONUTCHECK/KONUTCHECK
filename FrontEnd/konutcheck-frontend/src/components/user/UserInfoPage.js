@@ -30,16 +30,16 @@ class UserInfoPage extends React.Component {
         console.log("Kullanıcılar çekilirken hata oluştu");
     }
 
-    handleDeleteUser(user) {
-        UserService.deleteUser(user.id).then(response => this.handlerDeleteResponse(response)).catch(error => this.handleDeleteError(error));
+    handleCancelUser() {
+        UserService.cancelUser().then(response => this.handlerCancelResponse(response)).catch(error => this.handleCancelError(error));
 
     }
 
-    handlerDeleteResponse(response) {
+    handlerCancelResponse(response) {
         this.componentDidMount()
     }
 
-    handleDeleteError(error) {
+    handleCancelError(error) {
         console.log("Kullanıcı silinirken hata oluştu");
     }
 
@@ -60,12 +60,13 @@ class UserInfoPage extends React.Component {
                             <ListGroup.Item>{this.state.user.email}</ListGroup.Item>
                             <ListGroup.Item>{this.state.user.userPhoneNumber1}</ListGroup.Item>
                             <ListGroup.Item>{this.state.user.userPhoneNumber2}</ListGroup.Item>
+                            <ListGroup.Item>{this.state.user.statusType}</ListGroup.Item>
                         </ListGroup>
                     </Card.Body>
 
                     <Card.Body>
                         <Button style={{ marginLeft: "10px" }}
-                            className="btn btn-info" >Delete</Button>
+                            className="btn btn-info" onClick={() => this.handleCancelUser()}>Hesabı Pasifleştir</Button>
                     </Card.Body>
                 </Card>
 
