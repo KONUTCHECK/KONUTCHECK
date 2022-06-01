@@ -17,6 +17,7 @@ public enum GeneralErrorMessage implements BaseErrorMessage{
     ID_NOT_MATCH("Id not match!", "Id may be null or not match."),
     INVALID_GRADE("Grade is not available!", "Grade must be between 0 - 5."),
     TOTAL_POINT_NOT_FOUND("Total point not found!","This user doesn't have evaluation."),
+    USER_NOT_ACTIVE("User is not active", "User must be active!"),
     ;
 
     private String errorMessage;

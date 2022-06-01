@@ -14,6 +14,7 @@ import com.SeniorProject.konutcheck.app.user.dto.Us_UserDto;
 import com.SeniorProject.konutcheck.app.user.dto.Us_UserGetInfoDto;
 import com.SeniorProject.konutcheck.app.user.dto.Us_UserSaveDto;
 import com.SeniorProject.konutcheck.app.user.entity.Us_User;
+import com.SeniorProject.konutcheck.app.user.enums.StatusType;
 import com.SeniorProject.konutcheck.app.user.enums.UserType;
 import com.SeniorProject.konutcheck.app.user.service.entityService.Us_UserEntityService;
 import lombok.RequiredArgsConstructor;
@@ -37,6 +38,7 @@ public class Us_UserService {
         Us_User usUser = Us_UserMapperConverter.INSTANCE.convertToUsUserFromUsUserSaveDto(usUserSaveDto);
         String encodedPassword = passwordEncoder.encode(usUserSaveDto.getPassword());
         usUser.setPassword(encodedPassword);
+        usUser.setStatusType(StatusType.Aktif);
         usUser = usUserEntityService.save(usUser);
 
         Us_UserDto usUserDto = Us_UserMapperConverter.INSTANCE.convertToUsUserDtoFromUsUser(usUser);
@@ -44,7 +46,7 @@ public class Us_UserService {
     }
 
     public List<Us_UserGetInfoDto> getAllUsers(){
-        List<Us_User> usUserList = usUserEntityService.findAll();
+        List<Us_User> usUserList = usUserEntityService.findAllActiveUser();
         List<Us_UserGetInfoDto> usUserDtoList = Us_UserMapperConverter.INSTANCE.convertToUsUserGetInfoDtoListFromUsUserList(usUserList);
         return usUserDtoList;
     }
@@ -57,7 +59,7 @@ public class Us_UserService {
     }
 
     public List<Us_UserDto> getAllUsersByUserType(UserType userType){
-        List<Us_User> usUserList = usUserEntityService.getAllByUserType(userType);
+        List<Us_User> usUserList = usUserEntityService.getAllByUserTypeWithActiveUser(userType);
         List<Us_UserDto> usUserDtoList = Us_UserMapperConverter.INSTANCE.convertToUsUserDtoListFromUsUserList(usUserList);
         return usUserDtoList;
     }
@@ -77,6 +79,14 @@ public class Us_UserService {
 
         Us_UserDto usUserDtoUpdate = Us_UserMapperConverter.INSTANCE.convertToUsUserDtoFromUsUser(usUser);
         return usUserDtoUpdate;
+    }
+
+    public void cancelUser() {
+        Long userId = usUserEntityService.getCurrentUser();
+        Us_User usUser = usUserEntityService.getIdWithControl(userId);
+        usUser.setStatusType(StatusType.Pasif);
+
+        usUserEntityService.save(usUser);
     }
 
     public void deleteUser(Long id){
@@ -100,4 +110,5 @@ public class Us_UserService {
             throw new InvalidInformationExceptions(GeneralErrorMessage.AGE_CANNOT_BE_ZERO);
         }
     }
+
 }

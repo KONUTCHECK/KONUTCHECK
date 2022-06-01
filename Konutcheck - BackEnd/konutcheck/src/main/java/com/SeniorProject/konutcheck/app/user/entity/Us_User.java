@@ -1,9 +1,6 @@
 package com.SeniorProject.konutcheck.app.user.entity;
 
-import com.SeniorProject.konutcheck.app.user.enums.EducationalStatus;
-import com.SeniorProject.konutcheck.app.user.enums.Genders;
-import com.SeniorProject.konutcheck.app.user.enums.MaritialStatus;
-import com.SeniorProject.konutcheck.app.user.enums.UserType;
+import com.SeniorProject.konutcheck.app.user.enums.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -60,6 +57,9 @@ public class Us_User {
     @Column(name = "PASSWORD", nullable = false)
     private String password;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "STATUS_TYPE", nullable = false, length = 30)
+    private StatusType statusType;
 }
 
 

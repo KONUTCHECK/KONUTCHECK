@@ -48,6 +48,12 @@ public class Us_UserController {
         return ResponseEntity.ok(usUserDtoUpdate);
     }
 
+    @PatchMapping("/cancel/")
+    public ResponseEntity cancelUser(){
+        usUserService.cancelUser();
+        return ResponseEntity.ok(Void.TYPE);
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable Long id){
         usUserService.deleteUser(id);
