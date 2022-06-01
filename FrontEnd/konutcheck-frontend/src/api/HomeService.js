@@ -7,15 +7,6 @@ class HomeService {
         return axios.get(url);
     }
 
-    /*findById(homeId){
-        const url = "/homes/id/" + homeId
-        return axios.get("/homes/id/" +  homeId);
-    }*/
-
-    /*getHomeById(homeId){
-        return axios.get('homes/id'+ '/' + homeId);
-    }*/
-
     saveHome(newHome) {
         const url = "/homes/home-infos"
         return axios.post(url, newHome)
@@ -36,9 +27,16 @@ class HomeService {
         return axios.get(url);
     }
 
-    /* getHomeById(homeId){
-         return axios.get(homeId);
-     }*/
+    getHomeBetweenAmounts(amount1, amount2) {
+        const url = '/homes/between-amounts/?firstAmount=' + amount1 + '&secondAmount=' + amount2;
+        return axios.get(url);
+    }
+
+    getHomeByCity(city){
+        const url = '/homes/cities/?city=' + city.toString();
+        return axios.get(url);
+    }
+
 }
 
 export default new HomeService();

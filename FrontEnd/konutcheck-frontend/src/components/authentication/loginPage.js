@@ -10,7 +10,7 @@ class LoginPage extends React.Component{
 
         this.state = {
             email:"",
-            password:""
+            password:"",
         }
 
         this.handlerChange = this.handlerChange.bind(this);

@@ -8,6 +8,8 @@ class Countries extends React.Component{
             <Combobox
                 fieldName = {this.props.fieldName}
                 notNull= {true}
+                name={this.props.name}
+                onChange={this.props.onChange}
                 items = {[{id: "Adana", name: "Adana"},
                 {id: "Adıyaman", name: "Adıyaman"},
                 {id: "Afyonkarahisar", name: "Afyonkarahisar"},

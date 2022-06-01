@@ -6,6 +6,7 @@ import HomeTypes from "../general/combobox/HomeCombobox/HomeTypes";
 import HomeAspects from "../general/combobox/HomeCombobox/HomeAspects";
 import Countries from "../general/combobox/HomeCombobox/Countries";
 import Cities from "../general/combobox/HomeCombobox/Cities";
+import { Link } from "react-router-dom";
 
 
 
@@ -83,6 +84,7 @@ class HomeAddPage extends React.Component {
                             <WarningSystemType
                                 fieldName="warningSystem"
                                 notNull={true}
+                                type="combobox"
                             ></WarningSystemType>
                         </div>
 
@@ -99,6 +101,7 @@ class HomeAddPage extends React.Component {
                             <HomeAspects
                                 fieldName="homeAspect"
                                 notNull={true}
+                                type="combobox"
                             ></HomeAspects>
                         </div>
 
@@ -123,6 +126,7 @@ class HomeAddPage extends React.Component {
                             <HomeTypes
                                 fieldName="homeType"
                                 notNull={true}
+                                type="combobox"
                             ></HomeTypes>
                         </div>
 
@@ -131,6 +135,7 @@ class HomeAddPage extends React.Component {
                             <Countries
                                 fieldName="country"
                                 notNull={true}
+                                type="combobox"
                             ></Countries>
                         </div>
 
@@ -184,7 +189,9 @@ class HomeAddPage extends React.Component {
 
                     </div>
 
+                  
                     <input type="submit" className="btn btn-danger btn-block" value="Kaydet" />
+                  
                 </form>
             </div>
 

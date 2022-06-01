@@ -238,8 +238,8 @@ export default function HomeUpdatePage() {
                             onChange={(e) => setAnnouncementDate(e.target.value)} />
                     </div>
                 </div>
-                <Link to='#'>
-                    <Button type='submit' onClick={() => updateAPIData()}>Update</Button>
+                <Link to='/homes'>
+                    <Button type='submit' onClick={() => updateAPIData()}>Güncelle</Button>
                 </Link>
             </form>
         </div>

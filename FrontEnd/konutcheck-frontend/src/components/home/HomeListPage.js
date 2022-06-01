@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import HomeFilterPage from "./HomeFilterPage";
 import { ButtonGroup, Dropdown, DropdownButton } from "react-bootstrap";
 import HomeTypes from "../general/combobox/HomeCombobox/HomeTypes";
+import Cities from "../general/combobox/HomeCombobox/Cities";
 
 
 
@@ -16,7 +17,10 @@ class HomeListPage extends React.Component {
 
         this.state = {
             homeList: [],
-            homeType: ""
+            homeType: "",
+            amount1: "",
+            amount2: "",
+            city: ""
         }
 
         this.handlerChange = this.handlerChange.bind(this);
@@ -40,10 +44,6 @@ class HomeListPage extends React.Component {
         console.log("Evler çekilirken hata oluştu");
     }
 
-    /*viewHome(id){
-        this.props.history.push(`/view-home/${id}`);
-    }*/
-
     handleDeleteHome(home) {
         console.log(home);
 
@@ -65,6 +65,12 @@ class HomeListPage extends React.Component {
 
     handleSearch() {
         HomeService.getHomeByType(this.state.homeType).then(response => this.handlerResponse(response))
+            .catch(error => this.handleError(error))
+
+        HomeService.getHomeBetweenAmounts(this.state.amount1, this.state.amount2).then(response => this.handlerResponse(response))
+            .catch(error => this.handleError(error))
+        
+        HomeService.getHomeByCity(this.state.city).then(response => this.handlerResponse(response))
             .catch(error => this.handleError(error))
     }
 
@@ -104,25 +110,65 @@ class HomeListPage extends React.Component {
 
         return (
             <div className="row" style={{ margin: '10px 0 0 0' }}>
-                <div className="col-md-10">
-                    <HomeTypes
-                        type="combobox"
-                        value={this.state.homeType}
-                        name="homeType"
-                        onChange={this.handlerChange}
-                    >
-                    </HomeTypes>
-                </div>
-                <div className="col-md-2">
-                    <div className="d-grid gap-2">
-                        <Button variant="secondary" onClick={() => this.handleSearch()}>Arama</Button>
+                <div className="row">
+                    <div className="col-sm-3">
+                        Ev Tipi
+                        <HomeTypes
+                            type="combobox"
+                            value={this.state.homeType}
+                            fieldName="homeType"
+                            onChange={this.handlerChange}
+                        >
+                        </HomeTypes>
                     </div>
 
+                    <div className="col-sm-3">
+                        Fiyat Aralığı
+                        <div className="row">
+                            <div className="col-md-6" >
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="İlk Fiyat"
+                                    required=""
+                                    autoFocus=""
+                                    value={this.state.amount1}
+                                    name="amount1"
+                                    onChange={this.handlerChange}
+                                />
+                            </div>
+                            <div className="col-md-6" >
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="Son Fiyat"
+                                    required=""
+                                    autoFocus=""
+                                    value={this.state.amount2}
+                                    name="amount2"
+                                    onChange={this.handlerChange}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-sm-3">
+                        Şehir
+                    <Cities
+                            type="combobox"
+                            value={this.state.city}
+                            fieldName="city"
+                            onChange={this.handlerChange}
+                        >
+                        </Cities>
+                    </div>
+                    <div className="col-sm-3">
+                        <div className="d-grid gap-2">
+                            <Button variant="secondary" onClick={() => this.handleSearch()} onChange={this.handlerChange}>Arama</Button>
+                        </div>
+
+                    </div>
                 </div>
-
-
-
-
 
                 {this.state.homeList.map((home, i) => (
                     <Card className="my-card" style={{ width: '18rem', margin: '2rem' }} key={i}>
