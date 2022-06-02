@@ -6,6 +6,7 @@ import HomeFilterPage from "./HomeFilterPage";
 import { ButtonGroup, Dropdown, DropdownButton } from "react-bootstrap";
 import HomeTypes from "../general/combobox/HomeCombobox/HomeTypes";
 import Cities from "../general/combobox/HomeCombobox/Cities";
+import HomeAspects from "../general/combobox/HomeCombobox/HomeAspects";
 
 
 
@@ -178,14 +179,20 @@ class HomeListPage extends React.Component {
                             <Card.Title>{home.homeType}</Card.Title>
                             <Card.Text>
                                 {home.city} / {home.district} , {home.neighborhood} Mahallesi, {home.street} Caddesi,
-                                Bina No : {home.buildingNo}
+                                Bina No: {home.buildingNo}
                             </Card.Text>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
-                            <ListGroupItem>Fiyat : {home.amount}</ListGroupItem>
-                            <ListGroupItem>Oda Sayısı : {home.numberOfRooms}</ListGroupItem>
-                            <ListGroupItem>Kat Sayısı : {home.floor}</ListGroupItem>
-                            <ListGroupItem>{home.announcementDate}</ListGroupItem>
+                            <ListGroupItem><b>Fiyat : </b>{home.amount}</ListGroupItem>
+                            <ListGroupItem><b>Depozito: </b>{home.deposit}</ListGroupItem>
+                            <ListGroupItem><b>Oda Sayısı:</b> {home.numberOfRooms}</ListGroupItem>
+                            <ListGroupItem><b>Kat Sayısı:</b> {home.floor}</ListGroupItem>
+                            <ListGroupItem><b>Isınma Tipi:</b> {home.warningSystem}</ListGroupItem>
+                            <ListGroupItem><b>Cephe:</b> {home.homeAspect}</ListGroupItem>
+                            <ListGroupItem><b>Metrekare: </b>{home.homeSize}</ListGroupItem>
+                            <ListGroupItem><b>Bina Yaşı:</b> {home.buildingAge}</ListGroupItem>
+                            <ListGroupItem><b>Aidat:</b> {home.dues}</ListGroupItem>
+                            <ListGroupItem><b>İlan Tarihi: </b>{home.announcementDate}</ListGroupItem>
                         </ListGroup>
                         <Card.Body>
                             <Button style={{ marginLeft: "10px" }} onClick={() => this.handleDeleteHome(home)} className="btn btn-info">Delete</Button>

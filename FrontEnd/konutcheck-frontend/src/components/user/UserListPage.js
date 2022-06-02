@@ -33,21 +33,21 @@ class UserListPage extends React.Component {
     render() {
 
         return (
-            <div className="row p-1">
+            <div className="whole-user">
                 {this.state.userList.map((user, i) => (
-                    <Accordion key={user.id}>
+                    <Accordion className="user-table" defaultActiveKey="0" key={user.id}>
                         <Accordion.Item eventKey="0">
-                            <Accordion.Header>{user.name} {user.surname}{` (${user.userType})`}</Accordion.Header>
+                            <Accordion.Header className="user-header">{user.name} {user.surname}{` (${user.userType})`}</Accordion.Header>
                             <Accordion.Body>
                                 <ListGroup>
-                                    <ListGroup.Item>{user.age}</ListGroup.Item>
-                                    <ListGroup.Item>{user.gender}</ListGroup.Item>
-                                    <ListGroup.Item>{user.educationalStatus}</ListGroup.Item>
-                                    <ListGroup.Item>{user.job}</ListGroup.Item>
-                                    <ListGroup.Item>{user.maritialStatus}</ListGroup.Item>
-                                    <ListGroup.Item>{user.email}</ListGroup.Item>
-                                    <ListGroup.Item>{user.userPhoneNumber1}</ListGroup.Item>
-                                    <ListGroup.Item>{user.userPhoneNumber2}</ListGroup.Item>
+                                    <ListGroup.Item className="one-user">{user.age}</ListGroup.Item>
+                                    <ListGroup.Item className="one-user">{user.gender}</ListGroup.Item>
+                                    <ListGroup.Item className="one-user">{user.educationalStatus}</ListGroup.Item>
+                                    <ListGroup.Item className="one-user">{user.job}</ListGroup.Item>
+                                    <ListGroup.Item className="one-user">{user.maritialStatus}</ListGroup.Item>
+                                    <ListGroup.Item className="one-user">{user.email}</ListGroup.Item>
+                                    <ListGroup.Item className="one-user">{user.userPhoneNumber1}</ListGroup.Item>
+                                    <ListGroup.Item className="one-user">{user.userPhoneNumber2}</ListGroup.Item>
                                 </ListGroup>
                             </Accordion.Body>
                         </Accordion.Item>

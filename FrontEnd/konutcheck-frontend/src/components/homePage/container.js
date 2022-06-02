@@ -1,5 +1,8 @@
 import React from "react";
 import { Card, CardGroup } from "react-bootstrap";
+import mission from "./img/mission.png";
+import vission from "./img/vission.png";
+import whyus from "./img/whyus.png";
 
 class Container extends React.Component {
     constructor(props) {
@@ -20,7 +23,7 @@ class Container extends React.Component {
             <div>
                 <CardGroup className="cardgroup">
                     <Card>
-                        <Card.Img variant="top" src="holder.js/100px160" />
+                        <Card.Img variant="top" src={mission} className="card-img"/>
                         <Card.Body>
                             <Card.Title>Misyonumuz</Card.Title>
                             <Card.Text>
@@ -29,7 +32,7 @@ class Container extends React.Component {
                         </Card.Body>
                     </Card>
                     <Card>
-                        <Card.Img variant="top" src="holder.js/100px160" />
+                        <Card.Img variant="top" src={vission} className="card-img" />
                         <Card.Body>
                             <Card.Title>Vizyonumuz</Card.Title>
                             <Card.Text>
@@ -40,7 +43,7 @@ class Container extends React.Component {
                         </Card.Body>
                     </Card>
                     <Card>
-                        <Card.Img variant="top" src="holder.js/100px160" />
+                        <Card.Img variant="top" src={whyus} className="card-img" />
                         <Card.Body>
                             <Card.Title>Neden Biz?</Card.Title>
                             <Card.Text>
