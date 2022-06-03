@@ -11,7 +11,7 @@ class UserInfoPage extends React.Component {
 
         this.state = {
             user: {},
-            isuserpassive : false
+            isuserpassive: false
         }
 
     }
@@ -69,7 +69,7 @@ class UserInfoPage extends React.Component {
 
                     <Card.Body>
                         <Button style={{ marginLeft: "10px" }}
-                            className="btn btn-info" onClick={() => {this.handleCancelUser(); this.setStatus()}}>Hesabı Pasifleştir</Button>
+                            className="btn btn-info" onClick={() => { this.handleCancelUser() }}>Hesabı Pasifleştir</Button>
                         <Button style={{ marginLeft: "63rem", backgroundColor: "#2eb12e" }}
                             className="btn btn-info" >Hesabı Aktifleştir</Button>
                     </Card.Body>

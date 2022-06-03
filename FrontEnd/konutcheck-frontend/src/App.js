@@ -17,59 +17,60 @@ import UserInfoPage from './components/user/UserInfoPage';
 
 class App extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props)
 
     this.state = {
-      isLoggedOn : false
+      isLoggedOn: false
     }
 
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
   }
 
-  getIsLogged(){
+  getIsLogged() {
     const token = sessionStorage.getItem('token')
     const isLogged = token ? true : false
     return isLogged
   }
 
-  login(){
-    this.setState({isLoggedOn : true})
+  login() {
+    this.setState({ isLoggedOn: true })
   }
 
-  logout(){
-    this.setState({isLoggedOn : false})
+  logout() {
+    this.setState({ isLoggedOn: false })
     sessionStorage.clear()
   }
 
-  render(){
+  render() {
 
     const isLogged = this.getIsLogged();
+    const userType = sessionStorage.getItem('userType')
 
     return (
-    <div className="App">
-      <Menu isLoggedOn={isLogged} logout={this.logout}></Menu>
-      <Routes>
+      <div className="App">
+        <Menu isLoggedOn={isLogged} userType={userType} logout={this.logout}></Menu>
+        <Routes>
 
-        <Route path='/' element={<HomePage></HomePage>}> </Route>
-        <Route path='*' element={<ErrorPage></ErrorPage>}></Route>
-        <Route path="/login" element={<LoginPage login={this.login}></LoginPage>}></Route>
-        <Route path="/homes" element={<HomeListPage></HomeListPage>}></Route>
-        <Route path="/add-homes" element={<HomeAddPage></HomeAddPage>}></Route>
-        <Route path="/register" element={<Register></Register>}></Route>
-        <Route path = "/view-home/:id" element = {<DetailHomeInfoPage></DetailHomeInfoPage>}></Route>
-        <Route path="/update-home-infos" element={<HomeUpdatePage></HomeUpdatePage>}></Route>
-        <Route path="/get-homes-by" element={<HomeFilterPage></HomeFilterPage>}></Route>
-        <Route path="/users" element={<UserListPage></UserListPage>}></Route>
-        <Route path="/user-info" element={<UserInfoPage></UserInfoPage>}></Route>
-      </Routes> 
+          <Route path='/' element={<HomePage></HomePage>}> </Route>
+          <Route path='*' element={<ErrorPage></ErrorPage>}></Route>
+          <Route path="/login" element={<LoginPage login={this.login}></LoginPage>}></Route>
+          <Route path="/homes" element={<HomeListPage></HomeListPage>}></Route>
+          <Route path="/add-homes" element={<HomeAddPage></HomeAddPage>}></Route>
+          <Route path="/register" element={<Register></Register>}></Route>
+          <Route path="/view-home/:id" element={<DetailHomeInfoPage></DetailHomeInfoPage>}></Route>
+          <Route path="/update-home-infos" element={<HomeUpdatePage></HomeUpdatePage>}></Route>
+          <Route path="/get-homes-by" element={<HomeFilterPage></HomeFilterPage>}></Route>
+          <Route path="/users" element={<UserListPage></UserListPage>}></Route>
+          <Route path="/user-info" element={<UserInfoPage></UserInfoPage>}></Route>
+        </Routes>
 
-      <Footer isLoggedOn={isLogged} logout={this.logout}></Footer>
-    </div>
-  );
+        <Footer isLoggedOn={isLogged} logout={this.logout}></Footer>
+      </div>
+    );
   }
-  
+
 }
 
 export default App;

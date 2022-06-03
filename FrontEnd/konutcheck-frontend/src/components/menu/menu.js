@@ -42,7 +42,7 @@ class Menu extends React.Component {
                                     {!this.props.isLoggedOn && < NavDropdown.Item href="/register">Kayıt Ol</NavDropdown.Item>}
                                     {!this.props.isLoggedOn && < NavDropdown.Item href="/login">Giriş</NavDropdown.Item>}
                                     {this.props.isLoggedOn && <NavDropdown.Item href="/user-info">Profilim</NavDropdown.Item>}
-                                    {this.props.isLoggedOn && <NavDropdown.Item href="/add-homes">Ev Ekle</NavDropdown.Item>}
+                                    {this.props.isLoggedOn && this.props.userType === 'Evsahibi' && <NavDropdown.Item href="/add-homes">Ev Ekle</NavDropdown.Item>}
                                     {this.props.isLoggedOn && <NavDropdown.Item href="/" onClick={this.handleLogout}>Çıkış</NavDropdown.Item>}
 
 
