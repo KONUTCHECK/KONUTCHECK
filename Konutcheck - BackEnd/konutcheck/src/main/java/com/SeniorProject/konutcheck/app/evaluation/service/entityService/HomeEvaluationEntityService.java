@@ -17,11 +17,15 @@ public class HomeEvaluationEntityService extends BaseEntityService<HomeEvaluatio
         this.homeEvaluationDao = dao;
     }
 
-    public GetHomeIdDto getHomeId(Long id){
-        return homeEvaluationDao.getHomeId(id);
+    public GetHomeIdDto getHomeId(){
+        return homeEvaluationDao.getHomeId();
     }
 
     public List<GetTotalPoint> getTotalPoint(Long id){
         return homeEvaluationDao.getTotalPoint(id);
+    }
+
+    public Boolean existByEvaluationOwnerId(Long id){
+        return homeEvaluationDao.existsByEvaluationOwnerTenantId(id);
     }
 }

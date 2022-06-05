@@ -21,7 +21,7 @@ public interface GeneralHomeInfoDao extends JpaRepository<GeneralHomeInfo, Long>
     List<GeneralHomeInfo> findByCityAndDistrict(Cities city, String district);
     List<GeneralHomeInfo> findByCityAndDistrictAndNeighborhood(Cities city, String district, String neighborhood);
     List<GeneralHomeInfo> findByCityAndDistrictAndNeighborhoodAndStreet(Cities city, String district, String neighborhood, String street);
-
+    List<GeneralHomeInfo> findAllByHomeOwner(Long id);
 
 
 }

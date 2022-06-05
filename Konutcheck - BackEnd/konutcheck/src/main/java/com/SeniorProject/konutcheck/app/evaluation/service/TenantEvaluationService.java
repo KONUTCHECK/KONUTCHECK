@@ -36,12 +36,11 @@ public class TenantEvaluationService {
         return getTotalPointList;
     }
 
-    public TenantEvaluationDto saveTenantEvaluation(TenantEvaluationSaveDto tenantEvaluationSaveDto) {
+    public TenantEvaluationDto saveTenantEvaluation(TenantEvaluationSaveDto tenantEvaluationSaveDto, Long tenantId) {
         TenantEvaluation tenantEvaluation = EvaluationMapperConverter.INSTANCE.convertToTenantEvaluationFromTenantEvaluationSaveDto(tenantEvaluationSaveDto);
         Long currentUserId = authenticationService.getCurrentUserId();
-        validationOfHomeId(currentUserId);
-        validationOfTenantId(tenantEvaluationSaveDto);
         tenantEvaluation.setEvaluationOwnerLandlordId(currentUserId);
+        tenantEvaluation.setTenantId(tenantId);
         tenantEvaluation.setTenantPoint(calculateTenantSinglePoint(tenantEvaluationSaveDto));
         tenantEvaluation = tenantEvaluationEntityService.save(tenantEvaluation);
         TenantEvaluationDto tenantEvaluationDto = EvaluationMapperConverter.INSTANCE.convertToTenantEvaluationDtoFromTenantEvaluation(tenantEvaluation);
@@ -69,7 +68,7 @@ public class TenantEvaluationService {
         return singlePoint;
     }
 
-    private Boolean validationOfHomeId(Long id) {
+    /*private Boolean validationOfHomeId(Long id) {
         GetHomeIdDto homeId = tenantRelatedHomesEntityService.getHomeIdByLandlordId(id);
         Boolean isHomeIdExist = landlordRelatedHomesEntityService.isHomeIdExist(homeId.getHomeId());
 
@@ -78,14 +77,14 @@ public class TenantEvaluationService {
         } else {
             throw new InvalidInformationExceptions(GeneralErrorMessage.ID_NOT_MATCH);
         }
-    }
+    }*/
 
-    private Boolean validationOfTenantId(TenantEvaluationSaveDto tenantEvaluationSaveDto) {
-        Long tenantId = tenantEvaluationSaveDto.getTenantId();
-        Boolean isTenantIdExist = userEntityService.existById(tenantId);
+    private Long getTenantId() {
+        GetHomeIdDto tenantId = tenantEvaluationEntityService.getTenantId();
+        Boolean isTenantIdExist = userEntityService.existById(tenantId.getHomeId());
 
         if (isTenantIdExist) {
-            return true;
+            return tenantId.getHomeId();
         } else {
             throw new ItemNotFoundExceptions(GeneralErrorMessage.ID_NOT_FOUND);
         }

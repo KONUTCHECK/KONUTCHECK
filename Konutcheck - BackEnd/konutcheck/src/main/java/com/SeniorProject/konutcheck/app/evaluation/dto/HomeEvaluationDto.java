@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 public class HomeEvaluationDto {
     private Long id;
     private Long homeId;
+    private Long evaluationOwnerTenantId;
     private int gradeOfHomeCleaning;
     private int gradeOfHomeReality;
     private int gradeOfHomeModification;

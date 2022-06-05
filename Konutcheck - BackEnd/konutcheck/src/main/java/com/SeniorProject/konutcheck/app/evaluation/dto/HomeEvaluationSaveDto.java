@@ -8,7 +8,6 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 public class HomeEvaluationSaveDto {
-    private Long homeId;
     private int gradeOfHomeCleaning;
     private int gradeOfHomeReality;
     private int gradeOfHomeModification;

@@ -16,4 +16,6 @@ public interface Us_UserDao extends JpaRepository<Us_User, Long> {
     Us_User findByEmail(String email);
     Boolean existsByEmail(String email);
 
+
+
 }

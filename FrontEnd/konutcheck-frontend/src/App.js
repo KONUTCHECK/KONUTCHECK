@@ -14,6 +14,13 @@ import HomeFilterPage from './components/home/HomeFilterPage';
 import Footer from './components/homePage/footer'
 import UserListPage from './components/user/UserListPage';
 import UserInfoPage from './components/user/UserInfoPage';
+import ListPassiveHomesPage from './components/home/ListPassiveHomesPage';
+import TenantHomesDetailPage from './components/home/TenantHomesDetailPage';
+import LandlordHomesDetailPage from './components/home/LandlordHomesDetailPage';
+import HomeEvaluation from './components/evaluation/HomeEvaluation';
+import LandlordEvaluation from './components/evaluation/LandlordEvaluation';
+import ListLandlordsTenantsPage from './components/home/ListLandlordsTenantsPage';
+import TenantEvaluation from './components/evaluation/TenantEvaluation';
 
 class App extends React.Component {
 
@@ -64,6 +71,13 @@ class App extends React.Component {
           <Route path="/get-homes-by" element={<HomeFilterPage></HomeFilterPage>}></Route>
           <Route path="/users" element={<UserListPage></UserListPage>}></Route>
           <Route path="/user-info" element={<UserInfoPage></UserInfoPage>}></Route>
+          <Route path="/list-passive-homes" element={<ListPassiveHomesPage></ListPassiveHomesPage>}></Route>
+          <Route path="/tenant-homes" element={<TenantHomesDetailPage></TenantHomesDetailPage>}></Route>
+          <Route path="/landlord-homes" element={<LandlordHomesDetailPage></LandlordHomesDetailPage>}></Route>
+          <Route path="/home-evaluation" element={<HomeEvaluation></HomeEvaluation>}></Route>
+          <Route path="/landlord-evaluation" element={<LandlordEvaluation></LandlordEvaluation>}></Route>
+          <Route path="/landlord-tenants" element={<ListLandlordsTenantsPage></ListLandlordsTenantsPage>}></Route>
+          <Route path="/tenant-evaluation/:tenantId" element={<TenantEvaluation></TenantEvaluation>}></Route>
         </Routes>
 
         <Footer isLoggedOn={isLogged} logout={this.logout}></Footer>

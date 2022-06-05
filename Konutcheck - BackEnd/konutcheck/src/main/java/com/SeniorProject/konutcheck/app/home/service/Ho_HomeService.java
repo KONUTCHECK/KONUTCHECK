@@ -56,6 +56,13 @@ public class Ho_HomeService {
         return generalHomeInfoDtoList;
     }
 
+    public List<GeneralHomeInfoDto> gelAllHomesByHomeOwner(){
+        Long houseOwnerId = generalHomeInfoEntityService.getCurrentUser();
+        List<GeneralHomeInfo> generalHomeInfos = generalHomeInfoEntityService.findAllByHomeOwner(houseOwnerId);
+        List<GeneralHomeInfoDto> generalHomeInfoDtoList = GeneralHomeInfoMapperConverter.INSTANCE.convertToGeneralHomeInfoDtoListFromGeneralHomeInfoList(generalHomeInfos);
+        return generalHomeInfoDtoList;
+    }
+
     public List<GeneralHomeInfoDto> getAllHomesByHomeType(HomeTypes homeType){
         List<GeneralHomeInfo> homeDetailsList = generalHomeInfoEntityService.findByHomeType(homeType);
         List<GeneralHomeInfoDto> generalHomeInfoDtoList = GeneralHomeInfoMapperConverter.INSTANCE.convertToGeneralHomeInfoDtoListFromGeneralHomeInfoList(homeDetailsList);
@@ -107,6 +114,7 @@ public class Ho_HomeService {
         if(isExist){
             generalHomeInfo = GeneralHomeInfoMapperConverter.INSTANCE.convertToGeneralHomeInfoFromGeneralHomeInfoDto(generalHomeInfoDto);
             generalHomeInfo.setAnnouncementDate(LocalDate.now());
+            generalHomeInfo.setHomeOwner(generalHomeInfoEntityService.getCurrentUser());
             generalHomeInfo = generalHomeInfoEntityService.save(generalHomeInfo);
         }else{
             throw new ItemNotFoundExceptions(GeneralErrorMessage.HOME_INFOS_NOT_FOUND);

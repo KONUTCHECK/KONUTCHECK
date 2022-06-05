@@ -19,6 +19,7 @@ public enum GeneralErrorMessage implements BaseErrorMessage{
     TOTAL_POINT_NOT_FOUND("Total point not found!","This user doesn't have evaluation."),
     USER_NOT_ACTIVE("User is not active", "User must be active!"),
     USER_IS_ACTIVE("User is active", "User is active so this is a invalid process!"),
+    EVALUATION_WAS_MADE("This owner has an evaluation!", "Each owner can make one evaluation for home."),
     ;
 
     private String errorMessage;
