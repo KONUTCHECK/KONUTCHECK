@@ -4,6 +4,7 @@ import { Link, Navigate } from "react-router-dom";
 import UserService from "../../api/UserService";
 
 
+
 class UserInfoPage extends React.Component {
 
     constructor(props) {
@@ -50,6 +51,7 @@ class UserInfoPage extends React.Component {
 
         return (
             <div className="row p-1">
+            
                 <Card className="my-card">
                     <Card.Body>
                         <Card.Title>{this.state.user.name} {this.state.user.surname}</Card.Title>

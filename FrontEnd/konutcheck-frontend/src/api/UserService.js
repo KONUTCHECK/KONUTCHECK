@@ -21,8 +21,10 @@ class UserService{
         const url = '/users/cancel/';
         return axios.patch(url);
     }
-    
+    getUserByType(type) {
+        const url = '/users/' + type.toString();
+        return axios.get(url);
 }
-
+}
 export default new UserService();
 

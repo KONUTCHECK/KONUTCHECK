@@ -14,6 +14,7 @@ import HomeFilterPage from './components/home/HomeFilterPage';
 import Footer from './components/homePage/footer'
 import UserListPage from './components/user/UserListPage';
 import UserInfoPage from './components/user/UserInfoPage';
+import UserUpdatePage from './components/user/UserUpdatePage';
 
 class App extends React.Component {
 
@@ -63,6 +64,8 @@ class App extends React.Component {
         <Route path="/get-homes-by" element={<HomeFilterPage></HomeFilterPage>}></Route>
         <Route path="/users" element={<UserListPage></UserListPage>}></Route>
         <Route path="/user-info" element={<UserInfoPage></UserInfoPage>}></Route>
+        <Route path="/update-user-infos" element={<UserUpdatePage></UserUpdatePage>}></Route>
+
       </Routes> 
 
       <Footer isLoggedOn={isLogged} logout={this.logout}></Footer>
