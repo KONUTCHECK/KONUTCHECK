@@ -5,6 +5,7 @@ import com.SeniorProject.konutcheck.app.evaluation.dto.*;
 import com.SeniorProject.konutcheck.app.evaluation.entity.HomeEvaluation;
 import com.SeniorProject.konutcheck.app.evaluation.service.entityService.HomeEvaluationEntityService;
 import com.SeniorProject.konutcheck.app.general.exceptionEnums.GeneralErrorMessage;
+import com.SeniorProject.konutcheck.app.general.exceptions.DuplicateException;
 import com.SeniorProject.konutcheck.app.general.exceptions.InvalidInformationExceptions;
 import com.SeniorProject.konutcheck.app.home.service.entityService.GeneralHomeInfoEntityService;
 import lombok.RequiredArgsConstructor;
@@ -25,8 +26,10 @@ public class HomeEvaluationService {
     }
 
     public HomeEvaluationDto saveHomeEvaluation(HomeEvaluationSaveDto homeEvaluationSaveDto) {
+        validationOfIsEvaluationOwnerIdExist();
         HomeEvaluation homeEvaluation = EvaluationMapperConverter.INSTANCE.convertToHomeEvaluationFromHomeEvaluationSaveDto(homeEvaluationSaveDto);
-        validationOfHomeId(homeEvaluationSaveDto);
+        homeEvaluation.setEvaluationOwnerTenantId(homeEvaluationEntityService.getCurrentUser());
+        homeEvaluation.setHomeId(getHomeId());
         homeEvaluation.setHomePoint(calculateHomeSinglePoint(homeEvaluationSaveDto));
         homeEvaluation = homeEvaluationEntityService.save(homeEvaluation);
         HomeEvaluationDto homeEvaluationDto = EvaluationMapperConverter.INSTANCE.convertToHomeEvaluationDtoFromHomeEvaluation(homeEvaluation);
@@ -63,14 +66,25 @@ public class HomeEvaluationService {
         return singlePoint;
     }
 
-    private Boolean validationOfHomeId(HomeEvaluationSaveDto homeEvaluationSaveDto){
-        GetHomeIdDto homeId = homeEvaluationEntityService.getHomeId(homeEvaluationSaveDto.getHomeId());
+    private Long getHomeId(){
+        GetHomeIdDto homeId = homeEvaluationEntityService.getHomeId();
         Boolean isHomeIdExist = generalHomeInfoEntityService.existById(homeId.getHomeId());
 
         if(isHomeIdExist){
-            return true;
+            return homeId.getHomeId();
         }else {
             throw new InvalidInformationExceptions(GeneralErrorMessage.ID_NOT_MATCH);
+        }
+    }
+
+    private Boolean validationOfIsEvaluationOwnerIdExist(){
+        Long id = homeEvaluationEntityService.getCurrentUser();
+        Boolean isExist = homeEvaluationEntityService.existByEvaluationOwnerId(id);
+
+        if(!isExist){
+            return true;
+        }else{
+            throw new DuplicateException(GeneralErrorMessage.EVALUATION_WAS_MADE);
         }
     }
 

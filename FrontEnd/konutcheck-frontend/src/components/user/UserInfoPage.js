@@ -12,7 +12,7 @@ class UserInfoPage extends React.Component {
 
         this.state = {
             user: {},
-            isuserpassive : false
+            isuserpassive: false
         }
 
     }
@@ -54,25 +54,25 @@ class UserInfoPage extends React.Component {
             
                 <Card className="my-card">
                     <Card.Body>
-                        <Card.Title>{this.state.user.name} {this.state.user.surname}</Card.Title>
+                        <Card.Title><b>Adı-Soyadı: </b>{this.state.user.name} {this.state.user.surname}</Card.Title>
                         <ListGroup>
-                            <ListGroup.Item>{this.state.user.userType}</ListGroup.Item>
-                            <ListGroup.Item>{this.state.user.age}</ListGroup.Item>
-                            <ListGroup.Item>{this.state.user.gender}</ListGroup.Item>
-                            <ListGroup.Item>{this.state.user.educationalStatus}</ListGroup.Item>
-                            <ListGroup.Item>{this.state.user.job}</ListGroup.Item>
-                            <ListGroup.Item>{this.state.user.maritialStatus}</ListGroup.Item>
-                            <ListGroup.Item>{this.state.user.email}</ListGroup.Item>
-                            <ListGroup.Item>{this.state.user.userPhoneNumber1}</ListGroup.Item>
-                            <ListGroup.Item>{this.state.user.userPhoneNumber2}</ListGroup.Item>
-                            <ListGroup.Item>{this.state.user.statusType}</ListGroup.Item>
+                            <ListGroup.Item><b>Kullanıcı Tipi: </b>{this.state.user.userType}</ListGroup.Item>
+                            <ListGroup.Item><b>Yaşı: </b>{this.state.user.age}</ListGroup.Item>
+                            <ListGroup.Item><b>Cinsiyet: </b>{this.state.user.gender}</ListGroup.Item>
+                            <ListGroup.Item><b>Eğitim: </b>{this.state.user.educationalStatus}</ListGroup.Item>
+                            <ListGroup.Item><b>Meslek: </b>{this.state.user.job}</ListGroup.Item>
+                            <ListGroup.Item><b>Medeni Hal: </b>{this.state.user.maritialStatus}</ListGroup.Item>
+                            <ListGroup.Item><b>Email Adresi:</b>{this.state.user.email}</ListGroup.Item>
+                            <ListGroup.Item><b>1. Telefon Numarası: </b>{this.state.user.userPhoneNumber1}</ListGroup.Item>
+                            <ListGroup.Item><b>2. Telefon Numarası</b>{this.state.user.userPhoneNumber2}</ListGroup.Item>
+                            <ListGroup.Item><b>Aktiflik/Pasiflik: </b>{this.state.user.statusType}</ListGroup.Item>
                         </ListGroup>
                     </Card.Body>
 
                     <Card.Body>
                         <Button style={{ marginLeft: "10px" }}
-                            className="btn btn-info" onClick={() => {this.handleCancelUser(); this.setStatus()}}>Hesabı Pasifleştir</Button>
-                        <Button style={{ marginLeft: "10px" }}
+                            className="btn btn-info" onClick={() => { this.handleCancelUser() }}>Hesabı Pasifleştir</Button>
+                        <Button style={{ marginLeft: "63rem", backgroundColor: "#2eb12e" }}
                             className="btn btn-info" >Hesabı Aktifleştir</Button>
                     </Card.Body>
                 </Card>

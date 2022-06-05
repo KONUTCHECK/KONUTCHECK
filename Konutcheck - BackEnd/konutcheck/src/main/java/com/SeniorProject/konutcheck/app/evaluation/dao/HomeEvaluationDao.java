@@ -13,11 +13,13 @@ import java.util.List;
 public interface HomeEvaluationDao extends JpaRepository<HomeEvaluation, Long> {
 
     @Query(
-            value = "select new com.SeniorProject.konutcheck.app.evaluation.dto.GetHomeIdDto(tenantRelatedHomes.homeId)" +
-                    " from TenantRelatedHomes tenantRelatedHomes" +
-                    " where tenantRelatedHomes.homeId = :homeId"
+            value = "select new com.SeniorProject.konutcheck.app.evaluation.dto.GetHomeIdDto(tenantHome.homeId)" +
+                    " from TenantHome tenantHome" +
+                    " left join HomeEvaluation  homeEvaluation on homeEvaluation.homeId = tenantHome.homeId" +
+                    " where tenantHome.tenantId = homeEvaluation.evaluationOwnerTenantId" +
+                    " group by tenantHome.homeId"
     )
-    GetHomeIdDto getHomeId(Long homeId);
+    GetHomeIdDto getHomeId();
 
     @Query(
             value = "select new com.SeniorProject.konutcheck.app.evaluation.dto.GetTotalPoint(SUM(homeEvaluation.homePoint))" +
@@ -25,4 +27,7 @@ public interface HomeEvaluationDao extends JpaRepository<HomeEvaluation, Long> {
                     " where homeEvaluation.homeId = :id"
     )
     List<GetTotalPoint> getTotalPoint(Long id);
+
+    Boolean existsByEvaluationOwnerTenantId(Long id);
+
 }

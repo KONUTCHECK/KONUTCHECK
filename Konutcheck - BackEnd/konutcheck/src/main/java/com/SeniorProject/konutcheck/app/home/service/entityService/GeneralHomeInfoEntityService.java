@@ -21,6 +21,10 @@ public class GeneralHomeInfoEntityService extends BaseEntityService<GeneralHomeI
         this.generalHomeInfoDao = dao;
     }
 
+    public List<GeneralHomeInfo> findAllByHomeOwner(Long id){
+        return generalHomeInfoDao.findAllByHomeOwner(id);
+    }
+
    public List<GeneralHomeInfo> findByHomeType(HomeTypes homeType){
         return generalHomeInfoDao.findByHomeType(homeType);
    }

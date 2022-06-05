@@ -2,6 +2,8 @@ package com.SeniorProject.konutcheck.app.evaluation.controller;
 
 import com.SeniorProject.konutcheck.app.evaluation.dto.*;
 import com.SeniorProject.konutcheck.app.evaluation.service.*;
+import com.SeniorProject.konutcheck.app.home.dto.TenantHomeDto;
+import com.SeniorProject.konutcheck.app.home.service.TenantHomeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -36,9 +38,9 @@ public class EvaluationController {
         return ResponseEntity.ok(landlordEvaluationDto);
     }
 
-    @PostMapping("/tenant-evaluation")
-    public ResponseEntity saveTenantEvaluation(@RequestBody TenantEvaluationSaveDto tenantEvaluationSaveDto){
-        TenantEvaluationDto tenantEvaluationDto = tenantEvaluationService.saveTenantEvaluation(tenantEvaluationSaveDto);
+    @PostMapping("/tenant-evaluation/{tenantId}")
+    public ResponseEntity saveTenantEvaluation(@RequestBody TenantEvaluationSaveDto tenantEvaluationSaveDto, @PathVariable Long tenantId){
+        TenantEvaluationDto tenantEvaluationDto = tenantEvaluationService.saveTenantEvaluation(tenantEvaluationSaveDto, tenantId);
         return ResponseEntity.ok(tenantEvaluationDto);
     }
 
@@ -77,4 +79,7 @@ public class EvaluationController {
         List<UserHomeDetails> userHomeDetailsList = landlordRelatedHomesService.getLandlordHomeDetails(id);
         return ResponseEntity.ok(userHomeDetailsList);
     }
+
+
+
 }

@@ -37,6 +37,31 @@ class HomeService {
         return axios.get(url);
     }
 
+    listPassiveHomes(){
+        const url = '/homes/list-passive-homes';
+        return axios.get(url);
+    }
+
+    setTenantHomeStatusActive(id){
+        const url = '/homes/set-status-active/' + id;
+        return axios.patch(url, id)
+    }
+
+    getTenantHomeDetails(){
+        const url = '/homes/tenant-homes-details';
+        return axios.get(url);
+    }
+
+    getLandlordHomeDetails(){
+        const url = '/homes/landlord-homes';
+        return axios.get(url);
+    }
+
+    listLandlordTenants(){
+        const url = '/homes/landlord-tenants';
+        return axios.get(url);
+    }
+
 }
 
 export default new HomeService();

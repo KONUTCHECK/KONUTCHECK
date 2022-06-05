@@ -1,5 +1,6 @@
 package com.SeniorProject.konutcheck.app.evaluation.dao;
 
+import com.SeniorProject.konutcheck.app.evaluation.dto.GetHomeIdDto;
 import com.SeniorProject.konutcheck.app.evaluation.dto.GetTotalPoint;
 import com.SeniorProject.konutcheck.app.evaluation.entity.TenantEvaluation;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,5 +17,13 @@ public interface TenantEvaluationDao extends JpaRepository<TenantEvaluation, Lon
                     " where tenantEvaluation.tenantId = :id"
     )
     List<GetTotalPoint> getTotalPoint(Long id);
+
+    @Query(
+            value = "select new com.SeniorProject.konutcheck.app.evaluation.dto.GetHomeIdDto(tenantHome.tenantId)" +
+                    " from TenantHome tenantHome" +
+                    " left join TenantEvaluation tenantEvaluation on tenantEvaluation.tenantId = tenantHome.tenantId" +
+                    " group by tenantHome.tenantId"
+    )
+    GetHomeIdDto getTenantId();
 
 }

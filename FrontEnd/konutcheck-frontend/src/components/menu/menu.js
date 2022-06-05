@@ -42,7 +42,11 @@ class Menu extends React.Component {
                                     {!this.props.isLoggedOn && < NavDropdown.Item href="/register">Kayıt Ol</NavDropdown.Item>}
                                     {!this.props.isLoggedOn && < NavDropdown.Item href="/login">Giriş</NavDropdown.Item>}
                                     {this.props.isLoggedOn && <NavDropdown.Item href="/user-info">Profilim</NavDropdown.Item>}
-                                    {this.props.isLoggedOn && <NavDropdown.Item href="/add-homes">Ev Ekle</NavDropdown.Item>}
+                                    {this.props.isLoggedOn && this.props.userType === 'Evsahibi' && <NavDropdown.Item href="/add-homes">Ev Ekle</NavDropdown.Item>}
+                                    {this.props.isLoggedOn && this.props.userType === 'Evsahibi' && <NavDropdown.Item href="/list-passive-homes">Ev Onayla</NavDropdown.Item>}
+                                    {this.props.isLoggedOn && this.props.userType === 'Kiracı' &&<NavDropdown.Item href="/tenant-homes">Kiracı Olduğum Evler</NavDropdown.Item>}
+                                    {this.props.isLoggedOn && this.props.userType === 'Evsahibi' && <NavDropdown.Item href="/landlord-homes">Sahip Olduğum Evler</NavDropdown.Item>}
+                                    {this.props.isLoggedOn && this.props.userType === 'Evsahibi' && <NavDropdown.Item href="/landlord-tenants">Kiracılarım</NavDropdown.Item>}
                                     {this.props.isLoggedOn && <NavDropdown.Item href="/" onClick={this.handleLogout}>Çıkış</NavDropdown.Item>}
 
 

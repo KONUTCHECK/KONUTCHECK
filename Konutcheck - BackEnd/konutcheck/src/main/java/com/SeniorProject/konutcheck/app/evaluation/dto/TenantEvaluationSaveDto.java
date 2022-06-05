@@ -6,7 +6,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class TenantEvaluationSaveDto {
-    private Long tenantId;
     private int gradeOfRentPayment;
     private int gradeOfBillPayment;
     private int gradeOfTenantSatisfaction;

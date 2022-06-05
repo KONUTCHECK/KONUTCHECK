@@ -19,6 +19,9 @@ public class HomeEvaluation {
     @Column(name = "HOME_ID", nullable = false)
     private Long homeId;
 
+    @Column(name="EVALUATION_OWNER_TENANT_ID", nullable = false)
+    private Long evaluationOwnerTenantId;
+
     @Column(name = "GRADE_OF_HOME_CLEANING", nullable = false)
     private int gradeOfHomeCleaning;
 

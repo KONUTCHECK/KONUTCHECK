@@ -28,21 +28,17 @@ public class LandlordEvaluationService {
     private final LandlordEvaluationEntityService landlordEvaluationEntityService;
     private final AuthenticationService authenticationService;
 
-    private final TenantRelatedHomesEntityService tenantRelatedHomesEntityService;
-    private final LandlordRelatedHomesEntityService landlordRelatedHomesEntityService;
-    private final Us_UserEntityService userEntityService;
-
     public List<GetTotalPoint> getTotalPointOfLandlord(Long id){
         List<GetTotalPoint> getTotalPointList = landlordEvaluationEntityService.getTotalPoint(id);
         return getTotalPointList;
     }
 
     public LandlordEvaluationDto saveLandlordEvaluation(LandlordEvaluationSaveDto landlordEvaluationSaveDto) {
+        validationOfIsEvaluationOwnerIdExist();
         LandlordEvaluation landlordEvaluation = EvaluationMapperConverter.INSTANCE.convertToLandlordEvaluationFromLandlordEvaluationSaveDto(landlordEvaluationSaveDto);
         Long currentUserId = authenticationService.getCurrentUserId();
-        validationOfHomeId(landlordEvaluationSaveDto);
-        validationOfLandlordId(landlordEvaluationSaveDto);
         landlordEvaluation.setEvaluationOwnerTenantId(currentUserId);
+        landlordEvaluation.setLandlordId(getLandlordId());
         landlordEvaluation.setLandlordPoint(calculateLandlordSinglePoint(landlordEvaluationSaveDto));
         landlordEvaluation = landlordEvaluationEntityService.save(landlordEvaluation);
         LandlordEvaluationDto landlordEvaluationDto = EvaluationMapperConverter.INSTANCE.convertToLandlordEvaluationDtoFromLandlordEvaluation(landlordEvaluation);
@@ -67,25 +63,25 @@ public class LandlordEvaluationService {
         return singlePoint;
     }
 
-    private Boolean validationOfHomeId(LandlordEvaluationSaveDto landlordEvaluationSaveDto){
-        GetHomeIdDto homeId = tenantRelatedHomesEntityService.getHomeIdByLandlordId(landlordEvaluationSaveDto.getLandlordId());
-        Boolean isHomeIdExist = landlordRelatedHomesEntityService.isHomeIdExist(homeId.getHomeId());
+    private Long getLandlordId(){
+        GetHomeIdDto landlordId = landlordEvaluationEntityService.getLandlordId();
+        Boolean isLandlordExist = landlordEvaluationEntityService.existById(landlordId.getHomeId());
 
-        if(isHomeIdExist){
-            return true;
-        }else {
-            throw new InvalidInformationExceptions(GeneralErrorMessage.ID_NOT_MATCH);
+        if(isLandlordExist){
+            return landlordId.getHomeId();
+        }else{
+            throw new ItemNotFoundExceptions(GeneralErrorMessage.ID_NOT_FOUND);
         }
     }
 
-    private Boolean validationOfLandlordId(LandlordEvaluationSaveDto landlordEvaluationSaveDto){
-        Long landlordId = landlordEvaluationSaveDto.getLandlordId();
-        Boolean isLandlordIdExist = userEntityService.existById(landlordId);
+    private Boolean validationOfIsEvaluationOwnerIdExist(){
+        Long id = landlordEvaluationEntityService.getCurrentUser();
+        Boolean isExist = landlordEvaluationEntityService.isExistEvaluationOwnerTenantId(id);
 
-        if(isLandlordIdExist){
+        if(!isExist){
             return true;
         }else{
-            throw new ItemNotFoundExceptions(GeneralErrorMessage.ID_NOT_FOUND);
+            throw new InvalidInformationExceptions(GeneralErrorMessage.EVALUATION_WAS_MADE);
         }
     }
 
