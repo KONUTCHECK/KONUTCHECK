@@ -16,6 +16,11 @@ class EvaluationService{
         const url = '/evaluations/tenant-evaluation/' + tenantId;
         return axios.post(url, newTenantEvaluation, tenantId);
     }
+
+    getTotalPointOfHome(id){
+        const url = '/evaluations/home-total-point/' + id;
+        return axios.get(url,id);
+    }
     
 }
 

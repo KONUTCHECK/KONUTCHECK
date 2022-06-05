@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Card, ListGroup, ListGroupItem, NavLink } from "react-bootstrap";
+import { Button, Card, ListGroup, ListGroupItem, NavLink, OverlayTrigger, Tooltip } from "react-bootstrap";
 import HomeService from "../../api/HomeService";
 import { Link } from 'react-router-dom';
 import HomeFilterPage from "./HomeFilterPage";
@@ -7,9 +7,15 @@ import { ButtonGroup, Dropdown, DropdownButton } from "react-bootstrap";
 import HomeTypes from "../general/combobox/HomeCombobox/HomeTypes";
 import Cities from "../general/combobox/HomeCombobox/Cities";
 import HomeAspects from "../general/combobox/HomeCombobox/HomeAspects";
+import EvaluationService from "../../api/EvaluationService";
 
 
-
+ /* Related With Tenant Home */
+ const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Beni Kiracı Olarak Ekle
+    </Tooltip>
+  );
 
 class HomeListPage extends React.Component {
 
@@ -31,6 +37,7 @@ class HomeListPage extends React.Component {
     componentDidMount() {
         this.setState({ homeType: "Daire" })
         this.getHomeList();
+        this.getHomePoint();
     }
 
     getHomeList() {
@@ -39,6 +46,7 @@ class HomeListPage extends React.Component {
 
     handlerResponse(response) {
         this.setState({ homeList: response.data })
+        console.log(this.state.homeList);
     }
 
     handleError(error) {
@@ -79,6 +87,15 @@ class HomeListPage extends React.Component {
 
         this.setState({ [event.target.name]: event.target.value })
         console.log(this.state)
+    }
+
+    getHomePoint(){
+        EvaluationService.getTotalPointOfHome(this.props.id).then(response => this.handlerResponse(response))
+        .catch(error => this.handleHomePointError(error))
+    }
+
+    handleHomePointError(error){
+        console.log("Puan çekilirken hata oluştu");
     }
 
     setData(home) {
@@ -173,13 +190,21 @@ class HomeListPage extends React.Component {
 
                 {this.state.homeList.map((home, i) => (
                     <Card className="my-card" style={{ width: '18rem', margin: '2rem' }} key={i}>
-                        <Button className="btn-light add-tenant">➕</Button>
-                        <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+                        <OverlayTrigger
+                            placement="right"
+                            delay={{ show: 250, hide: 400 }}
+                            overlay={renderTooltip}
+                        >
+                            <Button className="btn-light add-tenant" onClick={() => this.handleSaveTenantHome(home)}>➕</Button>
+                        </OverlayTrigger>
                         <Card.Body>
                             <Card.Title>{home.homeType}</Card.Title>
                             <Card.Text>
                                 {home.city} / {home.district} , {home.neighborhood} Mahallesi, {home.street} Caddesi,
                                 Bina No: {home.buildingNo}
+                            </Card.Text>
+                            <Card.Text>
+                                {home.totalPoint}
                             </Card.Text>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
