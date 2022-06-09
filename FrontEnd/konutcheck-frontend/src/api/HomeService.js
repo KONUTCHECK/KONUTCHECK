@@ -32,32 +32,37 @@ class HomeService {
         return axios.get(url);
     }
 
-    getHomeByCity(city){
+    getHomeByCity(city) {
         const url = '/homes/cities/?city=' + city.toString();
         return axios.get(url);
     }
 
-    listPassiveHomes(){
+    listPassiveHomes() {
         const url = '/homes/list-passive-homes';
         return axios.get(url);
     }
 
-    setTenantHomeStatusActive(id){
+    setTenantHome(id) {
+        const url = '/homes/save-tenant-home/' + id;
+        return axios.patch(url, id)
+    }
+
+    setTenantHomeStatusActive(id) {
         const url = '/homes/set-status-active/' + id;
         return axios.patch(url, id)
     }
 
-    getTenantHomeDetails(){
+    getTenantHomeDetails() {
         const url = '/homes/tenant-homes-details';
         return axios.get(url);
     }
 
-    getLandlordHomeDetails(){
+    getLandlordHomeDetails() {
         const url = '/homes/landlord-homes';
         return axios.get(url);
     }
 
-    listLandlordTenants(){
+    listLandlordTenants() {
         const url = '/homes/landlord-tenants';
         return axios.get(url);
     }

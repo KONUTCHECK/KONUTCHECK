@@ -14,6 +14,7 @@ class UserListPage extends React.Component {
             userList: [],
             userType: ""
         }
+        this.handlerChange = this.handlerChange.bind(this);
     }
 
     componentDidMount() {
@@ -36,30 +37,36 @@ class UserListPage extends React.Component {
             .catch(error => this.handleError(error))
     }
 
+
+    handlerChange(event) {
+        this.setState({ [event.target.name]: event.target.value })
+        console.log(this.state)
+    }
+
     render() {
 
         return (
 
-            
+
             <div className="row p-1">
                 <div className="col-sm-3">
-                        Kullanıcı Tipi
-                        <Usertype
-                            type="combobox"
-                            value={this.state.userType}
-                            fieldName="userType"
-                            onChange={this.handlerChange}
-                        >
-                        </Usertype>
+                    Kullanıcı Tipi
+                    <Usertype
+                        type="combobox"
+                        value={this.state.userType}
+                        fieldName="userType"
+                        onChange={this.handlerChange}
+                    >
+                    </Usertype>
 
+                </div>
+                <div className="col-sm-3">
+                    <div className="d-grid gap-2">
+                        <Button variant="secondary" onClick={() => this.handleSearch()} onChange={this.handlerChange}>Arama</Button>
                     </div>
-                    <div className="col-sm-3">
-                        <div className="d-grid gap-2">
-                            <Button variant="secondary" onClick={() => this.handleSearch()} onChange={this.handlerChange}>Arama</Button>
-                        </div>
 
-                    </div>
-                
+                </div>
+
 
                 {this.state.userList.map((user, i) => (
                     <Accordion className="user-table" defaultActiveKey="0" key={user.id}>

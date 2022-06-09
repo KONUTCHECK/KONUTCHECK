@@ -1,14 +1,15 @@
 import React from "react";
 import Combobox from "../Combobox";
 
-class Usertype extends React.Component{
+class Usertype extends React.Component {
 
-    render(){
-        return(
+    render() {
+        return (
             <Combobox
-                fieldName = {this.props.fieldName}
-                notNull= {true}
-                items = {[{id: "Evsahibi", name: "Evsahibi"}, {id: "Kiracı", name: "Kiracı"}, ]}
+                fieldName={this.props.fieldName}
+                notNull={true}
+                items={[{ id: "Evsahibi", name: "Evsahibi" }, { id: "Kiracı", name: "Kiracı" },]}
+                onChange={this.props.onChange}
             ></Combobox>
         )
     }

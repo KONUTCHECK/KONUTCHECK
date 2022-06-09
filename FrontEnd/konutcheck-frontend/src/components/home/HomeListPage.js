@@ -10,12 +10,12 @@ import HomeAspects from "../general/combobox/HomeCombobox/HomeAspects";
 import EvaluationService from "../../api/EvaluationService";
 
 
- /* Related With Tenant Home */
- const renderTooltip = (props) => (
+/* Related With Tenant Home */
+const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
-      Beni Kiracı Olarak Ekle
+        Beni Kiracı Olarak Ekle
     </Tooltip>
-  );
+);
 
 class HomeListPage extends React.Component {
 
@@ -78,7 +78,7 @@ class HomeListPage extends React.Component {
 
         HomeService.getHomeBetweenAmounts(this.state.amount1, this.state.amount2).then(response => this.handlerResponse(response))
             .catch(error => this.handleError(error))
-        
+
         HomeService.getHomeByCity(this.state.city).then(response => this.handlerResponse(response))
             .catch(error => this.handleError(error))
     }
@@ -89,13 +89,18 @@ class HomeListPage extends React.Component {
         console.log(this.state)
     }
 
-    getHomePoint(){
+    getHomePoint() {
         EvaluationService.getTotalPointOfHome(this.props.id).then(response => this.handlerResponse(response))
-        .catch(error => this.handleHomePointError(error))
+            .catch(error => this.handleHomePointError(error))
     }
 
-    handleHomePointError(error){
+    handleHomePointError(error) {
         console.log("Puan çekilirken hata oluştu");
+    }
+
+    handleSaveTenantHome(homeId) {
+        HomeService.setTenantHome(homeId).then(response => { })
+            .catch(error => this.handleError(error))
     }
 
     setData(home) {
@@ -172,7 +177,7 @@ class HomeListPage extends React.Component {
 
                     <div className="col-sm-3">
                         Şehir
-                    <Cities
+                        <Cities
                             type="combobox"
                             value={this.state.city}
                             fieldName="city"
@@ -189,13 +194,13 @@ class HomeListPage extends React.Component {
                 </div>
 
                 {this.state.homeList.map((home, i) => (
-                    <Card className="my-card" style={{ width: '18rem', margin: '2rem' }} key={i}>
+                    <Card key={home.id} className="my-card" style={{ width: '18rem', margin: '2rem' }}>
                         <OverlayTrigger
                             placement="right"
                             delay={{ show: 250, hide: 400 }}
                             overlay={renderTooltip}
                         >
-                            <Button className="btn-light add-tenant" onClick={() => this.handleSaveTenantHome(home)}>➕</Button>
+                            <Button className="btn-light add-tenant" onClick={() => this.handleSaveTenantHome(home.id)}>➕</Button>
                         </OverlayTrigger>
                         <Card.Body>
                             <Card.Title>{home.homeType}</Card.Title>
@@ -220,11 +225,9 @@ class HomeListPage extends React.Component {
                             <ListGroupItem><b>İlan Tarihi: </b>{home.announcementDate}</ListGroupItem>
                         </ListGroup>
                         <Card.Body>
-                            <Button style={{ marginLeft: "10px" }} onClick={() => this.handleDeleteHome(home)} className="btn btn-info">Delete</Button>
-
-
+                            <Button style={{ float: "left" }} onClick={() => this.handleDeleteHome(home)} className="btn">Delete</Button>
                             <Link to='/update-home-infos'>
-                                <Button style={{ marginLeft: "10px" }} className="btn btn-info" onClick={() => this.setData(home)}>Güncelle</Button>
+                                <Button style={{ float: "right" }} className="btn" onClick={() => this.setData(home)}>Güncelle</Button>
                             </Link>
                         </Card.Body>
                     </Card>

@@ -35,10 +35,13 @@ class UserInfoPage extends React.Component {
 
     handleCancelUser() {
         UserService.cancelUser().then(response => this.handlerCancelResponse(response)).catch(error => this.handleCancelError(error));
-
+    }
+    handleUserBack() {
+        UserService.getUserBack().then(response => this.handlerCancelResponse(response)).catch(error => this.handleCancelError(error));
     }
 
     handlerCancelResponse(response) {
+        console.log(response)
         this.componentDidMount()
     }
 
@@ -51,7 +54,7 @@ class UserInfoPage extends React.Component {
 
         return (
             <div className="row p-1">
-            
+
                 <Card className="my-card">
                     <Card.Body>
                         <Card.Title><b>Adı-Soyadı: </b>{this.state.user.name} {this.state.user.surname}</Card.Title>
@@ -70,10 +73,11 @@ class UserInfoPage extends React.Component {
                     </Card.Body>
 
                     <Card.Body>
-                        <Button style={{ marginLeft: "10px" }}
-                            className="btn btn-info" onClick={() => { this.handleCancelUser() }}>Hesabı Pasifleştir</Button>
-                        <Button style={{ marginLeft: "63rem", backgroundColor: "#2eb12e" }}
-                            className="btn btn-info" >Hesabı Aktifleştir</Button>
+                        {this.state.user.statusType === "Aktif" && <Button style={{ marginLeft: "10px" }}
+                            className="btn btn-info" onClick={() => { this.handleCancelUser() }}>Hesabı Pasifleştir</Button>}
+                        {this.state.user.statusType === "Pasif" &&
+                            <Button style={{ marginLeft: "10px", backgroundColor: "#2eb12e" }}
+                                className="btn btn-info" onClick={() => { this.handleUserBack() }}>Hesabı Aktifleştir</Button>}
                     </Card.Body>
                 </Card>
 

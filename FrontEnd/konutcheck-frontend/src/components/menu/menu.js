@@ -30,8 +30,8 @@ class Menu extends React.Component {
                             <Nav className="me-auto">
                                 <Nav.Link href="/">ANA SAYFA</Nav.Link>
                                 <Nav.Link href="/">HAKKIMIZDA</Nav.Link>
-                                <Nav.Link href="/homes" >EVLER</Nav.Link>
-                                <Nav.Link href="/users">KULLANICILAR</Nav.Link>
+                                {this.props.isLoggedOn && <Nav.Link href="/homes" >EVLER</Nav.Link>}
+                                {this.props.isLoggedOn && <Nav.Link href="/users">KULLANICILAR</Nav.Link>}
                                 <Nav.Link href="/">BİZE ULAŞIN</Nav.Link>
 
 
@@ -44,7 +44,7 @@ class Menu extends React.Component {
                                     {this.props.isLoggedOn && <NavDropdown.Item href="/user-info">Profilim</NavDropdown.Item>}
                                     {this.props.isLoggedOn && this.props.userType === 'Evsahibi' && <NavDropdown.Item href="/add-homes">Ev Ekle</NavDropdown.Item>}
                                     {this.props.isLoggedOn && this.props.userType === 'Evsahibi' && <NavDropdown.Item href="/list-passive-homes">Ev Onayla</NavDropdown.Item>}
-                                    {this.props.isLoggedOn && this.props.userType === 'Kiracı' &&<NavDropdown.Item href="/tenant-homes">Kiracı Olduğum Evler</NavDropdown.Item>}
+                                    {this.props.isLoggedOn && this.props.userType === 'Kiracı' && <NavDropdown.Item href="/tenant-homes">Kiracı Olduğum Evler</NavDropdown.Item>}
                                     {this.props.isLoggedOn && this.props.userType === 'Evsahibi' && <NavDropdown.Item href="/landlord-homes">Sahip Olduğum Evler</NavDropdown.Item>}
                                     {this.props.isLoggedOn && this.props.userType === 'Evsahibi' && <NavDropdown.Item href="/landlord-tenants">Kiracılarım</NavDropdown.Item>}
                                     {this.props.isLoggedOn && <NavDropdown.Item href="/" onClick={this.handleLogout}>Çıkış</NavDropdown.Item>}
