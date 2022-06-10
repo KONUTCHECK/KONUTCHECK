@@ -56,7 +56,7 @@ class TenantHomesDetailPage extends React.Component {
                             <ListGroupItem>{home.announcementDate}</ListGroupItem>
                         </ListGroup>
                         <Card.Body>
-                            <Link to={'/home-evaluation?id=' + home.id}>
+                            <Link to={`/home-evaluation?id=${home.id}`}>
                                 <Button style={{ marginLeft: "10px" }} className="btn btn-info" >Evi Değerlendir</Button>
                             </Link>
 
