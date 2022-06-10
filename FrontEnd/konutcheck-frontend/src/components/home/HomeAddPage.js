@@ -6,11 +6,21 @@ import HomeTypes from "../general/combobox/HomeCombobox/HomeTypes";
 import HomeAspects from "../general/combobox/HomeCombobox/HomeAspects";
 import Countries from "../general/combobox/HomeCombobox/Countries";
 import Cities from "../general/combobox/HomeCombobox/Cities";
+import ToastMessage from "../general/toastMessage";
 
 
 
 
 class HomeAddPage extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            toast: false,
+            type: 'success',
+            message: 'Ev Başarı ile Eklendi.'
+        }
+    }
     handleFormSubmit = (e) => {
         e.preventDefault();
         const newHome = serialize(e.target, { hash: true })
@@ -19,22 +29,36 @@ class HomeAddPage extends React.Component {
     }
 
     save(newHome) {
-
         HomeService.saveHome(newHome)
             .then(response => this.handleResponse(response))
             .catch(error => this.handleError(error))
     }
 
     handleResponse(response) {
+        this.setState({
+            toast: true,
+            type: 'success',
+            message: 'Ev Başarı ile Eklendi.'
+        })
+        setTimeout(() => {
+            this.setState({ toast: false })
+        }, 100);
         console.log(response);
     }
 
     handleError(error) {
+        this.setState({
+            toast: true,
+            type: 'error',
+            message: error.message
+        })
+        setTimeout(() => {
+            this.setState({ toast: false })
+        }, 100);
         console.log(error.data);
     }
 
     render() {
-        window.history.go(-1);
         return (
 
             <div className="container col-md-6 offset-md-3">
@@ -189,6 +213,9 @@ class HomeAddPage extends React.Component {
                     <input type="submit" className="btn btn-danger btn-block" value="Kaydet" />
 
                 </form>
+                {this.state.toast &&
+                    <ToastMessage type={this.state.type} message={this.state.message}></ToastMessage>
+                }
             </div>
 
         );

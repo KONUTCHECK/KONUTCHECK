@@ -55,8 +55,8 @@ class TenantHomesDetailPage extends React.Component {
                             <ListGroupItem>Kat Sayısı : {home.floor}</ListGroupItem>
                             <ListGroupItem>{home.announcementDate}</ListGroupItem>
                         </ListGroup>
-                        <Card.Body> 
-                            <Link to='/home-evaluation'>
+                        <Card.Body>
+                            <Link to={'/home-evaluation?id=' + home.id}>
                                 <Button style={{ marginLeft: "10px" }} className="btn btn-info" >Evi Değerlendir</Button>
                             </Link>
 
@@ -65,7 +65,8 @@ class TenantHomesDetailPage extends React.Component {
                             </Link>
                         </Card.Body>
                     </Card>
-                ))}
+                ))
+                }
 
             </div>
         );
