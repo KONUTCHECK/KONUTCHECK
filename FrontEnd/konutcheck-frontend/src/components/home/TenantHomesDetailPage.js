@@ -57,12 +57,13 @@ class TenantHomesDetailPage extends React.Component {
                         </ListGroup>
                         <Card.Body>
                             <Link to={`/home-evaluation?id=${home.id}`}>
-                                <Button style={{ marginLeft: "10px" }} className="btn btn-info" >Evi Değerlendir</Button>
+                                <Button style={{ width: "100%" }} className="btn">Evi Değerlendir</Button>
                             </Link>
 
                             <Link to='/landlord-evaluation'>
-                                <Button style={{ marginLeft: "10px" }} className="btn btn-info" >Ev Sahibini Değerlendir</Button>
+                                <Button style={{ width: "100%" }} className="btn" >Ev Sahibini Değerlendir</Button>
                             </Link>
+
                         </Card.Body>
                     </Card>
                 ))
