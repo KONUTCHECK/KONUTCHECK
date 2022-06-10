@@ -97,7 +97,7 @@ class LandlordHomesDetailPage extends React.Component {
                             <ListGroupItem>{home.announcementDate}</ListGroupItem>
                         </ListGroup>
                         <Card.Body>
-                            <Button s style={{ float: "left" }} onClick={() => this.handleDeleteHome(home)} className="btn">Delete</Button>
+                            <Button s style={{ float: "left" }} onClick={() => this.handleDeleteHome(home)} className="btn-danger">Sil</Button>
 
 
                             <Link to='/update-home-infos'>

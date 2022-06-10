@@ -36,19 +36,19 @@ class LandlordEvaluation extends React.Component {
                 <Card className="my-card">
                     <Card.Body>
                         <Form onSubmit={this.handleFormSubmit}>
-                        <ListGroup>
-                            <ListGroup.Item>gradeOfLandlordSatisfaction <input name="gradeOfLandlordSatisfaction"/></ListGroup.Item>
-                            <ListGroup.Item>gradeOfLandlordTreatment : <input name="gradeOfLandlordTreatment" /></ListGroup.Item>
-                            <ListGroup.Item>gradeOfLandlordAccessibility: <input name="gradeOfLandlordAccessibility" /></ListGroup.Item>
-                            <ListGroup.Item>gradeOfLandlordUnderstanding: <input name="gradeOfLandlordUnderstanding" /></ListGroup.Item>
-                        </ListGroup>
+                            <ListGroup>
+                                <ListGroup.Item>gradeOfLandlordSatisfaction <input name="gradeOfLandlordSatisfaction" /></ListGroup.Item>
+                                <ListGroup.Item>gradeOfLandlordTreatment : <input name="gradeOfLandlordTreatment" /></ListGroup.Item>
+                                <ListGroup.Item>gradeOfLandlordAccessibility: <input name="gradeOfLandlordAccessibility" /></ListGroup.Item>
+                                <ListGroup.Item>gradeOfLandlordUnderstanding: <input name="gradeOfLandlordUnderstanding" /></ListGroup.Item>
+                            </ListGroup>
 
-                        <input type="submit" className="btn btn-danger btn-block" value="Değerlendir" />
+                            <input type="submit" className="btn" value="Değerlendir" style={{ marginTop: '10px' }} />
 
                         </Form>
                     </Card.Body>
 
-             
+
                 </Card>
 
             </div>

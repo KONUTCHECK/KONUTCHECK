@@ -8,6 +8,7 @@ import HomeTypes from "../general/combobox/HomeCombobox/HomeTypes";
 import Cities from "../general/combobox/HomeCombobox/Cities";
 import HomeAspects from "../general/combobox/HomeCombobox/HomeAspects";
 import EvaluationService from "../../api/EvaluationService";
+import ToastMessage from "../general/toastMessage";
 
 
 /* Related With Tenant Home */
@@ -27,9 +28,11 @@ class HomeListPage extends React.Component {
             homeType: "",
             amount1: "",
             amount2: "",
-            city: ""
+            city: "",
+            toast: false,
+            type: 'success',
+            message: 'Ev Başarıyla Silindi.'
         }
-
         this.handlerChange = this.handlerChange.bind(this);
 
     }
@@ -61,10 +64,26 @@ class HomeListPage extends React.Component {
     }
 
     handlerDeleteResponse(response) {
+        this.setState({
+            toast: true,
+            type: 'success',
+            message: 'Ev Başarıyla Silindi.'
+        })
+        setTimeout(() => {
+            this.setState({ toast: false })
+        }, 100);
         this.componentDidMount();
     }
 
     handleDeleteError(error) {
+        this.setState({
+            toast: true,
+            type: 'error',
+            message: error.message
+        })
+        setTimeout(() => {
+            this.setState({ toast: false })
+        }, 100);
         console.log("Ev silinirken hata oluştu");
     }
 
@@ -132,7 +151,7 @@ class HomeListPage extends React.Component {
     render() {
 
         return (
-            <div className="row" style={{ margin: '10px 0 0 0' }}>
+            <div className="row" style={{ margin: '10px 0 0 0', justifyContent: 'center' }}>
                 <div className="row">
                     <div className="col-sm-3">
                         Ev Tipi
@@ -212,7 +231,7 @@ class HomeListPage extends React.Component {
                                 {home.totalPoint}
                             </Card.Text>
                         </Card.Body>
-                        <ListGroup className="list-group-flush">
+                        <ListGroup className="list-group-flush" style={{ borderRadius: '10px' }}>
                             <ListGroupItem><b>Fiyat : </b>{home.amount}</ListGroupItem>
                             <ListGroupItem><b>Depozito: </b>{home.deposit}</ListGroupItem>
                             <ListGroupItem><b>Oda Sayısı:</b> {home.numberOfRooms}</ListGroupItem>
@@ -225,14 +244,16 @@ class HomeListPage extends React.Component {
                             <ListGroupItem><b>İlan Tarihi: </b>{home.announcementDate}</ListGroupItem>
                         </ListGroup>
                         <Card.Body>
-                            <Button style={{ float: "left" }} onClick={() => this.handleDeleteHome(home)} className="btn">Delete</Button>
+                            <Button style={{ float: "left" }} onClick={() => this.handleDeleteHome(home)} className="btn-danger">Sil</Button>
                             <Link to='/update-home-infos'>
                                 <Button style={{ float: "right" }} className="btn" onClick={() => this.setData(home)}>Güncelle</Button>
                             </Link>
                         </Card.Body>
                     </Card>
                 ))}
-
+                {this.state.toast &&
+                    <ToastMessage type={this.state.type} message={this.state.message}></ToastMessage>
+                }
             </div>
         );
     }

@@ -47,7 +47,7 @@ class HomeEvaluation extends React.Component {
                                 <ListGroup.Item>gradeOfHomeClosenessToSomewhere: <input type="number" name="gradeOfHomeClosenessToSomewhere" /></ListGroup.Item>
                             </ListGroup>
 
-                            <input type="submit" className="btn btn-danger btn-block" value="Değerlendir" />
+                            <input type="submit" className="btn" value="Değerlendir" style={{ marginTop: '10px' }} />
 
                         </Form>
                     </Card.Body>
