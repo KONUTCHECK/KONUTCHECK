@@ -90,7 +90,7 @@ class HomeListPage extends React.Component {
     }
 
     getHomePoint() {
-        EvaluationService.getTotalPointOfHome(this.props.id).then(response => this.handlerResponse(response))
+        EvaluationService.getTotalPointOfHome(this.state.id).then(response => this.handlerResponse(response))
             .catch(error => this.handleHomePointError(error))
     }
 

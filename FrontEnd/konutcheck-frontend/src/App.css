@@ -129,17 +129,18 @@
   margin-bottom: 10px;
 }
 .user-table{
-  width: 30%;
-  display: inline-block;
-  margin: 15px 15px 5px 5px;
-  border: 2px solid purple;
-  border-radius: 14px;
+    width: 90%;
+    margin: 5px 5%;
+    padding: 0;
+    overflow: hidden;
+    border: 2px solid purple;
+    border-radius: 14px;
 }
 
 @media screen and (max-width: 900px) {
   .user-table {
-      width: 100%;
-      display: block;}
+      display: block;
+    }
   }
 
   .accordion-button {
@@ -290,4 +291,7 @@ ul{
 }
 .add-tenant:active {
   transform: scale(1.1);
+}
+.p-1 {
+  padding: 1.25rem!important;
 }

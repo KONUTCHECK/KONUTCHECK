@@ -36,23 +36,23 @@ class HomeEvaluation extends React.Component {
                 <Card className="my-card">
                     <Card.Body>
                         <Form onSubmit={this.handleFormSubmit}>
-                        <ListGroup>
-                            <ListGroup.Item>HomeCleaning: <input name="gradeOfHomeCleaning"/></ListGroup.Item>
-                            <ListGroup.Item>gradeOfHomeReality : <input name="gradeOfHomeReality" /></ListGroup.Item>
-                            <ListGroup.Item>gradeOfHomeModification: <input name="gradeOfHomeModification" /></ListGroup.Item>
-                            <ListGroup.Item>gradeOfNetworkInfrastructure: <input name="gradeOfNetworkInfrastructure" /></ListGroup.Item>
-                            <ListGroup.Item>gradeOfPhoneInfrastructure: <input name ="gradeOfPhoneInfrastructure"/></ListGroup.Item>
-                            <ListGroup.Item>gradeOfHomeEnvironment: <input name ="gradeOfHomeEnvironment"  /></ListGroup.Item>
-                            <ListGroup.Item>gradeOfHomeNeighborliness: <input name="gradeOfHomeNeighborliness" /></ListGroup.Item>
-                            <ListGroup.Item>gradeOfHomeClosenessToSomewhere: <input name="gradeOfHomeClosenessToSomewhere" /></ListGroup.Item>
-                        </ListGroup>
+                            <ListGroup>
+                                <ListGroup.Item>HomeCleaning: <input type="number" name="gradeOfHomeCleaning" /></ListGroup.Item>
+                                <ListGroup.Item>gradeOfHomeReality : <input type="number" name="gradeOfHomeReality" /></ListGroup.Item>
+                                <ListGroup.Item>gradeOfHomeModification: <input type="number" name="gradeOfHomeModification" /></ListGroup.Item>
+                                <ListGroup.Item>gradeOfNetworkInfrastructure: <input type="number" name="gradeOfNetworkInfrastructure" /></ListGroup.Item>
+                                <ListGroup.Item>gradeOfPhoneInfrastructure: <input type="number" name="gradeOfPhoneInfrastructure" /></ListGroup.Item>
+                                <ListGroup.Item>gradeOfHomeEnvironment: <input type="number" name="gradeOfHomeEnvironment" /></ListGroup.Item>
+                                <ListGroup.Item>gradeOfHomeNeighborliness: <input type="number" name="gradeOfHomeNeighborliness" /></ListGroup.Item>
+                                <ListGroup.Item>gradeOfHomeClosenessToSomewhere: <input type="number" name="gradeOfHomeClosenessToSomewhere" /></ListGroup.Item>
+                            </ListGroup>
 
-                        <input type="submit" className="btn btn-danger btn-block" value="Değerlendir" />
+                            <input type="submit" className="btn btn-danger btn-block" value="Değerlendir" />
 
                         </Form>
                     </Card.Body>
 
-             
+
                 </Card>
 
             </div>

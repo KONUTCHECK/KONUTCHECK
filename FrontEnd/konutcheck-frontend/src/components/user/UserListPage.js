@@ -47,49 +47,53 @@ class UserListPage extends React.Component {
 
         return (
 
+            <>
+                <div className="row p-1">
+                    <div className="col-sm-3">
+                        Kullanıcı Tipi
+                        <Usertype
+                            type="combobox"
+                            value={this.state.userType}
+                            fieldName="userType"
+                            onChange={this.handlerChange}
+                        >
+                        </Usertype>
 
-            <div className="row p-1">
-                <div className="col-sm-3">
-                    Kullanıcı Tipi
-                    <Usertype
-                        type="combobox"
-                        value={this.state.userType}
-                        fieldName="userType"
-                        onChange={this.handlerChange}
-                    >
-                    </Usertype>
-
-                </div>
-                <div className="col-sm-3">
-                    <div className="d-grid gap-2">
-                        <Button variant="secondary" onClick={() => this.handleSearch()} onChange={this.handlerChange}>Arama</Button>
                     </div>
+                    <div className="col-sm-3">
+                        <div className="d-grid gap-2">
+                            <Button variant="secondary" onClick={() => this.handleSearch()} onChange={this.handlerChange}>Arama</Button>
+                        </div>
 
+                    </div>
                 </div>
+                {
+                    this.state.userList.map((user, i) => (
+                        <div className="row p-1" key={user.id}>
+                            <Accordion className="user-table" defaultActiveKey="0">
+                                <Accordion.Item eventKey="0">
+                                    <Accordion.Header>{user.name} {user.surname}{user.userType}</Accordion.Header>
+                                    <Accordion.Body>
+                                        <ListGroup>
+                                            <ListGroup.Item className="one-user">{user.age}</ListGroup.Item>
+                                            <ListGroup.Item className="one-user">{user.gender}</ListGroup.Item>
+                                            <ListGroup.Item className="one-user">{user.educationalStatus}</ListGroup.Item>
+                                            <ListGroup.Item className="one-user">{user.job}</ListGroup.Item>
+                                            <ListGroup.Item className="one-user">{user.maritialStatus}</ListGroup.Item>
+                                            <ListGroup.Item className="one-user">{user.email}</ListGroup.Item>
+                                            <ListGroup.Item className="one-user">{user.userPhoneNumber1}</ListGroup.Item>
+                                            <ListGroup.Item className="one-user">{user.userPhoneNumber2}</ListGroup.Item>
+                                        </ListGroup>
+                                    </Accordion.Body>
+                                </Accordion.Item>
+
+                            </Accordion>
+                        </div>
 
 
-                {this.state.userList.map((user, i) => (
-                    <Accordion className="user-table" defaultActiveKey="0" key={user.id}>
-                        <Accordion.Item eventKey="0">
-                            <Accordion.Header>{user.name} {user.surname}{user.userType}</Accordion.Header>
-                            <Accordion.Body>
-                                <ListGroup>
-                                    <ListGroup.Item className="one-user">{user.age}</ListGroup.Item>
-                                    <ListGroup.Item className="one-user">{user.gender}</ListGroup.Item>
-                                    <ListGroup.Item className="one-user">{user.educationalStatus}</ListGroup.Item>
-                                    <ListGroup.Item className="one-user">{user.job}</ListGroup.Item>
-                                    <ListGroup.Item className="one-user">{user.maritialStatus}</ListGroup.Item>
-                                    <ListGroup.Item className="one-user">{user.email}</ListGroup.Item>
-                                    <ListGroup.Item className="one-user">{user.userPhoneNumber1}</ListGroup.Item>
-                                    <ListGroup.Item className="one-user">{user.userPhoneNumber2}</ListGroup.Item>
-                                </ListGroup>
-                            </Accordion.Body>
-                        </Accordion.Item>
-
-                    </Accordion>
-
-                ))}
-            </div>
+                    ))
+                }
+            </>
         );
     }
 }

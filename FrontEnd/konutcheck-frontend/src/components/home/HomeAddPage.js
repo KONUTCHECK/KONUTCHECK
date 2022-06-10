@@ -6,13 +6,11 @@ import HomeTypes from "../general/combobox/HomeCombobox/HomeTypes";
 import HomeAspects from "../general/combobox/HomeCombobox/HomeAspects";
 import Countries from "../general/combobox/HomeCombobox/Countries";
 import Cities from "../general/combobox/HomeCombobox/Cities";
-import { Link } from "react-router-dom";
 
 
 
 
 class HomeAddPage extends React.Component {
-
     handleFormSubmit = (e) => {
         e.preventDefault();
         const newHome = serialize(e.target, { hash: true })
@@ -28,7 +26,6 @@ class HomeAddPage extends React.Component {
     }
 
     handleResponse(response) {
-
         console.log(response);
     }
 
@@ -37,8 +34,7 @@ class HomeAddPage extends React.Component {
     }
 
     render() {
-
-
+        window.history.go(-1);
         return (
 
             <div className="container col-md-6 offset-md-3">
@@ -189,9 +185,9 @@ class HomeAddPage extends React.Component {
 
                     </div>
 
-                  
+
                     <input type="submit" className="btn btn-danger btn-block" value="Kaydet" />
-                  
+
                 </form>
             </div>
 

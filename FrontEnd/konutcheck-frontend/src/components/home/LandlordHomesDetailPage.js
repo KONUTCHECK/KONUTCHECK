@@ -13,7 +13,7 @@ class LandlordHomesDetailPage extends React.Component {
         super(props);
 
         this.state = {
-            homeList: [],        
+            homeList: [],
         }
 
     }
@@ -97,11 +97,11 @@ class LandlordHomesDetailPage extends React.Component {
                             <ListGroupItem>{home.announcementDate}</ListGroupItem>
                         </ListGroup>
                         <Card.Body>
-                            <Button style={{ marginLeft: "10px" }} onClick={() => this.handleDeleteHome(home)} className="btn btn-info">Delete</Button>
+                            <Button s style={{ float: "left" }} onClick={() => this.handleDeleteHome(home)} className="btn">Delete</Button>
 
 
                             <Link to='/update-home-infos'>
-                                <Button style={{ marginLeft: "10px" }} className="btn btn-info" onClick={() => this.setData(home)}>Güncelle</Button>
+                                <Button style={{ float: "right" }} className="btn" onClick={() => this.setData(home)}>Güncelle</Button>
                             </Link>
                         </Card.Body>
                     </Card>
