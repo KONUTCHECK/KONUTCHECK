@@ -40,7 +40,6 @@ class HomeListPage extends React.Component {
     componentDidMount() {
         this.setState({ homeType: "Daire" })
         this.getHomeList();
-        this.getHomePoint();
     }
 
     getHomeList() {
@@ -49,6 +48,8 @@ class HomeListPage extends React.Component {
 
     handlerResponse(response) {
         this.setState({ homeList: response.data })
+        if (response.data.length > 0)
+            this.getHomePoint(0);
         console.log(this.state.homeList);
     }
 
@@ -108,11 +109,16 @@ class HomeListPage extends React.Component {
         console.log(this.state)
     }
 
-    getHomePoint() {
-        EvaluationService.getTotalPointOfHome(this.state.id).then(response => this.handlerResponse(response))
+    getHomePoint(i) {
+        EvaluationService.getTotalPointOfHome(this.state.homeList[i].id).then(response => {
+            this.state.homeList[i].point = response.data[0];
+            console.log(this.state.homeList)
+            i++;
+            if (i < this.state.homeList.length)
+                this.getHomePoint(i)
+        })
             .catch(error => this.handleHomePointError(error))
     }
-
     handleHomePointError(error) {
         console.log("Puan çekilirken hata oluştu");
     }
@@ -242,6 +248,7 @@ class HomeListPage extends React.Component {
                             <ListGroupItem><b>Bina Yaşı:</b> {home.buildingAge}</ListGroupItem>
                             <ListGroupItem><b>Aidat:</b> {home.dues}</ListGroupItem>
                             <ListGroupItem><b>İlan Tarihi: </b>{home.announcementDate}</ListGroupItem>
+                            <ListGroupItem><b>Puan : </b>{home.point?.totalPoint}</ListGroupItem>
                         </ListGroup>
                         <Card.Body>
                             <Button style={{ float: "left" }} onClick={() => this.handleDeleteHome(home)} className="btn-danger">Sil</Button>

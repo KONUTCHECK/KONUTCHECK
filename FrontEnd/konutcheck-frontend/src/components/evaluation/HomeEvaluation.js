@@ -10,7 +10,7 @@ class HomeEvaluation extends React.Component {
     handleFormSubmit = (e) => {
         e.preventDefault();
         const newHomeEvaluation = serialize(e.target, { hash: true })
-        newHomeEvaluation.homeId = Number(window.location.search.split('id=')[1]);
+        newHomeEvaluation.tenantId = Number(window.location.search.split('id=')[1]);
         this.saveHomeEvaluation(newHomeEvaluation);
 
     }
