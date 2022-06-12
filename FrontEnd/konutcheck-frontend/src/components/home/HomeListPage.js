@@ -275,6 +275,7 @@ class HomeListPage extends React.Component {
                 {this.state.toast &&
                     <ToastMessage type={this.state.type} message={this.state.message}></ToastMessage>
                 }
+
             </div>
         );
     }
