@@ -65,14 +65,14 @@ class App extends React.Component {
           <Route path='*' element={<ErrorPage></ErrorPage>}></Route>
           <Route path="/login" element={<LoginPage login={this.login}></LoginPage>}></Route>
           <Route path="/homes" element={<HomeListPage></HomeListPage>}></Route>
-          <Route path="/add-homes" element={<HomeAddPage></HomeAddPage>}></Route>
+          {userType === 'Evsahibi' && <Route path="/add-homes" element={<HomeAddPage></HomeAddPage>}></Route>}
           <Route path="/register" element={<Register></Register>}></Route>
           <Route path="/view-home/:id" element={<DetailHomeInfoPage></DetailHomeInfoPage>}></Route>
-          <Route path="/update-home-infos" element={<HomeUpdatePage></HomeUpdatePage>}></Route>
+          {userType === 'Evsahibi' && <Route path="/update-home-infos" element={<HomeUpdatePage></HomeUpdatePage>}></Route>}
           <Route path="/get-homes-by" element={<HomeFilterPage></HomeFilterPage>}></Route>
-          <Route path="/users" element={<UserListPage></UserListPage>}></Route>
+          {userType === 'Evsahibi' && <Route path="/users" element={<UserListPage></UserListPage>}></Route>}
           <Route path="/user-info" element={<UserInfoPage></UserInfoPage>}></Route>
-          <Route path="/list-passive-homes" element={<ListPassiveHomesPage></ListPassiveHomesPage>}></Route>
+          {userType === 'Evsahibi' && <Route path="/list-passive-homes" element={<ListPassiveHomesPage></ListPassiveHomesPage>}></Route>}
           <Route path="/tenant-homes" element={<TenantHomesDetailPage></TenantHomesDetailPage>}></Route>
           <Route path="/landlord-homes" element={<LandlordHomesDetailPage></LandlordHomesDetailPage>}></Route>
           <Route path="/home-evaluation" element={<HomeEvaluation></HomeEvaluation>}></Route>

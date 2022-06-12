@@ -36,6 +36,7 @@ class LoginPage extends React.Component {
         axios.defaults.headers.common['Authorization'] = sessionStorage.getItem('token');
         UserService.getUserInfo().then(response => {
             sessionStorage.setItem('userType', response.data.userType)
+            sessionStorage.setItem('userId', response.data.id)
             this.props.login()
         }).catch(error => console.log(error));
 

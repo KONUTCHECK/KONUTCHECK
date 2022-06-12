@@ -22,7 +22,7 @@ class HomeListPage extends React.Component {
 
     constructor(props) {
         super(props);
-
+        this.tempList = [];
         this.state = {
             homeList: [],
             homeType: "",
@@ -49,7 +49,7 @@ class HomeListPage extends React.Component {
     handlerResponse(response) {
         this.setState({ homeList: response.data })
         if (response.data.length > 0)
-            this.getHomePoint(0);
+            this.getHomePoint(0, response.data);
         console.log(this.state.homeList);
     }
 
@@ -108,14 +108,23 @@ class HomeListPage extends React.Component {
         this.setState({ [event.target.name]: event.target.value })
         console.log(this.state)
     }
-
-    getHomePoint(i) {
-        EvaluationService.getTotalPointOfHome(this.state.homeList[i].id).then(response => {
-            this.state.homeList[i].point = response.data[0];
-            console.log(this.state.homeList)
-            i++;
-            if (i < this.state.homeList.length)
-                this.getHomePoint(i)
+    getHomePoint(i, list) {
+        if (i === 0) {
+            this.tempList = list;
+        }
+        let item = { ...this.tempList[i] };
+        EvaluationService.getTotalPointOfHome(item.id).then(response => {
+            item.homePoint = response.data[0];
+            EvaluationService.getTotalPointOflandlord(item.homeOwner).then(response => {
+                item.landlordPoint = response.data[0];
+                this.tempList[i] = item;
+                i++;
+                if (i < this.tempList.length)
+                    this.getHomePoint(i)
+                else {
+                    this.setState({ homeList: this.tempList })
+                }
+            })
         })
             .catch(error => this.handleHomePointError(error))
     }
@@ -155,7 +164,7 @@ class HomeListPage extends React.Component {
     }
 
     render() {
-
+        const userId = sessionStorage.getItem('userId');
         return (
             <div className="row" style={{ margin: '10px 0 0 0', justifyContent: 'center' }}>
                 <div className="row">
@@ -248,13 +257,18 @@ class HomeListPage extends React.Component {
                             <ListGroupItem><b>Bina Yaşı:</b> {home.buildingAge}</ListGroupItem>
                             <ListGroupItem><b>Aidat:</b> {home.dues}</ListGroupItem>
                             <ListGroupItem><b>İlan Tarihi: </b>{home.announcementDate}</ListGroupItem>
-                            <ListGroupItem><b>Puan : </b>{home.point?.totalPoint}</ListGroupItem>
+                            <ListGroupItem><b>Ev Puanı : </b>{home.homePoint?.totalPoint}</ListGroupItem>
+                            <ListGroupItem><b>Ev Sahibi Puanı : </b>{home.landlordPoint?.totalPoint}</ListGroupItem>
                         </ListGroup>
                         <Card.Body>
-                            <Button style={{ float: "left" }} onClick={() => this.handleDeleteHome(home)} className="btn-danger">Sil</Button>
-                            <Link to='/update-home-infos'>
-                                <Button style={{ float: "right" }} className="btn" onClick={() => this.setData(home)}>Güncelle</Button>
-                            </Link>
+                            {userId == home.homeOwner &&
+                                <>
+                                    <Button style={{ float: "left" }} onClick={() => this.handleDeleteHome(home)} className="btn-danger">Sil</Button>
+                                    <Link to='/update-home-infos'>
+                                        <Button style={{ float: "right" }} className="btn" onClick={() => this.setData(home)}>Güncelle</Button>
+                                    </Link>
+                                </>
+                            }
                         </Card.Body>
                     </Card>
                 ))}
