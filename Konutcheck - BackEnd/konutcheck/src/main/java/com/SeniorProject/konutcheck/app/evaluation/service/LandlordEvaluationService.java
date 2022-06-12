@@ -27,6 +27,7 @@ import java.util.List;
 public class LandlordEvaluationService {
     private final LandlordEvaluationEntityService landlordEvaluationEntityService;
     private final AuthenticationService authenticationService;
+    private final Us_UserEntityService userEntityService;
 
     public List<GetTotalPoint> getTotalPointOfLandlord(Long id){
         List<GetTotalPoint> getTotalPointList = landlordEvaluationEntityService.getTotalPoint(id);
@@ -64,8 +65,9 @@ public class LandlordEvaluationService {
     }
 
     private Long getLandlordId(){
-        GetHomeIdDto landlordId = landlordEvaluationEntityService.getLandlordId();
-        Boolean isLandlordExist = landlordEvaluationEntityService.existById(landlordId.getHomeId());
+        Long tenantId = landlordEvaluationEntityService.getCurrentUser();
+        GetHomeIdDto landlordId = landlordEvaluationEntityService.getLandlordId(tenantId);
+        Boolean isLandlordExist = userEntityService.existById(landlordId.getHomeId());
 
         if(isLandlordExist){
             return landlordId.getHomeId();

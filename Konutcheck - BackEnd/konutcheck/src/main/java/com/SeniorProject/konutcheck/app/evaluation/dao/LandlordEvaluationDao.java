@@ -21,10 +21,11 @@ public interface LandlordEvaluationDao extends JpaRepository<LandlordEvaluation,
     @Query(
             value = "select new com.SeniorProject.konutcheck.app.evaluation.dto.GetHomeIdDto(generalHomeInfo.homeOwner)" +
                     " from GeneralHomeInfo generalHomeInfo" +
-                    " left join LandlordEvaluation  landlordEvaluation on landlordEvaluation.landlordId = generalHomeInfo.homeOwner" +
+                    " left join TenantHome  tenantHome on tenantHome.homeId = generalHomeInfo.id" +
+                    " where tenantHome.tenantId = :tenantId" +
                     " group by generalHomeInfo.homeOwner"
     )
-    GetHomeIdDto getLandlordId();
+    GetHomeIdDto getLandlordId(Long tenantId);
 
     Boolean existsByEvaluationOwnerTenantId(Long tenantId);
 }

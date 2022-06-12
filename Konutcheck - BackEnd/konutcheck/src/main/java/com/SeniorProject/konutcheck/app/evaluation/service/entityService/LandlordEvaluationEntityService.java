@@ -21,8 +21,8 @@ public class LandlordEvaluationEntityService extends BaseEntityService<LandlordE
         return landlordEvaluationDao.getTotalPoint(id);
     }
 
-    public GetHomeIdDto getLandlordId(){
-        return landlordEvaluationDao.getLandlordId();
+    public GetHomeIdDto getLandlordId(Long tenantId){
+        return landlordEvaluationDao.getLandlordId(tenantId);
     }
 
     public Boolean isExistEvaluationOwnerTenantId(Long tenantId){
