@@ -21,6 +21,7 @@ import HomeEvaluation from './components/evaluation/HomeEvaluation';
 import LandlordEvaluation from './components/evaluation/LandlordEvaluation';
 import ListLandlordsTenantsPage from './components/home/ListLandlordsTenantsPage';
 import TenantEvaluation from './components/evaluation/TenantEvaluation';
+import UserUpdatePage from './components/user/UserUpdatePage';
 
 class App extends React.Component {
 
@@ -78,6 +79,7 @@ class App extends React.Component {
           <Route path="/landlord-evaluation" element={<LandlordEvaluation></LandlordEvaluation>}></Route>
           <Route path="/landlord-tenants" element={<ListLandlordsTenantsPage></ListLandlordsTenantsPage>}></Route>
           <Route path="/tenant-evaluation/:tenantId" element={<TenantEvaluation></TenantEvaluation>}></Route>
+          <Route path="/update-user-infos" element={<UserUpdatePage></UserUpdatePage>}></Route>
         </Routes>
 
         <Footer isLoggedOn={isLogged} logout={this.logout}></Footer>

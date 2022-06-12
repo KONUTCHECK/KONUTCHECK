@@ -1,13 +1,13 @@
 import axios from "axios";
 
-class UserService{
+class UserService {
 
-    findAllUsers(){
+    findAllUsers() {
         const url = "/users";
         return axios.get(url);
     }
 
-    getUserInfo(){
+    getUserInfo() {
         const url = "/users/user-info";
         return axios.get(url);
     }
@@ -17,12 +17,18 @@ class UserService{
         return axios.delete(url, id);
     }
 
-    cancelUser(){
+    cancelUser() {
         const url = '/users/cancel/';
         return axios.patch(url);
     }
-    
+    getUserBack() {
+        const url = '/users/get-user-back/';
+        return axios.patch(url);
+    }
+    getUserByType(type) {
+        const url = '/users/' + type.toString();
+        return axios.get(url);
+    }
 }
-
 export default new UserService();
 

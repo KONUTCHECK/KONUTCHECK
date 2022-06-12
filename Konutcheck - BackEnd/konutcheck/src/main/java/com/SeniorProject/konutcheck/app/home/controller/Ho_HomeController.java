@@ -121,7 +121,7 @@ public class Ho_HomeController {
 
     /*---------------------------------------------------------------------------------------------------------*/
 
-    @PostMapping("/save-tenant-home/{homeId}")
+    @PatchMapping("/save-tenant-home/{homeId}")
     public ResponseEntity saveTenantHome(@PathVariable Long homeId){
         TenantHomeDto tenantHomeDto = tenantHomeService.saveTenantHome(homeId);
         return ResponseEntity.ok(tenantHomeDto);

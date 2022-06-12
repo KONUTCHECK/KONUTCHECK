@@ -76,10 +76,12 @@
 .btn{
   background-color: #5b2f83;
   border: #5b2f83;
+  color: white;
   margin-bottom: 10px;
 }
 .btn:hover{
   background-color: #9060ab;
+  color: white;
 }
 .btn-danger:hover{
   background-color: #9060ab;
@@ -94,7 +96,12 @@
 .btn-info:hover{
   background-color: rgb(243, 138, 138);
 }
-
+.btn-danger {
+  background-color: #dc3545;
+}
+.btn-danger:hover{
+  background-color: #de5e6b;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -129,17 +136,18 @@
   margin-bottom: 10px;
 }
 .user-table{
-  width: 30%;
-  display: inline-block;
-  margin: 15px 15px 5px 5px;
-  border: 2px solid purple;
-  border-radius: 14px;
+    width: 90%;
+    margin: 5px 5%;
+    padding: 0;
+    overflow: hidden;
+    border: 2px solid purple;
+    border-radius: 14px;
 }
 
 @media screen and (max-width: 900px) {
   .user-table {
-      width: 100%;
-      display: block;}
+      display: block;
+    }
   }
 
   .accordion-button {
@@ -290,4 +298,7 @@ ul{
 }
 .add-tenant:active {
   transform: scale(1.1);
+}
+.p-1 {
+  padding: 1.25rem!important;
 }

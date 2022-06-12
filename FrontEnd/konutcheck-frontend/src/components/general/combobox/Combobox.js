@@ -6,7 +6,7 @@ class Combobox extends React.Component {
     render() {
 
         return (
-            <Form.Select name={this.props.fieldName} onChange={(e) => this.props.onChange(e)}>
+            <Form.Select name={this.props.fieldName} onChange={(e) => this.props.onChange && this.props.onChange(e)}>
 
                 {!this.props.notNull ? <option value={null}>Seçiniz..</option> : ""}
 

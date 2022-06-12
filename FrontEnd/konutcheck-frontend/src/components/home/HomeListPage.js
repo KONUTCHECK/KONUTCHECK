@@ -8,14 +8,15 @@ import HomeTypes from "../general/combobox/HomeCombobox/HomeTypes";
 import Cities from "../general/combobox/HomeCombobox/Cities";
 import HomeAspects from "../general/combobox/HomeCombobox/HomeAspects";
 import EvaluationService from "../../api/EvaluationService";
+import ToastMessage from "../general/toastMessage";
 
 
- /* Related With Tenant Home */
- const renderTooltip = (props) => (
+/* Related With Tenant Home */
+const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
-      Beni Kiracı Olarak Ekle
+        Beni Kiracı Olarak Ekle
     </Tooltip>
-  );
+);
 
 class HomeListPage extends React.Component {
 
@@ -27,9 +28,11 @@ class HomeListPage extends React.Component {
             homeType: "",
             amount1: "",
             amount2: "",
-            city: ""
+            city: "",
+            toast: false,
+            type: 'success',
+            message: 'Ev Başarıyla Silindi.'
         }
-
         this.handlerChange = this.handlerChange.bind(this);
 
     }
@@ -37,7 +40,6 @@ class HomeListPage extends React.Component {
     componentDidMount() {
         this.setState({ homeType: "Daire" })
         this.getHomeList();
-        this.getHomePoint();
     }
 
     getHomeList() {
@@ -46,6 +48,8 @@ class HomeListPage extends React.Component {
 
     handlerResponse(response) {
         this.setState({ homeList: response.data })
+        if (response.data.length > 0)
+            this.getHomePoint(0);
         console.log(this.state.homeList);
     }
 
@@ -61,10 +65,26 @@ class HomeListPage extends React.Component {
     }
 
     handlerDeleteResponse(response) {
+        this.setState({
+            toast: true,
+            type: 'success',
+            message: 'Ev Başarıyla Silindi.'
+        })
+        setTimeout(() => {
+            this.setState({ toast: false })
+        }, 100);
         this.componentDidMount();
     }
 
     handleDeleteError(error) {
+        this.setState({
+            toast: true,
+            type: 'error',
+            message: error.message
+        })
+        setTimeout(() => {
+            this.setState({ toast: false })
+        }, 100);
         console.log("Ev silinirken hata oluştu");
     }
 
@@ -78,7 +98,7 @@ class HomeListPage extends React.Component {
 
         HomeService.getHomeBetweenAmounts(this.state.amount1, this.state.amount2).then(response => this.handlerResponse(response))
             .catch(error => this.handleError(error))
-        
+
         HomeService.getHomeByCity(this.state.city).then(response => this.handlerResponse(response))
             .catch(error => this.handleError(error))
     }
@@ -89,13 +109,23 @@ class HomeListPage extends React.Component {
         console.log(this.state)
     }
 
-    getHomePoint(){
-        EvaluationService.getTotalPointOfHome(this.props.id).then(response => this.handlerResponse(response))
-        .catch(error => this.handleHomePointError(error))
+    getHomePoint(i) {
+        EvaluationService.getTotalPointOfHome(this.state.homeList[i].id).then(response => {
+            this.state.homeList[i].point = response.data[0];
+            console.log(this.state.homeList)
+            i++;
+            if (i < this.state.homeList.length)
+                this.getHomePoint(i)
+        })
+            .catch(error => this.handleHomePointError(error))
+    }
+    handleHomePointError(error) {
+        console.log("Puan çekilirken hata oluştu");
     }
 
-    handleHomePointError(error){
-        console.log("Puan çekilirken hata oluştu");
+    handleSaveTenantHome(homeId) {
+        HomeService.setTenantHome(homeId).then(response => { })
+            .catch(error => this.handleError(error))
     }
 
     setData(home) {
@@ -127,7 +157,7 @@ class HomeListPage extends React.Component {
     render() {
 
         return (
-            <div className="row" style={{ margin: '10px 0 0 0' }}>
+            <div className="row" style={{ margin: '10px 0 0 0', justifyContent: 'center' }}>
                 <div className="row">
                     <div className="col-sm-3">
                         Ev Tipi
@@ -172,7 +202,7 @@ class HomeListPage extends React.Component {
 
                     <div className="col-sm-3">
                         Şehir
-                    <Cities
+                        <Cities
                             type="combobox"
                             value={this.state.city}
                             fieldName="city"
@@ -189,13 +219,13 @@ class HomeListPage extends React.Component {
                 </div>
 
                 {this.state.homeList.map((home, i) => (
-                    <Card className="my-card" style={{ width: '18rem', margin: '2rem' }} key={i}>
+                    <Card key={home.id} className="my-card" style={{ width: '18rem', margin: '2rem' }}>
                         <OverlayTrigger
                             placement="right"
                             delay={{ show: 250, hide: 400 }}
                             overlay={renderTooltip}
                         >
-                            <Button className="btn-light add-tenant" onClick={() => this.handleSaveTenantHome(home)}>➕</Button>
+                            <Button className="btn-light add-tenant" onClick={() => this.handleSaveTenantHome(home.id)}>➕</Button>
                         </OverlayTrigger>
                         <Card.Body>
                             <Card.Title>{home.homeType}</Card.Title>
@@ -207,7 +237,7 @@ class HomeListPage extends React.Component {
                                 {home.totalPoint}
                             </Card.Text>
                         </Card.Body>
-                        <ListGroup className="list-group-flush">
+                        <ListGroup className="list-group-flush" style={{ borderRadius: '10px' }}>
                             <ListGroupItem><b>Fiyat : </b>{home.amount}</ListGroupItem>
                             <ListGroupItem><b>Depozito: </b>{home.deposit}</ListGroupItem>
                             <ListGroupItem><b>Oda Sayısı:</b> {home.numberOfRooms}</ListGroupItem>
@@ -218,18 +248,19 @@ class HomeListPage extends React.Component {
                             <ListGroupItem><b>Bina Yaşı:</b> {home.buildingAge}</ListGroupItem>
                             <ListGroupItem><b>Aidat:</b> {home.dues}</ListGroupItem>
                             <ListGroupItem><b>İlan Tarihi: </b>{home.announcementDate}</ListGroupItem>
+                            <ListGroupItem><b>Puan : </b>{home.point?.totalPoint}</ListGroupItem>
                         </ListGroup>
                         <Card.Body>
-                            <Button style={{ marginLeft: "10px" }} onClick={() => this.handleDeleteHome(home)} className="btn btn-info">Delete</Button>
-
-
+                            <Button style={{ float: "left" }} onClick={() => this.handleDeleteHome(home)} className="btn-danger">Sil</Button>
                             <Link to='/update-home-infos'>
-                                <Button style={{ marginLeft: "10px" }} className="btn btn-info" onClick={() => this.setData(home)}>Güncelle</Button>
+                                <Button style={{ float: "right" }} className="btn" onClick={() => this.setData(home)}>Güncelle</Button>
                             </Link>
                         </Card.Body>
                     </Card>
                 ))}
-
+                {this.state.toast &&
+                    <ToastMessage type={this.state.type} message={this.state.message}></ToastMessage>
+                }
             </div>
         );
     }
