@@ -94,10 +94,10 @@ class LandlordHomesDetailPage extends React.Component {
                             <ListGroupItem>Fiyat : {home.amount}</ListGroupItem>
                             <ListGroupItem>Oda Sayısı : {home.numberOfRooms}</ListGroupItem>
                             <ListGroupItem>Kat Sayısı : {home.floor}</ListGroupItem>
-                            <ListGroupItem>{home.announcementDate}</ListGroupItem>
+                            <ListGroupItem>Duyuru Tarihi : {home.announcementDate}</ListGroupItem>
                         </ListGroup>
                         <Card.Body>
-                            <Button s style={{ float: "left" }} onClick={() => this.handleDeleteHome(home)} className="btn-danger">Sil</Button>
+                            <Button style={{ float: "left" }} onClick={() => this.handleDeleteHome(home)} className="btn-danger">Sil</Button>
 
 
                             <Link to='/update-home-infos'>
