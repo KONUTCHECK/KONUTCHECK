@@ -105,7 +105,7 @@ class Register extends React.Component {
                         </div>
 
                         <div className="form-group ">
-                            <label htmlFor="inputRating" className="label-name">Çalıştığı Sektör</label>
+                            <label htmlFor="inputRating" className="label-name">Meslek</label>
                             <input
                                 className="form-control "
 

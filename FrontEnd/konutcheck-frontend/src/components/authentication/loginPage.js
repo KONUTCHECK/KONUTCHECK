@@ -91,11 +91,6 @@ class LoginPage extends React.Component {
                                     onChange={this.handlerChange}
                                 />
 
-                                <div className="checkbox mb-3">
-                                    <label>
-                                        <input type="checkbox" value="remember-me" /> Beni Hatırla
-                                    </label>
-                                </div>
 
                                 <input type="submit" className="btn btn-danger btn-block" value="Giriş Yap" />
                             </form>

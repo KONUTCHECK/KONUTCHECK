@@ -101,8 +101,8 @@ class UserInfoPage extends React.Component {
                                 className="btn btn-info" onClick={() => { this.handleUserBack() }}>Hesabı Aktifleştir</Button>}
 
                         <Link to="/update-user-infos">
-                            <Button style={{ marginLeft: "10px" }}
-                                className="btn btn-info" onClick={() => this.setData(this.state.user)}>Bilgilerimi Güncelle</Button>
+                            <Button style={{ marginLeft: "59rem" }}
+                                className="btn btn-update" onClick={() => this.setData(this.state.user)}>Bilgilerimi Güncelle</Button>
                         </Link>
                     </Card.Body>
                 </Card>

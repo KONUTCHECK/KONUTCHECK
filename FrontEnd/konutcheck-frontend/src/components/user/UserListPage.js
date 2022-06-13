@@ -72,17 +72,17 @@ class UserListPage extends React.Component {
                         <div className="row p-1" key={user.id}>
                             <Accordion className="user-table" defaultActiveKey="0">
                                 <Accordion.Item eventKey="0">
-                                    <Accordion.Header>{user.name} {user.surname}{user.userType}</Accordion.Header>
+                                    <Accordion.Header><b>Adı- Soyadı: </b> {user.name} {user.surname} {user.userType}</Accordion.Header>
                                     <Accordion.Body>
                                         <ListGroup>
-                                            <ListGroup.Item className="one-user">{user.age}</ListGroup.Item>
-                                            <ListGroup.Item className="one-user">{user.gender}</ListGroup.Item>
-                                            <ListGroup.Item className="one-user">{user.educationalStatus}</ListGroup.Item>
-                                            <ListGroup.Item className="one-user">{user.job}</ListGroup.Item>
-                                            <ListGroup.Item className="one-user">{user.maritialStatus}</ListGroup.Item>
-                                            <ListGroup.Item className="one-user">{user.email}</ListGroup.Item>
-                                            <ListGroup.Item className="one-user">{user.userPhoneNumber1}</ListGroup.Item>
-                                            <ListGroup.Item className="one-user">{user.userPhoneNumber2}</ListGroup.Item>
+                                            <ListGroup.Item className="one-user"> <b>Yaşı: </b> {user.age}</ListGroup.Item>
+                                            <ListGroup.Item className="one-user"><b>Cinsiyet: </b>{user.gender}</ListGroup.Item>
+                                            <ListGroup.Item className="one-user"><b>Eğitim: </b>{user.educationalStatus}</ListGroup.Item>
+                                            <ListGroup.Item className="one-user"><b>Meslek: </b>{user.job}</ListGroup.Item>
+                                            <ListGroup.Item className="one-user"><b>Medeni Hali: </b>{user.maritialStatus}</ListGroup.Item>
+                                            <ListGroup.Item className="one-user"><b>Email Adresi: </b>{user.email}</ListGroup.Item>
+                                            <ListGroup.Item className="one-user"><b>1. Telefon Numarası: </b>{user.userPhoneNumber1}</ListGroup.Item>
+                                            <ListGroup.Item className="one-user"><b>2. Telefon Numarası: </b>{user.userPhoneNumber2}</ListGroup.Item>
                                         </ListGroup>
                                     </Accordion.Body>
                                 </Accordion.Item>

@@ -96,8 +96,15 @@
 .btn-info:hover{
   background-color: rgb(243, 138, 138);
 }
+.btn-update{
+  background-color: green;
+  margin-left: 59rem;
+}
+.btn-active{
+  background-color: green;
+}
 .btn-danger {
-  background-color: #dc3545;
+  background-color: #5b2f83;
 }
 .btn-danger:hover{
   background-color: #de5e6b;
@@ -173,7 +180,12 @@
   width: 10%;
 }
 
-
+.dropdown-items {
+  text-align: center;
+}
+.table{
+  background-color: #a7b0f3;
+}
 .footer{
   background-color: #a8abab;
   padding-top: 0rem;
@@ -214,7 +226,8 @@ footer li{
 }
 
 .footer-social-links{
-  margin-left: 70px;
+  margin-left: 67px;
+  margin-top: 11px;
 }
 
 @media screen and (max-width: 900px) {

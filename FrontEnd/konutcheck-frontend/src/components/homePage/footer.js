@@ -36,7 +36,7 @@ class Footer extends React.Component {
                                 </div>
 
                                 <div className="footer-item">
-                                    <h4>Hizmetler</h4>
+                                    <h4>HİZMETLER</h4>
                                     <ul>
                                         <a href="#" className="footer-links">
                                             <li>Evinizi Kiraya Verin</li>
@@ -47,10 +47,10 @@ class Footer extends React.Component {
                                     </ul>
                                 </div>
                                 <div className="footer-item">
-                                    <h4>Bize Ulaşın</h4>
+                                    <h4>BİZE ULAŞIN</h4>
 
-                                    <a href="#" className="footer-links">
-                                        <p>info@konutcheck.com</p></a>
+                                    <a href="mailto:" className="footer-links">
+                                    info@konutcheck.com </a>
                                     <ul className="footer-social-links">
 
                                         <li>

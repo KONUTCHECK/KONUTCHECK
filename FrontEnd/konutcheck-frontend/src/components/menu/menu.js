@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import logo from "../homePage/img/logooo.png";
+import Footer from "../homePage/footer";
 
 
 class Menu extends React.Component {
@@ -32,22 +33,22 @@ class Menu extends React.Component {
                                 <Nav.Link href="/">HAKKIMIZDA</Nav.Link>
                                 {this.props.isLoggedOn && <Nav.Link href="/homes" >EVLER</Nav.Link>}
                                 {this.props.isLoggedOn && <Nav.Link href="/users">KULLANICILAR</Nav.Link>}
-                                <Nav.Link href="/">BİZE ULAŞIN</Nav.Link>
+                                <Nav.Link href="#">BİZE ULAŞIN</Nav.Link>
 
 
                                 <NavDropdown title="HESABIM" id="basic-nav-dropdown">
 
 
 
-                                    {!this.props.isLoggedOn && < NavDropdown.Item href="/register">Kayıt Ol</NavDropdown.Item>}
-                                    {!this.props.isLoggedOn && < NavDropdown.Item href="/login">Giriş</NavDropdown.Item>}
-                                    {this.props.isLoggedOn && <NavDropdown.Item href="/user-info">Profilim</NavDropdown.Item>}
-                                    {this.props.isLoggedOn && this.props.userType === 'Evsahibi' && <NavDropdown.Item href="/add-homes">Ev Ekle</NavDropdown.Item>}
-                                    {this.props.isLoggedOn && this.props.userType === 'Evsahibi' && <NavDropdown.Item href="/list-passive-homes">Ev Onayla</NavDropdown.Item>}
-                                    {this.props.isLoggedOn && this.props.userType === 'Kiracı' && <NavDropdown.Item href="/tenant-homes">Kiracı Olduğum Evler</NavDropdown.Item>}
-                                    {this.props.isLoggedOn && this.props.userType === 'Evsahibi' && <NavDropdown.Item href="/landlord-homes">Sahip Olduğum Evler</NavDropdown.Item>}
-                                    {this.props.isLoggedOn && this.props.userType === 'Evsahibi' && <NavDropdown.Item href="/landlord-tenants">Kiracılarım</NavDropdown.Item>}
-                                    {this.props.isLoggedOn && <NavDropdown.Item href="/" onClick={this.handleLogout}>Çıkış</NavDropdown.Item>}
+                                    {!this.props.isLoggedOn && < NavDropdown.Item href="/register" className="dropdown-items">Kayıt Ol</NavDropdown.Item>}
+                                    {!this.props.isLoggedOn && < NavDropdown.Item href="/login" className="dropdown-items">Giriş</NavDropdown.Item>}
+                                    {this.props.isLoggedOn && <NavDropdown.Item href="/user-info" className="dropdown-items">Profilim</NavDropdown.Item>}
+                                    {this.props.isLoggedOn && this.props.userType === 'Evsahibi' && <NavDropdown.Item href="/add-homes" className="dropdown-items">Ev Ekle</NavDropdown.Item>}
+                                    {this.props.isLoggedOn && this.props.userType === 'Evsahibi' && <NavDropdown.Item href="/list-passive-homes" className="dropdown-items">Kiracının Evini Onayla</NavDropdown.Item>}
+                                    {this.props.isLoggedOn && this.props.userType === 'Kiracı' && <NavDropdown.Item href="/tenant-homes" className="dropdown-items">Kiracı Olduğum Evler</NavDropdown.Item>}
+                                    {this.props.isLoggedOn && this.props.userType === 'Evsahibi' && <NavDropdown.Item href="/landlord-homes" className="dropdown-items">Sahip Olduğum Evler</NavDropdown.Item>}
+                                    {this.props.isLoggedOn && this.props.userType === 'Evsahibi' && <NavDropdown.Item href="/landlord-tenants" className="dropdown-items">Kiracılarım</NavDropdown.Item>}
+                                    {this.props.isLoggedOn && <NavDropdown.Item href="/" onClick={this.handleLogout} className="dropdown-items">Çıkış</NavDropdown.Item>}
 
 
 
