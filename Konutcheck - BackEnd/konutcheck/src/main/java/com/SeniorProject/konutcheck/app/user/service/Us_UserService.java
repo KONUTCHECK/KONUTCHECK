@@ -72,6 +72,7 @@ public class Us_UserService {
         if(isExist){
             validationOfAge(usUserDto.getAge());
             usUser = Us_UserMapperConverter.INSTANCE.convertToUsUserFromUsUSerDto(usUserDto);
+            usUser.setStatusType(StatusType.Aktif);
             usUser = usUserEntityService.save(usUser);
         }else{
             throw new ItemNotFoundExceptions(GeneralErrorMessage.USER_NOT_FOUND);
