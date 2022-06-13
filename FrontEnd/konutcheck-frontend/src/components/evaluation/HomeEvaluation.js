@@ -3,9 +3,21 @@ import React from "react";
 import { Accordion, Button, Card, Form, ListGroup, ListGroupItem } from "react-bootstrap";
 import { Link, Navigate } from "react-router-dom";
 import EvaluationService from "../../api/EvaluationService";
+import ToastMessage from "../general/toastMessage";
+
 
 
 class HomeEvaluation extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            toast: false,
+            type: 'success',
+            message: 'Ev başarıyla değerlendirildi :)'
+        }
+    }
 
     handleFormSubmit = (e) => {
         e.preventDefault();
@@ -19,11 +31,27 @@ class HomeEvaluation extends React.Component {
     }
 
     handlerResponse(response) {
+        this.setState({
+            toast: true,
+            type: 'success',
+            message: 'Ev başarıyla değerlendirildi :)'
+        })
+        setTimeout(() => {
+            this.setState({ toast: false })
+        }, 100);
         console.log(response);
     }
 
     handleError(error) {
-        console.log("Değerlendirme yapılırken hata oluştu");
+        this.setState({
+            toast: true,
+            type: 'error',
+            message: "Değerlendirme yapılırken hata oluştu, lütfen hiçbir alanı boş bırakmadan 1-5 arasında puanlayınız :("
+        })
+        setTimeout(() => {
+            this.setState({ toast: false })
+        }, 100);
+        
     }
 
 
@@ -50,11 +78,15 @@ class HomeEvaluation extends React.Component {
                             <input type="submit" className="btn" value="Değerlendir" style={{ marginTop: '10px' }} />
 
                         </Form>
+
                     </Card.Body>
 
 
                 </Card>
 
+                {this.state.toast &&
+                    <ToastMessage type={this.state.type} message={this.state.message}></ToastMessage>
+                }
             </div>
         );
     }

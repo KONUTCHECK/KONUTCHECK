@@ -32,9 +32,9 @@ public class EvaluationController {
         return ResponseEntity.ok(landlordRelatedHomesDto);
     }
 
-    @PostMapping("/landlord-evaluation")
-    public ResponseEntity saveLandlordEvaluation(@RequestBody LandlordEvaluationSaveDto landlordEvaluationSaveDto){
-        LandlordEvaluationDto landlordEvaluationDto = landlordEvaluationService.saveLandlordEvaluation(landlordEvaluationSaveDto);
+    @PostMapping("/landlord-evaluation/{landlordId}")
+    public ResponseEntity saveLandlordEvaluation(@RequestBody LandlordEvaluationSaveDto landlordEvaluationSaveDto, @PathVariable Long landlordId){
+        LandlordEvaluationDto landlordEvaluationDto = landlordEvaluationService.saveLandlordEvaluation(landlordEvaluationSaveDto, landlordId);
         return ResponseEntity.ok(landlordEvaluationDto);
     }
 

@@ -38,10 +38,10 @@ class TenantHomesDetailPage extends React.Component {
     render() {
 
         return (
-            <div className="row" style={{ margin: '10px 0 0 0' }}>
-              <p>KİRACI OLDUĞUM EVLER </p> 
+            <div className="row" style={{ margin: '10px 15px 15px 0' }}>
+              <p className="my-homes"><b>KİRACI OLDUĞUM EVLER</b></p> 
                 {this.state.homeList.map((home, i) => (
-                    <Card className="my-card" style={{ width: '18rem', margin: '2rem' }} key={i}>
+                    <Card className="my-card" style={{ width: '100%' }} key={i}>
                         <Card.Body>
                             <Card.Title>{home.homeType}</Card.Title>
                             <Card.Text>

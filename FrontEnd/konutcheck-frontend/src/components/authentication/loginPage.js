@@ -5,6 +5,8 @@ import AuthenticationService from "../../api/AuthenticationService";
 import UserService from "../../api/UserService";
 import PageTitle from "../general/pageTitle";
 import image from "../homePage/img/logooo.png";
+import ToastMessage from "../general/toastMessage";
+
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -13,6 +15,9 @@ class LoginPage extends React.Component {
         this.state = {
             email: "",
             password: "",
+            toast: false,
+            type: 'success',
+            message: 'E-posta adresi veya şifre yanlış!'
         }
 
         this.handlerChange = this.handlerChange.bind(this);
@@ -43,6 +48,14 @@ class LoginPage extends React.Component {
     }
 
     handleError(error) {
+        this.setState({
+            toast: true,
+            type: 'error',
+            message: "E-posta adresi veya şifre yanlış!"
+        })
+        setTimeout(() => {
+            this.setState({ toast: false })
+        }, 100);
         console.log(error)
     }
 
@@ -97,6 +110,9 @@ class LoginPage extends React.Component {
                         </div>
                     </div>
                 </div>
+                {this.state.toast &&
+                    <ToastMessage type={this.state.type} message={this.state.message}></ToastMessage>
+                }
             </div>
         );
     }

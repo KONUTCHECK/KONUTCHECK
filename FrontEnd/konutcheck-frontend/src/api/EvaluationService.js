@@ -7,9 +7,9 @@ class EvaluationService {
         return axios.post(url, newHomeEvaluation);
     }
 
-    saveLandlordEvaluation(newLandlordEvaluation) {
-        const url = '/evaluations/landlord-evaluation';
-        return axios.post(url, newLandlordEvaluation);
+    saveLandlordEvaluation(newLandlordEvaluation, landlordId) {
+        const url = '/evaluations/landlord-evaluation/' + landlordId;
+        return axios.post(url, newLandlordEvaluation, landlordId);
     }
 
     saveTenantEvaluation(newTenantEvaluation, tenantId) {
