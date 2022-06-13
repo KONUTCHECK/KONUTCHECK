@@ -35,6 +35,7 @@ public class Us_UserService {
     public Us_UserDto saveUser(Us_UserSaveDto usUserSaveDto){
         isEmailExist(usUserSaveDto.getEmail());
         validationOfAge(usUserSaveDto.getAge());
+        validationOfPhoneNumber(usUserSaveDto.getUserPhoneNumber1(), usUserSaveDto.getUserPhoneNumber2());
         Us_User usUser = Us_UserMapperConverter.INSTANCE.convertToUsUserFromUsUserSaveDto(usUserSaveDto);
         String encodedPassword = passwordEncoder.encode(usUserSaveDto.getPassword());
         usUser.setPassword(encodedPassword);
@@ -73,6 +74,8 @@ public class Us_UserService {
             validationOfAge(usUserDto.getAge());
             usUser = Us_UserMapperConverter.INSTANCE.convertToUsUserFromUsUSerDto(usUserDto);
             usUser.setStatusType(StatusType.Aktif);
+            String encodedPassword = passwordEncoder.encode(usUserDto.getPassword());
+            usUser.setPassword(encodedPassword);
             usUser = usUserEntityService.save(usUser);
         }else{
             throw new ItemNotFoundExceptions(GeneralErrorMessage.USER_NOT_FOUND);
@@ -118,6 +121,17 @@ public class Us_UserService {
             return true;
         }else{
             throw new InvalidInformationExceptions(GeneralErrorMessage.AGE_CANNOT_BE_ZERO);
+        }
+    }
+
+    private Boolean validationOfPhoneNumber(String phoneNumber1, String phoneNumber2){
+        Boolean isExistPhoneNumber1 = usUserEntityService.existByPhoneNumber1(phoneNumber1);
+        Boolean isExistPhoneNumber2 = usUserEntityService.existByPhoneNumber2(phoneNumber2);
+
+        if(!(isExistPhoneNumber1 && isExistPhoneNumber2)){
+            return true;
+        }else{
+            throw new DuplicateException(GeneralErrorMessage.PHONENUMBER_ALREADY_USED);
         }
     }
 

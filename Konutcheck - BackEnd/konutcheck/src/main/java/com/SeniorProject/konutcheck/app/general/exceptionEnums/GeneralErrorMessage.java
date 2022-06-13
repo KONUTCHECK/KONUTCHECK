@@ -12,6 +12,7 @@ public enum GeneralErrorMessage implements BaseErrorMessage{
     AGE_CANNOT_BE_ZERO("Age cannot be zero!","Age cannot be zero or little than zero!"),
     CANNOT_BE_NEGATIVE("Value cannot be negative!","The value is little than zero but it must not."),
     ALREADY_USED("Email was used already!","Cannot register the same email that was used by another one."),
+    PHONENUMBER_ALREADY_USED("Phone number was used already!","Cannot register the same phoneNumber that was used by another one."),
     HOME_NOT_FOUND ( "Home not found!", "There is no home related to this id." ),
     INVALID_USER_TYPE("Invalid user type!", "User type mus be tenant or landlord."),
     ID_NOT_MATCH("Id not match!", "Id may be null or not match."),
