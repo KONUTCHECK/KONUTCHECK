@@ -1,11 +1,8 @@
 package com.SeniorProject.konutcheck.app.evaluation.service;
 
 import com.SeniorProject.konutcheck.app.evaluation.converter.EvaluationMapperConverter;
-import com.SeniorProject.konutcheck.app.evaluation.dto.GetHomeIdDto;
+import com.SeniorProject.konutcheck.app.evaluation.dto.*;
 
-import com.SeniorProject.konutcheck.app.evaluation.dto.GetTotalPoint;
-import com.SeniorProject.konutcheck.app.evaluation.dto.TenantEvaluationDto;
-import com.SeniorProject.konutcheck.app.evaluation.dto.TenantEvaluationSaveDto;
 import com.SeniorProject.konutcheck.app.evaluation.entity.TenantEvaluation;
 import com.SeniorProject.konutcheck.app.evaluation.service.entityService.LandlordRelatedHomesEntityService;
 import com.SeniorProject.konutcheck.app.evaluation.service.entityService.TenantEvaluationEntityService;
@@ -40,6 +37,7 @@ public class TenantEvaluationService {
         TenantEvaluation tenantEvaluation = EvaluationMapperConverter.INSTANCE.convertToTenantEvaluationFromTenantEvaluationSaveDto(tenantEvaluationSaveDto);
         Long currentUserId = authenticationService.getCurrentUserId();
         tenantEvaluation.setEvaluationOwnerLandlordId(currentUserId);
+        validationOfIsLandlordStatusActive(currentUserId);
         tenantEvaluation.setTenantId(tenantId);
         tenantEvaluation.setTenantPoint(calculateTenantSinglePoint(tenantEvaluationSaveDto));
         tenantEvaluation = tenantEvaluationEntityService.save(tenantEvaluation);
@@ -67,26 +65,14 @@ public class TenantEvaluationService {
         BigDecimal singlePoint = BigDecimal.valueOf(sum / 5);
         return singlePoint;
     }
+    
+    private Boolean validationOfIsLandlordStatusActive(Long userId){
+        GetStatusTypeDto landlordStatus = tenantEvaluationEntityService.getLandlordStatus(userId);
 
-    /*private Boolean validationOfHomeId(Long id) {
-        GetHomeIdDto homeId = tenantRelatedHomesEntityService.getHomeIdByLandlordId(id);
-        Boolean isHomeIdExist = landlordRelatedHomesEntityService.isHomeIdExist(homeId.getHomeId());
-
-        if (isHomeIdExist) {
+        if(landlordStatus.getStatusType().equals(true)){
             return true;
-        } else {
-            throw new InvalidInformationExceptions(GeneralErrorMessage.ID_NOT_MATCH);
-        }
-    }*/
-
-    private Long getTenantId() {
-        GetHomeIdDto tenantId = tenantEvaluationEntityService.getTenantId();
-        Boolean isTenantIdExist = userEntityService.existById(tenantId.getHomeId());
-
-        if (isTenantIdExist) {
-            return tenantId.getHomeId();
-        } else {
-            throw new ItemNotFoundExceptions(GeneralErrorMessage.ID_NOT_FOUND);
+        }else{
+            throw new InvalidInformationExceptions(GeneralErrorMessage.USER_NOT_ACTIVE);
         }
     }
 

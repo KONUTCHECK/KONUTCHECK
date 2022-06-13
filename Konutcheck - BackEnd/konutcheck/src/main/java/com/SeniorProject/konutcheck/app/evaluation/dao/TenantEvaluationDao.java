@@ -1,6 +1,7 @@
 package com.SeniorProject.konutcheck.app.evaluation.dao;
 
 import com.SeniorProject.konutcheck.app.evaluation.dto.GetHomeIdDto;
+import com.SeniorProject.konutcheck.app.evaluation.dto.GetStatusTypeDto;
 import com.SeniorProject.konutcheck.app.evaluation.dto.GetTotalPoint;
 import com.SeniorProject.konutcheck.app.evaluation.entity.TenantEvaluation;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -25,5 +26,13 @@ public interface TenantEvaluationDao extends JpaRepository<TenantEvaluation, Lon
                     " group by tenantHome.tenantId"
     )
     GetHomeIdDto getTenantId();
+
+    @Query(
+            value = "select new com.SeniorProject.konutcheck.app.evaluation.dto.GetStatusTypeDto(user.statusType)" +
+                    " from Us_User user" +
+                    " where user.Id = :userId " +
+                    " group by user.statusType"
+    )
+    GetStatusTypeDto getLandlordStatus(Long userId);
 
 }

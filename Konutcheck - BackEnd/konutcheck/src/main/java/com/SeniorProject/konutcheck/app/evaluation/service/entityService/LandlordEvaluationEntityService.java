@@ -1,6 +1,7 @@
 package com.SeniorProject.konutcheck.app.evaluation.service.entityService;
 import com.SeniorProject.konutcheck.app.evaluation.dao.LandlordEvaluationDao;
 import com.SeniorProject.konutcheck.app.evaluation.dto.GetHomeIdDto;
+import com.SeniorProject.konutcheck.app.evaluation.dto.GetStatusTypeDto;
 import com.SeniorProject.konutcheck.app.evaluation.dto.GetTotalPoint;
 import com.SeniorProject.konutcheck.app.evaluation.entity.LandlordEvaluation;
 import com.SeniorProject.konutcheck.app.general.service.BaseEntityService;
@@ -27,5 +28,9 @@ public class LandlordEvaluationEntityService extends BaseEntityService<LandlordE
 
     public Boolean isExistEvaluationOwnerTenantId(Long tenantId){
         return landlordEvaluationDao.existsByEvaluationOwnerTenantId(tenantId);
+    }
+
+    public GetStatusTypeDto getTenantStatus(Long userId){
+        return landlordEvaluationDao.getTenantStatus(userId);
     }
 }
