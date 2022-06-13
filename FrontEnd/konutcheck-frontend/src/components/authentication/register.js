@@ -6,11 +6,23 @@ import Usertype from "../general/combobox/RegisterCombobox/Usertype";
 import Gender from "../general/combobox/RegisterCombobox/Gender";
 import Marital_status from "../general/combobox/RegisterCombobox/marital_status";
 import Education from "../general/combobox/RegisterCombobox/education";
+import ToastMessage from "../general/toastMessage";
+
 
 
 
 
 class Register extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            toast: false,
+            type: 'success',
+            message: 'Kişi başarıyla kaydedildi.'
+        }
+    }
 
     handleFormSubmit = (e) => {
         e.preventDefault();
@@ -28,10 +40,26 @@ class Register extends React.Component {
 
     handleResponse(response) {
 
+        this.setState({
+            toast: true,
+            type: 'success',
+            message: 'Kişi başarıyla kaydedildi.'
+        })
+        setTimeout(() => {
+            this.setState({ toast: false })
+        }, 100);
         console.log(response);
     }
 
     handleError(error) {
+        this.setState({
+            toast: true,
+            type: 'error',
+            message: "Girilen bilgiler hatalıdır veya alanlar boş bırakılmamalıdır."
+        })
+        setTimeout(() => {
+            this.setState({ toast: false })
+        }, 100);
         console.log(error.data);
     }
 
@@ -44,7 +72,7 @@ class Register extends React.Component {
          
             <div className="container col-md-6 offset-md-3">
 
-                <form id="product-form" className="mt-5" onSubmit={this.handleFormSubmit}>
+                <form id="product-form" className="mt-5" onSubmit={this.handleFormSubmit} >
 
                     <div className="form-row">
 
@@ -152,7 +180,9 @@ class Register extends React.Component {
                     
                 </form>
                 
-                
+                {this.state.toast &&
+                    <ToastMessage type={this.state.type} message={this.state.message}></ToastMessage>
+                }
             
             
             </div>

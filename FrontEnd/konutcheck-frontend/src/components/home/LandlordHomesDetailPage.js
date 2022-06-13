@@ -6,6 +6,8 @@ import HomeFilterPage from "./HomeFilterPage";
 import { ButtonGroup, Dropdown, DropdownButton } from "react-bootstrap";
 import HomeTypes from "../general/combobox/HomeCombobox/HomeTypes";
 import Cities from "../general/combobox/HomeCombobox/Cities";
+import 'react-confirm-alert/src/react-confirm-alert.css';
+import { confirmAlert } from 'react-confirm-alert';
 
 class LandlordHomesDetailPage extends React.Component {
 
@@ -36,13 +38,14 @@ class LandlordHomesDetailPage extends React.Component {
 
     handleDeleteHome(home) {
         console.log(home);
-
         HomeService.deleteHome(home.id).then(response => this.handlerDeleteResponse(response)).catch(error => this.handleDeleteError(error));
 
     }
 
     handlerDeleteResponse(response) {
+
         this.componentDidMount();
+
     }
 
     handleDeleteError(error) {
@@ -78,11 +81,11 @@ class LandlordHomesDetailPage extends React.Component {
     render() {
 
         return (
-            <div className="row" style={{ margin: '10px 0 0 0' }}>
-            <p>EVLERİM</p>
+            <div className="row" style={{ margin: '10px 15px 15px 0' }}>
+                <p className="my-homes"><b>EVLERİM</b></p>
                 {this.state.homeList.map((home, i) => (
-                    <Card className="my-card" style={{ width: '18rem', margin: '2rem' }} key={i}>
-                      
+                    <Card className="my-card" style={{ width: '100%' }} key={i}>
+
                         <Card.Body>
                             <Card.Title>{home.homeType}</Card.Title>
                             <Card.Text>
@@ -102,7 +105,15 @@ class LandlordHomesDetailPage extends React.Component {
                             <ListGroupItem><b>İlan Tarihi : </b>{home.announcementDate}</ListGroupItem>
                         </ListGroup>
                         <Card.Body>
-                            <Button style={{ float: "left" }} onClick={() => this.handleDeleteHome(home)} className="btn-danger">Sil</Button>
+                            <Button style={{ float: "left" }} onClick={() => {
+                                const confirmBox = window.confirm(
+                                    "Bu evi silmek istediğine emin misin?"
+                                )
+                                if (confirmBox === true) {
+                                    this.handleDeleteHome(home)
+                                }
+                            }
+                            } className="btn-danger">Sil</Button>
 
 
                             <Link to='/update-home-infos'>

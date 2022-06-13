@@ -110,7 +110,7 @@
   background-color: #5b2f83;
 }
 .btn-danger:hover{
-  background-color: #de5e6b;
+  background-color: #9060ab;
 }
 .App-header {
   background-color: #282c34;
@@ -321,4 +321,10 @@ ul{
 }
 .p-1 {
   padding: 1.25rem!important;
+}
+
+/*+*/
+.my-homes{
+  font-size: 30px;
+  color: #646eb8;
 }

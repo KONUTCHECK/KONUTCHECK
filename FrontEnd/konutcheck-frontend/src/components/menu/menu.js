@@ -31,7 +31,8 @@ class Menu extends React.Component {
                             <Nav className="me-auto">
                                 <Nav.Link href="/">ANA SAYFA</Nav.Link>
                                 <Nav.Link href="/">HAKKIMIZDA</Nav.Link>
-                                {this.props.isLoggedOn && <Nav.Link href="/homes" >EVLER</Nav.Link>}
+                                {this.props.isLoggedOn && this.props.userType === 'Kiracı' && <Nav.Link href="/homes" >EVLER</Nav.Link>}
+                                {this.props.isLoggedOn && this.props.userType === 'Evsahibi' && <Nav.Link href="/homes-landlord" >EVLER</Nav.Link>}
                                 {this.props.isLoggedOn && <Nav.Link href="/users">KULLANICILAR</Nav.Link>}
                                 <Nav.Link href="#">BİZE ULAŞIN</Nav.Link>
 

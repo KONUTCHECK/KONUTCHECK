@@ -22,6 +22,7 @@ import LandlordEvaluation from './components/evaluation/LandlordEvaluation';
 import ListLandlordsTenantsPage from './components/home/ListLandlordsTenantsPage';
 import TenantEvaluation from './components/evaluation/TenantEvaluation';
 import UserUpdatePage from './components/user/UserUpdatePage';
+import HomeListPageForLandlord from './components/home/HomeListPageForLandlord';
 
 class App extends React.Component {
 
@@ -64,7 +65,8 @@ class App extends React.Component {
           <Route path='/' element={<HomePage></HomePage>}> </Route>
           <Route path='*' element={<ErrorPage></ErrorPage>}></Route>
           <Route path="/login" element={<LoginPage login={this.login}></LoginPage>}></Route>
-          <Route path="/homes" element={<HomeListPage></HomeListPage>}></Route>
+          {userType === 'Kiracı' &&<Route path="/homes" element={<HomeListPage></HomeListPage>}></Route>}
+          {userType === 'Evsahibi' &&<Route path="/homes-landlord" element={<HomeListPageForLandlord></HomeListPageForLandlord>}></Route>}
           {userType === 'Evsahibi' && <Route path="/add-homes" element={<HomeAddPage></HomeAddPage>}></Route>}
           <Route path="/register" element={<Register></Register>}></Route>
           <Route path="/view-home/:id" element={<DetailHomeInfoPage></DetailHomeInfoPage>}></Route>
