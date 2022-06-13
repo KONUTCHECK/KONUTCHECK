@@ -72,7 +72,7 @@ class App extends React.Component {
           <Route path="/view-home/:id" element={<DetailHomeInfoPage></DetailHomeInfoPage>}></Route>
           {userType === 'Evsahibi' && <Route path="/update-home-infos" element={<HomeUpdatePage></HomeUpdatePage>}></Route>}
           <Route path="/get-homes-by" element={<HomeFilterPage></HomeFilterPage>}></Route>
-          {userType === 'Evsahibi' && <Route path="/users" element={<UserListPage></UserListPage>}></Route>}
+          <Route path="/users" element={<UserListPage></UserListPage>}></Route>
           <Route path="/user-info" element={<UserInfoPage></UserInfoPage>}></Route>
           {userType === 'Evsahibi' && <Route path="/list-passive-homes" element={<ListPassiveHomesPage></ListPassiveHomesPage>}></Route>}
           <Route path="/tenant-homes" element={<TenantHomesDetailPage></TenantHomesDetailPage>}></Route>

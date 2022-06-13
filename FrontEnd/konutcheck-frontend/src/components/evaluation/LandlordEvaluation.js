@@ -3,9 +3,21 @@ import React from "react";
 import { Accordion, Button, Card, Form, ListGroup, ListGroupItem } from "react-bootstrap";
 import { Link, Navigate } from "react-router-dom";
 import EvaluationService from "../../api/EvaluationService";
+import ToastMessage from "../general/toastMessage";
+
 
 
 class LandlordEvaluation extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            toast: false,
+            type: 'success',
+            message: 'Ev sahibi başarıyla değerlendirildi :)'
+        }
+    }
 
     handleFormSubmit = (e) => {
         e.preventDefault();
@@ -15,16 +27,31 @@ class LandlordEvaluation extends React.Component {
 
     }
 
-    saveLandlordEvaluation(newLandlordEvaluation) {
-        EvaluationService.saveLandlordEvaluation(newLandlordEvaluation).then(response => this.handlerResponse(response)).catch(error => this.handleError(error));
+    saveLandlordEvaluation(newLandlordEvaluation, landlordId) {
+        EvaluationService.saveLandlordEvaluation(newLandlordEvaluation, landlordId).then(response => this.handlerResponse(response)).catch(error => this.handleError(error));
     }
 
     handlerResponse(response) {
+        this.setState({
+            toast: true,
+            type: 'success',
+            message: 'Ev sahibi başarıyla değerlendirildi :)'
+        })
+        setTimeout(() => {
+            this.setState({ toast: false })
+        }, 100);
         console.log(response);
     }
 
     handleError(error) {
-        console.log("Değerlendirme yapılırken hata oluştu");
+        this.setState({
+            toast: true,
+            type: 'error',
+            message: "Değerlendirme yapılırken hata oluştu, lütfen hiçbir alanı boş bırakmadan 1-5 arasında puanlayınız :("
+        })
+        setTimeout(() => {
+            this.setState({ toast: false })
+        }, 100);
     }
 
 
@@ -52,6 +79,9 @@ class LandlordEvaluation extends React.Component {
 
                 </Card>
 
+                {this.state.toast &&
+                    <ToastMessage type={this.state.type} message={this.state.message}></ToastMessage>
+                }
             </div>
         );
     }
