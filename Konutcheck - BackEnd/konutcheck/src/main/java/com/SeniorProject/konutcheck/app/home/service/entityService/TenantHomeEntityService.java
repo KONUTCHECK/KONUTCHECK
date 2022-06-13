@@ -1,5 +1,6 @@
 package com.SeniorProject.konutcheck.app.home.service.entityService;
 
+import com.SeniorProject.konutcheck.app.evaluation.dto.GetStatusTypeDto;
 import com.SeniorProject.konutcheck.app.home.dao.TenantHomeDao;
 import com.SeniorProject.konutcheck.app.home.dto.Ho_HomeDetails;
 import com.SeniorProject.konutcheck.app.home.dto.TenantHomeDetails;
@@ -28,5 +29,9 @@ public class TenantHomeEntityService extends BaseEntityService<TenantHome, Tenan
 
     public List<TenantHomeDetails> getLandlordTenant(Long landlordId){
         return tenantHomeDao.getLandlordsTenant(landlordId);
+    }
+
+    public GetStatusTypeDto getUserStatus(Long userId){
+        return tenantHomeDao.getUserStatus(userId);
     }
 }

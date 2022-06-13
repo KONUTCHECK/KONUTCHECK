@@ -34,4 +34,12 @@ public class Us_UserEntityService extends BaseEntityService<Us_User, Us_UserDao>
         return usUserDao.existsByEmail(email);
     }
 
+    public Boolean existByPhoneNumber1(String phoneNumber1){
+        return usUserDao.existsByUserPhoneNumber1(phoneNumber1);
+    }
+
+    public Boolean existByPhoneNumber2(String phoneNumber2){
+        return usUserDao.existsByUserPhoneNumber1(phoneNumber2);
+    }
+
 }

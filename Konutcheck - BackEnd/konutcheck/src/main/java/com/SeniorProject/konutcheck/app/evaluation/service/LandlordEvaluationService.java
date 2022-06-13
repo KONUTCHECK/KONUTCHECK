@@ -1,10 +1,7 @@
 package com.SeniorProject.konutcheck.app.evaluation.service;
 
 import com.SeniorProject.konutcheck.app.evaluation.converter.EvaluationMapperConverter;
-import com.SeniorProject.konutcheck.app.evaluation.dto.GetHomeIdDto;
-import com.SeniorProject.konutcheck.app.evaluation.dto.GetTotalPoint;
-import com.SeniorProject.konutcheck.app.evaluation.dto.LandlordEvaluationDto;
-import com.SeniorProject.konutcheck.app.evaluation.dto.LandlordEvaluationSaveDto;
+import com.SeniorProject.konutcheck.app.evaluation.dto.*;
 import com.SeniorProject.konutcheck.app.evaluation.entity.LandlordEvaluation;
 import com.SeniorProject.konutcheck.app.evaluation.service.entityService.LandlordEvaluationEntityService;
 import com.SeniorProject.konutcheck.app.evaluation.service.entityService.LandlordRelatedHomesEntityService;
@@ -14,6 +11,7 @@ import com.SeniorProject.konutcheck.app.general.exceptionEnums.GeneralErrorMessa
 import com.SeniorProject.konutcheck.app.general.exceptions.InvalidInformationExceptions;
 import com.SeniorProject.konutcheck.app.general.exceptions.ItemNotFoundExceptions;
 import com.SeniorProject.konutcheck.app.securityGeneral.service.AuthenticationService;
+import com.SeniorProject.konutcheck.app.user.enums.StatusType;
 import com.SeniorProject.konutcheck.app.user.service.entityService.Us_UserEntityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -35,9 +33,10 @@ public class LandlordEvaluationService {
     }
 
     public LandlordEvaluationDto saveLandlordEvaluation(LandlordEvaluationSaveDto landlordEvaluationSaveDto) {
-        validationOfIsEvaluationOwnerIdExist();
-        LandlordEvaluation landlordEvaluation = EvaluationMapperConverter.INSTANCE.convertToLandlordEvaluationFromLandlordEvaluationSaveDto(landlordEvaluationSaveDto);
         Long currentUserId = authenticationService.getCurrentUserId();
+        validationOfIsEvaluationOwnerIdExist();
+        validationOfIsTenantStatusActive(currentUserId);
+        LandlordEvaluation landlordEvaluation = EvaluationMapperConverter.INSTANCE.convertToLandlordEvaluationFromLandlordEvaluationSaveDto(landlordEvaluationSaveDto);
         landlordEvaluation.setEvaluationOwnerTenantId(currentUserId);
         landlordEvaluation.setLandlordId(getLandlordId());
         landlordEvaluation.setLandlordPoint(calculateLandlordSinglePoint(landlordEvaluationSaveDto));
@@ -73,6 +72,16 @@ public class LandlordEvaluationService {
             return landlordId.getHomeId();
         }else{
             throw new ItemNotFoundExceptions(GeneralErrorMessage.ID_NOT_FOUND);
+        }
+    }
+
+    private Boolean validationOfIsTenantStatusActive(Long userId){
+        GetStatusTypeDto tenantStatus = landlordEvaluationEntityService.getTenantStatus(userId);
+
+        if(tenantStatus.getStatusType().equals(StatusType.Aktif)){
+            return true;
+        }else{
+            throw new InvalidInformationExceptions(GeneralErrorMessage.USER_NOT_ACTIVE);
         }
     }
 

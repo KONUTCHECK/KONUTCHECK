@@ -1,5 +1,6 @@
 package com.SeniorProject.konutcheck.app.home.dao;
 
+import com.SeniorProject.konutcheck.app.evaluation.dto.GetStatusTypeDto;
 import com.SeniorProject.konutcheck.app.home.dto.Ho_HomeDetails;
 import com.SeniorProject.konutcheck.app.home.dto.TenantHomeDetails;
 import com.SeniorProject.konutcheck.app.home.entity.TenantHome;
@@ -37,4 +38,12 @@ public interface TenantHomeDao extends JpaRepository<TenantHome, Long> {
                     " where tenantHome.tenantId = :tenantId and tenantHome.statusType = 'Aktif'"
     )
     List<Ho_HomeDetails> homesBelongToTenant(Long tenantId);
+
+    @Query(
+            value = "select new com.SeniorProject.konutcheck.app.evaluation.dto.GetStatusTypeDto(user.statusType)" +
+                    " from Us_User user" +
+                    " where user.Id = :userId " +
+                    " group by user.statusType"
+    )
+    GetStatusTypeDto getUserStatus(Long userId);
 }
