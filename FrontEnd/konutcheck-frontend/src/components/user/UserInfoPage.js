@@ -49,6 +49,27 @@ class UserInfoPage extends React.Component {
         console.log("Kullanıcı silinirken hata oluştu");
     }
 
+    setData(user) {
+        let { id, name, surname, age, userType, gender, educationalStatus, job, maritialStatus, email, userPhoneNumber1, userPhoneNumber2,
+            password } = user;
+        localStorage.setItem('id', id);
+        localStorage.setItem('İsim', name);
+        localStorage.setItem('Soyisim', surname);
+        localStorage.setItem('Yaş', age);
+        localStorage.setItem('Kullanıcı Tipi', userType);
+        localStorage.setItem('Cinsiyet', gender);
+        localStorage.setItem('Eğitim Durumu', educationalStatus);
+        localStorage.setItem('Meslek', job);
+        localStorage.setItem('Evlilik Durumu', maritialStatus);
+        localStorage.setItem('Mail Adresi', email);
+        localStorage.setItem('Telefon Numarası 1 ', userPhoneNumber1);
+        localStorage.setItem('Telefon Numarası 2 ', userPhoneNumber2);
+        localStorage.setItem('Şifre', password);
+       
+        console.log(user)
+    }
+
+
     render() {
 
 
@@ -78,6 +99,11 @@ class UserInfoPage extends React.Component {
                         {this.state.user.statusType === "Pasif" &&
                             <Button style={{ marginLeft: "10px", backgroundColor: "#2eb12e" }}
                                 className="btn btn-info" onClick={() => { this.handleUserBack() }}>Hesabı Aktifleştir</Button>}
+
+                        <Link to="/update-user-infos">
+                            <Button style={{ marginLeft: "10px" }}
+                                className="btn btn-info" onClick={() => this.setData(this.state.user)}>Bilgilerimi Güncelle</Button>
+                        </Link>
                     </Card.Body>
                 </Card>
 

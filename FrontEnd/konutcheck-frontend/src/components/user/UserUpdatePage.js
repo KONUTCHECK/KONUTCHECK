@@ -14,7 +14,7 @@ export default function UserUpdatePage() {
     const [age, setAge] = useState('');
     const [userType, setUserType] = useState('');
     const [gender, setGender] = useState();
-    const [education, setEducation] = useState('');
+    const [educationalStatus, setEducation] = useState('');
     const [job, setJob] = useState();
     const [maritialStatus, setMaritialStatus] = useState('');
     const [email, setEmail] = useState('');
@@ -30,6 +30,7 @@ export default function UserUpdatePage() {
         setUserType(localStorage.getItem('Kullanıcı Tipi'))
         setGender(localStorage.getItem('Cinsiyet'))
         setEducation(localStorage.getItem('Eğitim Durumu'));
+        setJob(localStorage.getItem('Meslek'))
         setMaritialStatus(localStorage.getItem('Evlilik Durumu'));
         setEmail(localStorage.getItem('Mail Adresi'))
         setUserPhoneNumber1(localStorage.getItem('Telefon Numarası 1 '))
@@ -38,14 +39,14 @@ export default function UserUpdatePage() {
     }, []);
 
     const updateAPIData = () => {
-        axios.put('/user/update-user-infos', {
+        axios.put('/users', {
             id,
             name,
             surname,
             age,
             userType,
             gender,
-            education,
+            educationalStatus,
             job,
             maritialStatus,
             email,
@@ -96,7 +97,7 @@ export default function UserUpdatePage() {
                     </div>
                    
                     <div className="form-group ">
-                        <label htmlFor="inputRating">,Yaş</label>
+                        <label htmlFor="inputRating">Cinsiyet</label>
                         <Gender
                             fieldName="gender"
                             notNull={true}
@@ -110,13 +111,13 @@ export default function UserUpdatePage() {
                         <Education
                             fieldName="educationalStatus"
                             notNull={true}
-                            value={education}
+                            value={educationalStatus}
                             onChange={(e) => setEducation(e.target.value)}
                         ></Education>
                     </div>
                     
                     <div className="form-group ">
-                        <label htmlFor="inputRating">İş</label>
+                        <label htmlFor="inputRating">Meslek</label>
                         <input
                             className="form-control "
                             value={job}
@@ -165,7 +166,7 @@ export default function UserUpdatePage() {
                     </div>
                   
                 </div>
-                <Link to='/users'>
+                <Link to='/user-info'>
                     <Button type='submit' onClick={() => updateAPIData()}>Güncelle</Button>
                 </Link>
             </form>
