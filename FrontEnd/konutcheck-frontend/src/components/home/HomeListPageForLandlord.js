@@ -11,14 +11,8 @@ import EvaluationService from "../../api/EvaluationService";
 import ToastMessage from "../general/toastMessage";
 
 
-/* Related With Tenant Home */
-const renderTooltip = (props) => (
-    <Tooltip id="button-tooltip" {...props}>
-        Beni Kiracı Olarak Ekle
-    </Tooltip>
-);
 
-class HomeListPage extends React.Component {
+class HomeListPageForLandlord extends React.Component {
 
     constructor(props) {
         super(props);
@@ -131,11 +125,7 @@ class HomeListPage extends React.Component {
     handleHomePointError(error) {
         console.log("Puan çekilirken hata oluştu");
     }
-
-    handleSaveTenantHome(homeId) {
-        HomeService.setTenantHome(homeId).then(response => { })
-            .catch(error => this.handleError(error))
-    }
+  
 
     setData(home) {
         let { id, amount, deposit, dues, numberOfRooms, warningSystem, buildingAge, homeAspect, floor, homeSize, homeType,
@@ -229,13 +219,6 @@ class HomeListPage extends React.Component {
 
                 {this.state.homeList.map((home, i) => (
                     <Card key={home.id} className="my-card" style={{ width: '18rem', margin: '2rem' }}>
-                        <OverlayTrigger
-                            placement="right"
-                            delay={{ show: 250, hide: 400 }}
-                            overlay={renderTooltip}
-                        >
-                            <Button className="btn-light add-tenant" onClick={() => this.handleSaveTenantHome(home.id)}>➕</Button>
-                        </OverlayTrigger>
                         <Card.Body>
                             <Card.Title>{home.homeType}</Card.Title>
                             <Card.Text>
@@ -287,4 +270,4 @@ class HomeListPage extends React.Component {
         );
     }
 }
-export default HomeListPage;
+export default HomeListPageForLandlord;

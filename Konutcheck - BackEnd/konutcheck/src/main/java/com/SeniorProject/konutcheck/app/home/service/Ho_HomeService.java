@@ -1,5 +1,7 @@
 package com.SeniorProject.konutcheck.app.home.service;
 
+import com.SeniorProject.konutcheck.app.evaluation.entity.HomeEvaluation;
+import com.SeniorProject.konutcheck.app.evaluation.service.entityService.HomeEvaluationEntityService;
 import com.SeniorProject.konutcheck.app.general.exceptionEnums.GeneralErrorMessage;
 import com.SeniorProject.konutcheck.app.general.exceptions.InvalidInformationExceptions;
 import com.SeniorProject.konutcheck.app.general.exceptions.ItemNotFoundExceptions;
