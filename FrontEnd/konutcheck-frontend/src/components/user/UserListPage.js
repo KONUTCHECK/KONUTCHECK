@@ -72,7 +72,7 @@ class UserListPage extends React.Component {
                         <div className="row p-1" key={user.id}>
                             <Accordion className="user-table" defaultActiveKey="0">
                                 <Accordion.Item eventKey="0">
-                                    <Accordion.Header><b>Adı- Soyadı: </b> {user.name} {user.surname} {user.userType}</Accordion.Header>
+                                    <Accordion.Header><b>Adı- Soyadı:&nbsp; </b> {user.name} {user.surname} &nbsp; <b>Kullanıcı Tipi: &nbsp; </b> {user.userType}</Accordion.Header>
                                     <Accordion.Body>
                                         <ListGroup>
                                             <ListGroup.Item className="one-user"> <b>Yaşı: </b> {user.age}</ListGroup.Item>

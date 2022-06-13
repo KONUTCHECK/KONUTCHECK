@@ -36,7 +36,8 @@ class HomeEvaluation extends React.Component {
                     <Card.Body>
                         <Form onSubmit={this.handleFormSubmit}>
                             <ListGroup>
-                                <ListGroup.Item>HomeCleaning: <input type="number" name="gradeOfHomeCleaning" /></ListGroup.Item>
+                                <p> <b>Aşağıdaki soruları kiracı olduğunuz süre boyunca oturduğunuz evi dikkate alarak 1 ile 5 arasında puanlayınız. </b></p>
+                                <ListGroup.Item>Ev temiz miydi? Kaldığınız süre içinde geçmişten kalan: <input type="number" name="gradeOfHomeCleaning" /></ListGroup.Item>
                                 <ListGroup.Item>gradeOfHomeReality : <input type="number" name="gradeOfHomeReality" /></ListGroup.Item>
                                 <ListGroup.Item>gradeOfHomeModification: <input type="number" name="gradeOfHomeModification" /></ListGroup.Item>
                                 <ListGroup.Item>gradeOfNetworkInfrastructure: <input type="number" name="gradeOfNetworkInfrastructure" /></ListGroup.Item>

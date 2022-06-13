@@ -39,7 +39,7 @@ class TenantHomesDetailPage extends React.Component {
 
         return (
             <div className="row" style={{ margin: '10px 0 0 0' }}>
-
+              <p>KİRACI OLDUĞUM EVLER </p> 
                 {this.state.homeList.map((home, i) => (
                     <Card className="my-card" style={{ width: '18rem', margin: '2rem' }} key={i}>
                         <Card.Body>
@@ -50,10 +50,16 @@ class TenantHomesDetailPage extends React.Component {
                             </Card.Text>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
-                            <ListGroupItem>Fiyat : {home.amount}</ListGroupItem>
-                            <ListGroupItem>Oda Sayısı : {home.numberOfRooms}</ListGroupItem>
-                            <ListGroupItem>Kat Sayısı : {home.floor}</ListGroupItem>
-                            <ListGroupItem>{home.announcementDate}</ListGroupItem>
+                        <ListGroupItem> <b>Fiyat :</b> {home.amount}</ListGroupItem>
+                            <ListGroupItem><b>Depozito : </b>{home.deposit}</ListGroupItem>
+                            <ListGroupItem><b>Oda Sayısı : </b> {home.numberOfRooms}</ListGroupItem>
+                            <ListGroupItem><b>Kat Sayısı : </b>{home.floor}</ListGroupItem>
+                            <ListGroupItem><b>Isınma Tipi : </b>{home.warningSystem}</ListGroupItem>
+                            <ListGroupItem><b>Cephe : </b>{home.homeAspect}</ListGroupItem>
+                            <ListGroupItem><b>Metrekare :</b> {home.homeSize}</ListGroupItem>
+                            <ListGroupItem><b>Bina Yaşı :</b> {home.buildingAge}</ListGroupItem>
+                            <ListGroupItem><b>Aidat :</b> {home.dues}</ListGroupItem>
+                            <ListGroupItem><b>İlan Tarihi : </b>{home.announcementDate}</ListGroupItem>
                         </ListGroup>
                         <Card.Body>
                             <Link to={`/home-evaluation?id=${home.id}`}>
