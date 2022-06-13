@@ -202,7 +202,7 @@
   font-size: 1rem;
   font-weight: 700;
   margin-top: 14px;
-  margin-left: 2px;
+  margin-left: 13px;
 }
 
 footer p{
@@ -215,7 +215,6 @@ footer p{
 
 }
 footer li{
-  display: inline-block;
   margin: 1rem;
   text-align: left;
 }
@@ -233,6 +232,9 @@ footer li{
   margin-top: 11px;
 }
 
+#mail-icon{
+  margin-right: 5px;
+}
 @media screen and (max-width: 900px) {
   .footer-item {
       width: 100%;
@@ -244,6 +246,7 @@ footer li{
 
 ul{
   list-style-type: none;
+  padding-left: 1.5rem !important;
 }
 
 @media screen and (max-width: 900px) {
