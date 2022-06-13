@@ -22,17 +22,6 @@ import java.util.Optional;
 public class Ho_HomeService {
     private final GeneralHomeInfoEntityService generalHomeInfoEntityService;
 
-   /* public Ho_HomeDto saveHome(Ho_HomeSaveDto hoHomeSaveDto){
-        isGeneralHomeInfosExist(hoHomeSaveDto);
-        isHomeAddressExist(hoHomeSaveDto);
-        Ho_Home hoHome= Ho_HomeMapperConverter.INSTANCE.convertToHoHomeFromHoHomeSaveDto(hoHomeSaveDto);
-        hoHome.setAnnouncementDate(LocalDate.now());
-        hoHome = hoHomeEntityService.save(hoHome);
-
-        Ho_HomeDto hoHomeDto = Ho_HomeMapperConverter.INSTANCE.convertToHoHomeDtoFromHoHome(hoHome);
-        return hoHomeDto;
-   }*/
-
     public GeneralHomeInfoDto saveHomeInfos(GeneralHomeInfoSaveDto generalHomeInfoSaveDto){
         validationOfGeneralHomeInfos(generalHomeInfoSaveDto);
         GeneralHomeInfo generalHomeInfo = GeneralHomeInfoMapperConverter.INSTANCE.convertToGeneralHomeInfoFromGeneralHomeInfoSaveDto(generalHomeInfoSaveDto);
@@ -130,28 +119,6 @@ public class Ho_HomeService {
     }
 
 
-   /*private Boolean isGeneralHomeInfosExist(Ho_HomeSaveDto hoHomeSaveDto){
-        Long id = hoHomeSaveDto.getGeneralHomeInfoId();
-        Boolean isExist = generalHomeInfoEntityService.existById(id);
-
-        if(isExist){
-            return true;
-        }else{
-            throw new ItemNotFoundExceptions(GeneralErrorMessage.HOME_INFOS_NOT_FOUND);
-        }
-   }
-
-   private Boolean isHomeAddressExist(Ho_HomeSaveDto hoHomeSaveDto){
-        Long id = hoHomeSaveDto.getHomeAddressId();
-        Boolean isExist = homeAddressEntityService.existById(id);
-
-        if(isExist){
-            return true;
-        }else{
-            throw new ItemNotFoundExceptions(GeneralErrorMessage.HOME_ADDRESS_NOT_FOUND);
-        }
-   }*/
-
    private boolean validationOfGeneralHomeInfos(GeneralHomeInfoSaveDto generalHomeInfoSaveDto){
         BigDecimal amount = generalHomeInfoSaveDto.getAmount();
         BigDecimal deposit = generalHomeInfoSaveDto.getDeposit();
@@ -165,5 +132,7 @@ public class Ho_HomeService {
             return true;
         }
    }
+
+
 
 }

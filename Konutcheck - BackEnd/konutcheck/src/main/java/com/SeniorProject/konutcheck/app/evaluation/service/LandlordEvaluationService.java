@@ -11,6 +11,7 @@ import com.SeniorProject.konutcheck.app.general.exceptionEnums.GeneralErrorMessa
 import com.SeniorProject.konutcheck.app.general.exceptions.InvalidInformationExceptions;
 import com.SeniorProject.konutcheck.app.general.exceptions.ItemNotFoundExceptions;
 import com.SeniorProject.konutcheck.app.securityGeneral.service.AuthenticationService;
+import com.SeniorProject.konutcheck.app.user.enums.StatusType;
 import com.SeniorProject.konutcheck.app.user.service.entityService.Us_UserEntityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -77,7 +78,7 @@ public class LandlordEvaluationService {
     private Boolean validationOfIsTenantStatusActive(Long userId){
         GetStatusTypeDto tenantStatus = landlordEvaluationEntityService.getTenantStatus(userId);
 
-        if(tenantStatus.getStatusType().equals(true)){
+        if(tenantStatus.getStatusType().equals(StatusType.Aktif)){
             return true;
         }else{
             throw new InvalidInformationExceptions(GeneralErrorMessage.USER_NOT_ACTIVE);

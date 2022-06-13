@@ -8,6 +8,7 @@ import com.SeniorProject.konutcheck.app.general.exceptionEnums.GeneralErrorMessa
 import com.SeniorProject.konutcheck.app.general.exceptions.DuplicateException;
 import com.SeniorProject.konutcheck.app.general.exceptions.InvalidInformationExceptions;
 import com.SeniorProject.konutcheck.app.home.service.entityService.GeneralHomeInfoEntityService;
+import com.SeniorProject.konutcheck.app.user.enums.StatusType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -92,7 +93,7 @@ public class HomeEvaluationService {
     private Boolean validationOfIsTenantStatusActive(Long userId){
         GetStatusTypeDto tenantStatus = homeEvaluationEntityService.getTenantStatus(userId);
 
-        if(tenantStatus.getStatusType().equals(true)){
+        if(tenantStatus.getStatusType().equals(StatusType.Aktif)){
             return true;
         }else{
             throw new InvalidInformationExceptions(GeneralErrorMessage.USER_NOT_ACTIVE);

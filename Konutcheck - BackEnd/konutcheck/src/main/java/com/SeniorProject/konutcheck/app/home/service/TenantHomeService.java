@@ -1,6 +1,9 @@
 package com.SeniorProject.konutcheck.app.home.service;
 
 import com.SeniorProject.konutcheck.app.evaluation.converter.UserRelatedHomesMapperConverter;
+import com.SeniorProject.konutcheck.app.evaluation.dto.GetStatusTypeDto;
+import com.SeniorProject.konutcheck.app.general.exceptionEnums.GeneralErrorMessage;
+import com.SeniorProject.konutcheck.app.general.exceptions.InvalidInformationExceptions;
 import com.SeniorProject.konutcheck.app.home.converter.GeneralHomeInfoMapperConverter;
 import com.SeniorProject.konutcheck.app.home.dto.Ho_HomeDetails;
 import com.SeniorProject.konutcheck.app.home.dto.TenantHomeDetails;
@@ -21,8 +24,9 @@ public class TenantHomeService {
     public TenantHomeDto saveTenantHome(Long homeId){
         TenantHome tenantHome = new TenantHome();
         tenantHome.setTenantId(tenantHomeEntityService.getCurrentUser());
+        validationOfIsUserActive(tenantHomeEntityService.getCurrentUser());
         tenantHome.setHomeId(homeId);
-        tenantHome.setStatusType(StatusType.Pasif);
+        tenantHome.setStatusType(StatusType.Pasif);//Is home defined to user.
         tenantHome = tenantHomeEntityService.save(tenantHome);
 
         TenantHomeDto tenantHomeDto = GeneralHomeInfoMapperConverter.INSTANCE.convertToTenantHomeDtoFromTenantHome(tenantHome);
@@ -42,6 +46,7 @@ public class TenantHomeService {
     }
 
     public TenantHome saveTenantHomeStatusActive(Long id){
+        validationOfIsUserActive(tenantHomeEntityService.getCurrentUser()); //Taking landlord id because this process made by landlord.
         TenantHome tenantHome = tenantHomeEntityService.getIdWithControl(id);
         tenantHome.setStatusType(StatusType.Aktif);
         tenantHome = tenantHomeEntityService.save(tenantHome);
@@ -52,5 +57,15 @@ public class TenantHomeService {
         Long tenantId = tenantHomeEntityService.getCurrentUser();
         List<Ho_HomeDetails> homeDetailsList = tenantHomeEntityService.getTenantAllHomesDetails(tenantId);
         return homeDetailsList;
+    }
+
+    private Boolean validationOfIsUserActive(Long userId){
+        GetStatusTypeDto userStatus = tenantHomeEntityService.getUserStatus(userId);
+
+        if(userStatus.getStatusType().equals(StatusType.Aktif)){
+            return true;
+        }else{
+            throw new InvalidInformationExceptions(GeneralErrorMessage.USER_NOT_ACTIVE);
+        }
     }
 }
