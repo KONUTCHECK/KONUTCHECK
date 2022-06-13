@@ -99,9 +99,19 @@
 .btn-info:hover{
   background-color: rgb(243, 138, 138);
 }
+.btn-info-tenant{
+  background-color: green;
+  float: left;
+}
+.btn-info-tenant:hover{
+  background-color: rgb(101, 199, 101);
+}
 .btn-update{
   background-color: green;
   margin-left: 59rem;
+}
+.btn-update:hover{
+  background-color: rgb(101, 199, 101);
 }
 .btn-active{
   background-color: green;

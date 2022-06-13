@@ -60,7 +60,7 @@ class ListLandlordsTenantsPage extends React.Component {
                                 <td>
                                 <Link to="/tenant-evaluation/">
                                     <Button style={{ marginLeft: "10px" }}
-                                    className="btn btn-info">Kiracıyı Değerlendir</Button>
+                                    className="btn btn-info-tenant">Kiracıyı Değerlendir</Button>
                                 </Link>
                                 </td>
 
