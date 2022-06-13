@@ -49,33 +49,8 @@ class Footer extends React.Component {
                                 <div className="footer-item">
                                     <h4>BİZE ULAŞIN</h4>
 
-                                    <a href="mailto:" className="footer-links">
+                                    <a href="mailto:info@konutcheck.com" className="footer-links "> <i class="fa fa-envelope" id="mail-icon"></i>
                                     info@konutcheck.com </a>
-                                    <ul className="footer-social-links">
-
-                                        <li>
-                                            <button className="btn-social">
-                                                <a href="https://www.bt21.com/character" target="_blank">
-                                                    <i className="fab fa-google"></i>
-                                                </a>
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button className="btn-social">
-                                                <a href="https://twitter.com/bt21_" target="_blank">
-                                                    <i className="fab fa-twitter"></i>
-                                                </a>
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button className="btn-social">
-                                                <a href="https://www.youtube.com/channel/UCINr5W7cwW06ADtsszAToAw" target="_blank">
-                                                    <i className="fab fa-youtube"></i>
-                                                </a>
-                                            </button>
-                                        </li>
-                                    </ul>
-
 
                                 </div>
 
