@@ -36,15 +36,15 @@ class HomeEvaluation extends React.Component {
                     <Card.Body>
                         <Form onSubmit={this.handleFormSubmit}>
                             <ListGroup>
-                                <p> <b>Aşağıdaki soruları kiracı olduğunuz süre boyunca oturduğunuz evi dikkate alarak 1 ile 5 arasında puanlayınız. </b></p>
-                                <ListGroup.Item>Ev temiz miydi? Kaldığınız süre içinde geçmişten kalan: <input type="number" name="gradeOfHomeCleaning" /></ListGroup.Item>
-                                <ListGroup.Item>gradeOfHomeReality : <input type="number" name="gradeOfHomeReality" /></ListGroup.Item>
-                                <ListGroup.Item>gradeOfHomeModification: <input type="number" name="gradeOfHomeModification" /></ListGroup.Item>
-                                <ListGroup.Item>gradeOfNetworkInfrastructure: <input type="number" name="gradeOfNetworkInfrastructure" /></ListGroup.Item>
-                                <ListGroup.Item>gradeOfPhoneInfrastructure: <input type="number" name="gradeOfPhoneInfrastructure" /></ListGroup.Item>
-                                <ListGroup.Item>gradeOfHomeEnvironment: <input type="number" name="gradeOfHomeEnvironment" /></ListGroup.Item>
-                                <ListGroup.Item>gradeOfHomeNeighborliness: <input type="number" name="gradeOfHomeNeighborliness" /></ListGroup.Item>
-                                <ListGroup.Item>gradeOfHomeClosenessToSomewhere: <input type="number" name="gradeOfHomeClosenessToSomewhere" /></ListGroup.Item>
+                                <p> <b>Aşağıdaki soruları kiracı olduğunuz süre boyunca oturduğunuz evi dikkate alarak 1 (en düşük) ile 5 (en yüksek) olacak şekilde puanlayınız. </b></p>
+                                <ListGroup.Item>Ev temiz miydi? <input type="number" min="0" max="5" name="gradeOfHomeCleaning" /></ListGroup.Item>
+                                <ListGroup.Item>Ev, ev sahibinizin ya da emlakçınızın size anlattığı gibi miydi?  <input type="number" min="0" max="5" name="gradeOfHomeReality" /></ListGroup.Item>
+                                <ListGroup.Item>Evin tamirata ihtiyacı var mıydı?  <input type="number" min="0" max="5" name="gradeOfHomeModification" /></ListGroup.Item>
+                                <ListGroup.Item>Evin internet altyapısı var mıydı, varsa nasıldı? <input type="number" min="0" max="5" name="gradeOfNetworkInfrastructure" /></ListGroup.Item>
+                                <ListGroup.Item>Evin telefon altyapısı var mıydı, şebeke sorunsuz çalışıyor muydu? <input type="number" min="0" max="5" name="gradeOfPhoneInfrastructure" /></ListGroup.Item>
+                                <ListGroup.Item>Evin çevresi nasıldı? Orada yaşamaktan memnun muydunuz? <input type="number" min="0" max="5" name="gradeOfHomeEnvironment" /></ListGroup.Item>
+                                <ListGroup.Item>Evinizin bulunduğu binada, mahallede ya da sitede komşuluk ilişkileri nasıldı? <input type="number" min="0" max="5" name="gradeOfHomeNeighborliness" /></ListGroup.Item>
+                                <ListGroup.Item>Evin muhiti nasıldı? Gerekli yerlere yakın mıydı? (hastane, okul, semt pazarı vb.) <input type="number" min="0" max="5" name="gradeOfHomeClosenessToSomewhere" /></ListGroup.Item>
                             </ListGroup>
 
                             <input type="submit" className="btn" value="Değerlendir" style={{ marginTop: '10px' }} />

@@ -83,7 +83,7 @@ class UserListPage extends React.Component {
                                             <ListGroup.Item className="one-user"><b>Email Adresi: </b>{user.email}</ListGroup.Item>
                                             <ListGroup.Item className="one-user"><b>1. Telefon Numarası: </b>{user.userPhoneNumber1}</ListGroup.Item>
                                             <ListGroup.Item className="one-user"><b>2. Telefon Numarası: </b>{user.userPhoneNumber2}</ListGroup.Item>
-                                        </ListGroup>
+                                            </ListGroup>
                                     </Accordion.Body>
                                 </Accordion.Item>
 

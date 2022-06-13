@@ -50,7 +50,7 @@ class HomeAddPage extends React.Component {
         this.setState({
             toast: true,
             type: 'error',
-            message: error.message
+            message: "Girilen bilgiler hatalıdır veya alanlar boş bırakılmamalıdır."
         })
         setTimeout(() => {
             this.setState({ toast: false })
