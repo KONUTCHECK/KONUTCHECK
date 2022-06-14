@@ -17,10 +17,10 @@ public interface HomeEvaluationDao extends JpaRepository<HomeEvaluation, Long> {
             value = "select new com.SeniorProject.konutcheck.app.evaluation.dto.GetHomeIdDto(tenantHome.homeId)" +
                     " from TenantHome tenantHome" +
                     " left join HomeEvaluation  homeEvaluation on homeEvaluation.homeId = tenantHome.homeId" +
-                    " where tenantHome.tenantId = homeEvaluation.evaluationOwnerTenantId" +
+                    " where tenantHome.tenantId = :tenantId" +
                     " group by tenantHome.homeId"
     )
-    GetHomeIdDto getHomeId();
+    GetHomeIdDto getHomeId(Long tenantId);
 
     @Query(
             value = "select new com.SeniorProject.konutcheck.app.evaluation.dto.GetTotalPoint(SUM(homeEvaluation.homePoint))" +

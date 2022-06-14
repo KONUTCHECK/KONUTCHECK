@@ -31,7 +31,7 @@ public class HomeEvaluationService {
         validationOfIsTenantStatusActive(homeEvaluationEntityService.getCurrentUser());
         HomeEvaluation homeEvaluation = EvaluationMapperConverter.INSTANCE.convertToHomeEvaluationFromHomeEvaluationSaveDto(homeEvaluationSaveDto);
         homeEvaluation.setEvaluationOwnerTenantId(homeEvaluationEntityService.getCurrentUser());
-        homeEvaluation.setHomeId(getHomeId());
+        homeEvaluation.setHomeId(getHomeId(homeEvaluationEntityService.getCurrentUser()));
         homeEvaluation.setHomePoint(calculateHomeSinglePoint(homeEvaluationSaveDto));
         homeEvaluation = homeEvaluationEntityService.save(homeEvaluation);
         HomeEvaluationDto homeEvaluationDto = EvaluationMapperConverter.INSTANCE.convertToHomeEvaluationDtoFromHomeEvaluation(homeEvaluation);
@@ -68,8 +68,8 @@ public class HomeEvaluationService {
         return singlePoint;
     }
 
-    private Long getHomeId(){
-        GetHomeIdDto homeId = homeEvaluationEntityService.getHomeId();
+    private Long getHomeId(Long tenantId){
+        GetHomeIdDto homeId = homeEvaluationEntityService.getHomeId(tenantId);
         Boolean isHomeIdExist = generalHomeInfoEntityService.existById(homeId.getHomeId());
 
         if(isHomeIdExist){
