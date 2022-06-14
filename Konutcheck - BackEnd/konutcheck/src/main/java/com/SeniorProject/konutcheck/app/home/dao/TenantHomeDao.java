@@ -32,7 +32,7 @@ public interface TenantHomeDao extends JpaRepository<TenantHome, Long> {
     List<TenantHomeDetails> getLandlordsTenant(Long landlordId);
 
     @Query(
-            value = "select new com.SeniorProject.konutcheck.app.home.dto.Ho_HomeDetails(generalHomeInfo.id, generalHomeInfo.homeType, generalHomeInfo.amount, generalHomeInfo.deposit, generalHomeInfo.dues, generalHomeInfo.numberOfRooms, generalHomeInfo.warningSystem, generalHomeInfo.buildingAge, generalHomeInfo.homeAspect, generalHomeInfo.floor, generalHomeInfo.homeSize,generalHomeInfo.country, generalHomeInfo.city, generalHomeInfo.district, generalHomeInfo.neighborhood, generalHomeInfo.street, generalHomeInfo.buildingNo, generalHomeInfo.apartmentNo, generalHomeInfo.announcementDate)" +
+            value = "select new com.SeniorProject.konutcheck.app.home.dto.Ho_HomeDetails(generalHomeInfo.id, generalHomeInfo.homeOwner, generalHomeInfo.homeType, generalHomeInfo.amount, generalHomeInfo.deposit, generalHomeInfo.dues, generalHomeInfo.numberOfRooms, generalHomeInfo.warningSystem, generalHomeInfo.buildingAge, generalHomeInfo.homeAspect, generalHomeInfo.floor, generalHomeInfo.homeSize,generalHomeInfo.country, generalHomeInfo.city, generalHomeInfo.district, generalHomeInfo.neighborhood, generalHomeInfo.street, generalHomeInfo.buildingNo, generalHomeInfo.apartmentNo, generalHomeInfo.announcementDate)" +
                     " from GeneralHomeInfo generalHomeInfo" +
                     " left join TenantHome tenantHome on tenantHome.homeId = generalHomeInfo.id" +
                     " where tenantHome.tenantId = :tenantId and tenantHome.statusType = 'Aktif'"

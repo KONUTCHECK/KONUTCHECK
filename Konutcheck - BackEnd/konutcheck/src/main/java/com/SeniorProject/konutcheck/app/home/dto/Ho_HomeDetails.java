@@ -13,6 +13,7 @@ import java.time.LocalDate;
 @RequiredArgsConstructor
 public class Ho_HomeDetails {
     private final Long id;
+    private final Long homeOwnerId;
     private final HomeTypes homeType;
     private final BigDecimal amount;
     private final BigDecimal deposit;
