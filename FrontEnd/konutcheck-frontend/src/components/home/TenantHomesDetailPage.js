@@ -39,7 +39,7 @@ class TenantHomesDetailPage extends React.Component {
 
         return (
             <div className="row" style={{ margin: '10px 15px 15px 0' }}>
-              <p className="my-homes"><b>KİRACI OLDUĞUM EVLER</b></p> 
+                <p className="my-homes"><b>KİRACI OLDUĞUM EVLER</b></p>
                 {this.state.homeList.map((home, i) => (
                     <Card className="my-card" style={{ width: '100%' }} key={i}>
                         <Card.Body>
@@ -50,7 +50,7 @@ class TenantHomesDetailPage extends React.Component {
                             </Card.Text>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
-                        <ListGroupItem> <b>Fiyat :</b> {home.amount}</ListGroupItem>
+                            <ListGroupItem> <b>Fiyat :</b> {home.amount}</ListGroupItem>
                             <ListGroupItem><b>Depozito : </b>{home.deposit}</ListGroupItem>
                             <ListGroupItem><b>Oda Sayısı : </b> {home.numberOfRooms}</ListGroupItem>
                             <ListGroupItem><b>Kat Sayısı : </b>{home.floor}</ListGroupItem>
@@ -62,11 +62,11 @@ class TenantHomesDetailPage extends React.Component {
                             <ListGroupItem><b>İlan Tarihi : </b>{home.announcementDate}</ListGroupItem>
                         </ListGroup>
                         <Card.Body>
-                            <Link to={`/home-evaluation?id=${home.id}`}>
+                            <Link to="/home-evaluation">
                                 <Button style={{ width: "100%" }} className="btn">Evi Değerlendir</Button>
                             </Link>
 
-                            <Link to='/landlord-evaluation'>
+                            <Link to={`/landlord-evaluation/${home.homeOwnerId}`}>
                                 <Button style={{ width: "100%" }} className="btn" >Ev Sahibini Değerlendir</Button>
                             </Link>
 

@@ -65,8 +65,8 @@ class App extends React.Component {
           <Route path='/' element={<HomePage></HomePage>}> </Route>
           <Route path='*' element={<ErrorPage></ErrorPage>}></Route>
           <Route path="/login" element={<LoginPage login={this.login}></LoginPage>}></Route>
-          {userType === 'Kiracı' &&<Route path="/homes" element={<HomeListPage></HomeListPage>}></Route>}
-          {userType === 'Evsahibi' &&<Route path="/homes-landlord" element={<HomeListPageForLandlord></HomeListPageForLandlord>}></Route>}
+          {userType === 'Kiracı' && <Route path="/homes" element={<HomeListPage></HomeListPage>}></Route>}
+          {userType === 'Evsahibi' && <Route path="/homes-landlord" element={<HomeListPageForLandlord></HomeListPageForLandlord>}></Route>}
           {userType === 'Evsahibi' && <Route path="/add-homes" element={<HomeAddPage></HomeAddPage>}></Route>}
           <Route path="/register" element={<Register></Register>}></Route>
           <Route path="/view-home/:id" element={<DetailHomeInfoPage></DetailHomeInfoPage>}></Route>
@@ -78,7 +78,7 @@ class App extends React.Component {
           <Route path="/tenant-homes" element={<TenantHomesDetailPage></TenantHomesDetailPage>}></Route>
           <Route path="/landlord-homes" element={<LandlordHomesDetailPage></LandlordHomesDetailPage>}></Route>
           <Route path="/home-evaluation" element={<HomeEvaluation></HomeEvaluation>}></Route>
-          <Route path="/landlord-evaluation" element={<LandlordEvaluation></LandlordEvaluation>}></Route>
+          <Route path="/landlord-evaluation/:id" element={<LandlordEvaluation></LandlordEvaluation>}></Route>
           <Route path="/landlord-tenants" element={<ListLandlordsTenantsPage></ListLandlordsTenantsPage>}></Route>
           <Route path="/tenant-evaluation/:tenantId" element={<TenantEvaluation></TenantEvaluation>}></Route>
           <Route path="/update-user-infos" element={<UserUpdatePage></UserUpdatePage>}></Route>

@@ -22,8 +22,8 @@ class LandlordEvaluation extends React.Component {
     handleFormSubmit = (e) => {
         e.preventDefault();
         const newLandlordEvaluation = serialize(e.target, { hash: true })
-
-        this.saveLandlordEvaluation(newLandlordEvaluation);
+        const landlordId = window.location.pathname.split('/')[2];
+        this.saveLandlordEvaluation(newLandlordEvaluation, landlordId);
 
     }
 
@@ -64,7 +64,7 @@ class LandlordEvaluation extends React.Component {
                     <Card.Body>
                         <Form onSubmit={this.handleFormSubmit}>
                             <ListGroup>
-                            <p> <b>Aşağıdaki soruları kiracı olduğunuz süre boyunca ev sahibinizin size karşı tutumlarını dikkate alarak 1 (en düşük) ile 5 (en yüksek) olacak şekilde puanlayınız. </b></p>
+                                <p> <b>Aşağıdaki soruları kiracı olduğunuz süre boyunca ev sahibinizin size karşı tutumlarını dikkate alarak 1 (en düşük) ile 5 (en yüksek) olacak şekilde puanlayınız. </b></p>
                                 <ListGroup.Item>Ev sahibiniz size karşı ilgili miydi? Herhangi bir sorunda rahatlıkla onu arayabilir miydiniz? <input type="number" min="0" max="5" name="gradeOfLandlordSatisfaction" /></ListGroup.Item>
                                 <ListGroup.Item>Ev sahibinizen size karşı hal ve tutumları nasıldı?  <input type="number" min="0" max="5" name="gradeOfLandlordTreatment" /></ListGroup.Item>
                                 <ListGroup.Item>Herhangi acil bir durumda ev sahibinize hemen ulaşabilir miydiniz?  <input type="number" min="0" max="5" name="gradeOfLandlordAccessibility" /></ListGroup.Item>

@@ -22,7 +22,8 @@ class TenantEvaluation extends React.Component {
     handleFormSubmit = (e) => {
         e.preventDefault();
         const newTenantEvaluation = serialize(e.target, { hash: true })
-        this.saveTenantEvaluation(newTenantEvaluation);
+        const tenantId = window.location.pathname.split('/')[2];
+        this.saveTenantEvaluation(newTenantEvaluation, tenantId);
 
     }
 
@@ -62,22 +63,22 @@ class TenantEvaluation extends React.Component {
                 <Card className="my-card">
                     <Card.Body>
                         <Form onSubmit={this.handleFormSubmit}>
-                        <ListGroup>
-                        <p> <b>Aşağıdaki soruları kiracınızın evinizde yaşadığı süre zarfında size ve eve karşı tutumlarını dikkate alarak 1 (en düşük) ile 5 (en yüksek) olacak şekilde puanlayınız. </b></p>
-                            <ListGroup.Item>Kiracınız kira ücretini aksatmadan ve zamanında öder miydi? <input type="number" min="0" max="5" name="gradeOfRentPayment"/></ListGroup.Item>
-                            <ListGroup.Item>Kiracınız, kiracısı olduğu evin faturalarını aksatmadan ve zamanında öder miydi? <input type="number" min="0" max="5" name="gradeOfBillPayment" /></ListGroup.Item>
-                            <ListGroup.Item>Kiracınızın size karşı hal ve tutumları nasıldı? <input type="number" min="0" max="5" name="gradeOfTenantSatisfaction" /></ListGroup.Item>
-                            <ListGroup.Item>Kiracınızın komşuluk ilişkileri nasıldı? (Komşularından herhangi bir şikayet vb. duyumlar alma gibi.) <input type="number" min="0" max="5" name="gradeOfTenantNeighborliness" /></ListGroup.Item>
-                            <ListGroup.Item>Kiracınız, evinizde kiracıyken eve herhangi bir zarar verdi mi? (duvarlara çivi çakma, evde izinsiz tadilat yapma vb.) <input type="number" min="0" max="5" name="gradeOfTenantHomeTreat" /></ListGroup.Item>
+                            <ListGroup>
+                                <p> <b>Aşağıdaki soruları kiracınızın evinizde yaşadığı süre zarfında size ve eve karşı tutumlarını dikkate alarak 1 (en düşük) ile 5 (en yüksek) olacak şekilde puanlayınız. </b></p>
+                                <ListGroup.Item>Kiracınız kira ücretini aksatmadan ve zamanında öder miydi? <input type="number" min="0" max="5" name="gradeOfRentPayment" /></ListGroup.Item>
+                                <ListGroup.Item>Kiracınız, kiracısı olduğu evin faturalarını aksatmadan ve zamanında öder miydi? <input type="number" min="0" max="5" name="gradeOfBillPayment" /></ListGroup.Item>
+                                <ListGroup.Item>Kiracınızın size karşı hal ve tutumları nasıldı? <input type="number" min="0" max="5" name="gradeOfTenantSatisfaction" /></ListGroup.Item>
+                                <ListGroup.Item>Kiracınızın komşuluk ilişkileri nasıldı? (Komşularından herhangi bir şikayet vb. duyumlar alma gibi.) <input type="number" min="0" max="5" name="gradeOfTenantNeighborliness" /></ListGroup.Item>
+                                <ListGroup.Item>Kiracınız, evinizde kiracıyken eve herhangi bir zarar verdi mi? (duvarlara çivi çakma, evde izinsiz tadilat yapma vb.) <input type="number" min="0" max="5" name="gradeOfTenantHomeTreat" /></ListGroup.Item>
 
-                        </ListGroup>
+                            </ListGroup>
 
-                        <input type="submit" className="btn btn-danger btn-block" value="Değerlendir" />
+                            <input type="submit" className="btn btn-danger btn-block" value="Değerlendir" />
 
                         </Form>
                     </Card.Body>
 
-             
+
                 </Card>
 
                 {this.state.toast &&

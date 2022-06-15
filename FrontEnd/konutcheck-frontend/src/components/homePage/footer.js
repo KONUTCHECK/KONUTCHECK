@@ -29,7 +29,7 @@ class Footer extends React.Component {
                             <Nav className="me-auto">
 
                                 <div className="footer-item">
-                                <Navbar.Brand href="/"><img src={logo} className="App-logo" /></Navbar.Brand>
+                                    <Navbar.Brand href="/"><img src={logo} className="App-logo" /></Navbar.Brand>
                                     <p className="about-us">Ankara Yıldırım Beyazıt Üniversitesi Yönetim Bilişim Sistemleri bölümünde eğitim gören son sınıf öğrencileriyiz. Yaşanılan ortak bir sorundan yola çıkarak ihtiyaç doğrultusunda insanların
                                         konut kiralama konusunda yaşadıkları güven problemine çözüm bulma amacıyla birleşmiş bulunmaktayız.
                                     </p>
@@ -49,8 +49,8 @@ class Footer extends React.Component {
                                 <div className="footer-item">
                                     <h4>BİZE ULAŞIN</h4>
 
-                                    <a href="mailto:info@konutcheck.com" className="footer-links "> <i class="fa fa-envelope" id="mail-icon"></i>
-                                    info@konutcheck.com </a>
+                                    <a href="mailto:info@konutcheck.com" className="footer-links "> <i className="fa fa-envelope" id="mail-icon"></i>
+                                        info@konutcheck.com </a>
 
                                 </div>
 
@@ -69,7 +69,7 @@ class Footer extends React.Component {
                     </div>
 
                 </div>
-            </div>
+            </div >
         );
     }
 }
