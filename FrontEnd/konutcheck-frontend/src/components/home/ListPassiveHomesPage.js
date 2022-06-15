@@ -68,7 +68,7 @@ class ListPassiveHomesPage extends React.Component {
                                     Bina No : {home.buildingNo}</td>
 
                                 <td><Button style={{ marginLeft: "10px" }}
-                                    className="btn btn-active" onClick={() => { this.handleSetStatusActive(home.tenantHomeId)}}>Aktifleştir</Button></td>
+                                    className="btn btn-active" onClick={() => { this.handleSetStatusActive(home.tenantHomeId)}}>Onayla</Button></td>
                             </tr>
                         ))}
                     </tbody>
